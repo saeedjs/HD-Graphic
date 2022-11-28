@@ -1,5 +1,8 @@
 const ProductMain = () => {
-  return <></>;
+  return (
+    <>
+    </>
+  );
 };
 
 export default ProductMain;
