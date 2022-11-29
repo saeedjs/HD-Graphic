@@ -8,29 +8,6 @@ import Image from "next/image";
 const ProductMain = () => {
   return (
     <Container sx={{ maxWidth: "1280px" }}>
-      <Grid container>
-        <Grid item xs={12} sm={12} md={4} lg={4}>
-          <Typography
-            sx={{
-              borderRight: 8,
-              borderColor: "#4ECCA3",
-            }}
-          >
-            <span style={{ marginRight: "10px" }}> تصاویر استوک</span>
-            <span
-              style={{
-                marginRight: "10px",
-                color: "#4ECCA3",
-                marginRight: "70px",
-              }}
-            >
-              {" "}
-              مشاهده همه
-            </span>
-          </Typography>
-        </Grid>
-      </Grid>
-
       <Grid container justifyContent="center">
         <Grid item sx={{ marginTop: "10px" }} xs={12} md={6} lg={4}>
           <Paper>
