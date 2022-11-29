@@ -9,7 +9,7 @@ const ProductMain = () => {
     <Container>
       <Grid container>
         <Grid item xs={6}>
-          <Typography color="">متن نمایشی برای </Typography>
+          <Typography>متن نمایشی برای </Typography>
         </Grid>
         <Grid item xs={6}>
           <Typography>متن نمایشی برای </Typography>
