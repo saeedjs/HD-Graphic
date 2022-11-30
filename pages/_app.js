@@ -1,19 +1,17 @@
 import "../styles/globals.css";
 // import Header from "../components/layout/Header";
-<<<<<<< HEAD
 // import Footer from "../components/layout/Footer";
-import NavbarTop from "../components/layout/Navbar/NavbarTop";
-=======
+
 import Footer from "../components/layout/Footer";
 // import NavbarTop from "../components/Navbar/NavbarTop";
->>>>>>> 33b51bb92f697f5b5ff9cd50df1c9788b6541770
+
 import { CssBaseline, Typography } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 function MyApp({ Component, pageProps }) {
   const theme = createTheme({
     palette: {
       light: {
-        main: "#FFFFFF"
+        main: "#FFFFFF",
       },
       colors: {
         black: "#232931",
