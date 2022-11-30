@@ -6,8 +6,8 @@ const TitleProducts = () => {
       <Typography
         sx={{
           borderRight: 8,
-          borderColor: "colors.pink",
-          color: "colors.pink",
+          borderColor: "colors.green",
+          color: "colors.black",
         }}
       >
         <span style={{ marginRight: "10px" }}> تصاویر استوک</span>
