@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-// import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import NavbarTop from "../components/layout/Navbar/NavbarTop";
 import { CssBaseline, Typography } from "@mui/material";
@@ -8,7 +7,7 @@ function MyApp({ Component, pageProps }) {
   const theme = createTheme({
     palette: {
       light: {
-        main: "#FFFFFF"
+        main: "#FFFFFF",
       },
       colors: {
         black: "#232931",
@@ -25,9 +24,8 @@ function MyApp({ Component, pageProps }) {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        {/* <NavbarTop /> */}
-        {/* <Header /> */}
-        <Component {...pageProps} />
+        {/* <NavbarTop />*/}
+        <Component {...pageProps} /> 
         <Footer />
       </ThemeProvider>
     </>
