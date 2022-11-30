@@ -16,10 +16,10 @@ const Main = () => {
 
         <ProductMain />
         <Grid container>
-          <Grid item lg={6}>
+          <Grid item xs={6} sm={6} md={6} lg={6}>
             <TitleProducts />
           </Grid>
-          <Grid item lg={6}>
+          <Grid item xs={6} sm={6} md={6} lg={6}>
             <TitleProducts />
           </Grid>
         </Grid>
