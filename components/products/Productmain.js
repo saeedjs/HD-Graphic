@@ -4,12 +4,13 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Container, Paper, CardActionArea, Grid } from "@mui/material";
 import Image from "next/image";
+import { Box } from "@mui/system";
 
 const ProductMain = () => {
   return (
     <Container sx={{ maxWidth: "1280px" }}>
       <Grid container justifyContent="center">
-        <Grid item sx={{ marginTop: "10px" }} xs={12} md={6} lg={4}>
+        <Grid item sx={{ marginTop: "10px" }} xs={4} md={4} lg={4}>
           <Paper>
             <Card sx={{ maxWidth: 415 }}>
               <CardActionArea>
@@ -145,13 +146,10 @@ const ProductMain = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12}>
-        <Image
-          src="/images/group.png"
-          sx={{ marginTop: "33px" }}
-          width={1140}
-          height={170}
-        />
+      <Grid item>
+        <Box>
+          <img style={{ maxWidth: 1200 }} src="./images/group.png" />
+        </Box>
       </Grid>
     </Container>
   );

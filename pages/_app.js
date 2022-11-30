@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 // import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
-import NavbarTop from "../components/Navbar/NavbarTop";
+// import NavbarTop from "../components/Navbar/NavbarTop";
 import { CssBaseline, Typography } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 function MyApp({ Component, pageProps }) {
@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <NavbarTop />
+        {/* <NavbarTop /> */}
         {/* <Header /> */}
         <Component {...pageProps} />
         <Footer />
