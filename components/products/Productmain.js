@@ -10,7 +10,19 @@ import Link from "next/link";
 
 const ProductMain = () => {
   return (
-    <Container sx={{ maxWidth: "1280px" }}>
+    <Container sx={{ maxWidth: "1380px" }}>
+      <span style={{ marginRight: "10px", borderRight: "8px solid #4ECCA3 " }}>
+        تصاویر استوک
+      </span>
+      <span
+        style={{
+          marginRight: "10px",
+          color: "#4ECCA3",
+          marginRight: "70px",
+        }}
+      >
+        مشاهده همه
+      </span>
       <Grid container justifyContent={"center"}>
         <Grid
           sx={{
@@ -77,7 +89,7 @@ const ProductMain = () => {
                 padding: "0",
                 margin: "0",
               }}
-              src="./images/www.png"
+              src="./images/ewe.png"
             />
           </Grid>
           <Grid item sx={{ margin: "4px" }} xs={12}>
@@ -125,7 +137,7 @@ const ProductMain = () => {
                 padding: "0",
                 margin: "0",
               }}
-              src="./images/www.png"
+              src="./images/qqq.png"
             />
           </Grid>
           <Grid
@@ -147,7 +159,7 @@ const ProductMain = () => {
                 padding: "0",
                 margin: "0",
               }}
-              src="./images/www.png"
+              src="./images/dwad.png"
             />
           </Grid>
         </Grid>
