@@ -1,12 +1,15 @@
 import "../styles/globals.css";
 // import Header from "../components/layout/Header";
 // import Footer from "../components/layout/Footer";
-import NavbarTop from "../components/layout/Navbar/NavbarTop";
+import NavbarTop from "../components/Navbar/NavbarTop";
 import { CssBaseline, Typography } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 function MyApp({ Component, pageProps }) {
   const theme = createTheme({
     palette: {
+      light: {
+        main: "#FFFFFF",
+      },
       colors: {
         black: "#232931",
         gray: "#393E46",
@@ -22,10 +25,10 @@ function MyApp({ Component, pageProps }) {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <NavbarTop />
+        {/* <NavbarTop /> */}
         {/* <Header /> */}
         <Component {...pageProps} />
-        {/* <Footer /> */}
+        <Footer />
       </ThemeProvider>
     </>
   );
