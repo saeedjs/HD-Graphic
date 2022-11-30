@@ -8,12 +8,12 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { useState } from "react";
+import Link from "next/link";
 
 const pages = ["آیکون", "تصویر", "فایل لایه باز", "دسته بندی", "مجموعه ها", "طراحان"];
 const settings = ["پروفایل", "اکانت", "داشبورد", "خروج"];
@@ -54,7 +54,9 @@ function ResponsiveAppBar() {
                 border: "none",
               }}
             >
-              <img src="images/3917033.png" />
+              <Link href="#">
+                <img src="images/3917033.png" />
+              </Link>
             </Paper>
             <IconButton
               sx={{ color: "black" }}
@@ -92,24 +94,6 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none", color: "black" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Paper
               variant="outlined"
@@ -120,7 +104,9 @@ function ResponsiveAppBar() {
                 border: "none",
               }}
             >
-              <img src="images/3917033.png" />
+              <Link href="#">
+                <img src="images/3917033.png" />
+              </Link>
             </Paper>
             {pages.map((page) => (
               <Button
@@ -132,57 +118,62 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
-          {true && (
-            <Box sx={{ flexGrow: 0 }}>
-              <Button
-                variant="contained"
-                sx={{
-                  mx: 2,
-                  backgroundColor: "colors.green",
-                  "&:hover": {
-                    backgroundColor: "colors.greenHover",
-                  },
-                }}
-              >
-                اشتراک ویژه
-              </Button>
-              <div>
-                <Button variant="text" sx={{ color: "colors.black" }}>
+
+          <Box sx={{ flexGrow: 0 }}>
+            <Button
+              variant="contained"
+              sx={{
+                mx: 2,
+                backgroundColor: "colors.green",
+                "&:hover": {
+                  backgroundColor: "colors.greenHover",
+                },
+              }}
+            >
+              اشتراک ویژه
+            </Button>
+
+            {false && (
+              <>
+                <Button variant="text" sx={{ color: "colors.black", m: 0 }}>
                   ورود
                 </Button>
-                <Button variant="text" sx={{ color: "colors.black" }}>
+                <Button variant="text" sx={{ color: "colors.black", m: 0 }}>
                   ثبت نام
                 </Button>
-              </div>
+              </>
+            )}
+            {true && (
               <Tooltip title="Open settings" sx={{ display: "none" }}>
                 <IconButton onClick={handleOpenUserMenu} sx={{ px: 2 }}>
                   <AccountCircleIcon />
                 </IconButton>
               </Tooltip>
-              <Menu
-                sx={{ mt: "45px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu} sx={{ width: "120px" }}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-          )}
+            )}
+            <Menu
+              sx={{ mt: "45px" }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {settings.map((setting) => (
+                <MenuItem key={setting} onClick={handleCloseUserMenu} sx={{ width: "120px" }}>
+                  <Typography textAlign="center">{setting}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+
           <Paper
             variant="outlined"
             sx={{
@@ -192,7 +183,9 @@ function ResponsiveAppBar() {
               border: "none",
             }}
           >
-            <img src="images/Group13.png" />
+            <Link href="#">
+              <img src="images/Group13.png" />
+            </Link>
           </Paper>
         </Toolbar>
       </Container>
