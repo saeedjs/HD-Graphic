@@ -43,7 +43,6 @@ const useStyles = makeStyles({
 
 export default function SearchBox() {
   const classes = useStyles();
-
   const [value, setValue] = useState("");
   const [age, setAge] = useState("");
 
@@ -104,7 +103,7 @@ export default function SearchBox() {
                     IconComponent={ExpandMoreIcon}
                   >
                     <MenuItem value="" sx={{ mt: 2 }}>
-                      <em>همه</em>
+                      همه
                     </MenuItem>
                     <MenuItem value={10}>موکاپ</MenuItem>
                     <MenuItem value={20}>آیکون</MenuItem>
