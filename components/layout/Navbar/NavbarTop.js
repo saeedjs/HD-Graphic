@@ -18,7 +18,7 @@ import Link from "next/link";
 const pages = ["آیکون", "تصویر", "فایل لایه باز", "دسته بندی", "مجموعه ها", "طراحان"];
 const settings = ["پروفایل", "اکانت", "داشبورد", "خروج"];
 
-function ResponsiveAppBar() {
+function NavbarTop() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -192,4 +192,4 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default NavbarTop;

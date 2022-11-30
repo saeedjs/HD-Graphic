@@ -12,7 +12,7 @@ import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   root: {
     "& .MuiInputBase-root": {
       "& fieldset": {
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
       padding: "1px",
     },
   },
-}));
+});
 
 export default function SearchBox() {
   const classes = useStyles();
