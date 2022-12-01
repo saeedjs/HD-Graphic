@@ -11,7 +11,7 @@ const Productmain2 = () => {
     <>
       <Container justifyContent="center">
         <Grid container>
-          <Box height={"40px"}>
+          <Box item sm={12} md={12}>
             <span
               style={{ marginRight: "10px", borderRight: "8px solid #4ECCA3 " }}
             >
