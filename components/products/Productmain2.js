@@ -4,12 +4,29 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Container, Paper, CardActionArea, Grid } from "@mui/material";
 import Image from "next/image";
+import { Box } from "@mui/system";
 
 const Productmain2 = () => {
   return (
     <>
       <Container justifyContent="center">
         <Grid container>
+          <Box height={"40px"}>
+            <span
+              style={{ marginRight: "10px", borderRight: "8px solid #4ECCA3 " }}
+            >
+              تصاویر استوک
+            </span>
+            <span
+              style={{
+                marginRight: "10px",
+                color: "#4ECCA3",
+                marginRight: "70px",
+              }}
+            >
+              مشاهده همه
+            </span>
+          </Box>
           <Grid item xs={6} sm={6} md={6} lg={6}>
             <img
               style={{
