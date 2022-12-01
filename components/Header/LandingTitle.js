@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-
+import Link from "next/link";
 const LandingTitle = () => {
   return (
     <>
@@ -13,7 +13,9 @@ const LandingTitle = () => {
           mt: 5,
         }}
       >
-        <img src="images/hd-g.png" style={{ width: "300px" }} />
+        <Link href="#">
+          <img src="images/hd-g.png" style={{ width: "300px" }} />
+        </Link>
         <Typography
           variant="h4"
           components="h4"
