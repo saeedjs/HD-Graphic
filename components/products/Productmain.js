@@ -11,37 +11,95 @@ import ProductmainBig from "./ProductmainBig";
 const ProductMain = () => {
   return (
     <>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "start",
-          padding: "30px",
-        }}
-      >
+      <span style={{ marginRight: "190px", borderRight: "8px solid #4ECCA3 " }}>
         <span
-          style={{
-            marginRight: "10px",
-            borderRight: "8px solid #4ECCA3 ",
-          }}
+          style={{ marginRight: "20px", fontSize: "12px", fontWeight: "500" }}
         >
           تصاویر استوک
         </span>
-        <Link href={"#"}>
-          <span
-            style={{
-              marginRight: "30px",
-              color: "#4ECCA3",
-              marginRight: "70px",
-            }}
-          >
-            مشاهده همه
-          </span>
-        </Link>
-      </Box>
+      </span>
+
+      <Link href={"#"}>
+        <span
+          style={{
+            fontWeight: "500",
+            fontSize: "12px",
+            color: "#4ECCA3",
+            marginRight: "30px",
+          }}
+        >
+          {" "}
+          مشاهده همه{" "}
+        </span>
+        <span
+          style={{
+            fontWeight: "500",
+            fontSize: "12px",
+            marginRight: "230px",
+            color: "#AAAAAA",
+          }}
+        >
+          {" "}
+          بیش از 4000 طرح{" "}
+        </span>
+      </Link>
+      <Box
+        sx={{
+          padding: "10px",
+        }}
+      ></Box>
 
       <Grid container justifyContent={"center"}>
         <ProductmainBig />
+        <Box
+          sx={{
+            display: {
+              lg: "none",
+              md: "none",
+              sm: "none",
+              xs: "block",
+            },
+          }}
+        >
+          <span
+            style={{ marginRight: "110px", borderRight: "8px solid #4ECCA3 " }}
+          >
+            <span
+              style={{
+                marginRight: "20px",
+                fontSize: "12px",
+                fontWeight: "500",
+              }}
+            >
+              تصاویر استوک
+            </span>
+          </span>
 
+          <Link href={"#"}>
+            <span
+              style={{
+                fontWeight: "500",
+                fontSize: "12px",
+                color: "#4ECCA3",
+                marginRight: "30px",
+              }}
+            >
+              {" "}
+              مشاهده همه{" "}
+            </span>
+            <span
+              style={{
+                fontWeight: "500",
+                fontSize: "12px",
+                marginRight: "40px",
+                color: "#AAAAAA",
+              }}
+            >
+              {" "}
+              بیش از 4000 طرح{" "}
+            </span>
+          </Link>
+        </Box>
         <Grid justifyContent={"center"} item xs={4} sm={2} md={2} lg={2}>
           <Grid item sx={{ margin: "3px" }}>
             <img
