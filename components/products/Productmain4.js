@@ -7,7 +7,7 @@ import Image from "next/image";
 import { Box } from "@mui/system";
 import Link from "next/link";
 
-const Productmain2 = () => {
+const Productmain4 = () => {
   return (
     <>
       <Container justifyContent="center">
@@ -17,24 +17,25 @@ const Productmain2 = () => {
           }}
         ></Box>
         <span style={{ borderRight: "8px solid #4ECCA3 " }}>
-          <span style={{ margin: "20px" }}>تصاویر استوک</span>
+          <span style={{ margin: "10px" }}> تصاویر استوک </span>
         </span>
-
         <Link href={"#"}>
           <span
             style={{
+              marginRight: "10px",
               color: "#4ECCA3",
-              marginRight: "30px",
+              marginRight: "70px",
             }}
           >
             {" "}
             مشاهده همه{" "}
           </span>
-          <span style={{ marginRight: "40px", color: "#AAAAAA" }}>
+          <span style={{ margin: "35px", color: "#AAAAAA" }}>
             {" "}
             بیش از 4000 طرح{" "}
           </span>
         </Link>
+
         <Box
           sx={{
             padding: "10px",
@@ -46,48 +47,48 @@ const Productmain2 = () => {
             <img
               style={{
                 width: "100%",
-                height: "auto",
+                height: "100%",
                 padding: "4px",
-
+                marginLeft: "10px",
                 margin: "0",
               }}
-              src="./images/123.png"
+              src="./images/dcxz.png"
             />
           </Grid>
           <Grid item xs={6} sm={6} md={6} lg={6}>
             <img
               style={{
                 width: "100%",
-                height: "auto",
+                height: "100%",
                 padding: "4px",
-
+                marginLeft: "10px",
                 margin: "0",
               }}
-              src="./images/1234.png"
+              src="./images/qwqwszx.png"
             />
           </Grid>
           <Grid item xs={6} sm={6} md={6} lg={6}>
             <img
               style={{
                 width: "100%",
-                height: "auto",
+                height: "100%",
                 padding: "4px",
-
+                marginLeft: "10px",
                 margin: "0",
               }}
-              src="./images/12345.png"
+              src="./images/vfx.png"
             />
           </Grid>
           <Grid item xs={6} sm={6} md={6} lg={6}>
             <img
               style={{
                 width: "100%",
-                height: "auto",
+                height: "100%",
                 padding: "4px",
-
+                marginLeft: "10px",
                 margin: "0",
               }}
-              src="./images/99996.png"
+              src="./images/xcvxcv.png"
             />
           </Grid>
         </Grid>
@@ -96,4 +97,4 @@ const Productmain2 = () => {
   );
 };
 
-export default Productmain2;
+export default Productmain4;
