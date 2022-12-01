@@ -36,12 +36,15 @@ const useStyles = makeStyles({
       },
     },
     "& .MuiSelect-select": {
-      paddingRight: "40px",
+      padding: "1px",
       marginLeft: "10px",
     },
     "& .MuiSelect-icon": {
-      right: "-38px",
+      right: "-11px",
       position: "relative",
+    },
+    "& .MuiOutlinedInput-input": {
+      paddingRight: "60px",
     },
   },
 });
