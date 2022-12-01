@@ -97,11 +97,14 @@ const ProductMain = () => {
         </Grid>
       </Grid>
       <Grid item xs={12}>
-        <Image
+        <img
           src="/images/group.png"
-          sx={{ marginTop: "33px" }}
-          width={1140}
-          height={170}
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+            padding: "0",
+            margin: "0",
+          }}
         />
       </Grid>
     </Container>
