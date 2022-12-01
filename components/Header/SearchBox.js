@@ -52,7 +52,7 @@ export default function SearchBox() {
 
   return (
     <Container>
-      <Box sx={{ mt: 2, display: "flex", justifyContent: "center" }}>
+      <Box sx={{ mt: 4, mb: 16, display: "flex", justifyContent: "center" }}>
         <TextField
           className={classes.root}
           sx={{
@@ -63,6 +63,7 @@ export default function SearchBox() {
             },
             backgroundColor: "colors.white",
             ".MuiOutlinedInput-root": { padding: "0 2px" },
+            borderRadius: "10px",
           }}
           placeholder="جستجوی برای آیکون،تصویر،فایل لایه باز"
           type="text"

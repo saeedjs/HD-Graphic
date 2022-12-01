@@ -1,12 +1,13 @@
 import { Box, Grid, Typography, Container } from "@mui/material";
 import { display } from "@mui/system";
 import Divider from "@mui/material/Divider";
+import Link from "next/link";
 
 const LandingProducts = () => {
   return (
     <>
       <Container>
-        <Box>
+        <Box sx={{ my: 16 }}>
           <Grid
             container
             sx={{
@@ -32,18 +33,22 @@ const LandingProducts = () => {
               <Box
                 component="span"
                 sx={{
-                  border: "5px solid red",
+                  border: "3px solid",
                   borderColor: "colors.green",
                   display: "inline-block",
                   borderRadius: "100%",
                 }}
               >
-                <img src="images/dv.png" />
+                <Link href="#">
+                  <img src="images/dv.png" />
+                </Link>
               </Box>
               <Box component="span">
-                <Typography variant="h5" component="h5" sx={{ p: 1 }}>
-                  فایل لایه باز
-                </Typography>
+                <Link href="#">
+                  <Typography variant="h5" component="h5" sx={{ p: 1 }}>
+                    فایل لایه باز
+                  </Typography>
+                </Link>
                 <Typography
                   variant="p"
                   component="p"
@@ -78,18 +83,22 @@ const LandingProducts = () => {
               <Box
                 component="span"
                 sx={{
-                  border: "5px solid red",
+                  border: "3px solid",
                   borderColor: "colors.green",
                   display: "inline-block",
                   borderRadius: "100%",
                 }}
               >
-                <img src="images/icons.png" />
+                <Link href="#">
+                  <img src="images/icons.png" />
+                </Link>
               </Box>
               <Box component="span">
-                <Typography variant="h5" component="h5" sx={{ p: 1 }}>
-                  آیکون
-                </Typography>
+                <Link href="#">
+                  <Typography variant="h5" component="h5" sx={{ p: 1 }}>
+                    آیکون
+                  </Typography>
+                </Link>
                 <Typography
                   variant="p"
                   component="p"
@@ -124,17 +133,21 @@ const LandingProducts = () => {
               <Box
                 component="span"
                 sx={{
-                  border: "5px solid red",
+                  border: "3px solid",
                   borderColor: "colors.green",
                   display: "inline-block",
                   borderRadius: "100%",
                 }}
               >
-                <img src="images/zsd.png" />
+                <Link href="#">
+                  <img src="images/zsd.png" />
+                </Link>
               </Box>
-              <Typography variant="h5" component="h5" sx={{ p: 1 }}>
-                تصویر{" "}
-              </Typography>
+              <Link href="#">
+                <Typography variant="h5" component="h5" sx={{ p: 1 }}>
+                  تصویر{" "}
+                </Typography>
+              </Link>
               <Typography
                 variant="p"
                 component="p"
@@ -173,17 +186,21 @@ const LandingProducts = () => {
               <Box
                 component="span"
                 sx={{
-                  border: "5px solid red",
+                  border: "3px solid",
                   borderColor: "colors.green",
                   display: "inline-block",
                   borderRadius: "100%",
                 }}
               >
-                <img src="images/mokop.png" />
+                <Link href="#">
+                  <img src="images/mokop.png" />
+                </Link>
               </Box>
-              <Typography variant="h5" component="h5" sx={{ p: 1 }}>
-                موکاپ
-              </Typography>
+              <Link href="#">
+                <Typography variant="h5" component="h5" sx={{ p: 1 }}>
+                  موکاپ
+                </Typography>
+              </Link>
               <Typography
                 variant="p"
                 component="p"
