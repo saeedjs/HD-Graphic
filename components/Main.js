@@ -19,37 +19,8 @@ const Main = () => {
         <img style={{ maxWidth: "100%" }} src="/images/Group20.png" />
       </Box>
 
-      <Grid container>
-        <Grid item xs={2}>
-          <Box
-            sx={{
-              backgroundImage: 'url("/images/Rectangle124.png")',
-              width: "490px",
-              height: "179px",
-            }}
-          ></Box>
-        </Grid>
-        <Grid item xs={2}>
-          <Box
-            sx={{
-              backgroundImage:
-                'url("/images/graphics-designing-course-karachi-digital-minds (1).png")',
-              backgroundRepeat:'no-repeat',  
-              width: "286.5px",
-              height: "214px",
-            }}
-          />
-        </Grid>
-        <Grid item xs={1}>
-          <Box
-            sx={{
-              backgroundImage: 'url("/images/Rectangle 125.png")',
-              width: "490px",
-              height: "179px",
-            }}
-          ></Box>
-        </Grid>
-      </Grid>
+      <Box sx={{ backgroundImage:'linear-gradient(to right, #FBFFC2 50%, #DFFFF5 50%)', width:'980px', height:'215px'}}>
+      </Box>
       <Articls />
     </>
   );
