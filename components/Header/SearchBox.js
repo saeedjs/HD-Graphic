@@ -63,6 +63,7 @@ export default function SearchBox() {
             },
             backgroundColor: "colors.white",
             ".MuiOutlinedInput-root": { padding: "0 2px" },
+            borderRadius: "10px",
           }}
           placeholder="جستجوی برای آیکون،تصویر،فایل لایه باز"
           type="text"
