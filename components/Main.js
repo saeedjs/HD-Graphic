@@ -11,7 +11,12 @@ import "swiper/css";
 const Main = () => {
   return (
     <>
-<<<<<<< HEAD
+      <Landing />
+      <Container Container>
+        <ProductMain />
+
+        <Productmain3 />
+      </Container>
       <Box mt={5}></Box>
       <Swiper
         spaceBetween={10}
@@ -335,16 +340,8 @@ const Main = () => {
           </Box>
         </SwiperSlide>
       </Swiper>
-=======
-      <Landing />
-      <Container Container>
-        <ProductMain />
-
-        <Productmain3 />
-      </Container>
->>>>>>> 784bdb38d84acd083f0093c97fe4311504ddff04
     </>
-  );
-};
+  )
+}
 
 export default Main;
