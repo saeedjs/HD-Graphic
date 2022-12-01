@@ -1,3 +1,4 @@
+import LandingProducts from "./LandingProducts";
 import LandingTitle from "./LandingTitle";
 import SearchBox from "./SearchBox";
 
@@ -6,6 +7,7 @@ const Header = () => {
     <>
       <LandingTitle />
       <SearchBox />
+      <LandingProducts />
     </>
   );
 };

@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
 import { IconButton, Link } from "@mui/material";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Box, Grid } from "@mui/material";
 import { useState } from "react";
 import InputLabel from "@mui/material/InputLabel";
@@ -19,10 +20,10 @@ const useStyles = makeStyles({
         border: "1px solid #ccc",
         transition: "0.3s",
       },
-      "&:hover": {
-        border: "none",
-      },
       "&.Mui-focused fieldset": {
+        border: "1px solid #ccc",
+      },
+      "&:hover fieldset": {
         border: "1px solid #ccc",
       },
     },
@@ -42,7 +43,6 @@ const useStyles = makeStyles({
 
 export default function SearchBox() {
   const classes = useStyles();
-
   const [value, setValue] = useState("");
   const [age, setAge] = useState("");
 
@@ -57,7 +57,7 @@ export default function SearchBox() {
         sx={{
           display: "flex",
           width: {
-            xs: "100%",
+            xs: "87%",
             md: "50%",
           },
           backgroundColor: "colors.white",
@@ -81,6 +81,18 @@ export default function SearchBox() {
           ),
           endAdornment: (
             <>
+              <>
+                {value && (
+                  <>
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={() => setValue("")}
+                    >
+                      <CancelRoundedIcon />
+                    </IconButton>
+                  </>
+                )}
+              </>
               <div className={classes.root2}>
                 <FormControl sx={{ m: 1, minWidth: 120 }}>
                   <Select
@@ -88,13 +100,14 @@ export default function SearchBox() {
                     onChange={handleChange}
                     displayEmpty
                     inputProps={{ "aria-label": "Without label" }}
+                    IconComponent={ExpandMoreIcon}
                   >
                     <MenuItem value="" sx={{ mt: 2 }}>
-                      <em>None</em>
+                      همه
                     </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    <MenuItem value={10}>موکاپ</MenuItem>
+                    <MenuItem value={20}>آیکون</MenuItem>
+                    <MenuItem value={30}>تصاویر استوک</MenuItem>
                   </Select>
                 </FormControl>
               </div>
@@ -105,11 +118,3 @@ export default function SearchBox() {
     </Box>
   );
 }
-
-// value && (
-//   <>
-//     <IconButton aria-label="toggle password visibility" onClick={() => setValue("")}>
-//       <CancelRoundedIcon />
-//     </IconButton>
-//   </>
-// ),
