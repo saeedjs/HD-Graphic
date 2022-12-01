@@ -138,7 +138,12 @@ const LandingProducts = () => {
               <Typography
                 variant="p"
                 component="p"
-                sx={{ width: "75%", display: "flex", textAlign: "center", m: "auto" }}
+                sx={{
+                  width: "75%",
+                  display: "flex",
+                  textAlign: "center",
+                  m: "auto",
+                }}
               >
                 منبع عظیمی از تصاویر با کیفیت برای استفاده در طرح های گرافیکی
               </Typography>
@@ -182,14 +187,122 @@ const LandingProducts = () => {
               <Typography
                 variant="p"
                 component="p"
-                sx={{ width: "75%", display: "flex", textAlign: "center", m: "auto" }}
+                sx={{
+                  width: "75%",
+                  display: "flex",
+                  textAlign: "center",
+                  m: "auto",
+                }}
               >
                 منبع عظیمی از موکاپ های آماده مناسب برای نمایش نمونه کار
               </Typography>
             </Grid>
           </Grid>
+<<<<<<< HEAD
         </Box>
       </Container>
+=======
+          <Grid
+            sx={{
+              display: {
+                xs: "none",
+                lg: "block",
+              },
+            }}
+          >
+            <img src="images/line1.png" />
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={5}
+            lg={2}
+            sx={{
+              my: {
+                xs: 2,
+                lg: 0,
+              },
+            }}
+          >
+            <Box
+              component="span"
+              sx={{
+                border: "5px solid red",
+                borderColor: "colors.green",
+                display: "inline-block",
+                borderRadius: "100%",
+              }}
+            >
+              <img src="images/zsd.png" />
+            </Box>
+            <Typography variant="h5" component="h5" sx={{ p: 1 }}>
+              تصویر{" "}
+            </Typography>
+            <Typography
+              variant="p"
+              component="p"
+              sx={{
+                width: "75%",
+                display: "flex",
+                textAlign: "center",
+                m: "auto",
+              }}
+            >
+              منبع عظیمی از تصاویر با کیفیت برای استفاده در طرح های گرافیکی
+            </Typography>
+          </Grid>
+          <Grid
+            sx={{
+              display: {
+                xs: "none",
+                lg: "block",
+              },
+            }}
+          >
+            <img src="images/line1.png" />
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={5}
+            lg={2}
+            sx={{
+              my: {
+                xs: 2,
+                lg: 0,
+              },
+            }}
+          >
+            <Box
+              component="span"
+              sx={{
+                border: "5px solid red",
+                borderColor: "colors.green",
+                display: "inline-block",
+                borderRadius: "100%",
+              }}
+            >
+              <img src="images/mokop.png" />
+            </Box>
+            <Typography variant="h5" component="h5" sx={{ p: 1 }}>
+              موکاپ
+            </Typography>
+            <Typography
+              variant="p"
+              component="p"
+              sx={{
+                width: "75%",
+                display: "flex",
+                textAlign: "center",
+                m: "auto",
+              }}
+            >
+              منبع عظیمی از موکاپ های آماده مناسب برای نمایش نمونه کار
+            </Typography>
+          </Grid>
+        </Grid>
+      </Box>
+>>>>>>> f061d1829b359bb0df7ca1a2a4fe2f77424e2634
     </>
   );
 };

@@ -24,8 +24,8 @@ function MyApp({ Component, pageProps }) {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        {/* <NavbarTop />*/}
-        <Component {...pageProps} /> 
+        <NavbarTop />
+        <Component {...pageProps} />
         <Footer />
       </ThemeProvider>
     </>
