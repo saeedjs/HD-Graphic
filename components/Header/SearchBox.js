@@ -52,7 +52,7 @@ export default function SearchBox() {
 
   return (
     <Container>
-      <Box sx={{ mt: 2, display: "flex", justifyContent: "center" }}>
+      <Box sx={{ mt: 4, mb: 16, display: "flex", justifyContent: "center" }}>
         <TextField
           className={classes.root}
           sx={{

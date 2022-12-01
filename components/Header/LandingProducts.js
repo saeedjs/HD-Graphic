@@ -6,7 +6,7 @@ const LandingProducts = () => {
   return (
     <>
       <Container>
-        <Box>
+        <Box sx={{ my: 16 }}>
           <Grid
             container
             sx={{
