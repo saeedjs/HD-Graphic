@@ -46,7 +46,12 @@ const LandingProducts = () => {
               <Typography
                 variant="p"
                 component="p"
-                sx={{ width: "75%", display: "flex", textAlign: "center", m: "auto" }}
+                sx={{
+                  width: "75%",
+                  display: "flex",
+                  textAlign: "center",
+                  m: "auto",
+                }}
               >
                 منبع عظیمی از فایل های لایه باز مناسب برای اینستاگرام و غیره
               </Typography>
@@ -92,7 +97,12 @@ const LandingProducts = () => {
               <Typography
                 variant="p"
                 component="p"
-                sx={{ width: "75%", display: "flex", textAlign: "center", m: "auto" }}
+                sx={{
+                  width: "75%",
+                  display: "flex",
+                  textAlign: "center",
+                  m: "auto",
+                }}
               >
                 منبع عظیمی از آیکون های مناسب برای طراحی صفحات وب{" "}
               </Typography>
@@ -137,7 +147,12 @@ const LandingProducts = () => {
             <Typography
               variant="p"
               component="p"
-              sx={{ width: "75%", display: "flex", textAlign: "center", m: "auto" }}
+              sx={{
+                width: "75%",
+                display: "flex",
+                textAlign: "center",
+                m: "auto",
+              }}
             >
               منبع عظیمی از تصاویر با کیفیت برای استفاده در طرح های گرافیکی
             </Typography>
@@ -181,7 +196,12 @@ const LandingProducts = () => {
             <Typography
               variant="p"
               component="p"
-              sx={{ width: "75%", display: "flex", textAlign: "center", m: "auto" }}
+              sx={{
+                width: "75%",
+                display: "flex",
+                textAlign: "center",
+                m: "auto",
+              }}
             >
               منبع عظیمی از موکاپ های آماده مناسب برای نمایش نمونه کار
             </Typography>
