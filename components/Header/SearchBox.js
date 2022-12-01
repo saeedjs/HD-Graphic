@@ -5,7 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { IconButton, Link } from "@mui/material";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Container } from "@mui/material";
 import { useState } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -51,70 +51,72 @@ export default function SearchBox() {
   };
 
   return (
-    <Box sx={{ mt: 2, display: "flex", justifyContent: "center" }}>
-      <TextField
-        className={classes.root}
-        sx={{
-          display: "flex",
-          width: {
-            xs: "87%",
-            md: "50%",
-          },
-          backgroundColor: "colors.white",
-          ".MuiOutlinedInput-root": { padding: "0 2px" },
-        }}
-        placeholder="جستجوی برای آیکون،تصویر،فایل لایه باز"
-        type="text"
-        variant="outlined"
-        size="small"
-        onChange={(e) => setValue(e.target.value)}
-        value={value}
-        InputProps={{
-          startAdornment: (
-            <>
-              <Link href="#">
-                <InputAdornment position="start">
-                  <SearchIcon />
-                </InputAdornment>
-              </Link>
-            </>
-          ),
-          endAdornment: (
-            <>
+    <Container>
+      <Box sx={{ mt: 2, display: "flex", justifyContent: "center" }}>
+        <TextField
+          className={classes.root}
+          sx={{
+            display: "flex",
+            width: {
+              xs: "87%",
+              md: "50%",
+            },
+            backgroundColor: "colors.white",
+            ".MuiOutlinedInput-root": { padding: "0 2px" },
+          }}
+          placeholder="جستجوی برای آیکون،تصویر،فایل لایه باز"
+          type="text"
+          variant="outlined"
+          size="small"
+          onChange={(e) => setValue(e.target.value)}
+          value={value}
+          InputProps={{
+            startAdornment: (
               <>
-                {value && (
-                  <>
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={() => setValue("")}
-                    >
-                      <CancelRoundedIcon />
-                    </IconButton>
-                  </>
-                )}
+                <Link href="#">
+                  <InputAdornment position="start">
+                    <SearchIcon />
+                  </InputAdornment>
+                </Link>
               </>
-              <div className={classes.root2}>
-                <FormControl sx={{ m: 1, minWidth: 120 }}>
-                  <Select
-                    value={age}
-                    onChange={handleChange}
-                    displayEmpty
-                    inputProps={{ "aria-label": "Without label" }}
-                    IconComponent={ExpandMoreIcon}
-                  >
-                    <MenuItem value="" sx={{ mt: 2 }}>
-                      همه
-                    </MenuItem>
-                    <MenuItem value={10}>موکاپ</MenuItem>
-                    <MenuItem value={20}>آیکون</MenuItem>
-                    <MenuItem value={30}>تصاویر استوک</MenuItem>
-                  </Select>
-                </FormControl>
-              </div>
-            </>
-          ),
-        }}
-      />
-    </Box>
+            ),
+            endAdornment: (
+              <>
+                <>
+                  {value && (
+                    <>
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={() => setValue("")}
+                      >
+                        <CancelRoundedIcon />
+                      </IconButton>
+                    </>
+                  )}
+                </>
+                <div className={classes.root2}>
+                  <FormControl sx={{ m: 1, minWidth: 120 }}>
+                    <Select
+                      value={age}
+                      onChange={handleChange}
+                      displayEmpty
+                      inputProps={{ "aria-label": "Without label" }}
+                      IconComponent={ExpandMoreIcon}
+                    >
+                      <MenuItem value="" sx={{ mt: 2 }}>
+                        همه
+                      </MenuItem>
+                      <MenuItem value={10}>موکاپ</MenuItem>
+                      <MenuItem value={20}>آیکون</MenuItem>
+                      <MenuItem value={30}>تصاویر استوک</MenuItem>
+                    </Select>
+                  </FormControl>
+                </div>
+              </>
+            ),
+          }}
+        />
+      </Box>
+    </Container>
   );
 }
