@@ -38,7 +38,7 @@ const Productmain2 = () => {
             style={{
               fontWeight: "500",
               fontSize: "12px",
-              marginRight: "40px",
+              marginRight: "123px",
               color: "#AAAAAA",
             }}
           >
