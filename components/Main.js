@@ -447,7 +447,6 @@ const Main = () => {
             </Box>
           </SwiperSlide>
         </Swiper>
->>>>>>> 0f09b33f6947115073593884c4f78dc7bb4c381b
       </Box>
 
       <Box sx={{ backgroundImage:'linear-gradient(to right, #FBFFC2 50%, #DFFFF5 50%)', width:'980px', height:'215px'}}>
