@@ -8,6 +8,7 @@ import { Box } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
+import Mainimages from "./MainImages";
 
 const Main = () => {
   return (
@@ -16,36 +17,8 @@ const Main = () => {
       <Container Container>
         <ProductMain />
         <Productmain3 />
-        <Box>
-          <img style={{ maxWidth: "100%" }} src="/images/Group20.png" />
-        </Box>
-        <Box sx={{display:'flex', justifyContent:'center'}}>
-          <Box
-            sx={{
-              borderRadius:'10px',
-              backgroundImage:
-                "linear-gradient(to right, #FBFFC2 50%, #DFFFF5 50%)",
-              width: "980px",
-              height: "215px",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <img sx={{maxWidth:'980px'}} src="/images/graphics-designing-course-karachi-digital-minds (1).png" />
-          </Box>
-        </Box>
       </Container>
-      <Box>
-        <img style={{ maxWidth: "100%" }} src="/images/Group20.png" />
-      </Box>
-      <Box
-        sx={{
-          backgroundImage:
-            "linear-gradient(to right, #FBFFC2 50%, #DFFFF5 50%)",
-          width: "980px",
-          height: "215px",
-        }}
-      ></Box>
+      <Mainimages />
       <Articls />
     </>
   );
