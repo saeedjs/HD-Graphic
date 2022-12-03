@@ -19,10 +19,10 @@ const Main = () => {
         <Box>
           <img style={{ maxWidth: "100%" }} src="/images/Group20.png" />
         </Box>
-        <Box sx={{display:'flex', justifyContent:'center'}}>
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
           <Box
             sx={{
-              borderRadius:'10px',
+              borderRadius: "10px",
               backgroundImage:
                 "linear-gradient(to right, #FBFFC2 50%, #DFFFF5 50%)",
               width: "980px",
@@ -31,21 +31,14 @@ const Main = () => {
               justifyContent: "center",
             }}
           >
-            <img sx={{maxWidth:'980px'}} src="/images/graphics-designing-course-karachi-digital-minds (1).png" />
+            <img
+              sx={{ maxWidth: "980px" }}
+              src="/images/graphics-designing-course-karachi-digital-minds (1).png"
+            />
           </Box>
         </Box>
       </Container>
-      <Box>
-        <img style={{ maxWidth: "100%" }} src="/images/Group20.png" />
-      </Box>
-      <Box
-        sx={{
-          backgroundImage:
-            "linear-gradient(to right, #FBFFC2 50%, #DFFFF5 50%)",
-          width: "980px",
-          height: "215px",
-        }}
-      ></Box>
+
       <Articls />
     </>
   );
