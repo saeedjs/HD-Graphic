@@ -173,7 +173,7 @@ const ProductMain = () => {
             />
           </Grid>
         </Grid>
-        <Grid item xs={10}>
+        <Grid item xs={12} sm={12} md={12} lg={10}>
           <img
             src="/images/group.png"
             style={{
