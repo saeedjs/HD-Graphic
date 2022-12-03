@@ -2,6 +2,7 @@ import { Button, ButtonBase, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { Box, Container } from "@mui/system";
 import ImageSearchIcon from "@mui/icons-material/ImageSearch";
+import Link from "next/link";
 
 const SingleProduct = () => {
   return (
@@ -174,6 +175,97 @@ const SingleProduct = () => {
             >
               اشتراک گذاری
             </Button>
+          </Grid>
+        </Grid>
+        <Typography>برچسب های مرتبط</Typography>
+        <Button
+          variant="contained"
+          width="48px"
+          height="32px"
+          sx={{
+            backgroundColor: "colors.green",
+            borderRadius: "10px",
+            boxShadow: "none",
+          }}
+        >
+          قالب اینستاگرام
+        </Button>
+        <Button
+          variant="contained"
+          width="48px"
+          height="32px"
+          sx={{
+            backgroundColor: "colors.green",
+            borderRadius: "10px",
+            boxShadow: "none",
+          }}
+        >
+          قالب اینستاگرام
+        </Button>
+        <Button
+          variant="contained"
+          width="48px"
+          height="32px"
+          sx={{
+            backgroundColor: "colors.green",
+            borderRadius: "10px",
+            boxShadow: "none",
+          }}
+        >
+          قالب اینستاگرام
+        </Button>
+        <Button
+          variant="contained"
+          width="48px"
+          height="32px"
+          sx={{
+            backgroundColor: "colors.green",
+            borderRadius: "10px",
+            boxShadow: "none",
+          }}
+        >
+          قالب اینستاگرام
+        </Button>
+        <Box
+          sx={{
+            padding: "40px",
+          }}
+        ></Box>
+        <span style={{ borderRight: "8px solid #4ECCA3 " }}>
+          <span style={{ margin: "20px", fontSize: "12px", fontWeight: "500" }}>
+            بیشتر با فریبا حسنی
+          </span>
+        </span>
+
+        <Box
+          sx={{
+            padding: "10px",
+          }}
+        ></Box>
+        <Grid container>
+          <Grid item xs={6} sm={6} md={6} lg={3}>
+            <img
+              style={{
+                width: "100%",
+                height: "auto",
+                padding: "4px",
+
+                margin: "0",
+              }}
+              src="./images/123.png"
+            />
+          </Grid>
+          <Grid item xs={6} sm={6} md={6} lg={3}>
+            <img
+              style={{
+                width: "100%",
+                height: "auto",
+                padding: "4px",
+
+                margin: "0",
+              }}
+              src="./images/1234.png"
+            />
           </Grid>
         </Grid>
       </Container>
