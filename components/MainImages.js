@@ -25,7 +25,7 @@ const Mainimages = () => {
                   <Typography sx={{fontWeight:'bold', fontSize:'24px', mb:'13px'}}>عضویت کاربر عادی</Typography>
                 </Box>
                 <Box>
-                  <Button variant="contained" sx={{backgroundColor:'colors.green'}}>عضویت کاربر عادی</Button>
+                  <Button variant="contained" width='119px' height='32px' sx={{backgroundColor:'colors.green', borderRadius:'10px', boxShadow:'none'}}>عضویت کاربر عادی</Button>
                 </Box>
               </Box>
             </Grid>
@@ -44,7 +44,7 @@ const Mainimages = () => {
                   <Typography sx={{fontWeight:'bold', fontSize:'24px', mb:'13px'}}>عضویت طراح یا عکاس</Typography>
                 </Box>
                 <Box>
-                  <Button variant="contained" sx={{backgroundColor:'colors.pink'}}>عضویت طراح یا عکاس</Button>
+                  <Button variant="contained" width='119px' height='32px' sx={{backgroundColor:'colors.pink', borderRadius:'10px', boxShadow:'none'}}>عضویت طراح یا عکاس</Button>
                 </Box>
               </Box>
             </Grid>
