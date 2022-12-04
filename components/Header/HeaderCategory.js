@@ -17,15 +17,21 @@ const HeaderCategory = () => {
       >
         <Box
           sx={{
+            overflow: "hidden",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "space-around",
           }}
         >
-          <Typography variant={"h4"} sx={{ marginBottom: "10px" }}>
-            بهترین قالب های اینستاگرام
-          </Typography>
+          <Box sx={{ display: "flex", justifyContent: "start" }}>
+            <Typography
+              variant={"h4"}
+              sx={{ marginBottom: "10px", marginLeft: "132px" }}
+            >
+              بهترین قالب های اینستاگرام
+            </Typography>
+          </Box>
           <Typography
             sx={{ width: "30%", fontSize: "15px" }}
             variant="h6"

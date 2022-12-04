@@ -12,7 +12,10 @@ const SingleProduct = () => {
           marginBottom: "30px",
         }}
       >
-        <Grid container>
+        <Grid
+          container
+          style={{ borderBottom: "1px solid #E5E5E5", paddingBottom: "50px" }}
+        >
           <Grid item sx={{ margin: "33px", marginLeft: "90px" }} lg={5.5}>
             <img
               style={{
@@ -21,7 +24,7 @@ const SingleProduct = () => {
                 padding: "0",
                 marginRight: "0px",
               }}
-              src="./images/eee.png"
+              src="./images/www.png"
             />
           </Grid>
           <Grid
@@ -47,9 +50,10 @@ const SingleProduct = () => {
               <Typography
                 variant={"h1"}
                 sx={{
-                  marginBottom: "10px",
+                  marginTop: "15px",
+                  marginBottom: "30px",
                   fontSize: "18px",
-                  fontWight: "bold",
+                  fontWeight: "bold",
                 }}
               >
                 بهترین قالب های اینستاگرام
@@ -60,18 +64,37 @@ const SingleProduct = () => {
                 color="initial"
               >
                 رم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                استفاده از طراحان گرافیک است. چاپگرها و
+                استفاده از طراحان گرافیک است. چاپگرها واستفاده از طراحان
+                گرافاستفاده از طراحان
               </Typography>
               <Typography
                 sx={{
-                  marginBottom: "30px",
+                  marginBottom: "32px",
                 }}
-                variant="6"
-                color="initial"
               >
-                <ImageSearchIcon />
-                فرمت فایل:Eps,PSD
+                <svg
+                  id="_3917317"
+                  data-name="3917317"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 22 22"
+                >
+                  <path
+                    id="Path_16"
+                    data-name="Path 16"
+                    d="M17.417,0H4.583A4.589,4.589,0,0,0,0,4.583V17.417A4.589,4.589,0,0,0,4.583,22H17.417A4.589,4.589,0,0,0,22,17.417V4.583A4.589,4.589,0,0,0,17.417,0ZM4.583,1.833H17.417a2.75,2.75,0,0,1,2.75,2.75V17.417a2.705,2.705,0,0,1-.275,1.178l-8.4-8.4a4.583,4.583,0,0,0-6.483,0L1.833,13.37V4.583a2.75,2.75,0,0,1,2.75-2.75Zm0,18.333a2.75,2.75,0,0,1-2.75-2.75V15.963L6.3,11.491a2.75,2.75,0,0,1,3.89,0l8.4,8.4a2.705,2.705,0,0,1-1.178.275Z"
+                  />
+                  <path
+                    id="Path_17"
+                    data-name="Path 17"
+                    d="M16,10.5A3.5,3.5,0,1,0,12.5,7,3.5,3.5,0,0,0,16,10.5Zm0-5A1.5,1.5,0,1,1,14.5,7,1.5,1.5,0,0,1,16,5.5Z"
+                    transform="translate(-1.471 0.538)"
+                  />
+                </svg>
+                <span style={{ margin: "10px" }}>فرمت فایل:Eps,PSD</span>
               </Typography>
+
               <Box
                 sx={{
                   border: 1,
@@ -377,6 +400,7 @@ const SingleProduct = () => {
             </Box>
           </Grid>
         </Grid>
+
         <Typography
           sx={{
             padding: "10px",
@@ -393,7 +417,7 @@ const SingleProduct = () => {
               border: "1px solid #4ECCA3",
               borderRadius: "10px",
               boxShadow: "none",
-              m: 2,
+              m: 1,
             }}
           >
             <svg
@@ -429,7 +453,7 @@ const SingleProduct = () => {
               border: "1px solid #4ECCA3",
               borderRadius: "10px",
               boxShadow: "none",
-              m: 2,
+              m: 1,
             }}
           >
             <svg
@@ -465,7 +489,7 @@ const SingleProduct = () => {
               border: "1px solid #4ECCA3",
               borderRadius: "10px",
               boxShadow: "none",
-              m: 2,
+              m: 1,
             }}
           >
             <svg
@@ -501,7 +525,7 @@ const SingleProduct = () => {
               border: "1px solid #4ECCA3",
               borderRadius: "10px",
               boxShadow: "none",
-              m: 2,
+              m: 1,
             }}
           >
             <svg
@@ -537,17 +561,26 @@ const SingleProduct = () => {
         >
           <Box
             sx={{
-              padding: "40px",
+              display: "flex",
+              justifyContent: "revert-layer",
             }}
-          ></Box>
-          <span style={{ borderRight: "8px solid #4ECCA3 " }}>
-            <span
-              style={{ margin: "20px", fontSize: "12px", fontWeight: "500" }}
-            >
-              بیشتر با فریبا حسنی
+          >
+            <span style={{ borderRight: "8px solid #4ECCA3 " }}>
+              <span
+                style={{ margin: "20px", fontSize: "12px", fontWeight: "500" }}
+              >
+                بیشتر با فریبا حسنی
+              </span>
             </span>
-          </span>
 
+            <span style={{ borderRight: "8px solid #4ECCA3 " }}>
+              <span
+                style={{ margin: "20px", fontSize: "12px", fontWeight: "500" }}
+              >
+                طرح های مشابه دیگر
+              </span>
+            </span>
+          </Box>
           <Box
             sx={{
               display: "flex",
@@ -564,7 +597,7 @@ const SingleProduct = () => {
                 width: "90%",
               }}
             >
-              <Grid item xs={6} sm={6} md={6} lg={6}>
+              <Grid item xs={6} sm={6} md={12} lg={4}>
                 <img
                   style={{
                     width: "100%",
@@ -573,10 +606,10 @@ const SingleProduct = () => {
 
                     margin: "0",
                   }}
-                  src="./images/123.png"
+                  src="./images/qqq.png"
                 />
               </Grid>
-              <Grid item xs={6} sm={6} md={6} lg={6}>
+              <Grid item xs={6} sm={6} md={12} lg={4}>
                 <img
                   style={{
                     width: "100%",
@@ -585,35 +618,18 @@ const SingleProduct = () => {
 
                     margin: "0",
                   }}
-                  src="./images/1234.png"
+                  src="./images/dwad.png"
                 />
               </Grid>
             </Grid>
-            <Box
-              sx={{
-                padding: "40px",
-              }}
-            ></Box>
-            <span style={{ borderRight: "8px solid #4ECCA3 " }}>
-              <span
-                style={{ margin: "20px", fontSize: "12px", fontWeight: "500" }}
-              >
-                بیشتر با فریبا حسنی
-              </span>
-            </span>
 
-            <Box
-              sx={{
-                padding: "10px",
-              }}
-            ></Box>
             <Grid
               container
               sx={{
                 width: "90%",
               }}
             >
-              <Grid item xs={6} sm={6} md={12} lg={6}>
+              <Grid item xs={6} sm={6} md={12} lg={4}>
                 <img
                   style={{
                     width: "100%",
@@ -622,10 +638,10 @@ const SingleProduct = () => {
 
                     margin: "0",
                   }}
-                  src="./images/123.png"
+                  src="./images/ewe.png"
                 />
               </Grid>
-              <Grid item xs={6} sm={6} md={12} lg={6}>
+              <Grid item xs={6} sm={6} md={12} lg={4}>
                 <img
                   style={{
                     width: "100%",
@@ -634,7 +650,19 @@ const SingleProduct = () => {
 
                     margin: "0",
                   }}
-                  src="./images/1234.png"
+                  src="./images/qqq.png"
+                />
+              </Grid>
+              <Grid item xs={6} sm={6} md={12} lg={4}>
+                <img
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    padding: "4px",
+
+                    margin: "0",
+                  }}
+                  src="./images/dwad.png"
                 />
               </Grid>
             </Grid>
