@@ -50,9 +50,10 @@ const SingleProduct = () => {
               <Typography
                 variant={"h1"}
                 sx={{
-                  marginBottom: "10px",
+                  marginTop: "15px",
+                  marginBottom: "30px",
                   fontSize: "18px",
-                  fontWight: "bold",
+                  fontWeight: "bold",
                 }}
               >
                 بهترین قالب های اینستاگرام
@@ -63,7 +64,8 @@ const SingleProduct = () => {
                 color="initial"
               >
                 رم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                استفاده از طراحان گرافیک است. چاپگرها و
+                استفاده از طراحان گرافیک است. چاپگرها واستفاده از طراحان
+                گرافاستفاده از طراحان
               </Typography>
               <Typography
                 sx={{
