@@ -13,11 +13,11 @@ const SingleProduct = () => {
         }}
       >
         <Grid container>
-          <Grid item sx={{ margin: "33px" }} lg={5}>
+          <Grid item sx={{ margin: "33px", marginLeft: "90px" }} lg={5.5}>
             <img
               style={{
-                maxWidth: "90%",
-                height: "auto",
+                maxWidth: "100%",
+                height: "100%",
                 padding: "0",
                 marginRight: "0px",
               }}
@@ -32,7 +32,7 @@ const SingleProduct = () => {
               padding: "20px",
             }}
             item
-            lg={6}
+            lg={4.8}
           >
             <Box
               sx={{
@@ -40,19 +40,27 @@ const SingleProduct = () => {
                 flexDirection: "column",
                 alignItems: "start",
                 justifyContent: "start",
+                widht: "100%",
+                marginBottom: "25px",
               }}
             >
-              <Typography variant={"h5"} sx={{ marginBottom: "10px" }}>
+              <Typography
+                variant={"h1"}
+                sx={{
+                  marginBottom: "10px",
+                  fontSize: "18px",
+                  fontWight: "bold",
+                }}
+              >
                 بهترین قالب های اینستاگرام
               </Typography>
               <Typography
-                sx={{ width: "50%", fontSize: "15px" }}
+                sx={{ width: "100%", fontSize: "15px", marginBottom: "30px" }}
                 variant="h6"
                 color="initial"
               >
                 رم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
-                در ستون و و سه درصد گذشته، حال و آینده شناخت فراوان جامعه
+                استفاده از طراحان گرافیک است. چاپگرها و
               </Typography>
               <Typography
                 sx={{
@@ -69,70 +77,82 @@ const SingleProduct = () => {
                   border: 1,
                   borderColor: "grey.500",
                   width: "100%",
-                  height: "181px",
+                  height: "148px",
                   backgroundColor: "#fff",
                   borderRadius: "10px",
                   mr: 1,
                 }}
               >
                 <Box sx={{ display: "flex", height: "100%" }}>
-                  <Box sx={{ display: "flex", alignItems: "center", m: 1.2 }}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      flexDirection: "column",
+                      m: 1.5,
+                    }}
+                  >
                     <img maxWidth="84px" height="84px" src="/images/545.png" />
+                    <Typography
+                      sx={{
+                        fontSize: "15px",
+                      }}
+                      color={"#CBCBCB"}
+                    >
+                      تعداد طرح:654
+                    </Typography>
                   </Box>
                   <Box sx={{ width: "100%" }}>
                     <Box
                       sx={{
                         display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
+                        justifyContent: "start",
+
                         height: "25%",
                       }}
                     >
                       <Typography
+                        xs={12}
+                        sm={6}
+                        md={12}
                         sx={{
+                          display: "flex",
+
                           fontSize: "16px",
                           fontWeight: "1000",
-                          pt: "30px",
+                          pt: "10px",
+                          color: "colors.green",
                         }}
                       >
                         طراح: فریبا حسینی
+                        <button
+                          style={{
+                            background: "#EEEEEE",
+                            width: "57px",
+                            height: "30px",
+                            marginRight: "90px",
+                            borderRadius: "10px",
+                            border: "0",
+                          }}
+                        >
+                          مشاهده
+                        </button>
                       </Typography>
-                      <button
-                        style={{
-                          background: "#EEEEEE",
-                          width: "57px",
-                          height: "30px",
-                        }}
-                      >
-                        مشاهده
-                      </button>
                     </Box>
                     <Box
                       sx={{
                         height: "75%",
                         display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
+                        alignItems: "start",
+                        justifyContent: "start",
                       }}
                     >
-                      <Box
-                        sx={{
-                          maxWidth: "272px",
-                          height: "103px",
-                          borderRadius: "10px",
-                          backgroundColor: "#FFFFFF",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                        }}
+                      <Typography
+                        sx={{ maxWidth: "255px", p: "8px", fontSize: "17px" }}
                       >
-                        <Typography
-                          sx={{ maxWidth: "255px", p: "8px", fontSize: "17px" }}
-                        >
-                          لورم ایپسوم متن ساختگی با تولید نامه و مجله در ستون و
-                          سطرآنچنان که لازم{" "}
-                        </Typography>
-                      </Box>
+                        لورم ایپسوم متن ساختگی با تولید نامه و مجله در ستون و
+                        سطرآنچنان که لازم{" "}
+                      </Typography>
                     </Box>
                   </Box>
                 </Box>
@@ -209,7 +229,7 @@ const SingleProduct = () => {
                 }}
               >
                 {" "}
-                افزودن به کلکسیون
+                دانلود فایل با کیفیت بالا
               </span>
               <svg
                 id="_3917330"
@@ -351,18 +371,23 @@ const SingleProduct = () => {
             </Box>
           </Grid>
         </Grid>
-        <Typography>
+        <Typography
+          sx={{
+            padding: "10px",
+          }}
+        >
           برچسب های مرتبط
           <Button
             variant="contained"
             width="48px"
-            height="32px"
+            height="30px"
             sx={{
               backgroundColor: "white",
               color: "black",
               border: "1px solid #4ECCA3",
               borderRadius: "10px",
               boxShadow: "none",
+              m: 2,
             }}
           >
             <svg
@@ -391,38 +416,110 @@ const SingleProduct = () => {
           <Button
             variant="contained"
             width="48px"
-            height="32px"
+            height="30px"
             sx={{
-              backgroundColor: "colors.green",
+              backgroundColor: "white",
+              color: "black",
+              border: "1px solid #4ECCA3",
               borderRadius: "10px",
               boxShadow: "none",
+              m: 2,
             }}
           >
-            قالب اینستاگرام
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+            >
+              <path
+                id="_3917132"
+                data-name="3917132"
+                d="M15.773,14.832,11.8,10.857a6.668,6.668,0,1,0-.941.941l3.974,3.974a.666.666,0,1,0,.941-.941ZM6.647,11.973a5.326,5.326,0,1,1,5.326-5.326,5.326,5.326,0,0,1-5.326,5.326Z"
+                transform="translate(0.032 0.032)"
+                fill="#4ecca3"
+              />
+            </svg>
+            <span
+              style={{
+                marginRight: "10px",
+              }}
+            >
+              {" "}
+              قالب اینستاگرام
+            </span>
           </Button>
           <Button
             variant="contained"
             width="48px"
-            height="32px"
+            height="30px"
             sx={{
-              backgroundColor: "colors.green",
+              backgroundColor: "white",
+              color: "black",
+              border: "1px solid #4ECCA3",
               borderRadius: "10px",
               boxShadow: "none",
+              m: 2,
             }}
           >
-            قالب اینستاگرام
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+            >
+              <path
+                id="_3917132"
+                data-name="3917132"
+                d="M15.773,14.832,11.8,10.857a6.668,6.668,0,1,0-.941.941l3.974,3.974a.666.666,0,1,0,.941-.941ZM6.647,11.973a5.326,5.326,0,1,1,5.326-5.326,5.326,5.326,0,0,1-5.326,5.326Z"
+                transform="translate(0.032 0.032)"
+                fill="#4ecca3"
+              />
+            </svg>
+            <span
+              style={{
+                marginRight: "10px",
+              }}
+            >
+              {" "}
+              قالب اینستاگرام
+            </span>
           </Button>
           <Button
             variant="contained"
             width="48px"
-            height="32px"
+            height="30px"
             sx={{
-              backgroundColor: "colors.green",
+              backgroundColor: "white",
+              color: "black",
+              border: "1px solid #4ECCA3",
               borderRadius: "10px",
               boxShadow: "none",
+              m: 2,
             }}
           >
-            قالب اینستاگرام
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+            >
+              <path
+                id="_3917132"
+                data-name="3917132"
+                d="M15.773,14.832,11.8,10.857a6.668,6.668,0,1,0-.941.941l3.974,3.974a.666.666,0,1,0,.941-.941ZM6.647,11.973a5.326,5.326,0,1,1,5.326-5.326,5.326,5.326,0,0,1-5.326,5.326Z"
+                transform="translate(0.032 0.032)"
+                fill="#4ecca3"
+              />
+            </svg>
+            <span
+              style={{
+                marginRight: "10px",
+              }}
+            >
+              {" "}
+              قالب اینستاگرام
+            </span>
           </Button>
         </Typography>
 
