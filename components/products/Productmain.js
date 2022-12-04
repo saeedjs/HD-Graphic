@@ -62,7 +62,7 @@ const ProductMain = () => {
           }}
         >
           <span
-            style={{ marginRight: "110px", borderRight: "8px solid #4ECCA3 " }}
+            style={{ marginRight: "104px", borderRight: "8px solid #4ECCA3 " }}
           >
             <span
               style={{

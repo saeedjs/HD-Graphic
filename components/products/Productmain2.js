@@ -38,7 +38,7 @@ const Productmain2 = () => {
             style={{
               fontWeight: "500",
               fontSize: "12px",
-              marginRight: "123px",
+              marginRight: "124px",
               color: "#AAAAAA",
             }}
           >
@@ -96,7 +96,7 @@ const Productmain2 = () => {
                 height: "auto",
                 padding: "4px",
 
-                margin: "0",
+                margin: "0px",
               }}
               src="./images/99996.png"
             />
