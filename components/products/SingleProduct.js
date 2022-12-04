@@ -75,9 +75,9 @@ const SingleProduct = () => {
               <Box
                 sx={{
                   border: 1,
-                  borderColor: "grey.500",
+                  borderColor: "#E2E2E2",
                   width: "100%",
-                  height: "148px",
+                  height: "130px",
                   backgroundColor: "#fff",
                   borderRadius: "10px",
                   mr: 1,
@@ -160,13 +160,13 @@ const SingleProduct = () => {
             </Box>
             <Button
               sx={{
-                width: "80%",
+                width: "100%",
                 height: "50px",
                 backgroundColor: "#EEEEEE",
                 color: "colors.black",
                 fontWeight: "bold",
                 marginRight: "10px",
-                m: 2,
+                m: 1,
               }}
             >
               <span
@@ -216,12 +216,13 @@ const SingleProduct = () => {
             </Button>
             <Button
               sx={{
-                width: "80%",
+                width: "100%",
                 height: "50px",
                 backgroundColor: "colors.pink",
                 color: "white",
                 fontWeight: "bold",
                 marginRight: "10px",
+                m: 1,
               }}
             >
               <span
@@ -261,6 +262,8 @@ const SingleProduct = () => {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "space-between",
+                marginTop: "40px",
+                m: 1,
                 marginBottom: "20px",
               }}
             >
@@ -304,7 +307,7 @@ const SingleProduct = () => {
             >
               <Button
                 sx={{
-                  width: "25%",
+                  width: "30%",
                   height: "43px",
                   backgroundColor: "white",
                   color: "black",
@@ -313,30 +316,31 @@ const SingleProduct = () => {
                   border: "1px solid #C2C2C2",
                 }}
               >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    id="_3917574"
+                    data-name="3917574"
+                    d="M16.088,12.222a3.878,3.878,0,0,0-3.2,1.687L7.474,11.459a3.815,3.815,0,0,0,0-2.906l5.41-2.461a3.884,3.884,0,1,0-.688-2.2,3.865,3.865,0,0,0,.067.655L6.516,7.16A3.888,3.888,0,1,0,6.5,12.849l5.767,2.606a3.951,3.951,0,0,0-.066.654,3.885,3.885,0,1,0,3.884-3.888Zm0-10.555a2.222,2.222,0,1,1-2.219,2.222,2.221,2.221,0,0,1,2.219-2.222ZM3.88,12.222A2.222,2.222,0,1,1,6.1,10,2.221,2.221,0,0,1,3.88,12.222Zm12.208,6.11a2.222,2.222,0,1,1,2.22-2.222,2.221,2.221,0,0,1-2.22,2.222Z"
+                    transform="translate(0.027 0.001)"
+                  />
+                </svg>{" "}
                 <span
                   style={{
-                    marginLeft: "16px",
+                    marginRight: "10px",
                   }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      id="_3917574"
-                      data-name="3917574"
-                      d="M16.088,12.222a3.878,3.878,0,0,0-3.2,1.687L7.474,11.459a3.815,3.815,0,0,0,0-2.906l5.41-2.461a3.884,3.884,0,1,0-.688-2.2,3.865,3.865,0,0,0,.067.655L6.516,7.16A3.888,3.888,0,1,0,6.5,12.849l5.767,2.606a3.951,3.951,0,0,0-.066.654,3.885,3.885,0,1,0,3.884-3.888Zm0-10.555a2.222,2.222,0,1,1-2.219,2.222,2.221,2.221,0,0,1,2.219-2.222ZM3.88,12.222A2.222,2.222,0,1,1,6.1,10,2.221,2.221,0,0,1,3.88,12.222Zm12.208,6.11a2.222,2.222,0,1,1,2.22-2.222,2.221,2.221,0,0,1-2.22,2.222Z"
-                      transform="translate(0.027 0.001)"
-                    />
-                  </svg>{" "}
+                  {" "}
                   اشتراک گذاری
                 </span>
               </Button>
               <Button
                 sx={{
-                  width: "25%",
+                  width: "30%",
                   height: "43px",
                   backgroundColor: "white",
                   color: "black",
@@ -345,27 +349,28 @@ const SingleProduct = () => {
                   border: "1px solid #C2C2C2",
                 }}
               >
+                <svg
+                  id="_01_align_center"
+                  data-name="01 align center"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="19"
+                  viewBox="0 0 20 19"
+                >
+                  <path
+                    id="Path_3"
+                    data-name="Path 3"
+                    d="M14.577.917A5.318,5.318,0,0,0,10,3.717,5.318,5.318,0,0,0,5.414.917,5.728,5.728,0,0,0,0,6.9C0,12.648,9.125,19.288,9.514,19.57l.481.347.481-.347c.388-.28,9.514-6.922,9.514-12.671A5.728,5.728,0,0,0,14.577.917ZM10,17.828C7.285,15.766,1.665,10.7,1.665,6.9A4.047,4.047,0,0,1,5.414,2.614,4.047,4.047,0,0,1,9.162,6.9h1.666a4.047,4.047,0,0,1,3.748-4.285A4.047,4.047,0,0,1,18.325,6.9C18.325,10.7,12.7,15.766,10,17.828Z"
+                    transform="translate(0.005 -0.917)"
+                    fill="#232931"
+                  />
+                </svg>{" "}
                 <span
                   style={{
-                    marginLeft: "16px",
+                    marginRight: "10px",
                   }}
                 >
-                  <svg
-                    id="_01_align_center"
-                    data-name="01 align center"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="19"
-                    viewBox="0 0 20 19"
-                  >
-                    <path
-                      id="Path_3"
-                      data-name="Path 3"
-                      d="M14.577.917A5.318,5.318,0,0,0,10,3.717,5.318,5.318,0,0,0,5.414.917,5.728,5.728,0,0,0,0,6.9C0,12.648,9.125,19.288,9.514,19.57l.481.347.481-.347c.388-.28,9.514-6.922,9.514-12.671A5.728,5.728,0,0,0,14.577.917ZM10,17.828C7.285,15.766,1.665,10.7,1.665,6.9A4.047,4.047,0,0,1,5.414,2.614,4.047,4.047,0,0,1,9.162,6.9h1.666a4.047,4.047,0,0,1,3.748-4.285A4.047,4.047,0,0,1,18.325,6.9C18.325,10.7,12.7,15.766,10,17.828Z"
-                      transform="translate(0.005 -0.917)"
-                      fill="#232931"
-                    />
-                  </svg>{" "}
+                  {" "}
                   پسندیدم
                 </span>
               </Button>
@@ -545,96 +550,95 @@ const SingleProduct = () => {
 
           <Box
             sx={{
-              padding: "10px",
-            }}
-          ></Box>
-          <Grid
-            container
-            sx={{
-              width: "90%",
+              display: "flex",
             }}
           >
-            <Grid item xs={6} sm={6} md={6} lg={2}>
-              <img
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  padding: "4px",
-
-                  margin: "0",
-                }}
-                src="./images/123.png"
-              />
-            </Grid>
-            <Grid item xs={6} sm={6} md={6} lg={2}>
-              <img
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  padding: "4px",
-
-                  margin: "0",
-                }}
-                src="./images/1234.png"
-              />
-            </Grid>
-          </Grid>
-          <Box
-            sx={{
-              padding: "40px",
-            }}
-          ></Box>
-          <span style={{ borderRight: "8px solid #4ECCA3 " }}>
-            <span
-              style={{ margin: "20px", fontSize: "12px", fontWeight: "500" }}
+            <Box
+              sx={{
+                padding: "10px",
+              }}
+            ></Box>
+            <Grid
+              container
+              sx={{
+                width: "90%",
+              }}
             >
-              بیشتر با فریبا حسنی
+              <Grid item xs={6} sm={6} md={6} lg={6}>
+                <img
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    padding: "4px",
+
+                    margin: "0",
+                  }}
+                  src="./images/123.png"
+                />
+              </Grid>
+              <Grid item xs={6} sm={6} md={6} lg={6}>
+                <img
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    padding: "4px",
+
+                    margin: "0",
+                  }}
+                  src="./images/1234.png"
+                />
+              </Grid>
+            </Grid>
+            <Box
+              sx={{
+                padding: "40px",
+              }}
+            ></Box>
+            <span style={{ borderRight: "8px solid #4ECCA3 " }}>
+              <span
+                style={{ margin: "20px", fontSize: "12px", fontWeight: "500" }}
+              >
+                بیشتر با فریبا حسنی
+              </span>
             </span>
-          </span>
 
-          <Box
-            sx={{
-              padding: "10px",
-            }}
-          ></Box>
-          <Grid container>
-            <Grid item xs={6} sm={6} md={6} lg={2}>
-              <img
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  padding: "4px",
+            <Box
+              sx={{
+                padding: "10px",
+              }}
+            ></Box>
+            <Grid
+              container
+              sx={{
+                width: "90%",
+              }}
+            >
+              <Grid item xs={6} sm={6} md={12} lg={6}>
+                <img
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    padding: "4px",
 
-                  margin: "0",
-                }}
-                src="./images/123.png"
-              />
+                    margin: "0",
+                  }}
+                  src="./images/123.png"
+                />
+              </Grid>
+              <Grid item xs={6} sm={6} md={12} lg={6}>
+                <img
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    padding: "4px",
+
+                    margin: "0",
+                  }}
+                  src="./images/1234.png"
+                />
+              </Grid>
             </Grid>
-            <Grid item xs={6} sm={6} md={6} lg={2}>
-              <img
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  padding: "4px",
-
-                  margin: "0",
-                }}
-                src="./images/1234.png"
-              />
-            </Grid>
-            <Grid item xs={6} sm={6} md={6} lg={2}>
-              <img
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  padding: "4px",
-
-                  margin: "0",
-                }}
-                src="./images/1234.png"
-              />
-            </Grid>
-          </Grid>
+          </Box>
         </Box>
       </Container>
     </>
