@@ -166,6 +166,7 @@ const SingleProduct = () => {
                 color: "colors.black",
                 fontWeight: "bold",
                 marginRight: "10px",
+                m: 2,
               }}
             >
               <span
