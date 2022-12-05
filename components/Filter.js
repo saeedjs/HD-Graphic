@@ -18,12 +18,6 @@ import {
 import { Box, Container, Stack } from "@mui/system";
 import { useState } from "react";
 const Filter = () => {
-  const filterArray = [
-    "بیشترین تخفیف",
-    "ارزان ترین",
-    "پر فروش ترین",
-    "محبوب ترین",
-  ];
   const itemArray = [
     {
       src: "eee.png",
@@ -112,14 +106,29 @@ const Filter = () => {
       status: false,
     },
   ];
+
   const [checkButtonState, setCheckButton] = useState(checkButtonArray);
   const [priceFilter, setPriceFilter] = useState([
-    "بیشترین تخفیف",
-    "ارزان ترین",
-    "بیشترین تخفیف",
-    "ارزان ترین",
-    "بیشترین تخفیف",
-    "ارزان ترین",
+    {
+      id: 0,
+      status: false,
+      value: "بیشترین تخفیف",
+    },
+    {
+      id: 1,
+      status: false,
+      value: "ارزان ترین",
+    },
+    {
+      id: 2,
+      status: false,
+      value: "پر فروش ترین",
+    },
+    {
+      id: 3,
+      status: false,
+      value: "محبوب ترین",
+    },
   ]);
   const [item, setItem] = useState(itemArray);
   const checkArray = [
@@ -152,6 +161,13 @@ const Filter = () => {
     if (findDisplay.display == "block") findDisplay.display = "none";
     else findDisplay.display = "block";
     setCheckDisplay(copyCheckDisplay);
+  };
+  const handleChange = (id) => {
+    const copyPriceFilter = [...priceFilter];
+    const findDisplay = copyPriceFilter.find((a) => a.id == id);
+    if (findDisplay.status) findDisplay.status = false;
+    else findDisplay.status = true;
+    setPriceFilter(copyPriceFilter);
   };
   return (
     <>
@@ -202,34 +218,69 @@ const Filter = () => {
               </Typography>
             </Box>
             <Box pr="10px" sx={{ borderBottom: "1px solid #EEEEEE" }}>
-              <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+              <Box
+                mt={"10px"}
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "space-evenly",
+                }}
+              >
                 {priceFilter.map((item, i) => (
-                  <Box
-                    m={1}
-                    sx={{
-                      minWidth: "92px",
-                      height: "31px",
-                      borderRadius: "10px",
-                      border: "1px solid #4ECCA3",
-                      display: "flex",
-                      justifyContent: "space-around",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Box m={1}>
-                      <Typography fontWeight={1000}>{item}</Typography>
-                    </Box>
-                    <Box sx={{ display: "flex", alignItems: "center", m:'5px' }}>
-                      <CloseIcon sx={{ color: "red", fontSize: "16px" }} />
-                    </Box>
-                  </Box>
+                  <>
+                    {item.status ? (
+                      <Box
+                        sx={{
+                          minWidth: "92px",
+                          my: "10px",
+                          height: "31px",
+                          borderRadius: "10px",
+                          border: "1px solid #4ECCA3",
+                          display: "flex",
+                          justifyContent: "space-around",
+                          alignItems: "center",
+                        }}
+                      >
+                        <Box m={1}>
+                          <Typography fontSize={"15px"} fontWeight={0}>
+                            {item.value}
+                          </Typography>
+                        </Box>
+                        <Box
+                          sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            m: "5px",
+                          }}
+                        >
+                          <CloseIcon
+                            onClick={() => handleChange(i)}
+                            sx={{
+                              color: "red",
+                              fontSize: "16px",
+                              "&:hover": {
+                                cursor: "pointer",
+                              },
+                            }}
+                          />
+                        </Box>
+                      </Box>
+                    ) : (
+                      <></>
+                    )}
+                  </>
                 ))}
               </Box>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
-                {filterArray.map((item, i) => (
+                {priceFilter.map((item, i) => (
                   <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <Checkbox sx={{ color: "#C2C2C2" }} />
-                    <Typography>{item}</Typography>
+                    <Checkbox
+                      checked={item.status}
+                      type={"checkbox"}
+                      onChange={() => handleChange(i)}
+                      sx={{ color: "#C2C2C2" }}
+                    />
+                    <Typography>{item.value}</Typography>
                   </Box>
                 ))}
               </Box>

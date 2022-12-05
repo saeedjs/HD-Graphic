@@ -138,9 +138,11 @@ function NavbarTop() {
               variant="contained"
               sx={{
                 mx: 2,
+                boxShadow:'none' ,
                 backgroundColor: "colors.green",
                 "&:hover": {
                   backgroundColor: "colors.greenHover",
+                  boxShadow:'none' 
                 },
               }}
             >
