@@ -9,7 +9,7 @@ const HeaderCategory = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "100% 100%",
           width: "100%",
-          height: "400px",
+          height: "500px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",

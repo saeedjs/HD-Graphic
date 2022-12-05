@@ -48,10 +48,14 @@ const SingleProduct = () => {
               }}
             >
               <Typography
+                xs={4}
+                sm={6}
+                md={4}
+                lg={5}
                 variant={"h1"}
                 sx={{
                   marginTop: "15px",
-                  marginBottom: "30px",
+                  marginBottom: "20px",
                   fontSize: "18px",
                   fontWeight: "bold",
                 }}
@@ -79,6 +83,9 @@ const SingleProduct = () => {
                   width="22"
                   height="22"
                   viewBox="0 0 22 22"
+                  style={{
+                    marginBottom: "-5px",
+                  }}
                 >
                   <path
                     id="Path_16"
@@ -99,11 +106,12 @@ const SingleProduct = () => {
                 sx={{
                   border: 1,
                   borderColor: "#E2E2E2",
-                  width: "100%",
+                  width: "90%",
                   height: "130px",
                   backgroundColor: "#fff",
                   borderRadius: "10px",
                   mr: 1,
+                  padding: "5px",
                 }}
               >
                 <Box sx={{ display: "flex", height: "100%" }}>
@@ -171,7 +179,12 @@ const SingleProduct = () => {
                       }}
                     >
                       <Typography
-                        sx={{ maxWidth: "255px", p: "8px", fontSize: "17px" }}
+                        sx={{
+                          marginTop: "10px",
+                          maxWidth: "255px",
+                          p: "8px",
+                          fontSize: "17px",
+                        }}
                       >
                         لورم ایپسوم متن ساختگی با تولید نامه و مجله در ستون و
                         سطرآنچنان که لازم{" "}
@@ -183,7 +196,7 @@ const SingleProduct = () => {
             </Box>
             <Button
               sx={{
-                width: "100%",
+                width: "90%",
                 height: "50px",
                 backgroundColor: "#EEEEEE",
                 color: "colors.black",
@@ -239,13 +252,21 @@ const SingleProduct = () => {
             </Button>
             <Button
               sx={{
-                width: "100%",
+                width: "90%",
                 height: "50px",
                 backgroundColor: "colors.pink",
                 color: "white",
                 fontWeight: "bold",
                 marginRight: "10px",
                 m: 1,
+                "&:hover ": {
+                  border: "1px solid ",
+                  color: "colors.pink",
+                  backgroundColor: "white",
+                  "&:hover svg": {
+                    color: "colors.pink",
+                  },
+                },
               }}
             >
               <span
@@ -283,6 +304,7 @@ const SingleProduct = () => {
             <Box
               sx={{
                 display: "flex",
+                width: "90%",
                 justifyContent: "space-between",
                 alignItems: "space-between",
                 marginTop: "40px",
@@ -298,6 +320,9 @@ const SingleProduct = () => {
                   width="22"
                   height="22"
                   viewBox="0 0 22 22"
+                  style={{
+                    marginBottom: "-5px",
+                  }}
                 >
                   <path
                     id="Path_8"
@@ -319,7 +344,7 @@ const SingleProduct = () => {
                     transform="translate(9.5 4.524)"
                   />
                 </svg>
-                <span> گزارش مشکلات</span>
+                <span> گزارش مشکلات دانلود فایل</span>
               </Typography>
               <Typography>تعداد دانلود:865</Typography>
             </Box>
@@ -406,7 +431,14 @@ const SingleProduct = () => {
             padding: "10px",
           }}
         >
-          برچسب های مرتبط
+          <span
+            style={{
+              marginLeft: "13px",
+            }}
+          >
+            برچسب های مرتبط
+          </span>
+
           <Button
             variant="contained"
             width="48px"
@@ -418,12 +450,16 @@ const SingleProduct = () => {
               borderRadius: "10px",
               boxShadow: "none",
               m: 1,
+              "&:hover ": {
+                color: "white",
+                backgroundColor: "colors.green",
+              },
             }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="20"
+              height="20"
               viewBox="0 0 16 16"
             >
               <path
@@ -454,12 +490,16 @@ const SingleProduct = () => {
               borderRadius: "10px",
               boxShadow: "none",
               m: 1,
+              "&:hover ": {
+                color: "white",
+                backgroundColor: "colors.green",
+              },
             }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="20"
+              height="20"
               viewBox="0 0 16 16"
             >
               <path
@@ -490,12 +530,16 @@ const SingleProduct = () => {
               borderRadius: "10px",
               boxShadow: "none",
               m: 1,
+              "&:hover ": {
+                color: "white",
+                backgroundColor: "colors.green",
+              },
             }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="20"
+              height="20"
               viewBox="0 0 16 16"
             >
               <path
@@ -526,12 +570,16 @@ const SingleProduct = () => {
               borderRadius: "10px",
               boxShadow: "none",
               m: 1,
+              "&:hover ": {
+                color: "white",
+                backgroundColor: "colors.green",
+              },
             }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="20"
+              height="20"
               viewBox="0 0 16 16"
             >
               <path
@@ -562,7 +610,8 @@ const SingleProduct = () => {
           <Box
             sx={{
               display: "flex",
-              justifyContent: "revert-layer",
+              justifyContent: "space-between",
+              width: "65%",
             }}
           >
             <span style={{ borderRight: "8px solid #4ECCA3 " }}>
@@ -573,7 +622,11 @@ const SingleProduct = () => {
               </span>
             </span>
 
-            <span style={{ borderRight: "8px solid #4ECCA3 " }}>
+            <span
+              style={{
+                borderRight: "8px solid #4ECCA3",
+              }}
+            >
               <span
                 style={{ margin: "20px", fontSize: "12px", fontWeight: "500" }}
               >
@@ -597,7 +650,7 @@ const SingleProduct = () => {
                 width: "90%",
               }}
             >
-              <Grid item xs={6} sm={6} md={12} lg={4}>
+              <Grid item xs={12} sm={12} md={12} lg={4}>
                 <img
                   style={{
                     width: "100%",
@@ -609,7 +662,7 @@ const SingleProduct = () => {
                   src="./images/qqq.png"
                 />
               </Grid>
-              <Grid item xs={6} sm={6} md={12} lg={4}>
+              <Grid item xs={12} sm={12} md={12} lg={4}>
                 <img
                   style={{
                     width: "100%",
@@ -629,7 +682,7 @@ const SingleProduct = () => {
                 width: "90%",
               }}
             >
-              <Grid item xs={6} sm={6} md={12} lg={4}>
+              <Grid item xs={12} sm={12} md={12} lg={4}>
                 <img
                   style={{
                     width: "100%",
@@ -641,7 +694,7 @@ const SingleProduct = () => {
                   src="./images/ewe.png"
                 />
               </Grid>
-              <Grid item xs={6} sm={6} md={12} lg={4}>
+              <Grid item xs={12} sm={12} md={12} lg={4}>
                 <img
                   style={{
                     width: "100%",
@@ -653,7 +706,21 @@ const SingleProduct = () => {
                   src="./images/qqq.png"
                 />
               </Grid>
-              <Grid item xs={6} sm={6} md={12} lg={4}>
+              <Grid
+                sx={{
+                  display: {
+                    lg: "block",
+                    md: "none",
+                    sm: "none",
+                    xs: "none",
+                  },
+                }}
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={4}
+              >
                 <img
                   style={{
                     width: "100%",
