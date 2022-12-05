@@ -1,5 +1,6 @@
 import { Label } from "@mui/icons-material";
 import CheckIcon from "@mui/icons-material/Check";
+import CloseIcon from "@mui/icons-material/Close";
 import {
   Button,
   Checkbox,
@@ -88,6 +89,38 @@ const Filter = () => {
       src: "asds.png",
     },
   ];
+  const checkButtonArray = [
+    {
+      id: 0,
+      backColor: "white",
+      color: "black",
+      variant: "outlined",
+      status: false,
+    },
+    {
+      id: 1,
+      backColor: "white",
+      color: "black",
+      variant: "outlined",
+      status: false,
+    },
+    {
+      id: 2,
+      backColor: "white",
+      color: "black",
+      variant: "outlined",
+      status: false,
+    },
+  ];
+  const [checkButtonState, setCheckButton] = useState(checkButtonArray);
+  const [priceFilter, setPriceFilter] = useState([
+    "بیشترین تخفیف",
+    "ارزان ترین",
+    "بیشترین تخفیف",
+    "ارزان ترین",
+    "بیشترین تخفیف",
+    "ارزان ترین",
+  ]);
   const [item, setItem] = useState(itemArray);
   const checkArray = [
     { id: 0, display: "none" },
@@ -97,6 +130,22 @@ const Filter = () => {
     { id: 4, display: "none" },
   ];
   const [checkDisplayState, setCheckDisplay] = useState(checkArray);
+  const checkButton = (id) => {
+    const copyCheckButtonState = [...checkButtonState];
+    const findDisplay = copyCheckButtonState.find((a) => a.id == id);
+    if (findDisplay.status) {
+      (findDisplay.backColor = "white"),
+        (findDisplay.color = "black"),
+        (findDisplay.variant = "outlined"),
+        (findDisplay.status = false);
+    } else {
+      (findDisplay.backColor = "colors.green"),
+        (findDisplay.color = "white"),
+        (findDisplay.variant = "contained"),
+        (findDisplay.status = true);
+    }
+    setCheckButton(copyCheckButtonState);
+  };
   const checkTik = (id) => {
     const copyCheckDisplay = [...checkDisplayState];
     const findDisplay = copyCheckDisplay.find((a) => a.id == id);
@@ -153,7 +202,29 @@ const Filter = () => {
               </Typography>
             </Box>
             <Box pr="10px" sx={{ borderBottom: "1px solid #EEEEEE" }}>
-              <Box></Box>
+              <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+                {priceFilter.map((item, i) => (
+                  <Box
+                    m={1}
+                    sx={{
+                      minWidth: "92px",
+                      height: "31px",
+                      borderRadius: "10px",
+                      border: "1px solid #4ECCA3",
+                      display: "flex",
+                      justifyContent: "space-around",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Box m={1}>
+                      <Typography fontWeight={1000}>{item}</Typography>
+                    </Box>
+                    <Box sx={{ display: "flex", alignItems: "center", m:'5px' }}>
+                      <CloseIcon sx={{ color: "red", fontSize: "16px" }} />
+                    </Box>
+                  </Box>
+                ))}
+              </Box>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
                 {filterArray.map((item, i) => (
                   <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -185,7 +256,7 @@ const Filter = () => {
                 </Box>
               </Box>
               <Box>
-                <Box sx={{ display: "flex",  }}>
+                <Box sx={{ display: "flex" }}>
                   <Box
                     onClick={() => checkTik(0)}
                     width="20px"
@@ -215,6 +286,9 @@ const Filter = () => {
                     sx={{
                       borderRadius: "100%",
                       backgroundColor: "colors.green",
+                      "&:hover": {
+                        cursor: "pointer",
+                      },
                     }}
                   >
                     <CheckIcon
@@ -233,6 +307,9 @@ const Filter = () => {
                     sx={{
                       borderRadius: "100%",
                       backgroundColor: "colors.white",
+                      "&:hover": {
+                        cursor: "pointer",
+                      },
                     }}
                   >
                     <CheckIcon
@@ -251,6 +328,9 @@ const Filter = () => {
                     sx={{
                       borderRadius: "100%",
                       backgroundColor: "colors.pink",
+                      "&:hover": {
+                        cursor: "pointer",
+                      },
                     }}
                   >
                     <CheckIcon
@@ -269,6 +349,9 @@ const Filter = () => {
                     sx={{
                       borderRadius: "100%",
                       backgroundColor: "colors.gray",
+                      "&:hover": {
+                        cursor: "pointer",
+                      },
                     }}
                   >
                     <CheckIcon
@@ -304,15 +387,19 @@ const Filter = () => {
               </Box>
               <Box>
                 <Button
-                  variant="outlined"
+                  onClick={() => checkButton(0)}
+                  variant={checkButtonState[0].variant}
                   sx={{
+                    backgroundColor: checkButtonState[0].backColor,
                     width: "68px",
                     height: "31px",
                     mx: "5px",
                     borderRadius: "5px",
                     borderColor: "#E1E1E1",
+                    boxShadow: "0px 0px",
                     "&:hover": {
                       borderColor: "#E1E1E1",
+                      backgroundColor: checkButtonState[0].backColor,
                     },
                   }}
                 >
@@ -320,22 +407,26 @@ const Filter = () => {
                     sx={{
                       fontSize: "14px",
                       fontWeight: "bold",
-                      color: "colors.black",
+                      color: checkButtonState[0].color,
                     }}
                   >
                     رایگان
                   </Typography>
                 </Button>
                 <Button
-                  variant="outlined"
+                  onClick={() => checkButton(1)}
+                  variant={checkButtonState[1].variant}
                   sx={{
+                    backgroundColor: checkButtonState[1].backColor,
                     width: "80px",
                     height: "31px",
                     mx: "5px",
                     borderRadius: "5px",
                     borderColor: "#E1E1E1",
+                    boxShadow: "0px 0px",
                     "&:hover": {
                       borderColor: "#E1E1E1",
+                      backgroundColor: checkButtonState[1].backColor,
                     },
                   }}
                 >
@@ -343,22 +434,26 @@ const Filter = () => {
                     sx={{
                       fontSize: "14px",
                       fontWeight: "bold",
-                      color: "colors.black",
+                      color: checkButtonState[1].color,
                     }}
                   >
                     اشتراکی
                   </Typography>
                 </Button>
                 <Button
-                  variant="outlined"
+                  onClick={() => checkButton(2)}
+                  variant={checkButtonState[2].variant}
                   sx={{
+                    backgroundColor: checkButtonState[2].backColor,
                     width: "41px",
                     height: "31px",
                     mx: "5px",
                     borderRadius: "5px",
                     borderColor: "#E1E1E1",
+                    boxShadow: "0px 0px",
                     "&:hover": {
                       borderColor: "#E1E1E1",
+                      backgroundColor: checkButtonState[2].backColor,
                     },
                   }}
                 >
@@ -366,7 +461,7 @@ const Filter = () => {
                     sx={{
                       fontSize: "14px",
                       fontWeight: "bold",
-                      color: "colors.black",
+                      color: checkButtonState[2].color,
                     }}
                   >
                     پولی
