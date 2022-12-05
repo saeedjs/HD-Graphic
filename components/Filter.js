@@ -7,6 +7,7 @@ import {
   Grid,
   ImageList,
   ImageListItem,
+  Link,
   Pagination,
   Radio,
   RadioGroup,
@@ -88,13 +89,20 @@ const Filter = () => {
     },
   ];
   const [item, setItem] = useState(itemArray);
-  var checkDisplay = ["none", "none", "none", "none", "none"];
-  const [checkDisplayState, setCheckDisplay] = useState(checkDisplay);
-  const checkTik = () => {
-    checkDisplay[3] = "block";
-    checkDisplay[2] = "block";
-    setCheckDisplay(checkDisplay);
-    console.log(checkDisplayState);
+  const checkArray = [
+    { id: 0, display: "none" },
+    { id: 1, display: "none" },
+    { id: 2, display: "none" },
+    { id: 3, display: "none" },
+    { id: 4, display: "none" },
+  ];
+  const [checkDisplayState, setCheckDisplay] = useState(checkArray);
+  const checkTik = (id) => {
+    const copyCheckDisplay = [...checkDisplayState];
+    const findDisplay = copyCheckDisplay.find((a) => a.id == id);
+    if (findDisplay.display == "block") findDisplay.display = "none";
+    else findDisplay.display = "block";
+    setCheckDisplay(copyCheckDisplay);
   };
   return (
     <>
@@ -177,23 +185,30 @@ const Filter = () => {
                 </Box>
               </Box>
               <Box>
-                <Box sx={{ display: "flex" }}>
+                <Box sx={{ display: "flex",  }}>
                   <Box
-                    onClick={() => checkTik()}
+                    onClick={() => checkTik(0)}
                     width="20px"
                     height="20px"
                     mr="7px"
                     sx={{
                       borderRadius: "100%",
                       backgroundColor: "colors.black",
+                      "&:hover": {
+                        cursor: "pointer",
+                      },
                     }}
                   >
                     <CheckIcon
                       fontSize="small"
-                      sx={{ color: "#FFFFFF", display: checkDisplay[3] }}
+                      sx={{
+                        color: "#FFFFFF",
+                        display: checkDisplayState[0].display,
+                      }}
                     />
                   </Box>
                   <Box
+                    onClick={() => checkTik(1)}
                     width="20px"
                     height="20px"
                     mr="7px"
@@ -204,10 +219,14 @@ const Filter = () => {
                   >
                     <CheckIcon
                       fontSize="small"
-                      sx={{ color: "#FFFFFF", display: checkDisplayState[1] }}
+                      sx={{
+                        color: "#FFFFFF",
+                        display: checkDisplayState[1].display,
+                      }}
                     />
                   </Box>
                   <Box
+                    onClick={() => checkTik(2)}
                     width="20px"
                     height="20px"
                     mr="7px"
@@ -218,10 +237,14 @@ const Filter = () => {
                   >
                     <CheckIcon
                       fontSize="small"
-                      sx={{ color: "#FFFFFF", display: checkDisplayState[2] }}
+                      sx={{
+                        color: "#FFFFFF",
+                        display: checkDisplayState[2].display,
+                      }}
                     />
                   </Box>
                   <Box
+                    onClick={() => checkTik(3)}
                     width="20px"
                     height="20px"
                     mr="7px"
@@ -232,10 +255,14 @@ const Filter = () => {
                   >
                     <CheckIcon
                       fontSize="small"
-                      sx={{ color: "#FFFFFF", display: checkDisplayState[3] }}
+                      sx={{
+                        color: "#FFFFFF",
+                        display: checkDisplayState[3].display,
+                      }}
                     />
                   </Box>
                   <Box
+                    onClick={() => checkTik(4)}
                     width="20px"
                     height="20px"
                     mr="7px"
@@ -246,7 +273,10 @@ const Filter = () => {
                   >
                     <CheckIcon
                       fontSize="small"
-                      sx={{ color: "#FFFFFF", display: checkDisplayState[4] }}
+                      sx={{
+                        color: "#FFFFFF",
+                        display: checkDisplayState[4].display,
+                      }}
                     />
                   </Box>
                 </Box>
@@ -388,16 +418,18 @@ const Filter = () => {
               }}
             >
               {item.map((item, i) => (
-                <Box sx={{ m: "5px" }}>
-                  <img
-                    style={{
-                      maxWidth: "200px !important",
-                      height: "200px !important",
-                    }}
-                    src={`/images/${item.src}`}
-                    loading="lazy"
-                  />
-                </Box>
+                <Link href="#">
+                  <Box sx={{ m: "5px" }}>
+                    <img
+                      style={{
+                        maxWidth: "200px !important",
+                        height: "200px !important",
+                      }}
+                      src={`/images/${item.src}`}
+                      loading="lazy"
+                    />
+                  </Box>
+                </Link>
               ))}
             </Box>
             <Box>
