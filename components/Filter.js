@@ -12,11 +12,13 @@ import {
   Pagination,
   Radio,
   RadioGroup,
+  TablePagination,
   TextField,
   Typography,
 } from "@mui/material";
 import { Box, Container, Stack } from "@mui/system";
 import { useState } from "react";
+import { Mypagination } from "./Mypagination";
 const Filter = () => {
   const itemArray = [
     {
@@ -179,7 +181,7 @@ const Filter = () => {
             borderBottom: "1px solid #EEEEEE",
           }}
         >
-          <Box sx={{ display: "flex" }}>
+          <Box sx={{ display: "flex", pr:'25px' }}>
             <Box sx={{ ml: "10px" }}>
               <img src="/images/icon/filter.png" />
             </Box>
@@ -540,11 +542,20 @@ const Filter = () => {
                 </Box>
               </Box>
               <Box>
-                <TextField
-                  sx={{ backgroundColor: "colors.white" }}
+                <input
+                  type="text"
+                  style={{
+                    width: "186px ",
+                    height: "42px",
+                    backgroundColor: "#EEEEEE",
+                    borderRadius: "5px",
+                    border: "none",
+                    textAlign: "center",
+                    "&:hover": {
+                      border: "none",
+                    },
+                  }}
                   placeholder="جستجو در میان طرح های کاربر"
-                  id="outlined-basic"
-                  variant="outlined"
                 />
               </Box>
             </Box>
@@ -579,9 +590,7 @@ const Filter = () => {
               ))}
             </Box>
             <Box>
-              <Stack spacing={2}>
-                <Pagination count={3} variant="outlined" shape="rounded" />
-              </Stack>
+              <Mypagination />
             </Box>
           </Grid>
         </Grid>
