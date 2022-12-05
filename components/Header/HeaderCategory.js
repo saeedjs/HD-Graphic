@@ -27,7 +27,16 @@ const HeaderCategory = () => {
           <Box sx={{ display: "flex", justifyContent: "start" }}>
             <Typography
               variant={"h4"}
-              sx={{ marginBottom: "10px", marginLeft: "132px" }}
+              sx={{
+                fontSize: {
+                  lg: "20px",
+                  md: "15px",
+                  sm: "15px",
+                  xs: "13px",
+                },
+                marginBottom: "10px",
+                marginLeft: "132px",
+              }}
             >
               بهترین قالب های اینستاگرام
             </Typography>
