@@ -654,19 +654,43 @@ const SingleProduct = () => {
               </span>
             </span>
           </Box>
-          <Grid container>
-            <Grid item xs={12} sm={12} md={6} lg={6}>
-              <img src="./images/qqq.png" />
+          <Grid
+            container
+            sx={{
+              justifyContent: "center",
+            }}
+          >
+            <Grid
+              item
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: "wrap ",
+              }}
+              xs={12}
+              sm={12}
+              md={10}
+              lg={5}
+            >
+              <img src="./images/qqq.png" style={{ margin: "4px" }} />
 
-              <img src="./images/dwad.png" />
+              <img src="./images/dwad.png" style={{ margin: "4px" }} />
             </Grid>
 
-            <Grid item lg={6}>
-              <img src="./images/ewe.png" />
+            <Grid
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: "wrap ",
+              }}
+              item
+              lg={7}
+            >
+              <img src="./images/ewe.png" style={{ margin: "4px" }} />
 
-              <img src="./images/qqq.png" />
+              <img src="./images/qqq.png" style={{ margin: "4px" }} />
 
-              <img src="./images/dwad.png" />
+              <img src="./images/dwad.png" style={{ margin: "4px" }} />
             </Grid>
           </Grid>
         </Box>
