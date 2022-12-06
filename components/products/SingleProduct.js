@@ -3,10 +3,14 @@ import Grid from "@mui/material/Grid";
 import { Box, Container } from "@mui/system";
 import ImageSearchIcon from "@mui/icons-material/ImageSearch";
 import Link from "next/link";
+import SearchBox from "../category/SearchBox";
 
 const SingleProduct = () => {
   return (
     <>
+      <SearchBox />
+      <Box sx={{ borderBottom: "1px solid #E5E5E5 " }}></Box>
+
       <Container
         sx={{
           marginBottom: "30px",
@@ -16,7 +20,19 @@ const SingleProduct = () => {
           container
           style={{ borderBottom: "1px solid #E5E5E5", paddingBottom: "50px" }}
         >
-          <Grid item sx={{ margin: "33px", marginLeft: "90px" }} lg={5.5}>
+          <Grid
+            item
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              margin: "33px",
+              marginLeft: "90px",
+            }}
+            xs={12}
+            sm={12}
+            md={12}
+            lg={5.5}
+          >
             <img
               style={{
                 maxWidth: "100%",
@@ -30,11 +46,19 @@ const SingleProduct = () => {
           <Grid
             sx={{
               display: "flex",
-              justifyContent: "start",
+              justifyContent: {
+                lg: "start",
+                md: "center",
+                sm: "center",
+                xs: "center",
+              },
               flexDirection: "column",
               padding: "20px",
             }}
             item
+            xs={12}
+            sm={12}
+            md={12}
             lg={4.8}
           >
             <Box
@@ -116,6 +140,8 @@ const SingleProduct = () => {
               >
                 <Box sx={{ display: "flex", height: "100%" }}>
                   <Box
+                    xs={12}
+                    sm={12}
                     sx={{
                       display: "flex",
                       alignItems: "center",
@@ -123,7 +149,13 @@ const SingleProduct = () => {
                       m: 1.5,
                     }}
                   >
-                    <img maxWidth="84px" height="84px" src="/images/545.png" />
+                    <Box>
+                      <img
+                        maxWidth="84px"
+                        height="84px"
+                        src="/images/545.png"
+                      />
+                    </Box>
                     <Typography
                       sx={{
                         fontSize: "15px",
@@ -621,119 +653,98 @@ const SingleProduct = () => {
                 بیشتر با فریبا حسنی
               </span>
             </span>
-
-            <span
-              style={{
-                borderRight: "8px solid #4ECCA3",
+            <Box
+              sx={{
+                display: {
+                  lg: "inline",
+                  md: "none",
+                  sm: "none",
+                  xs: "none",
+                },
               }}
             >
               <span
-                style={{ margin: "20px", fontSize: "12px", fontWeight: "500" }}
+                style={{
+                  marginLeft: "89px",
+                  borderRight: "8px solid #4ECCA3 ",
+                }}
               >
-                طرح های مشابه دیگر
+                <span
+                  style={{
+                    margin: "20px",
+                    fontSize: "12px",
+                    fontWeight: "500",
+                  }}
+                >
+                  بیشتر با فریبا حسنی
+                </span>
               </span>
-            </span>
+            </Box>
           </Box>
-          <Box
+          <Grid
+            container
             sx={{
-              display: "flex",
+              justifyContent: "center",
             }}
           >
+            <Grid
+              item
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: "wrap ",
+              }}
+              xs={12}
+              sm={12}
+              md={10}
+              lg={5}
+            >
+              <img src="./images/qqq.png" style={{ margin: "4px" }} />
+
+              <img src="./images/dwad.png" style={{ margin: "4px" }} />
+            </Grid>
             <Box
               sx={{
-                padding: "10px",
-              }}
-            ></Box>
-            <Grid
-              container
-              sx={{
-                width: "90%",
-              }}
-            >
-              <Grid item xs={12} sm={12} md={12} lg={4}>
-                <img
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    padding: "4px",
-
-                    margin: "0",
-                  }}
-                  src="./images/qqq.png"
-                />
-              </Grid>
-              <Grid item xs={12} sm={12} md={12} lg={4}>
-                <img
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    padding: "4px",
-
-                    margin: "0",
-                  }}
-                  src="./images/dwad.png"
-                />
-              </Grid>
-            </Grid>
-
-            <Grid
-              container
-              sx={{
-                width: "90%",
+                display: {
+                  lg: "none",
+                  md: "block",
+                  sm: "block",
+                  xs: "block",
+                },
               }}
             >
-              <Grid item xs={12} sm={12} md={12} lg={4}>
-                <img
+              <span style={{ borderRight: "8px solid #4ECCA3 " }}>
+                <span
                   style={{
-                    width: "100%",
-                    height: "auto",
-                    padding: "4px",
-
-                    margin: "0",
+                    margin: "20px",
+                    fontSize: "12px",
+                    fontWeight: "500",
                   }}
-                  src="./images/ewe.png"
-                />
-              </Grid>
-              <Grid item xs={12} sm={12} md={12} lg={4}>
-                <img
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    padding: "4px",
+                >
+                  بیشتر با فریبا حسنی
+                </span>
+              </span>
+            </Box>
 
-                    margin: "0",
-                  }}
-                  src="./images/qqq.png"
-                />
-              </Grid>
-              <Grid
-                sx={{
-                  display: {
-                    lg: "block",
-                    md: "none",
-                    sm: "none",
-                    xs: "none",
-                  },
-                }}
-                item
-                xs={12}
-                sm={12}
-                md={12}
-                lg={4}
-              >
-                <img
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    padding: "4px",
+            <Grid
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: "wrap ",
+              }}
+              item
+              xs={12}
+              sm={12}
+              md={10}
+              lg={7}
+            >
+              <img src="./images/ewe.png" style={{ margin: "4px" }} />
 
-                    margin: "0",
-                  }}
-                  src="./images/dwad.png"
-                />
-              </Grid>
+              <img src="./images/qqq.png" style={{ margin: "4px" }} />
+
+              <img src="./images/dwad.png" style={{ margin: "4px" }} />
             </Grid>
-          </Box>
+          </Grid>
         </Box>
       </Container>
     </>

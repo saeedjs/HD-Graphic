@@ -49,7 +49,7 @@ const ProductMain = () => {
         }}
       ></Box>
 
-      <Grid container justifyContent={"center"}>
+      <Grid container maxWidth="xl" justifyContent={"center"}>
         <ProductmainBig />
         <Box
           sx={{

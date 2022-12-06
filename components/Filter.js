@@ -181,7 +181,7 @@ const Filter = () => {
             borderBottom: "1px solid #EEEEEE",
           }}
         >
-          <Box sx={{ display: "flex", pr:'25px' }}>
+          <Box sx={{ display: "flex", pr: "25px" }}>
             <Box sx={{ ml: "10px" }}>
               <img src="/images/icon/filter.png" />
             </Box>

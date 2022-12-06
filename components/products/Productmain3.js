@@ -5,7 +5,7 @@ import Productmain4 from "./Productmain4";
 const productmain3 = () => {
   return (
     <>
-      <Grid container justifyContent={"center"}>
+      <Grid container maxWidth="xl" justifyContent={"center"}>
         <Grid item lg={5.15}>
           <Productmain2 />
         </Grid>{" "}

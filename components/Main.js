@@ -14,7 +14,7 @@ const Main = () => {
   return (
     <>
       <Landing />
-      <Container Container>
+      <Container maxWidth="xl" Container>
         <ProductMain />
         <Productmain3 />
       </Container>
