@@ -5,6 +5,7 @@ import { Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import Image from "next/image";
 import { List } from "@mui/material";
+import Link from "next/link";
 const Footer = () => {
   return (
     <>
@@ -28,7 +29,9 @@ const Footer = () => {
                   <List>
                     <ListItem sx={{ py: 1, pb: 2 }}>
                       <Box>
-                        <img src="/images/logo.png" />
+                        <Link href={"#"}>
+                          <img src="/images/logo.png" />
+                        </Link>
                       </Box>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
@@ -80,24 +83,32 @@ const Footer = () => {
                       </Box>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
-                      <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
-                        حساب کاربری من
-                      </Typography>
+                      <Link href={"#"}>
+                        <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
+                          حساب کاربری من
+                        </Typography>
+                      </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
-                      <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
-                        پاسخ به سوالات متداول
-                      </Typography>
+                      <Link href={"#"}>
+                        <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
+                          پاسخ به سوالات متداول
+                        </Typography>
+                      </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
-                      <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
-                        حریم خصوصی
-                      </Typography>
+                      <Link href={"#"}>
+                        <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
+                          حریم خصوصی
+                        </Typography>
+                      </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
-                      <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
-                        قوانین استفاده
-                      </Typography>
+                      <Link href={"#"}>
+                        <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
+                          قوانین استفاده
+                        </Typography>
+                      </Link>
                     </ListItem>
                   </List>
                 </Grid>
@@ -111,24 +122,32 @@ const Footer = () => {
                       </Box>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
-                      <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
-                        درباره ما
-                      </Typography>
+                      <Link href={"#"}>
+                        <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
+                          درباره ما
+                        </Typography>
+                      </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
-                      <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
-                        راهنمای خرید محصول
-                      </Typography>
+                      <Link href={"#"}>
+                        <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
+                          راهنمای خرید محصول
+                        </Typography>
+                      </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
-                      <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
-                        راهنمای پرداخت
-                      </Typography>
+                      <Link href={"#"}>
+                        <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
+                          راهنمای پرداخت
+                        </Typography>
+                      </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
-                      <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
-                        تماس با ما
-                      </Typography>
+                      <Link href={"#"}>
+                        <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
+                          تماس با ما
+                        </Typography>
+                      </Link>
                     </ListItem>
                   </List>
                 </Grid>
@@ -145,10 +164,10 @@ const Footer = () => {
                       <Box
                         sx={{
                           display: "flex",
-                          flexWrap:{
-                            xl:'nowrap',
-                            xs:'wrap'
-                          }
+                          flexWrap: {
+                            xl: "nowrap",
+                            xs: "wrap",
+                          },
                         }}
                       >
                         <Box
@@ -162,10 +181,12 @@ const Footer = () => {
                             alignItems: "center",
                             justifyContent: "center",
                             mr: 1,
-                            mt: 1
+                            mt: 1,
                           }}
                         >
-                          <img src="/images/samandehi.png" />
+                          <Link href={"#"}>
+                            <img src="/images/samandehi.png" />
+                          </Link>
                         </Box>
                         <Box
                           width={100}
@@ -178,10 +199,12 @@ const Footer = () => {
                             alignItems: "center",
                             justifyContent: "center",
                             mr: 1,
-                            mt: 1
+                            mt: 1,
                           }}
                         >
-                          <img src="/images/enemad.png" />
+                          <Link href={"#"}>
+                            <img src="/images/enemad.png" />
+                          </Link>
                         </Box>
                         <Box
                           width={100}
@@ -194,10 +217,12 @@ const Footer = () => {
                             alignItems: "center",
                             justifyContent: "center",
                             mr: 1,
-                            mt: 1
+                            mt: 1,
                           }}
                         >
-                          <img src="/images/jmobiliraan.png" />
+                          <Link href={"#"}>
+                            <img src="/images/jmobiliraan.png" />
+                          </Link>
                         </Box>
                       </Box>
                     </ListItem>
@@ -224,54 +249,60 @@ const Footer = () => {
             </Typography>
           </Box>
           <Box sx={{ display: "flex", ml: 7 }}>
-            <Box
-              width={24}
-              height={24}
-              sx={{
-                backgroundColor: "colors.white",
-                borderRadius: 10,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                mr: 2,
-              }}
-            >
-              <Box height={20}>
-                <img src="/images/icon/717392.png" />
+            <Link href={"#"}>
+              <Box
+                width={24}
+                height={24}
+                sx={{
+                  backgroundColor: "colors.white",
+                  borderRadius: 10,
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  mr: 2,
+                }}
+              >
+                <Box height={20}>
+                  <img src="/images/icon/717392.png" />
+                </Box>
               </Box>
-            </Box>
-            <Box
-              width={24}
-              height={24}
-              sx={{
-                backgroundColor: "colors.white",
-                borderRadius: 10,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                mr: 2,
-              }}
-            >
-              <Box height={20}>
-                <img src="/images/icon/739260.png" />
+            </Link>
+            <Link href={"#"}>
+              <Box
+                width={24}
+                height={24}
+                sx={{
+                  backgroundColor: "colors.white",
+                  borderRadius: 10,
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  mr: 2,
+                }}
+              >
+                <Box height={20}>
+                  <img src="/images/icon/739260.png" />
+                </Box>
               </Box>
-            </Box>
-            <Box
-              width={24}
-              height={24}
-              sx={{
-                backgroundColor: "colors.white",
-                borderRadius: 10,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                mr: 2,
-              }}
-            >
-              <Box height={20}>
-                <img src="/images/icon/1384023.png" />
+            </Link>
+            <Link href={"#"}>
+              <Box
+                width={24}
+                height={24}
+                sx={{
+                  backgroundColor: "colors.white",
+                  borderRadius: 10,
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  mr: 2,
+                }}
+              >
+                <Box height={20}>
+                  <img src="/images/icon/1384023.png" />
+                </Box>
               </Box>
-            </Box>
+            </Link>
           </Box>
         </Box>
       </Box>

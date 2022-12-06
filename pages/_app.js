@@ -5,7 +5,7 @@ import { CssBaseline, Typography } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 function MyApp({ Component, pageProps }) {
   const theme = createTheme({
-    direction: 'rtl',
+    direction: "rtl",
     palette: {
       light: {
         main: "#FFFFFF",
@@ -18,6 +18,10 @@ function MyApp({ Component, pageProps }) {
         pink: "#F6416C",
         greenHover: "#3C9B7C",
       },
+    },
+    typography: {
+      fontFamily: "iranYekan, dana",
+      fontSize: "14px",
     },
   });
 

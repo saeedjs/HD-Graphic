@@ -1,11 +1,21 @@
+@font-face {
+  font-family: "iranYekan";
+  src: url(./fonts/iranYekan/regular/IRANYekanRegular.eot) format("eot"),
+    url(./fonts/iranYekan/regular/IRANYekanRegular.woff) format("woff"),
+    url(./fonts/iranYekan/regular/IRANYekanRegular.ttf) format("ttf");
+}
+@font-face {
+  font-family: "dana";
+  src: url(./fonts/dana/regular/dana-regular.eot) format("eot"),
+    url(./fonts/dana/regular/dana-regular.woff) format("woff"),
+    url(./fonts/dana/regular/dana-regular.ttf) format("ttf");
+}
 html,
 body {
   direction: rtl;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    direction: rtl;
+  direction: rtl;
 }
 
 a {
@@ -20,13 +30,3 @@ a {
 p {
   text-align: right;
 }
-/* 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-} */

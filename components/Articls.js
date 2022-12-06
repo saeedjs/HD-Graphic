@@ -3,11 +3,44 @@ import Typography from "@mui/material/Typography";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Grid from "@mui/material";
 import { Container } from "@mui/system";
+import Link from "next/link";
 const Articls = () => {
+  const articlsArray = [
+    {
+      title: "اهمیت طراحی مناسب برای چاپ در تبلیغات",
+      src: "245.png",
+      text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.",
+    },
+    {
+      title: "اهمیت طراحی مناسب برای چاپ در تبلیغات",
+      src: "245.png",
+      text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.",
+    },
+    {
+      title: "اهمیت طراحی مناسب برای چاپ در تبلیغات",
+      src: "245.png",
+      text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.",
+    },
+    {
+      title: "اهمیت طراحی مناسب برای چاپ در تبلیغات",
+      src: "245.png",
+      text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.",
+    },
+    {
+      title: "اهمیت طراحی مناسب برای چاپ در تبلیغات",
+      src: "245.png",
+      text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.",
+    },
+    {
+      title: "اهمیت طراحی مناسب برای چاپ در تبلیغات",
+      src: "245.png",
+      text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.",
+    },
+  ];
   return (
     <>
       <Container minWidth="sm" maxWidth="xxl">
-        <Box sx={{ mt: "140px", display: "flex", mr:'14px' }}>
+        <Box sx={{ mt: "140px", display: "flex", mr: "14px" }}>
           <Box
             height={"22px"}
             sx={{
@@ -17,7 +50,7 @@ const Articls = () => {
             }}
           ></Box>
           <Box sx={{ mr: "10px" }}>
-            <Typography sx={{fontSize:'16px'}}>مطالب وبلاگ</Typography>
+            <Typography sx={{ fontSize: "16px" }}>مطالب وبلاگ</Typography>
           </Box>
           <Box sx={{ mr: "35px" }}>
             <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
@@ -47,417 +80,84 @@ const Articls = () => {
                 slidesPerView: 3.5,
               },
             }}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
           >
-            <SwiperSlide>
-              <Box
-                sx={{
-                  width: "100%",
-                  height: "181px",
-                  backgroundColor: "colors.white",
-                  borderRadius: "10px",
-                  mr: 1,
-                }}
-              >
-                <Box sx={{ display: "flex", height: "100%" }}>
-                  <Box sx={{ display: "flex", alignItems: "center", m: 1.2 }}>
-                    <img
-                      maxWidth="150px"
-                      height="150px"
-                      src="/images/245.png"
-                    />
-                  </Box>
-                  <Box sx={{ width: "100%" }}>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        height: "25%",
-                      }}
-                    >
-                      <Typography
-                        sx={{
-                          fontSize: "16px",
-                          fontWeight: "1000",
-                          pt: "30px",
-                        }}
-                      >
-                        اهمیت طراحی مناسب برای چاپ در تبلیغات
-                      </Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        height: "75%",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
+            {articlsArray.map((item, i) => (
+              <SwiperSlide>
+                <Link href={"#"}>
+                  <Box
+                    sx={{
+                      width: "100%",
+                      height: "181px",
+                      backgroundColor: "colors.white",
+                      borderRadius: "10px",
+                      mr: 1,
+                    }}
+                  >
+                    <Box sx={{ display: "flex", height: "100%" }}>
                       <Box
-                        sx={{
-                          maxWidth: "272px",
-                          height: "103px",
-                          borderRadius: "10px",
-                          backgroundColor: "#FFFFFF",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                        }}
+                        sx={{ display: "flex", alignItems: "center", m: 1.2 }}
                       >
-                        <Typography
-                          sx={{ maxWidth: "255px", p: "8px", fontSize: "17px" }}
+                        <img
+                          maxWidth="150px"
+                          height="150px"
+                          src={"/images/" + item.src}
+                        />
+                      </Box>
+                      <Box sx={{ width: "100%" }}>
+                        <Box
+                          sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            height: "25%",
+                          }}
                         >
-                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                          چاپ و با استفاده از طراحان گرافیک است.{" "}
-                        </Typography>
+                          <Typography
+                            sx={{
+                              fontSize: "16px",
+                              fontWeight: "1000",
+                              pt: "30px",
+                            }}
+                          >
+                            {item.title}
+                          </Typography>
+                        </Box>
+                        <Box
+                          sx={{
+                            height: "75%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <Box
+                            sx={{
+                              maxWidth: "272px",
+                              height: "103px",
+                              borderRadius: "10px",
+                              backgroundColor: "#FFFFFF",
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                            }}
+                          >
+                            <Typography
+                              sx={{
+                                maxWidth: "255px",
+                                p: "8px",
+                                fontSize: "17px",
+                              }}
+                            >
+                              {item.text}
+                            </Typography>
+                          </Box>
+                        </Box>
                       </Box>
                     </Box>
                   </Box>
-                </Box>
-              </Box>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Box
-                sx={{
-                  width: "100%",
-                  height: "181px",
-                  backgroundColor: "colors.white",
-                  borderRadius: "10px",
-                  mr: 1,
-                }}
-              >
-                <Box sx={{ display: "flex", height: "100%" }}>
-                  <Box sx={{ display: "flex", alignItems: "center", m: 1.2 }}>
-                    <img
-                      maxWidth="150px"
-                      height="150px"
-                      src="/images/666.png"
-                    />
-                  </Box>
-                  <Box sx={{ width: "100%" }}>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        height: "25%",
-                      }}
-                    >
-                      <Typography
-                        sx={{
-                          fontSize: "16px",
-                          fontWeight: "1000",
-                          pt: "30px",
-                        }}
-                      >
-                        اهمیت طراحی مناسب برای چاپ در تبلیغات
-                      </Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        height: "75%",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          maxWidth: "272px",
-                          height: "103px",
-                          borderRadius: "10px",
-                          backgroundColor: "#FFFFFF",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                        }}
-                      >
-                        <Typography
-                          sx={{ maxWidth: "255px", p: "8px", fontSize: "17px" }}
-                        >
-                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                          چاپ و با استفاده از طراحان گرافیک است.{" "}
-                        </Typography>
-                      </Box>
-                    </Box>
-                  </Box>
-                </Box>
-              </Box>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Box
-                sx={{
-                  width: "100%",
-                  height: "181px",
-                  backgroundColor: "colors.white",
-                  borderRadius: "10px",
-                  mr: 1,
-                }}
-              >
-                <Box sx={{ display: "flex", height: "100%" }}>
-                  <Box sx={{ display: "flex", alignItems: "center", m: 1.2 }}>
-                    <img
-                      maxWidth="150px"
-                      height="150px"
-                      src="/images/485.png"
-                    />
-                  </Box>
-                  <Box sx={{ width: "100%" }}>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        height: "25%",
-                      }}
-                    >
-                      <Typography
-                        sx={{
-                          fontSize: "16px",
-                          fontWeight: "1000",
-                          pt: "30px",
-                        }}
-                      >
-                        اهمیت طراحی مناسب برای چاپ در تبلیغات
-                      </Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        height: "75%",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          maxWidth: "272px",
-                          height: "103px",
-                          borderRadius: "10px",
-                          backgroundColor: "#FFFFFF",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                        }}
-                      >
-                        <Typography
-                          sx={{ maxWidth: "255px", p: "8px", fontSize: "17px" }}
-                        >
-                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                          چاپ و با استفاده از طراحان گرافیک است.{" "}
-                        </Typography>
-                      </Box>
-                    </Box>
-                  </Box>
-                </Box>
-              </Box>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Box
-                sx={{
-                  width: "100%",
-                  height: "181px",
-                  backgroundColor: "colors.white",
-                  borderRadius: "10px",
-                  mr: 1,
-                }}
-              >
-                <Box sx={{ display: "flex", height: "100%" }}>
-                  <Box sx={{ display: "flex", alignItems: "center", m: 1.2 }}>
-                    <img
-                      maxWidth="150px"
-                      height="150px"
-                      src="/images/485.png"
-                    />
-                  </Box>
-                  <Box sx={{ width: "100%" }}>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        height: "25%",
-                      }}
-                    >
-                      <Typography
-                        sx={{
-                          fontSize: "16px",
-                          fontWeight: "1000",
-                          pt: "30px",
-                        }}
-                      >
-                        اهمیت طراحی مناسب برای چاپ در تبلیغات
-                      </Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        height: "75%",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          maxWidth: "272px",
-                          height: "103px",
-                          borderRadius: "10px",
-                          backgroundColor: "#FFFFFF",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                        }}
-                      >
-                        <Typography
-                          sx={{ maxWidth: "255px", p: "8px", fontSize: "17px" }}
-                        >
-                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                          چاپ و با استفاده از طراحان گرافیک است.{" "}
-                        </Typography>
-                      </Box>
-                    </Box>
-                  </Box>
-                </Box>
-              </Box>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Box
-                sx={{
-                  width: "100%",
-                  height: "181px",
-                  backgroundColor: "colors.white",
-                  borderRadius: "10px",
-                  mr: 1,
-                }}
-              >
-                <Box sx={{ display: "flex", height: "100%" }}>
-                  <Box sx={{ display: "flex", alignItems: "center", m: 1.2 }}>
-                    <img
-                      maxWidth="150px"
-                      height="150px"
-                      src="/images/485.png"
-                    />
-                  </Box>
-                  <Box sx={{ width: "100%" }}>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        height: "25%",
-                      }}
-                    >
-                      <Typography
-                        sx={{
-                          fontSize: "16px",
-                          fontWeight: "1000",
-                          pt: "30px",
-                        }}
-                      >
-                        اهمیت طراحی مناسب برای چاپ در تبلیغات
-                      </Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        height: "75%",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          maxWidth: "272px",
-                          height: "103px",
-                          borderRadius: "10px",
-                          backgroundColor: "#FFFFFF",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                        }}
-                      >
-                        <Typography
-                          sx={{ maxWidth: "255px", p: "8px", fontSize: "17px" }}
-                        >
-                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                          چاپ و با استفاده از طراحان گرافیک است.{" "}
-                        </Typography>
-                      </Box>
-                    </Box>
-                  </Box>
-                </Box>
-              </Box>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Box
-                sx={{
-                  width: "100%",
-                  height: "181px",
-                  backgroundColor: "colors.white",
-                  borderRadius: "10px",
-                  mr: 1,
-                }}
-              >
-                <Box sx={{ display: "flex", height: "100%" }}>
-                  <Box sx={{ display: "flex", alignItems: "center", m: 1.2 }}>
-                    <img
-                      maxWidth="150px"
-                      height="150px"
-                      src="/images/485.png"
-                    />
-                  </Box>
-                  <Box sx={{ width: "100%" }}>
-                    <Box
-                      sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        height: "25%",
-                      }}
-                    >
-                      <Typography
-                        sx={{
-                          fontSize: "16px",
-                          fontWeight: "1000",
-                          pt: "30px",
-                        }}
-                      >
-                        اهمیت طراحی مناسب برای چاپ در تبلیغات
-                      </Typography>
-                    </Box>
-                    <Box
-                      sx={{
-                        height: "75%",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          maxWidth: "272px",
-                          height: "103px",
-                          borderRadius: "10px",
-                          backgroundColor: "#FFFFFF",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                        }}
-                      >
-                        <Typography
-                          sx={{ maxWidth: "255px", p: "8px", fontSize: "17px" }}
-                        >
-                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                          چاپ و با استفاده از طراحان گرافیک است.{" "}
-                        </Typography>
-                      </Box>
-                    </Box>
-                  </Box>
-                </Box>
-              </Box>
-            </SwiperSlide>
+                </Link>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </Box>
       </Container>
