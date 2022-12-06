@@ -16,7 +16,19 @@ const SingleProduct = () => {
           container
           style={{ borderBottom: "1px solid #E5E5E5", paddingBottom: "50px" }}
         >
-          <Grid item sx={{ margin: "33px", marginLeft: "90px" }} lg={5.5}>
+          <Grid
+            item
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              margin: "33px",
+              marginLeft: "90px",
+            }}
+            xs={12}
+            sm={12}
+            md={12}
+            lg={5.5}
+          >
             <img
               style={{
                 maxWidth: "100%",
@@ -30,11 +42,19 @@ const SingleProduct = () => {
           <Grid
             sx={{
               display: "flex",
-              justifyContent: "start",
+              justifyContent: {
+                lg: "start",
+                md: "center",
+                sm: "center",
+                xs: "center",
+              },
               flexDirection: "column",
               padding: "20px",
             }}
             item
+            xs={12}
+            sm={12}
+            md={12}
             lg={4.8}
           >
             <Box
@@ -116,6 +136,8 @@ const SingleProduct = () => {
               >
                 <Box sx={{ display: "flex", height: "100%" }}>
                   <Box
+                    xs={12}
+                    sm={12}
                     sx={{
                       display: "flex",
                       alignItems: "center",
@@ -123,7 +145,13 @@ const SingleProduct = () => {
                       m: 1.5,
                     }}
                   >
-                    <img maxWidth="84px" height="84px" src="/images/545.png" />
+                    <Box>
+                      <img
+                        maxWidth="84px"
+                        height="84px"
+                        src="/images/545.png"
+                      />
+                    </Box>
                     <Typography
                       sx={{
                         fontSize: "15px",
