@@ -3,10 +3,14 @@ import Grid from "@mui/material/Grid";
 import { Box, Container } from "@mui/system";
 import ImageSearchIcon from "@mui/icons-material/ImageSearch";
 import Link from "next/link";
+import SearchBox from "../category/SearchBox";
 
 const SingleProduct = () => {
   return (
     <>
+      <SearchBox />
+      <Box sx={{ borderBottom: "1px solid #E5E5E5 " }}></Box>
+
       <Container
         sx={{
           marginBottom: "30px",
@@ -649,119 +653,22 @@ const SingleProduct = () => {
                 بیشتر با فریبا حسنی
               </span>
             </span>
-
-            <span
-              style={{
-                borderRight: "8px solid #4ECCA3",
-              }}
-            >
-              <span
-                style={{ margin: "20px", fontSize: "12px", fontWeight: "500" }}
-              >
-                طرح های مشابه دیگر
-              </span>
-            </span>
           </Box>
-          <Box
-            sx={{
-              display: "flex",
-            }}
-          >
-            <Box
-              sx={{
-                padding: "10px",
-              }}
-            ></Box>
-            <Grid
-              container
-              sx={{
-                width: "90%",
-              }}
-            >
-              <Grid item xs={12} sm={12} md={12} lg={4}>
-                <img
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    padding: "4px",
+          <Grid container>
+            <Grid item xs={12} sm={12} md={6} lg={6}>
+              <img src="./images/qqq.png" />
 
-                    margin: "0",
-                  }}
-                  src="./images/qqq.png"
-                />
-              </Grid>
-              <Grid item xs={12} sm={12} md={12} lg={4}>
-                <img
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    padding: "4px",
-
-                    margin: "0",
-                  }}
-                  src="./images/dwad.png"
-                />
-              </Grid>
+              <img src="./images/dwad.png" />
             </Grid>
 
-            <Grid
-              container
-              sx={{
-                width: "90%",
-              }}
-            >
-              <Grid item xs={12} sm={12} md={12} lg={4}>
-                <img
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    padding: "4px",
+            <Grid item lg={6}>
+              <img src="./images/ewe.png" />
 
-                    margin: "0",
-                  }}
-                  src="./images/ewe.png"
-                />
-              </Grid>
-              <Grid item xs={12} sm={12} md={12} lg={4}>
-                <img
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    padding: "4px",
+              <img src="./images/qqq.png" />
 
-                    margin: "0",
-                  }}
-                  src="./images/qqq.png"
-                />
-              </Grid>
-              <Grid
-                sx={{
-                  display: {
-                    lg: "block",
-                    md: "none",
-                    sm: "none",
-                    xs: "none",
-                  },
-                }}
-                item
-                xs={12}
-                sm={12}
-                md={12}
-                lg={4}
-              >
-                <img
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    padding: "4px",
-
-                    margin: "0",
-                  }}
-                  src="./images/dwad.png"
-                />
-              </Grid>
+              <img src="./images/dwad.png" />
             </Grid>
-          </Box>
+          </Grid>
         </Box>
       </Container>
     </>
