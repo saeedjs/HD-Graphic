@@ -653,6 +653,33 @@ const SingleProduct = () => {
                 بیشتر با فریبا حسنی
               </span>
             </span>
+            <Box
+              sx={{
+                display: {
+                  lg: "inline",
+                  md: "none",
+                  sm: "none",
+                  xs: "none",
+                },
+              }}
+            >
+              <span
+                style={{
+                  marginLeft: "89px",
+                  borderRight: "8px solid #4ECCA3 ",
+                }}
+              >
+                <span
+                  style={{
+                    margin: "20px",
+                    fontSize: "12px",
+                    fontWeight: "500",
+                  }}
+                >
+                  بیشتر با فریبا حسنی
+                </span>
+              </span>
+            </Box>
           </Box>
           <Grid
             container
@@ -676,6 +703,28 @@ const SingleProduct = () => {
 
               <img src="./images/dwad.png" style={{ margin: "4px" }} />
             </Grid>
+            <Box
+              sx={{
+                display: {
+                  lg: "none",
+                  md: "block",
+                  sm: "block",
+                  xs: "block",
+                },
+              }}
+            >
+              <span style={{ borderRight: "8px solid #4ECCA3 " }}>
+                <span
+                  style={{
+                    margin: "20px",
+                    fontSize: "12px",
+                    fontWeight: "500",
+                  }}
+                >
+                  بیشتر با فریبا حسنی
+                </span>
+              </span>
+            </Box>
 
             <Grid
               sx={{
@@ -684,6 +733,9 @@ const SingleProduct = () => {
                 flexWrap: "wrap ",
               }}
               item
+              xs={12}
+              sm={12}
+              md={10}
               lg={7}
             >
               <img src="./images/ewe.png" style={{ margin: "4px" }} />
