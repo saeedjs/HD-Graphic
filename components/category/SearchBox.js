@@ -200,7 +200,7 @@ export default function SearchBox() {
                   background: "#EEEEEE",
                   px: 1,
                   display: "flex",
-                  alignItems: "center",
+                  alignItems: "end",
                   borderRadius: "50px",
                   height: "24px",
                   width: "24px",
