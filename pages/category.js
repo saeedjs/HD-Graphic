@@ -6,7 +6,6 @@ const category = () => {
     <>
       <Category />
       <HeaderCategory />
-      <SingleProduct />
     </>
   );
 };
