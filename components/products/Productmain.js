@@ -11,34 +11,67 @@ import ProductmainBig from "./ProductmainBig";
 const ProductMain = () => {
   return (
     <>
-      <Box
-        sx={{
-          width: "40%",
-          mt: "140px",
-          display: "flex",
-          justifyContent: "space-between",
-          mr: "14px",
-        }}
-      >
+      <Box sx={{ display: "flex" }}>
         <Box
-          height={"22px"}
           sx={{
-            marginRight: "90px",
-            height: "22px",
-            backgroundColor: "colors.green",
-            width: "8px",
+            //
+            height: "auto",
+            mt: "140px",
+            display: "flex",
+            justifyContent: "space-between",
+            mr: "14px",
           }}
-        ></Box>
-        <Box sx={{ mr: "10px" }}>
-          <Typography sx={{ fontSize: "16px" }}>مطالب وبلاگ</Typography>
+        >
+          <Box
+            height={"22px"}
+            sx={{
+              marginRight: "90px",
+              height: "22px",
+              backgroundColor: "colors.green",
+              width: "8px",
+            }}
+          ></Box>
+          <Box sx={{ mr: "10px" }}>
+            <Typography sx={{ fontSize: "16px" }}>مطالب وبلاگ</Typography>
+          </Box>
+          <Box sx={{ mr: "35px" }}>
+            <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
+          </Box>
+          <Box sx={{ mr: "50px" }}>
+            <Typography sx={{ color: "#AAAAAA", fontSize: "14px" }}>
+              500 طرح آماده
+            </Typography>
+          </Box>
         </Box>
-        <Box sx={{ mr: "35px" }}>
-          <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
-        </Box>
-        <Box sx={{ mr: "50px" }}>
-          <Typography sx={{ color: "#EEEEE", fontSize: "16px" }}>
-            500 طرح آماده
-          </Typography>
+        <Box
+          sx={{
+            height: "auto",
+            mt: "140px",
+            display: "flex",
+            justifyContent: "space-between",
+            mr: "14px",
+          }}
+        >
+          <Box
+            height={"22px"}
+            sx={{
+              marginRight: "90px",
+              height: "22px",
+              backgroundColor: "colors.green",
+              width: "8px",
+            }}
+          ></Box>
+          <Box sx={{ mr: "10px" }}>
+            <Typography sx={{ fontSize: "16px" }}>مطالب وبلاگ</Typography>
+          </Box>
+          <Box sx={{ mr: "35px" }}>
+            <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
+          </Box>
+          <Box sx={{ mr: "50px" }}>
+            <Typography sx={{ color: "#AAAAAA", fontSize: "14px" }}>
+              500 طرح آماده
+            </Typography>
+          </Box>
         </Box>
       </Box>
 

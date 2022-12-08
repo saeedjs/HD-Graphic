@@ -53,7 +53,7 @@ const Articls = (prop) => {
             <Typography sx={{ fontSize: "16px" }}>{prop.title}</Typography>
           </Box>
           <Box sx={{ mr: "35px" }}>
-            <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
+            <Typography sx={{ color: "colors.green", fontSize:"14px" }}>مشاهده همه</Typography>
           </Box>
         </Box>
         <Box sx={{ mt: 5 }}>
@@ -114,7 +114,7 @@ const Articls = (prop) => {
                         >
                           <Typography
                             sx={{
-                              fontSize: "16px",
+                              fontSize: "14px",
                               fontWeight: "1000",
                               pt: "30px",
                             }}
@@ -145,7 +145,8 @@ const Articls = (prop) => {
                               sx={{
                                 maxWidth: "255px",
                                 p: "8px",
-                                fontSize: "17px",
+                                fontSize: "14px",
+                                fontWeight:'normal'
                               }}
                             >
                               {item.text}
