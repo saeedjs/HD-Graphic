@@ -199,6 +199,8 @@ export default function SearchBox() {
                 sx={{
                   background: "#EEEEEE",
                   px: 1,
+                  display: "flex",
+                  alignItems: "center",
                   borderRadius: "50px",
                   height: "24px",
                   width: "24px",
