@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Grid from "@mui/material";
 import { Container } from "@mui/system";
 import Link from "next/link";
-const Articls = () => {
+const Articls = (prop) => {
   const articlsArray = [
     {
       title: "اهمیت طراحی مناسب برای چاپ در تبلیغات",
@@ -50,7 +50,7 @@ const Articls = () => {
             }}
           ></Box>
           <Box sx={{ mr: "10px" }}>
-            <Typography sx={{ fontSize: "16px" }}>مطالب وبلاگ</Typography>
+            <Typography sx={{ fontSize: "16px" }}>{prop.title}</Typography>
           </Box>
           <Box sx={{ mr: "35px" }}>
             <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
