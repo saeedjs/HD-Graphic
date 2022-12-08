@@ -11,43 +11,36 @@ import ProductmainBig from "./ProductmainBig";
 const ProductMain = () => {
   return (
     <>
-      <span style={{ marginRight: "190px", borderRight: "8px solid #4ECCA3 " }}>
-        <span
-          style={{ marginRight: "20px", fontSize: "12px", fontWeight: "500" }}
-        >
-          تصاویر استوک
-        </span>
-      </span>
-
-      <Link href={"#"}>
-        <span
-          style={{
-            fontWeight: "500",
-            fontSize: "12px",
-            color: "#4ECCA3",
-            marginRight: "30px",
-          }}
-        >
-          {" "}
-          مشاهده همه{" "}
-        </span>
-        <span
-          style={{
-            fontWeight: "500",
-            fontSize: "12px",
-            marginRight: "230px",
-            color: "#AAAAAA",
-          }}
-        >
-          {" "}
-          بیش از 4000 طرح{" "}
-        </span>
-      </Link>
       <Box
         sx={{
-          padding: "10px",
+          width: "40%",
+          mt: "140px",
+          display: "flex",
+          justifyContent: "space-between",
+          mr: "14px",
         }}
-      ></Box>
+      >
+        <Box
+          height={"22px"}
+          sx={{
+            marginRight: "90px",
+            height: "22px",
+            backgroundColor: "colors.green",
+            width: "8px",
+          }}
+        ></Box>
+        <Box sx={{ mr: "10px" }}>
+          <Typography sx={{ fontSize: "16px" }}>مطالب وبلاگ</Typography>
+        </Box>
+        <Box sx={{ mr: "35px" }}>
+          <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
+        </Box>
+        <Box sx={{ mr: "50px" }}>
+          <Typography sx={{ color: "#EEEEE", fontSize: "16px" }}>
+            500 طرح آماده
+          </Typography>
+        </Box>
+      </Box>
 
       <Grid container maxWidth="xl" justifyContent={"center"}>
         <ProductmainBig />
@@ -57,54 +50,34 @@ const ProductMain = () => {
               lg: "none",
               md: "none",
               sm: "none",
-              xs: "block",
+              xs: "flex",
             },
           }}
         >
-          <span
-            style={{ marginRight: "104px", borderRight: "8px solid #4ECCA3 " }}
-          >
-            <span
-              style={{
-                marginRight: "20px",
-                fontSize: "12px",
-                fontWeight: "500",
-              }}
-            >
-              تصاویر استوک
-            </span>
-          </span>
-
-          <Link href={"#"}>
-            <span
-              style={{
-                fontWeight: "500",
-                fontSize: "12px",
-                color: "#4ECCA3",
-                marginRight: "30px",
-              }}
-            >
-              {" "}
-              مشاهده همه{" "}
-            </span>
-            <span
-              style={{
-                fontWeight: "500",
-                fontSize: "12px",
-                marginRight: "40px",
-                color: "#AAAAAA",
-              }}
-            >
-              {" "}
-              بیش از 4000 طرح{" "}
-            </span>
-          </Link>
+          <Box
+            height={"22px"}
+            sx={{
+              height: "22px",
+              backgroundColor: "colors.green",
+              width: "8px",
+            }}
+          ></Box>
+          <Box sx={{ mr: "10px" }}>
+            <Typography sx={{ fontSize: "16px" }}>تصاویر استوک</Typography>
+          </Box>
+          <Box sx={{ mr: "35px" }}>
+            <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
+          </Box>
+          <Box sx={{ mr: "10px" }}>
+            <Typography sx={{ fontSize: "16px" }}>500 طرح آماده</Typography>
+          </Box>
         </Box>
+
         <Grid justifyContent={"center"} item xs={4} sm={2} md={2} lg={2}>
           <Grid item sx={{ margin: "3px" }}>
             <img
               style={{
-                maxWidth: "100%",
+                width: "100%",
                 height: "auto",
                 padding: "0",
                 marginRight: "10px",
@@ -125,7 +98,15 @@ const ProductMain = () => {
           </Grid>
         </Grid>
 
-        <Grid justifyContent={"center"} item xs={4} sm={2} md={2} lg={2}>
+        <Grid
+          alignItems={"center"}
+          justifyContent={"center"}
+          item
+          xs={4}
+          sm={2}
+          md={2}
+          lg={2}
+        >
           <Grid item sx={{ margin: "3px" }} xs={12}>
             <img
               style={{

@@ -5,7 +5,7 @@ const HeaderCategory = () => {
     <>
       <Box
         sx={{
-          background: "url(./images/ss.png)",
+          background: "url(./images/banner-category.png)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "100% 100%",
           width: "100%",
