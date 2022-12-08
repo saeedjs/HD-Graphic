@@ -4,7 +4,6 @@ import SearchBox from "./SearchBox";
 const Category = () => {
   return (
     <>
-      <SearchBox />
       <CategoryDes />
     </>
   );

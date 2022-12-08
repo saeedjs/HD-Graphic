@@ -4,8 +4,8 @@ import Category from "../components/category/Category";
 const category = () => {
   return (
     <>
-      <Category />
       <HeaderCategory />
+      <Category />
     </>
   );
 };
