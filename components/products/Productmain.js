@@ -25,7 +25,7 @@ const ProductMain = () => {
           <Box
             height={"22px"}
             sx={{
-              marginRight: "90px",
+              marginRight: { lg: "90px", md: "20px", sm: "10px", xs: "5px" },
               height: "22px",
               backgroundColor: "colors.green",
               width: "8px",
@@ -37,19 +37,20 @@ const ProductMain = () => {
           <Box sx={{ mr: "35px" }}>
             <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
           </Box>
-          <Box sx={{ mr: "50px" }}>
-            <Typography sx={{ color: "#AAAAAA", fontSize: "14px" }}>
-              500 طرح آماده
-            </Typography>
-          </Box>
+          <Box sx={{ mr: "50px" }}></Box>
         </Box>
         <Box
           sx={{
             height: "auto",
             mt: "140px",
-            display: "flex",
+            display: {
+              lg: "flex",
+              md: "flex",
+              sm: "none",
+              xs: "none",
+            },
+            marginRight: "200px",
             justifyContent: "space-between",
-            mr: "14px",
           }}
         >
           <Box
@@ -62,12 +63,33 @@ const ProductMain = () => {
             }}
           ></Box>
           <Box sx={{ mr: "10px" }}>
-            <Typography sx={{ fontSize: "16px" }}>مطالب وبلاگ</Typography>
+            <Typography
+              sx={{
+                fontSize: {
+                  lg: "20px",
+                  md: "18px",
+                  sm: "12px",
+                  xs: "10px",
+                },
+                fontSize: "16px",
+              }}
+            >
+              مطالب وبلاگ
+            </Typography>
           </Box>
           <Box sx={{ mr: "35px" }}>
             <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
           </Box>
-          <Box sx={{ mr: "50px" }}>
+          <Box
+            sx={{
+              marginRight: {
+                lg: "370px",
+                md: "0px",
+                sm: "0px",
+                xs: "0px",
+              },
+            }}
+          >
             <Typography sx={{ color: "#AAAAAA", fontSize: "14px" }}>
               500 طرح آماده
             </Typography>
@@ -78,6 +100,7 @@ const ProductMain = () => {
       <Grid container maxWidth="xl" justifyContent={"center"}>
         <ProductmainBig />
         <Box
+          xs={12}
           sx={{
             display: {
               lg: "none",
@@ -91,6 +114,7 @@ const ProductMain = () => {
             height={"22px"}
             sx={{
               height: "22px",
+
               backgroundColor: "colors.green",
               width: "8px",
             }}
@@ -101,8 +125,10 @@ const ProductMain = () => {
           <Box sx={{ mr: "35px" }}>
             <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
           </Box>
-          <Box sx={{ mr: "10px" }}>
-            <Typography sx={{ fontSize: "16px" }}>500 طرح آماده</Typography>
+          <Box sx={{ mr: "12" }}>
+            <Typography sx={{ color: "#AAAAAA", fontSize: "16px" }}>
+              500 طرح آماده
+            </Typography>
           </Box>
         </Box>
 
