@@ -126,6 +126,7 @@ export default function SearchBox() {
                           <IconButton
                             aria-label="toggle password visibility"
                             onClick={() => setValue("")}
+                            sx={{ fontSize: "1.2rem" }}
                           >
                             <CancelRoundedIcon />
                           </IconButton>
@@ -162,7 +163,7 @@ export default function SearchBox() {
                           bottom: "-2px",
                         }}
                       >
-                        <InputAdornment position="start" sx={{ fontSize: "1.5rem" }}>
+                        <InputAdornment position="start">
                           <SearchIcon />
                         </InputAdornment>
                       </Link>
