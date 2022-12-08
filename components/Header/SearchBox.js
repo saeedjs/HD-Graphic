@@ -1,4 +1,3 @@
-import { makeStyles } from "@mui/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import { IconButton, Link } from "@mui/material";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";

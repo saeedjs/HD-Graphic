@@ -193,7 +193,6 @@ export default function SearchBox() {
                 borderRadius: "2px",
                 p: 1,
                 px: 2,
-                // mr: 3,
                 "&:hover": {
                   backgroundColor: "#efefef",
                 },
