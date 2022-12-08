@@ -9,7 +9,7 @@ const ProductmainBig = () => {
             width: "100%",
             height: "auto",
             padding: "0",
-            marginRight: "-20px",
+            marginRight: {lg:"-20px",md:"0px",sm:"0px",xs:"0px"},
             justifyContent: "center",
             alignItem: "center",
           }}

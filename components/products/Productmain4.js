@@ -17,16 +17,12 @@ const Productmain4 = () => {
           }}
         ></Box>
         <span style={{ borderRight: "8px solid #4ECCA3 " }}>
-          <span style={{ margin: "20px", fontSize: "12px", fontWeight: "500" }}>
-            تصاویر استوک
-          </span>
+          <span style={{ margin: "20px" }}>تصاویر استوک</span>
         </span>
 
         <Link href={"#"}>
           <span
             style={{
-              fontWeight: "500",
-              fontSize: "12px",
               color: "#4ECCA3",
               marginRight: "30px",
             }}
@@ -36,8 +32,6 @@ const Productmain4 = () => {
           </span>
           <span
             style={{
-              fontWeight: "500",
-              fontSize: "12px",
               marginRight: "160px",
               color: "#AAAAAA",
             }}
