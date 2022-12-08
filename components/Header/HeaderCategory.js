@@ -9,6 +9,7 @@ const HeaderCategory = () => {
           height: "500px",
           backgroundImage: "linear-gradient(to  left, white, #EEEEEE)",
           position: "relative",
+          overflow:'hidden'
         }}
       >
         <Box sx={{position:'absolute', display:'flex', justifyContent:'space-between', width:'100%', height:'100%'}}>
@@ -23,15 +24,9 @@ const HeaderCategory = () => {
               <Typography sx={{fontSize:'14px', lineHeight:'2', color:'#393E46'}}>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</Typography>
             </Box>
           </Box>
-          <Box>
+          <Box >
             <Box>
-              <img style={{maxWidth:'100%'}} src="/images/qqq.png" />
-            </Box>
-            <Box>
-              <img style={{maxWidth:'100%'}} src="/images/eee.png" />
-            </Box>
-            <Box>
-              <img style={{maxWidth:'100%'}} src="/images/dwad.png" />
+              <img style={{maxWidth:'100%'}} src="/images/banner-category.png" />
             </Box>
           </Box>
         </Box>
