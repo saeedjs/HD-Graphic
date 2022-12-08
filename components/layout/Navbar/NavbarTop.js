@@ -15,14 +15,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { useState } from "react";
 import Link from "next/link";
 
-const pages = [
-  "آیکون",
-  "تصویر",
-  "فایل لایه باز",
-  "دسته بندی",
-  "مجموعه ها",
-  "طراحان",
-];
+const pages = ["آیکون", "تصویر", "فایل لایه باز", "دسته بندی", "مجموعه ها", "طراحان"];
 const settings = ["پروفایل", "اکانت", "داشبورد", "خروج"];
 
 function NavbarTop() {
@@ -69,7 +62,7 @@ function NavbarTop() {
               </Link>
             </Paper>
             <IconButton
-              sx={{ color: "black" }}
+              sx={{ color: "black", fontSize: "2rem" }}
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -98,11 +91,7 @@ function NavbarTop() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ width: "200px" }}
-                >
+                <MenuItem key={page} onClick={handleCloseNavMenu} sx={{ width: "200px" }}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -161,7 +150,7 @@ function NavbarTop() {
             )}
             {true && (
               <Tooltip title="پروفایل" sx={{ display: "none" }}>
-                <IconButton onClick={handleOpenUserMenu} sx={{ px: 2 }}>
+                <IconButton onClick={handleOpenUserMenu} sx={{ px: 2, fontSize: "1.5rem" }}>
                   <AccountCircleIcon />
                 </IconButton>
               </Tooltip>
@@ -183,11 +172,7 @@ function NavbarTop() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem
-                  key={setting}
-                  onClick={handleCloseUserMenu}
-                  sx={{ width: "120px" }}
-                >
+                <MenuItem key={setting} onClick={handleCloseUserMenu} sx={{ width: "120px" }}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

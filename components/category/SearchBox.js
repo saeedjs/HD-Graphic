@@ -162,7 +162,7 @@ export default function SearchBox() {
                           bottom: "-2px",
                         }}
                       >
-                        <InputAdornment position="start">
+                        <InputAdornment position="start" sx={{ fontSize: "1.5rem" }}>
                           <SearchIcon />
                         </InputAdornment>
                       </Link>

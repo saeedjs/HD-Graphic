@@ -112,7 +112,6 @@ const PersonDetail = () => {
 
             pr: {
               xs: 2,
-              md: 4,
             },
             whiteSpace: "nowrap",
           }}
@@ -135,10 +134,10 @@ const PersonDetail = () => {
               display: "flex",
               alignItems: "end",
               justifyContent: "space-between",
-              px: {
-                md: 3,
-                xl: 2,
-              },
+              // px: {
+              //   // md: 4,
+              //   // xl: 2,
+              // },
               flexWrap: "wrap",
             }}
           >
@@ -160,7 +159,7 @@ const PersonDetail = () => {
               >
                 مهرانه شریفی
               </Typography>
-              <Typography sx={{ mt: "15px", pr: 1, fontSize: "14px" }}>
+              <Typography sx={{ mt: "20px", pl: 2, fontSize: "14px" }}>
                 <img src="images/download.png" style={{ verticalAlign: "bottom" }} /> دانلودها:6958
               </Typography>
             </Box>
@@ -187,7 +186,9 @@ const PersonDetail = () => {
               }}
             >
               <img src="images/info.png" style={{ verticalAlign: "middle", paddingLeft: "4px" }} />
-              <span style={{ fontSize: "14px" }}>درباره مدرس</span>
+              <Link href="#">
+                <span style={{ fontSize: "14px" }}>درباره مدرس</span>
+              </Link>
             </Box>
           </Grid>
         </Grid>
