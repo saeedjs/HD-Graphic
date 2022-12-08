@@ -99,9 +99,9 @@ export default function SearchBox() {
                 overflow: "hidden",
                 backgroundColor: "colors.white",
                 ".MuiOutlinedInput-root": { padding: "0 2px" },
-                borderRadius: "10px",
+                borderRadius: "5px",
               }}
-              placeholder="     جستجوی برای آیکون،تصویر،فایل لایه باز     "
+              placeholder="جستجو برای..."
               type="text"
               variant="outlined"
               size="small"
@@ -162,7 +162,7 @@ export default function SearchBox() {
                           bottom: "-2px",
                         }}
                       >
-                        <InputAdornment position="start">
+                        <InputAdornment position="start" sx={{ fontSize: "1.5rem" }}>
                           <SearchIcon />
                         </InputAdornment>
                       </Link>
