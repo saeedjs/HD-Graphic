@@ -9,9 +9,9 @@ const Mainimages = () => {
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Box
           sx={{
-            borderRadius: "10px",
+            borderRadius: "5px",
             backgroundImage:
-              " linear-gradient(93deg, rgba(255,238,148,1) 0%, rgba(251,255,194,1) 49%, rgba(223,255,245,1) 50%, rgba(112,253,255,1) 100%)",
+              " linear-gradient(93deg, rgba(255,238,148,1) 0%, rgba(251,255,194,1) 49%, rgba(223,255,245,1) 50%, rgba(112,253,255,1) 100%) ",
             width: "980px",
             height: "179px",
             display: "flex",
