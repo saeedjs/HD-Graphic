@@ -19,15 +19,19 @@ function MyApp({ Component, pageProps }) {
         greenHover: "#3C9B7C",
       },
     },
+    typography: {
+      fontFamily: "iranYekan, dana",
+      fontSize: "14px",
+    },
   });
 
   return (
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        {/* <NavbarTop /> */}
+        <NavbarTop />
         <Component {...pageProps} />
-        {/* <Footer /> */}
+        <Footer />
       </ThemeProvider>
     </>
   );

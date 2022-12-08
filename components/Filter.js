@@ -12,18 +12,14 @@ import {
   Pagination,
   Radio,
   RadioGroup,
+  TablePagination,
   TextField,
   Typography,
 } from "@mui/material";
 import { Box, Container, Stack } from "@mui/system";
 import { useState } from "react";
+import { Mypagination } from "./Mypagination";
 const Filter = () => {
-  const filterArray = [
-    "بیشترین تخفیف",
-    "ارزان ترین",
-    "پر فروش ترین",
-    "محبوب ترین",
-  ];
   const itemArray = [
     {
       src: "eee.png",
@@ -112,15 +108,29 @@ const Filter = () => {
       status: false,
     },
   ];
-  
+
   const [checkButtonState, setCheckButton] = useState(checkButtonArray);
   const [priceFilter, setPriceFilter] = useState([
-    "بیشترین تخفیف",
-    "ارزان ترین",
-    "بیشترین تخفیف",
-    "ارزان ترین",
-    "بیشترین تخفیف",
-    "ارزان ترین",
+    {
+      id: 0,
+      status: false,
+      value: "بیشترین تخفیف",
+    },
+    {
+      id: 1,
+      status: false,
+      value: "ارزان ترین",
+    },
+    {
+      id: 2,
+      status: false,
+      value: "پر فروش ترین",
+    },
+    {
+      id: 3,
+      status: false,
+      value: "محبوب ترین",
+    },
   ]);
   const [item, setItem] = useState(itemArray);
   const checkArray = [
@@ -154,14 +164,13 @@ const Filter = () => {
     else findDisplay.display = "block";
     setCheckDisplay(copyCheckDisplay);
   };
-  const handleChange = (event) => {
-    // if(!event)
-    //   console.log("")
-    console.log(event.target.value);
-
-    event.target.value = false;
-    console.log(event.target.value);
-  }
+  const handleChange = (id) => {
+    const copyPriceFilter = [...priceFilter];
+    const findDisplay = copyPriceFilter.find((a) => a.id == id);
+    if (findDisplay.status) findDisplay.status = false;
+    else findDisplay.status = true;
+    setPriceFilter(copyPriceFilter);
+  };
   return (
     <>
       <Container maxWidth="xxl">
@@ -172,7 +181,7 @@ const Filter = () => {
             borderBottom: "1px solid #EEEEEE",
           }}
         >
-          <Box sx={{ display: "flex" }}>
+          <Box sx={{ display: "flex", pr: "25px" }}>
             <Box sx={{ ml: "10px" }}>
               <img src="/images/icon/filter.png" />
             </Box>
@@ -211,34 +220,69 @@ const Filter = () => {
               </Typography>
             </Box>
             <Box pr="10px" sx={{ borderBottom: "1px solid #EEEEEE" }}>
-              <Box mt={'10px'} sx={{ display: "flex", flexWrap: "wrap", justifyContent:'space-evenly',}}>
+              <Box
+                mt={"10px"}
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "space-evenly",
+                }}
+              >
                 {priceFilter.map((item, i) => (
-                  <Box
-                    sx={{
-                      minWidth: "92px",
-                      my:'10px',
-                      height: "31px",
-                      borderRadius: "10px",
-                      border: "1px solid #4ECCA3",
-                      display: "flex",
-                      justifyContent: "space-around",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Box m={1}>
-                      <Typography fontSize={'15px'} fontWeight={0}>{item}</Typography>
-                    </Box>
-                    <Box sx={{ display: "flex", alignItems: "center", m:'5px' }}>
-                      <CloseIcon sx={{ color: "red", fontSize: "16px" }} />
-                    </Box>
-                  </Box>
+                  <>
+                    {item.status ? (
+                      <Box
+                        sx={{
+                          minWidth: "92px",
+                          my: "10px",
+                          height: "31px",
+                          borderRadius: "10px",
+                          border: "1px solid #4ECCA3",
+                          display: "flex",
+                          justifyContent: "space-around",
+                          alignItems: "center",
+                        }}
+                      >
+                        <Box m={1}>
+                          <Typography fontSize={"15px"} fontWeight={0}>
+                            {item.value}
+                          </Typography>
+                        </Box>
+                        <Box
+                          sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            m: "5px",
+                          }}
+                        >
+                          <CloseIcon
+                            onClick={() => handleChange(i)}
+                            sx={{
+                              color: "red",
+                              fontSize: "16px",
+                              "&:hover": {
+                                cursor: "pointer",
+                              },
+                            }}
+                          />
+                        </Box>
+                      </Box>
+                    ) : (
+                      <></>
+                    )}
+                  </>
                 ))}
               </Box>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
-                {filterArray.map((item, i) => (
+                {priceFilter.map((item, i) => (
                   <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <Checkbox type={"checkbox"} value={true} onChange={(event) => handleChange(event)} sx={{ color: "#C2C2C2" }} />
-                    <Typography>{item}</Typography>
+                    <Checkbox
+                      checked={item.status}
+                      type={"checkbox"}
+                      onChange={() => handleChange(i)}
+                      sx={{ color: "#C2C2C2" }}
+                    />
+                    <Typography>{item.value}</Typography>
                   </Box>
                 ))}
               </Box>
@@ -498,11 +542,20 @@ const Filter = () => {
                 </Box>
               </Box>
               <Box>
-                <TextField
-                  sx={{ backgroundColor: "colors.white" }}
+                <input
+                  type="text"
+                  style={{
+                    width: "186px ",
+                    height: "42px",
+                    backgroundColor: "#EEEEEE",
+                    borderRadius: "5px",
+                    border: "none",
+                    textAlign: "center",
+                    "&:hover": {
+                      border: "none",
+                    },
+                  }}
                   placeholder="جستجو در میان طرح های کاربر"
-                  id="outlined-basic"
-                  variant="outlined"
                 />
               </Box>
             </Box>
@@ -537,9 +590,7 @@ const Filter = () => {
               ))}
             </Box>
             <Box>
-              <Stack spacing={2}>
-                <Pagination count={3} variant="outlined" shape="rounded" />
-              </Stack>
+              <Mypagination />
             </Box>
           </Grid>
         </Grid>

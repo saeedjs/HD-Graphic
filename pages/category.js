@@ -5,8 +5,8 @@ const category = () => {
   return (
     <>
       <Category />
-      {/* <HeaderCategory /> */}
-      {/* <SingleProduct /> */}
+      <HeaderCategory />
+      <SingleProduct />
     </>
   );
 };
