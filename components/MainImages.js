@@ -11,7 +11,7 @@ const Mainimages = () => {
           sx={{
             borderRadius: "10px",
             backgroundImage:
-              "linear-gradient(to right, #FBFFC2 50%, #DFFFF5 50%)",
+              "linear-gradient(to right, #FFEE94 , #FBFFC2 50%, #DFFFF5 , #70FDFF 50%)",
             width: "980px",
             height: "179px",
             display: "flex",

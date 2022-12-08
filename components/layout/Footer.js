@@ -36,7 +36,7 @@ const Footer = () => {
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Box>
-                        <Typography sx={{ fontSize: "15px", fontWeight: 1000 }}>
+                        <Typography sx={{ fontSize: "14px", lineHeight:'2' }}>
                           برای دریافت جدیدترین تخفیف ها و تغییرات اچ دی گرافیک
                           در ایمیل با وارد کردن ایمیل خود در خبرنامه اچ دی
                           گرافیک عضو شوید
@@ -52,6 +52,7 @@ const Footer = () => {
                             maxWidth: "323px",
                             backgroundColor: "#FFFFFF",
                             borderRadius: "0px 3px 3px 0px",
+                            fontFamily:'dana'
                           }}
                           placeholder={"آدرس ایمیل خود را وارد کنید"}
                         ></TextField>
@@ -77,7 +78,7 @@ const Footer = () => {
                   <List>
                     <ListItem sx={{ py: 1, pb: 3 }}>
                       <Box>
-                        <Typography sx={{ fontWeight: 1000, fontSize: "17px" }}>
+                        <Typography sx={{ fontSize: "14px" }}>
                           خدمات مشتریان
                         </Typography>
                       </Box>
@@ -116,7 +117,7 @@ const Footer = () => {
                   <List>
                     <ListItem sx={{ py: 1, pb: 3 }}>
                       <Box>
-                        <Typography sx={{ fontWeight: 1000, fontSize: "17px" }}>
+                        <Typography sx={{ fontSize: "14px" }}>
                           اچ دی گرافیک
                         </Typography>
                       </Box>
@@ -155,7 +156,7 @@ const Footer = () => {
                   <List>
                     <ListItem sx={{ py: 1, pb: 3 }}>
                       <Box>
-                        <Typography sx={{ fontWeight: 1000, fontSize: "17px" }}>
+                        <Typography sx={{ fontSize: "14px" }}>
                           نماد ها و افتخارات
                         </Typography>
                       </Box>
