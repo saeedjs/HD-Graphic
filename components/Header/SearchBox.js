@@ -48,6 +48,7 @@ export default function SearchBox() {
                 outline: "none",
                 backgroundColor: "transparent",
                 fontSize: "1rem",
+                width: "200%",
               }}
               placeholder="جستجو برای آیکون ، تصویر، فایل لایه باز"
               onChange={(e) => setValue(e.target.value)}
