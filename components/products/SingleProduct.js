@@ -5,6 +5,10 @@ import ImageSearchIcon from "@mui/icons-material/ImageSearch";
 import Link from "next/link";
 import SearchBox from "../category/SearchBox";
 
+
+
+
+
 const SingleProduct = () => {
   return (
     <>

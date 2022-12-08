@@ -5,51 +5,53 @@ const HeaderCategory = () => {
     <>
       <Box
         sx={{
-          background: "url(./images/ss.png)",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "100% 100%",
+          backgroundColor: "",
           width: "100%",
-          height: "500px",
+          height: "30%",
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
+          p: 5,
         }}
       >
+        <img sx={{ position: "absolute" }} src="./images/dv.png" />
         <Box
           sx={{
-            overflow: "hidden",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "space-around",
+            width: "50%",
+            height: "500px",
+            overFlow: "hidden",
           }}
         >
-          <Box sx={{ display: "flex", justifyContent: "start" }}>
-            <Typography
-              variant={"h4"}
-              sx={{
-                fontSize: {
-                  lg: "20px",
-                  md: "15px",
-                  sm: "15px",
-                  xs: "13px",
-                },
-                marginBottom: "10px",
-                marginLeft: "132px",
-              }}
-            >
-              بهترین قالب های اینستاگرام
-            </Typography>
-          </Box>
           <Typography
-            sx={{ width: "30%", fontSize: "15px" }}
-            variant="h6"
-            color="initial"
+            sx={{
+              fontSize: {
+                lg: "24px",
+                md: "22px",
+                sm: "20px",
+                xs: "18px",
+              },
+              fontWeight: "bold",
+            }}
           >
-            رم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
-            از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و و
-            سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متروزنامه و مجله در
-            ستون و و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و مت
+            بهترین قالب اینستاگرام
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: {
+                lg: "14px",
+                md: "12px",
+                sm: "10px",
+                xs: "8px",
+              },
+              fontWeight: "small",
+            }}
+          >
+            ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+            کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی
+            در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را
+            می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
+            الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد{" "}
           </Typography>
         </Box>
       </Box>

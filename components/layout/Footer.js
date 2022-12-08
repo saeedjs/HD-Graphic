@@ -84,28 +84,28 @@ const Footer = () => {
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
+                        <Typography sx={{ fontSize: "14px" }}>
                           حساب کاربری من
                         </Typography>
                       </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
+                        <Typography sx={{ fontSize: "14px" }}>
                           پاسخ به سوالات متداول
                         </Typography>
                       </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
+                        <Typography sx={{ fontSize: "14px" }}>
                           حریم خصوصی
                         </Typography>
                       </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
+                        <Typography sx={{ fontSize: "14px" }}>
                           قوانین استفاده
                         </Typography>
                       </Link>
@@ -123,28 +123,28 @@ const Footer = () => {
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
+                        <Typography sx={{ fontSize: "14px" }}>
                           درباره ما
                         </Typography>
                       </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
+                        <Typography sx={{ fontSize: "14px" }}>
                           راهنمای خرید محصول
                         </Typography>
                       </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
+                        <Typography sx={{ fontSize: "14px" }}>
                           راهنمای پرداخت
                         </Typography>
                       </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
+                        <Typography sx={{ fontSize: "14px" }}>
                           تماس با ما
                         </Typography>
                       </Link>
@@ -244,7 +244,7 @@ const Footer = () => {
           }}
         >
           <Box sx={{ mr: 7 }}>
-            <Typography sx={{ fontSize: "15px", fontWeight: 800 }}>
+            <Typography sx={{ fontSize: "14px" }}>
               کلیه حقوق این سایت متعلق به مجموعه ریحانی میباشد
             </Typography>
           </Box>
