@@ -145,15 +145,15 @@ const Filter = () => {
     const copyCheckButtonState = [...checkButtonState];
     const findDisplay = copyCheckButtonState.find((a) => a.id == id);
     if (findDisplay.status) {
-      (findDisplay.backColor = "white"),
-        (findDisplay.color = "black"),
-        (findDisplay.variant = "outlined"),
-        (findDisplay.status = false);
+      findDisplay.backColor = "white";
+      findDisplay.color = "black";
+      findDisplay.variant = "outlined";
+      findDisplay.status = false;
     } else {
-      (findDisplay.backColor = "colors.green"),
-        (findDisplay.color = "white"),
-        (findDisplay.variant = "contained"),
-        (findDisplay.status = true);
+      findDisplay.backColor = "colors.green";
+      findDisplay.color = "white";
+      findDisplay.variant = "contained";
+      findDisplay.status = true;
     }
     setCheckButton(copyCheckButtonState);
   };
@@ -186,16 +186,12 @@ const Filter = () => {
               <img src="/images/icon/filter.png" />
             </Box>
             <Box>
-              <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
-                تنظیمات
-              </Typography>
+              <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>تنظیمات</Typography>
             </Box>
           </Box>
           <Box>
             <Box>
-              <Typography sx={{ color: "#AAAAAA" }}>
-                تعداد 6500 طرح آماده
-              </Typography>
+              <Typography sx={{ color: "#AAAAAA" }}>تعداد 6500 طرح آماده</Typography>
             </Box>
           </Box>
         </Box>
@@ -303,9 +299,7 @@ const Filter = () => {
                   <img wid src="/images/icon/color.png" />
                 </Box>
                 <Box>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
-                    رنگ
-                  </Typography>
+                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>رنگ</Typography>
                 </Box>
               </Box>
               <Box>
@@ -316,6 +310,9 @@ const Filter = () => {
                     height="20px"
                     mr="7px"
                     sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
                       borderRadius: "100%",
                       backgroundColor: "colors.black",
                       "&:hover": {
@@ -337,6 +334,9 @@ const Filter = () => {
                     height="20px"
                     mr="7px"
                     sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
                       borderRadius: "100%",
                       backgroundColor: "colors.green",
                       "&:hover": {
@@ -358,6 +358,9 @@ const Filter = () => {
                     height="20px"
                     mr="7px"
                     sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
                       borderRadius: "100%",
                       backgroundColor: "colors.white",
                       "&:hover": {
@@ -380,6 +383,9 @@ const Filter = () => {
                     mr="7px"
                     sx={{
                       borderRadius: "100%",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
                       backgroundColor: "colors.pink",
                       "&:hover": {
                         cursor: "pointer",
@@ -401,6 +407,9 @@ const Filter = () => {
                     mr="7px"
                     sx={{
                       borderRadius: "100%",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
                       backgroundColor: "colors.gray",
                       "&:hover": {
                         cursor: "pointer",
@@ -433,9 +442,7 @@ const Filter = () => {
                   <img src="/images/icon/license.png" />
                 </Box>
                 <Box>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
-                    لایسنس
-                  </Typography>
+                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>لایسنس</Typography>
                 </Box>
               </Box>
               <Box>
@@ -536,9 +543,7 @@ const Filter = () => {
                   <img src="/images/icon/search.png" />
                 </Box>
                 <Box>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
-                    جستجو
-                  </Typography>
+                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>جستجو</Typography>
                 </Box>
               </Box>
               <Box>
@@ -560,13 +565,7 @@ const Filter = () => {
               </Box>
             </Box>
           </Grid>
-          <Grid
-            item
-            xs={12}
-            md={9}
-            xl={10}
-            sx={{ borderRight: "1px solid #EEEEEE" }}
-          >
+          <Grid item xs={12} md={9} xl={10} sx={{ borderRight: "1px solid #EEEEEE" }}>
             <Box
               sx={{
                 display: "flex",
