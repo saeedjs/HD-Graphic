@@ -36,10 +36,9 @@ const Footer = () => {
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Box>
-                        <Typography sx={{ fontSize: "14px", lineHeight:'2' }}>
-                          برای دریافت جدیدترین تخفیف ها و تغییرات اچ دی گرافیک
-                          در ایمیل با وارد کردن ایمیل خود در خبرنامه اچ دی
-                          گرافیک عضو شوید
+                        <Typography sx={{ fontSize: "14px", lineHeight: "2" }}>
+                          برای دریافت جدیدترین تخفیف ها و تغییرات اچ دی گرافیک در ایمیل با وارد کردن
+                          ایمیل خود در خبرنامه اچ دی گرافیک عضو شوید
                         </Typography>
                       </Box>
                     </ListItem>
@@ -52,7 +51,7 @@ const Footer = () => {
                             maxWidth: "323px",
                             backgroundColor: "#FFFFFF",
                             borderRadius: "0px 3px 3px 0px",
-                            fontFamily:'dana'
+                            fontFamily: "dana",
                           }}
                           placeholder={"آدرس ایمیل خود را وارد کنید"}
                         ></TextField>
@@ -78,37 +77,27 @@ const Footer = () => {
                   <List>
                     <ListItem sx={{ py: 1, pb: 3 }}>
                       <Box>
-                        <Typography sx={{ fontSize: "14px" }}>
-                          خدمات مشتریان
-                        </Typography>
+                        <Typography sx={{ fontSize: "14px" }}>خدمات مشتریان</Typography>
                       </Box>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "14px" }}>
-                          حساب کاربری من
-                        </Typography>
+                        <Typography sx={{ fontSize: "14px" }}>حساب کاربری من</Typography>
                       </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "14px" }}>
-                          پاسخ به سوالات متداول
-                        </Typography>
+                        <Typography sx={{ fontSize: "14px" }}>پاسخ به سوالات متداول</Typography>
                       </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "14px" }}>
-                          حریم خصوصی
-                        </Typography>
+                        <Typography sx={{ fontSize: "14px" }}>حریم خصوصی</Typography>
                       </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "14px" }}>
-                          قوانین استفاده
-                        </Typography>
+                        <Typography sx={{ fontSize: "14px" }}>قوانین استفاده</Typography>
                       </Link>
                     </ListItem>
                   </List>
@@ -117,37 +106,27 @@ const Footer = () => {
                   <List>
                     <ListItem sx={{ py: 1, pb: 3 }}>
                       <Box>
-                        <Typography sx={{ fontSize: "14px" }}>
-                          اچ دی گرافیک
-                        </Typography>
+                        <Typography sx={{ fontSize: "14px" }}>اچ دی گرافیک</Typography>
                       </Box>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "14px" }}>
-                          درباره ما
-                        </Typography>
+                        <Typography sx={{ fontSize: "14px" }}>درباره ما</Typography>
                       </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "14px" }}>
-                          راهنمای خرید محصول
-                        </Typography>
+                        <Typography sx={{ fontSize: "14px" }}>راهنمای خرید محصول</Typography>
                       </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "14px" }}>
-                          راهنمای پرداخت
-                        </Typography>
+                        <Typography sx={{ fontSize: "14px" }}>راهنمای پرداخت</Typography>
                       </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "14px" }}>
-                          تماس با ما
-                        </Typography>
+                        <Typography sx={{ fontSize: "14px" }}>تماس با ما</Typography>
                       </Link>
                     </ListItem>
                   </List>
@@ -156,9 +135,7 @@ const Footer = () => {
                   <List>
                     <ListItem sx={{ py: 1, pb: 3 }}>
                       <Box>
-                        <Typography sx={{ fontSize: "14px" }}>
-                          نماد ها و افتخارات
-                        </Typography>
+                        <Typography sx={{ fontSize: "14px" }}>نماد ها و افتخارات</Typography>
                       </Box>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
