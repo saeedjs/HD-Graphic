@@ -7,6 +7,7 @@ import Collections from "./Collections";
 const Collection = () => {
   return (
     <>
+      <CollectionBanner />
       <Container>
         <Collections />
       </Container>
