@@ -1,12 +1,19 @@
+import { Box, Grid } from "@mui/material";
+import SingleCollection from "./SingleCollection";
+
 const CollectionComp = () => {
   return (
     <>
       <Box>
         <Box>title</Box>
-        <Grid>
-          <Grid item xs={6}></Grid>
-          <Grid item xs={6}></Grid>
-        </Grid>
+        <Box sx={{display:'flex'}}>
+          <Box>
+            <SingleCollection subc={"موکاپ های خرید"} />
+          </Box>
+          <Box>
+            <SingleCollection subc={"پس زمینه ای فانتزی"} />
+          </Box>
+        </Box>
       </Box>
     </>
   );

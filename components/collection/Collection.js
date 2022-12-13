@@ -1,16 +1,14 @@
-import { Grid } from "swiper";
+import { Grid } from "@mui/material";
+import { Container } from "@mui/system";
+import CollectionComp from "./CollectionComp";
+import Collections from "./Collections";
 
 const Collection = () => {
   return (
     <>
-      <Box>
-        <Grid>
-          <Grid item xs={6}></Grid>
-          <Grid item xs={6}></Grid>
-          <Grid item xs={6}></Grid>
-          <Grid item xs={6}></Grid>
-        </Grid>
-      </Box>
+      <Container>
+        <Collections />
+      </Container>
     </>
   );
 };
