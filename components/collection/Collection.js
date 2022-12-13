@@ -6,7 +6,7 @@ import Collections from "./Collections";
 const Collection = () => {
   return (
     <>
-      <Container>
+      <Container maxWidth={'xxl'}>
         <Collections />
       </Container>
     </>
