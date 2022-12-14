@@ -8,6 +8,7 @@ import SpecialCollection from "./SpecialCollection";
 const Collection = () => {
   return (
     <>
+      <CollectionBanner />
       <Container maxWidth={"xl"}>
         <SpecialCollection />
         <Collections />
@@ -15,5 +16,4 @@ const Collection = () => {
     </>
   );
 };
-
 export default Collection;

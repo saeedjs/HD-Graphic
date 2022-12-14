@@ -5,10 +5,6 @@ import ImageSearchIcon from "@mui/icons-material/ImageSearch";
 import Link from "next/link";
 import SearchBox from "../category/SearchBox";
 
-
-
-
-
 const SingleProduct = () => {
   return (
     <>
@@ -162,7 +158,7 @@ const SingleProduct = () => {
                     </Box>
                     <Typography
                       sx={{
-                        fontSize: "15px",
+                        fontSize: "12px",
                       }}
                       color={"#CBCBCB"}
                     >
@@ -185,7 +181,7 @@ const SingleProduct = () => {
                         sx={{
                           display: "flex",
 
-                          fontSize: "16px",
+                          fontSize: "14px",
                           fontWeight: "1000",
                           pt: "10px",
                           color: "colors.green",
@@ -202,7 +198,13 @@ const SingleProduct = () => {
                             border: "0",
                           }}
                         >
-                          مشاهده
+                          <span
+                            sx={{
+                              fontSize: "20px",
+                            }}
+                          >
+                            مشاهده{" "}
+                          </span>
                         </button>
                       </Typography>
                     </Box>
@@ -219,7 +221,7 @@ const SingleProduct = () => {
                           marginTop: "10px",
                           maxWidth: "255px",
                           p: "8px",
-                          fontSize: "17px",
+                          fontSize: "14px",
                         }}
                       >
                         لورم ایپسوم متن ساختگی با تولید نامه و مجله در ستون و
