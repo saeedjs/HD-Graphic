@@ -19,8 +19,8 @@ export default function SearchBox() {
   };
 
   return (
-    <Container>
-      <Box sx={{ mt: 4, mb: 16, display: "flex", justifyContent: "center", width: "100%" }}>
+    <Container maxWidth={"xl"}>
+      <Box sx={{ my: 3, display: "flex", justifyContent: "center", width: "100%" }}>
         <Grid container>
           <Grid
             item
@@ -55,7 +55,7 @@ export default function SearchBox() {
               justifyContent: "center",
               backgroundColor: "#f2f2f2",
               alignItems: "center",
-              borderRadius: "10px",
+              borderRadius: "5px",
               width: {
                 xs: "100%",
                 sm: "70%",
@@ -72,6 +72,8 @@ export default function SearchBox() {
                   backgroundColor: "transparent",
                   fontSize: "1rem",
                   width: "200%",
+                  fontFamily: "iranYekan",
+                  paddingRight: "15px",
                 }}
                 placeholder="جستجو کلمه کلیدی..."
                 onChange={(e) => setValue(e.target.value)}
@@ -154,8 +156,12 @@ export default function SearchBox() {
             </Box>
             <Box
               sx={{
-                backgroundColor: "e6e6e6",
+                backgroundColor: "#e6e6e6",
                 paddind: "4px",
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 borderRadius: "10px 0 0 10px",
                 textAlign: "center",
               }}
