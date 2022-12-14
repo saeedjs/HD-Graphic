@@ -6,12 +6,13 @@ import { Container, Paper, CardActionArea, Grid } from "@mui/material";
 import Image from "next/image";
 import { Box } from "@mui/system";
 import Link from "next/link";
+import TitleComponents from "../TitleComponents";
 
 const Productmain4 = () => {
   return (
     <>
       <Container justifyContent="center">
-        <Box
+        {/* <Box
           sx={{
             padding: "40px",
           }}
@@ -45,8 +46,17 @@ const Productmain4 = () => {
           sx={{
             padding: "10px",
           }}
+        ></Box> */}
+        <TitleComponents
+          title={"موکاپ"}
+          mount={"400 طرح  آماده"}
+          mcolor={"#AAAAAA"}
+        />
+        <Box
+          sx={{
+            mt: 2,
+          }}
         ></Box>
-
         <Grid container>
           <Grid item xs={3} sm={3} md={3} lg={6}>
             <img
@@ -69,7 +79,7 @@ const Productmain4 = () => {
                 marginLeft: "10px",
                 margin: "0",
               }}
-              src="./images/qwqwszx.png"
+              src="./images/vfx.png"
             />
           </Grid>
           <Grid item xs={3} sm={3} md={3} lg={6}>
