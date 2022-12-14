@@ -46,7 +46,11 @@ const Productmain2 = () => {
             padding: "10px",
           }}
         ></Box> */}
-        <TitleComponents title={"موکاپ"} mount={"400 طرح آماده"} />
+        <TitleComponents
+          title={"موکاپ"}
+          mount={"400 طرح آماده"}
+          mcolor={"#AAAAAA"}
+        />
         <Box
           sx={{
             mt: 2,
