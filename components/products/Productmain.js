@@ -141,7 +141,7 @@ const ProductMain = () => {
                 padding: "0",
                 marginRight: "10px",
               }}
-              src="./images/www.png"
+                src="./images/asds.png"
             />
           </Grid>
           <Grid item sx={{ margin: "3px" }}>
@@ -152,7 +152,7 @@ const ProductMain = () => {
                 padding: "0",
                 marginRight: "10px",
               }}
-              src="./images/www.png"
+              src="./images/asd.png"
             />
           </Grid>
         </Grid>
@@ -224,7 +224,7 @@ const ProductMain = () => {
             }}
           />
         </Grid>
-      </Grid>
+      </Grid>   
     </>
   );
 };

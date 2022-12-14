@@ -48,7 +48,7 @@ const Productmain4 = () => {
         ></Box>
 
         <Grid container>
-          <Grid item xs={6} sm={6} md={6} lg={6}>
+          <Grid item xs={3} sm={3} md={3} lg={6}>
             <img
               style={{
                 width: "100%",
@@ -60,7 +60,7 @@ const Productmain4 = () => {
               src="./images/dcxz.png"
             />
           </Grid>
-          <Grid item xs={6} sm={6} md={6} lg={6}>
+          <Grid item xs={3} sm={3} md={3} lg={6}>
             <img
               style={{
                 width: "100%",
@@ -72,7 +72,7 @@ const Productmain4 = () => {
               src="./images/qwqwszx.png"
             />
           </Grid>
-          <Grid item xs={6} sm={6} md={6} lg={6}>
+          <Grid item xs={3} sm={3} md={3} lg={6}>
             <img
               style={{
                 width: "100%",
@@ -84,7 +84,7 @@ const Productmain4 = () => {
               src="./images/vfx.png"
             />
           </Grid>
-          <Grid item xs={6} sm={6} md={6} lg={6}>
+          <Grid item xs={3} sm={3} md={3} lg={6}>
             <img
               style={{
                 width: "100%",
