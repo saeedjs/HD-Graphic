@@ -7,7 +7,7 @@ const SingleCollection = (props) => {
       <Box>
         <CollectionImg data={props.data} />
       </Box>
-      <Box sx={{display:'flex', justifyContent:'space-between', mt:'10px'}}>
+      <Box sx={{display:'flex', justifyContent:'space-between', my:'10px'}}>
         <Box>
             <Typography sx={{fontSize:'14px', fontWeight:'bold', fontFamily:'iranYekan', color:'colors.gray'}}>{props.data.subc}</Typography>
         </Box>
