@@ -7,7 +7,7 @@ const CollectionComp = (props) => {
     <>
       <Box>
         <Grid container sx={{justifyContent:'center'}}>
-          <Grid xl={10} sm={12} xs={10}>
+          <Grid item xl={10} sm={12} xs={10}>
             <Box>
               <TitleComponents
                 title={props.data.title}
@@ -15,7 +15,7 @@ const CollectionComp = (props) => {
               />
             </Box>
           </Grid>
-          <Grid container xl={10} sm={12} xs={12} sx={{justifyContent:{md:'space-between', xs:'space-around'}, mt:'20px'}}>
+          <Grid item container xl={10} sm={12} xs={12} sx={{justifyContent:{md:'space-between', xs:'space-around'}, mt:'20px'}}>
               <Box>
                 <SingleCollection data={props.data[0]} />
               </Box>

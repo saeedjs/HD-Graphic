@@ -25,7 +25,10 @@ const TitleComponents = (props) => {
             </Box>
           </Box>
         </Box>
-        <Box>
+        <Box sx={{display:{
+          md:"block",
+          xs:'none'
+        }}}>
           <Box>
             <Typography sx={{fontSize:'14px', color:'colors.green'}} >{props.mount}</Typography>
           </Box>
