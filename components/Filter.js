@@ -1,6 +1,7 @@
 import { Label } from "@mui/icons-material";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
+import { Masonry } from "@mui/lab";
 import {
   Button,
   Checkbox,
@@ -23,24 +24,31 @@ const Filter = () => {
   const itemArray = [
     {
       src: "eee.png",
+      height:'200px'
     },
     {
       src: "eee.png",
+      height:'200px'
     },
     {
       src: "eee.png",
+      height:'200px'
     },
     {
       src: "eee.png",
+      height:'200px'
     },
     {
       src: "eee.png",
+      height:'200px'
     },
     {
       src: "eee.png",
+      height:'200px'
     },
     {
       src: "eee.png",
+      height:'200px'
     },
     {
       src: "ewe.png",
@@ -574,18 +582,23 @@ const Filter = () => {
               }}
             >
               {item.map((item, i) => (
-                <Link href="#">
-                  <Box sx={{ m: "5px" }}>
-                    <img
-                      style={{
-                        maxWidth: "200px !important",
-                        height: "200px !important",
-                      }}
-                      src={`/images/${item.src}`}
-                      loading="lazy"
-                    />
+                <Masonry columns={4} spacing={2}>
+                  <Box key={i} sx={{ height:item.height}}>
+                    {i + 1}
                   </Box>
-                </Link>
+              </Masonry>
+                // <Link href="#">
+                //   <Box sx={{ m: "5px" }}>
+                //     <img
+                //       style={{
+                //         maxWidth: "200px !important",
+                //         height: "200px !important",
+                //       }}
+                //       src={`/images/${item.src}`}
+                //       loading="lazy"
+                //     />
+                //   </Box>
+                // </Link>
               ))}
             </Box>
             <Box>
