@@ -125,6 +125,59 @@ const SingleProduct = () => {
                 </svg>
                 <span style={{ margin: "10px" }}>فرمت فایل:Eps,PSD</span>
               </Typography>
+              <Box
+                sx={{
+                  border: 1,
+                  borderColor: "#E2E2E2",
+                  width: "90%",
+                  height: "110px",
+                  backgroundColor: "#F8F8F8",
+                  borderRadius: "10px",
+                  mr: 1,
+                  padding: "5px",
+                }}
+              >
+                <Box sx={{ display: "flex", height: "100%" }}>
+                  <Box
+                    xs={12}
+                    sm={12}
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      flexDirection: "column",
+
+                      m: 1,
+                    }}
+                  >
+                    <Box>
+                      <img
+                        maxWidth="84px"
+                        height="84px"
+                        src="/images/15412.png"
+                      />
+                    </Box>
+                  </Box>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <Typography sx={{ mt: 2, mr: 3 }} color={"colors.pink"}>
+                      سفارش چاپ همین حالا {"      "} !{" "}
+                    </Typography>
+                    <Typography
+                      fontSize={"14px"}
+                      color={"#C2C2C2"}
+                      sx={{ mt: 2, mr: 1.5 }}
+                      fontWeight={"small"}
+                    >
+                      شما می توانید همین فایل را چاپ نمایید
+                    </Typography>
+                  </Box>
+                </Box>
+              </Box>
 
               <Box
                 sx={{
@@ -134,6 +187,7 @@ const SingleProduct = () => {
                   height: "130px",
                   backgroundColor: "#fff",
                   borderRadius: "10px",
+                  mt: 1,
                   mr: 1,
                   padding: "5px",
                 }}

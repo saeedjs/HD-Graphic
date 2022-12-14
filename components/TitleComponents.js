@@ -4,7 +4,12 @@ import { propsToClassKey } from "@mui/styles";
 const TitleComponents = (props) => {
   return (
     <>
-      <Box sx={{ display: "flex", justifyContent:{md:'space-between', xs:'space-around'}}}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: { md: "space-between", xs: "space-around" },
+        }}
+      >
         <Box>
           <Box sx={{ display: "flex" }}>
             <Box
@@ -27,7 +32,9 @@ const TitleComponents = (props) => {
         </Box>
         <Box>
           <Box>
-            <Typography sx={{fontSize:'14px', color:'colors.green'}} >{props.mount}</Typography>
+            <Typography sx={{ fontSize: "14px", color: "colors." }}>
+              {props.mount}
+            </Typography>
           </Box>
         </Box>
       </Box>
