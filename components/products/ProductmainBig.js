@@ -7,9 +7,9 @@ const ProductmainBig = () => {
         <img
           style={{
             width: "100%",
-            height: "auto",
+            height: "480px",
             padding: "0",
-            marginRight: {lg:"-20px",md:"0px",sm:"0px",xs:"0px  "},
+
             justifyContent: "center",
             alignItem: "center",
           }}
