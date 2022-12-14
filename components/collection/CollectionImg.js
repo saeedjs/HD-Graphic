@@ -1,7 +1,6 @@
 import { Box } from "@mui/system";
 
 const CollectionImg = (props) => {
-    console.log(props)
   return (
     <>
       <Box sx={{display:'flex'}}>

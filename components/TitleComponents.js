@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { propsToClassKey } from "@mui/styles";
+import Link from "next/link";
 
 const TitleComponents = (props) => {
   return (
@@ -21,18 +22,44 @@ const TitleComponents = (props) => {
               }}
             ></Box>
             <Box sx={{ mr: "10px" }}>
-              <Typography sx={{ fontSize: "16px" }}>{props.title}</Typography>
+              <Typography
+                sx={{
+                  color: props.tcolor ? props.tcolor : "colors.dark",
+                  fontSize: "16px",
+                }}
+              >
+                {props.title}
+              </Typography>
             </Box>
             <Box sx={{ mr: "35px" }}>
-              <Typography sx={{ color: "colors.green", fontSize: "14px" }}>
-                مشاهده همه
-              </Typography>
+              <Link href={"#"}>
+                <Typography
+                  sx={{
+                    color: props.allcolor ? props.alltcolor : "colors.green",
+                    fontSize: "14px",
+                  }}
+                >
+                  مشاهده همه
+                </Typography>
+              </Link>
             </Box>
           </Box>
         </Box>
-        <Box>
+        <Box
+          sx={{
+            display: {
+              md: "block",
+              xs: "none",
+            },
+          }}
+        >
           <Box>
-            <Typography sx={{ fontSize: "14px", color: "colors." }}>
+            <Typography
+              sx={{
+                fontSize: "14px",
+                color: props.mcolor ? props.mcolor : "colors.green",
+              }}
+            >
               {props.mount}
             </Typography>
           </Box>
