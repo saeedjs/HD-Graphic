@@ -5,7 +5,6 @@ const CollectionBanner = () => {
       <Box
         sx={{
           backgroundImage: "url(images/back-img-c.png)",
-          backgroundRepeat: "no-repeat",
           objectFit: "cover",
           backgroundPosition: "center",
           width: "100%",
@@ -26,6 +25,7 @@ const CollectionBanner = () => {
                 xs: "100%",
                 md: "35%",
               },
+              maxWidth: "400px",
               fontSize: "12px",
               textAlign: "center",
               lineHeight: "2",
