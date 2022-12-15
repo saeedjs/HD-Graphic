@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Box } from "@mui/system";
 import ProductmainBig from "./ProductmainBig";
+import TitleComponents from "../TitleComponents";
 
 const ProductMain = () => {
   return (
@@ -130,8 +131,7 @@ const ProductMain = () => {
               500 طرح آماده
             </Typography>
           </Box>
-        </Box>
-
+        </Box>{" "}
         <Grid justifyContent={"center"} item xs={4} sm={2} md={2} lg={2}>
           <Grid item sx={{ margin: "3px" }}>
             <img
@@ -141,7 +141,7 @@ const ProductMain = () => {
                 padding: "0",
                 marginRight: "10px",
               }}
-                src="./images/asds.png"
+              src="./images/asds.png"
             />
           </Grid>
           <Grid item sx={{ margin: "3px" }}>
@@ -156,7 +156,6 @@ const ProductMain = () => {
             />
           </Grid>
         </Grid>
-
         <Grid
           alignItems={"center"}
           justifyContent={"center"}
@@ -213,18 +212,18 @@ const ProductMain = () => {
             />
           </Grid>
         </Grid>
-        <Grid item xs={12} sm={12} md={12} lg={10}>
-          <img
-            src="/images/group.png"
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-              padding: "0",
-              marginRight: "10px",
-            }}
-          />
-        </Grid>
-      </Grid>   
+      </Grid>
+      <Grid item xs={12} sm={12} md={12} lg={10}>
+        <img
+          src="/images/group.png"
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+            padding: "0",
+            marginRight: "10px",
+          }}
+        />
+      </Grid>
     </>
   );
 };

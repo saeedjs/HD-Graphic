@@ -1,4 +1,5 @@
 import { Grid } from "@mui/material";
+import TitleComponents from "../TitleComponents";
 
 const ProductmainBig = () => {
   return (
@@ -7,13 +8,9 @@ const ProductmainBig = () => {
         <img
           style={{
             width: "100%",
-            height: "auto",
             padding: "0",
-            marginRight: {lg:"-20px",md:"0px",sm:"0px",xs:"0px  "},
-            justifyContent: "center",
-            alignItem: "center",
           }}
-          src="./images/654.png"
+          src="./images/65454.png"
         />
       </Grid>
     </>
