@@ -12,7 +12,7 @@ import TitleComponents from "../TitleComponents";
 const ProductMain = () => {
   return (
     <>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", mb: 2 }}>
         <Box
           sx={{
             //
@@ -26,7 +26,7 @@ const ProductMain = () => {
           <Box
             height={"22px"}
             sx={{
-              marginRight: { lg: "90px", md: "20px", sm: "10px", xs: "5px" },
+              marginRight: { lg: "110px", md: "20px", sm: "10px", xs: "5px" },
               height: "22px",
               backgroundColor: "colors.green",
               width: "8px",
@@ -38,7 +38,6 @@ const ProductMain = () => {
           <Box sx={{ mr: "35px" }}>
             <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
           </Box>
-          <Box sx={{ mr: "50px" }}></Box>
         </Box>
         <Box
           sx={{
