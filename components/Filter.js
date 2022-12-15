@@ -1,7 +1,8 @@
 import { Label } from "@mui/icons-material";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
-import { Masonry } from "@mui/lab";
+import Masonry from "@mui/lab/Masonry";
+import Link from "next/link";
 import {
   Button,
   Checkbox,
@@ -9,7 +10,6 @@ import {
   Grid,
   ImageList,
   ImageListItem,
-  Link,
   Pagination,
   Radio,
   RadioGroup,
@@ -24,31 +24,24 @@ const Filter = () => {
   const itemArray = [
     {
       src: "eee.png",
-      height:'200px'
     },
     {
       src: "eee.png",
-      height:'200px'
     },
     {
       src: "eee.png",
-      height:'200px'
     },
     {
       src: "eee.png",
-      height:'200px'
     },
     {
       src: "eee.png",
-      height:'200px'
     },
     {
       src: "eee.png",
-      height:'200px'
     },
     {
       src: "eee.png",
-      height:'200px'
     },
     {
       src: "ewe.png",
@@ -194,12 +187,16 @@ const Filter = () => {
               <img src="/images/icon/filter.png" />
             </Box>
             <Box>
-              <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>تنظیمات</Typography>
+              <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
+                تنظیمات
+              </Typography>
             </Box>
           </Box>
           <Box>
             <Box>
-              <Typography sx={{ color: "#AAAAAA" }}>تعداد 6500 طرح آماده</Typography>
+              <Typography sx={{ color: "#AAAAAA" }}>
+                تعداد 6500 طرح آماده
+              </Typography>
             </Box>
           </Box>
         </Box>
@@ -307,7 +304,9 @@ const Filter = () => {
                   <img wid src="/images/icon/color.png" />
                 </Box>
                 <Box>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>رنگ</Typography>
+                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
+                    رنگ
+                  </Typography>
                 </Box>
               </Box>
               <Box>
@@ -450,7 +449,9 @@ const Filter = () => {
                   <img src="/images/icon/license.png" />
                 </Box>
                 <Box>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>لایسنس</Typography>
+                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
+                    لایسنس
+                  </Typography>
                 </Box>
               </Box>
               <Box>
@@ -551,7 +552,9 @@ const Filter = () => {
                   <img src="/images/icon/search.png" />
                 </Box>
                 <Box>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>جستجو</Typography>
+                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
+                    جستجو
+                  </Typography>
                 </Box>
               </Box>
               <Box>
@@ -573,33 +576,44 @@ const Filter = () => {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={12} md={9} xl={10} sx={{ borderRight: "1px solid #EEEEEE" }}>
-            <Box
-              sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "center",
-              }}
-            >
-              {item.map((item, i) => (
-                <Masonry columns={4} spacing={2}>
-                  <Box key={i} sx={{ height:item.height}}>
-                    {i + 1}
-                  </Box>
+          <Grid
+            item
+            xs={12}
+            md={9}
+            xl={10}
+            sx={{ borderRight: "1px solid #EEEEEE" }}
+          >
+            <Box sx={{ height: "100%" }}>
+              <Masonry
+                columns={{ xl: 6, lg: 4, md: 3, sm: 3, xs: 1 }}
+                spacing={0}
+                sx={{ mt: "15px" }}
+              >
+                {item.map((item, i) => (
+                  <Link href={"#"}>
+                    <Box
+                      key={i}
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        py: "10px",
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          width: { md: "200px", sm: "180px", xs: "200px" },
+                          height: { md: "200px", sm: "180px", xs: "200px" },
+                        }}
+                      >
+                        <img
+                          style={{ height: "100%", width: "100%" }}
+                          src={"/images/" + item.src}
+                        />
+                      </Box>
+                    </Box>
+                  </Link>
+                ))}
               </Masonry>
-                // <Link href="#">
-                //   <Box sx={{ m: "5px" }}>
-                //     <img
-                //       style={{
-                //         maxWidth: "200px !important",
-                //         height: "200px !important",
-                //       }}
-                //       src={`/images/${item.src}`}
-                //       loading="lazy"
-                //     />
-                //   </Box>
-                // </Link>
-              ))}
             </Box>
             <Box>
               <Mypagination />
