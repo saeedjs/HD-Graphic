@@ -16,27 +16,27 @@ const SingleProduct = () => {
           marginBottom: "30px",
         }}
       >
-        <Grid
-          container
-          style={{ borderBottom: "1px solid #E5E5E5", paddingBottom: "50px" }}
-        >
+        <Grid container style={{ borderBottom: "1px solid #E5E5E5", paddingBottom: "50px" }}>
           <Grid
             item
             sx={{
               display: "flex",
               justifyContent: "center",
-              margin: "33px",
-              marginLeft: "90px",
+              marginTop: "33px",
+              marginLeft: {
+                md: "20px",
+                lg: "90px",
+              },
             }}
             xs={12}
             sm={12}
             md={12}
-            lg={5.5}
+            lg={6}
           >
             <img
               style={{
                 maxWidth: "100%",
-                height: "100%",
+                height: "85%",
                 padding: "0",
                 marginRight: "0px",
               }}
@@ -65,8 +65,11 @@ const SingleProduct = () => {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "start",
-                justifyContent: "start",
+                alignItems: {
+                  xs: "center",
+                  lg: "start",
+                },
+                justifyContent: "center",
                 widht: "100%",
                 marginBottom: "25px",
               }}
@@ -87,13 +90,23 @@ const SingleProduct = () => {
                 بهترین قالب های اینستاگرام
               </Typography>
               <Typography
-                sx={{ width: "100%", fontSize: "15px", marginBottom: "30px" }}
+                sx={{
+                  width: {
+                    xs: "75%",
+                    lg: "100%",
+                  },
+                  fontSize: "15px",
+                  marginBottom: "30px",
+                  textAlign: {
+                    xs: "center",
+                    lg: "start",
+                  },
+                }}
                 variant="h6"
                 color="initial"
               >
-                رم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                استفاده از طراحان گرافیک است. چاپگرها واستفاده از طراحان
-                گرافاستفاده از طراحان
+                رم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                گرافیک است. چاپگرها واستفاده از طراحان گرافاستفاده از طراحان
               </Typography>
               <Typography
                 sx={{
@@ -129,7 +142,10 @@ const SingleProduct = () => {
                 sx={{
                   border: 1,
                   borderColor: "#E2E2E2",
-                  width: "90%",
+                  minWidth: {
+                    xs: "60%",
+                    lg: "98%",
+                  },
                   height: "110px",
                   backgroundColor: "#F8F8F8",
                   borderRadius: "10px",
@@ -145,16 +161,11 @@ const SingleProduct = () => {
                       display: "flex",
                       alignItems: "center",
                       flexDirection: "column",
-
                       m: 1,
                     }}
                   >
                     <Box>
-                      <img
-                        maxWidth="84px"
-                        height="84px"
-                        src="/images/15412.png"
-                      />
+                      <img maxWidth="84px" height="84px" src="/images/15412.png" />
                     </Box>
                   </Box>
                   <Box
@@ -162,11 +173,10 @@ const SingleProduct = () => {
                       display: "flex",
                       justifyContent: "center",
                       flexDirection: "column",
+                      alignItems: "center",
                     }}
                   >
-                    <Typography sx={{ mt: 2, mr: 3 }} color={"colors.pink"}>
-                      سفارش چاپ همین حالا {"      "} !{" "}
-                    </Typography>
+                    <Typography color={"colors.pink"}>سفارش چاپ همین حالا {"      "} ! </Typography>
                     <Typography
                       fontSize={"14px"}
                       color={"#C2C2C2"}
@@ -183,7 +193,10 @@ const SingleProduct = () => {
                 sx={{
                   border: 1,
                   borderColor: "#E2E2E2",
-                  width: "90%",
+                  minWidth: {
+                    xs: "50%",
+                    lg: "90%",
+                  },
                   height: "130px",
                   backgroundColor: "#fff",
                   borderRadius: "10px",
@@ -204,11 +217,7 @@ const SingleProduct = () => {
                     }}
                   >
                     <Box>
-                      <img
-                        maxWidth="84px"
-                        height="84px"
-                        src="/images/545.png"
-                      />
+                      <img maxWidth="84px" height="84px" src="/images/545.png" />
                     </Box>
                     <Typography
                       sx={{
@@ -223,9 +232,7 @@ const SingleProduct = () => {
                     <Box
                       sx={{
                         display: "flex",
-                        justifyContent: "start",
-
-                        height: "25%",
+                        justifyContent: "space-between",
                       }}
                     >
                       <Typography
@@ -233,8 +240,6 @@ const SingleProduct = () => {
                         sm={6}
                         md={12}
                         sx={{
-                          display: "flex",
-
                           fontSize: "14px",
                           fontWeight: "1000",
                           pt: "10px",
@@ -242,25 +247,21 @@ const SingleProduct = () => {
                         }}
                       >
                         طراح: فریبا حسینی
-                        <button
-                          style={{
-                            background: "#EEEEEE",
-                            width: "57px",
-                            height: "30px",
-                            marginRight: "90px",
+                      </Typography>
+                      <Link href="#">
+                        <Typography
+                          sx={{
+                            mt: "8px",
+                            p: 0.5,
                             borderRadius: "10px",
-                            border: "0",
+                            ml: 1.5,
+                            fontSize: "15px",
+                            backgroundColor: "colors.white",
                           }}
                         >
-                          <span
-                            sx={{
-                              fontSize: "20px",
-                            }}
-                          >
-                            مشاهده{" "}
-                          </span>
-                        </button>
-                      </Typography>
+                          مشاهده
+                        </Typography>
+                      </Link>
                     </Box>
                     <Box
                       sx={{
@@ -273,13 +274,14 @@ const SingleProduct = () => {
                       <Typography
                         sx={{
                           marginTop: "10px",
-                          maxWidth: "255px",
                           p: "8px",
-                          fontSize: "14px",
+                          fontSize: {
+                            xs: "10px",
+                            lg: "14px",
+                          },
                         }}
                       >
-                        لورم ایپسوم متن ساختگی با تولید نامه و مجله در ستون و
-                        سطرآنچنان که لازم{" "}
+                        لورم ایپسوم متن ساختگی با تولید نامه و مجله در ستون و سطرآنچنان که لازم{" "}
                       </Typography>
                     </Box>
                   </Box>
@@ -351,13 +353,13 @@ const SingleProduct = () => {
                 fontWeight: "bold",
                 marginRight: "10px",
                 m: 1,
-                "&:hover ": {
+                "&:hover": {
                   border: "1px solid ",
                   color: "colors.pink",
                   backgroundColor: "white",
-                  "&:hover svg": {
-                    color: "colors.pink",
-                  },
+                },
+                "&:hover svg path": {
+                  fill: "#F6416C",
                 },
               }}
             >
@@ -396,6 +398,7 @@ const SingleProduct = () => {
             <Box
               sx={{
                 display: "flex",
+                flexWrap: "wrap",
                 width: "90%",
                 justifyContent: "space-between",
                 alignItems: "space-between",
@@ -404,7 +407,7 @@ const SingleProduct = () => {
                 marginBottom: "20px",
               }}
             >
-              <Typography>
+              <Typography sx={{ my: 1 }}>
                 <svg
                   id="_3916699"
                   data-name="3916699"
@@ -438,7 +441,7 @@ const SingleProduct = () => {
                 </svg>
                 <span> گزارش مشکلات دانلود فایل</span>
               </Typography>
-              <Typography>تعداد دانلود:865</Typography>
+              <Typography sx={{ my: 1 }}>تعداد دانلود:865</Typography>
             </Box>
             <Box
               sx={{
@@ -450,18 +453,14 @@ const SingleProduct = () => {
                   width: "30%",
                   height: "43px",
                   backgroundColor: "white",
+                  whiteSpace: "nowrap",
                   color: "black",
                   fontWeight: "bold",
                   marginRight: "10px",
                   border: "1px solid #C2C2C2",
                 }}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                   <path
                     id="_3917574"
                     data-name="3917574"
@@ -548,12 +547,7 @@ const SingleProduct = () => {
               },
             }}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 16 16"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
               <path
                 id="_3917132"
                 data-name="3917132"
@@ -588,12 +582,7 @@ const SingleProduct = () => {
               },
             }}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 16 16"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
               <path
                 id="_3917132"
                 data-name="3917132"
@@ -628,12 +617,7 @@ const SingleProduct = () => {
               },
             }}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 16 16"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
               <path
                 id="_3917132"
                 data-name="3917132"
@@ -668,12 +652,7 @@ const SingleProduct = () => {
               },
             }}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 16 16"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
               <path
                 id="_3917132"
                 data-name="3917132"
@@ -707,9 +686,7 @@ const SingleProduct = () => {
             }}
           >
             <span style={{ borderRight: "8px solid #4ECCA3 " }}>
-              <span
-                style={{ margin: "20px", fontSize: "12px", fontWeight: "500" }}
-              >
+              <span style={{ margin: "20px", fontSize: "12px", fontWeight: "500" }}>
                 بیشتر با فریبا حسنی
               </span>
             </span>

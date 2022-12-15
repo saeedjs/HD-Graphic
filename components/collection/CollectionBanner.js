@@ -11,7 +11,18 @@ const CollectionBanner = () => {
           height: "100%",
         }}
       >
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", p: 20 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            p: {
+              xs: 5,
+              md: 10,
+              xl: 20,
+            },
+          }}
+        >
           <Typography>کلکسیون</Typography>
           <Typography sx={{ my: 1, textAlign: "center" }}>
             مجموعه ای از بهترین طرح های منتخب
