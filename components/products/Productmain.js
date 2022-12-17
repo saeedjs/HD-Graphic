@@ -45,7 +45,7 @@ const ProductMain = () => {
             mt: "140px",
             display: {
               lg: "flex",
-              md: "flex",
+              md: "none",
               sm: "none",
               xs: "none",
             },
@@ -105,7 +105,7 @@ const ProductMain = () => {
             display: {
               lg: "none",
               md: "none",
-              sm: "none",
+              sm: "flex",
               xs: "flex",
             },
           }}
@@ -131,7 +131,7 @@ const ProductMain = () => {
             </Typography>
           </Box>
         </Box>{" "}
-        <Grid justifyContent={"center"} item xs={4} sm={2} md={2} lg={2}>
+        <Grid justifyContent={"center"} item xs={4} sm={4} md={4} lg={2}>
           <Grid item sx={{ margin: "3px" }}>
             <img
               style={{
@@ -160,8 +160,8 @@ const ProductMain = () => {
           justifyContent={"center"}
           item
           xs={4}
-          sm={2}
-          md={2}
+          sm={4}
+          md={4}
           lg={2}
         >
           <Grid item sx={{ margin: "3px" }} xs={12}>
@@ -187,7 +187,7 @@ const ProductMain = () => {
             />
           </Grid>
         </Grid>
-        <Grid justifyContent={"center"} item xs={4} sm={2} md={2} lg={2}>
+        <Grid justifyContent={"center"} item xs={4} sm={4} md={4} lg={2}>
           <Grid item sx={{ margin: "3px" }} xs={12}>
             <img
               style={{
