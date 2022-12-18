@@ -9,7 +9,7 @@ import PersonDetail from "../../components/designer/PersonDetail";
 
 const dashboardPage = () => {
   return (
-    <Box sx={{ p: 4 }}>
+    <>
       <SearchBox />
       <PersonDetail />
       <Container maxWidth='xxl'>
