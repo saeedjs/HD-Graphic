@@ -1,3 +1,5 @@
+import MAinDashboard from "../../components/dashboard/MainDashboard";
+
 const dashboardPage = () => {
   return (
     <>
