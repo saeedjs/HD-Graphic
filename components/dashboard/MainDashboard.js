@@ -13,6 +13,7 @@ const MAinDashboard = () => {
         <ComponentTop
           ltitle={"درآمد کل فروش فایل: 2.500.000 تومان"}
           rtitle={"پروفایل کاربری"}
+          icon={'/images/icon/menu-burger.png'}
         />
         <Grid container>
           <Grid item xs={12} sm={3} lg={2}>

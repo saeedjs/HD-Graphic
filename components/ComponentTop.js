@@ -9,11 +9,12 @@ const ComponentTop = (props) => {
           display: "flex",
           justifyContent: "space-between",
           borderBottom: "1px solid #EEEEEE",
+          height:'45px'
         }}
       >
         <Box sx={{ display: "flex", pr: "25px" }}>
           <Box sx={{ ml: "10px" }}>
-            <img src="/images/icon/filter.png" />
+            <img src={props.icon} />
           </Box>
           <Box>
             <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>

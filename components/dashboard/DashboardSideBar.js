@@ -16,42 +16,40 @@ const DashboardSideBar = () => {
     const copyDashSideVals = [...dashSideVals];
     const item = copyDashSideVals.find((a) => a.id == index);
     if (!item.clickable) {
-        copyDashSideVals.map((i) => {
-            i.clickable = false;
-        })
-        item.clickable = true;
+      copyDashSideVals.map((i) => {
+        i.clickable = false;
+      });
+      item.clickable = true;
     }
-    setDashSideVals(copyDashSideVals);        
-   };
+    setDashSideVals(copyDashSideVals);
+  };
   return (
     <>
       <Box>
         {dashSideVals.map((item, index) => (
-        //   <Link href={"#"}>
-            <Box
-              onClick={() => itemHandle(index)}
+          <Box
+            onClick={() => itemHandle(index)}
+            sx={{
+              cursor: "pointer",
+              borderTop: "1px solid #E9E9E9",
+              borderBottom: "1px solid #E9E9E9",
+              height: "55px",
+              pr: "25px",
+            }}
+          >
+            <Typography
               sx={{
-                cursor:'pointer',
-                borderTop: "1px solid #E9E9E9",
-                borderBottom: "1px solid #E9E9E9",
-                height: "55px",
-                pr: "25px",
+                display: "flex",
+                color: item.clickable ? "#F6416C" : "#393E46",
+                alignItems: "center",
+                height: "100%",
+                fontSize: "14px",
+                fontWeight: "bold",
               }}
             >
-              <Typography
-                sx={{
-                  display: "flex",
-                  color:(item.clickable) ? '#F6416C':  '#393E46',
-                  alignItems: "center",
-                  height: "100%",
-                  fontSize: "14px",
-                  fontWeight: "bold",
-                }}
-              >
-                {item.text}
-              </Typography>
-            </Box>
-        //   </Link>
+              {item.text}
+            </Typography>
+          </Box>
         ))}
       </Box>
     </>
