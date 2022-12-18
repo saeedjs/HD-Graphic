@@ -20,6 +20,7 @@ import {
 import { Box, Container, Stack } from "@mui/system";
 import { useState } from "react";
 import { Mypagination } from "./Mypagination";
+import ComponentTop from "./ComponentTop";
 const Filter = () => {
   const itemArray = [
     {
@@ -175,31 +176,7 @@ const Filter = () => {
   return (
     <>
       <Container maxWidth="xxl">
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            borderBottom: "1px solid #EEEEEE",
-          }}
-        >
-          <Box sx={{ display: "flex", pr: "25px" }}>
-            <Box sx={{ ml: "10px" }}>
-              <img src="/images/icon/filter.png" />
-            </Box>
-            <Box>
-              <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
-                تنظیمات
-              </Typography>
-            </Box>
-          </Box>
-          <Box>
-            <Box>
-              <Typography sx={{ color: "#AAAAAA" }}>
-                تعداد 6500 طرح آماده
-              </Typography>
-            </Box>
-          </Box>
-        </Box>
+        <ComponentTop ltitle={'تعداد 6500 طرح آماده'} rtitle={'تنظیمات'} />
         <Grid container>
           <Grid item xs={12} md={3} xl={2}>
             <Box
