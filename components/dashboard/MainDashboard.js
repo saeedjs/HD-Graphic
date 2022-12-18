@@ -7,7 +7,7 @@ import TableProfile2 from "./TableProfile2";
 import TableProfile1 from "./TableProfile";
 import UploadedFileCard from "./UploadedFileCard";
 import DashboardSideBar from "./DashboardSideBar";
-const MAinDashboard = () => {
+const MAinDashboard = ({ children }) => {
   return (
     <>
       <SearchBox />
@@ -25,9 +25,7 @@ const MAinDashboard = () => {
             <Box
               sx={{ borderRight: "2px solid #e9e9e9", height: "100%", p: 2 }}
             >
-              <TableProfile1 />
-              <TableProfile2 />
-              <UploadedFileCard />
+              {children}
             </Box>
           </Grid>
         </Grid>
