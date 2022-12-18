@@ -43,6 +43,23 @@ const rows = [
 export default function AcccessibleTable(props) {
   return (
     <>
+      <Box xs={12}>
+        <Typography
+          sx={{
+            mb: 2,
+            ml: 3,
+            fontWeight: "bold",
+            fontSize: "17px",
+            display: "flex",
+            justifyContent: "end",
+          }}
+        >
+          :درآمد کل فروش فایل{" "}
+          <span style={{ color: "#F6416C", marginLeft: "5px" }}>2,500,000</span>
+          تومان
+        </Typography>
+      </Box>
+      <hr />
       <Typography sx={{ mb: 2, fontWeight: "bold" }}>
         فایل های خریداری شده
       </Typography>
@@ -81,12 +98,12 @@ export default function AcccessibleTable(props) {
             ))}
           </TableBody>
         </Table>
-      </TableContainer>
-      <Box sx={{ display: "flex", justifyContent: "end" }}>
-        <Box sx={{ display: "flex", justifyContent: "end" }}>
-          <Mypagination />
+        <Box sx={{ display: "flex", justifyContent: "end", mb: 10 }}>
+          <Box sx={{ display: "flex", justifyContent: "end" }}>
+            <Mypagination />
+          </Box>
         </Box>
-      </Box>
+      </TableContainer>
     </>
   );
 }
