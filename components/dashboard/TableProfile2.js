@@ -45,7 +45,7 @@ export default function TableProfile2() {
   return (
     <>
       <Typography sx={{ mb: 2, fontWeight: "bold" }}>
-        فایل های خریداری شده
+        فایل های فروخته شده
       </Typography>
       <TableContainer dir={"rtl"} component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="caption table">

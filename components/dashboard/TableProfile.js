@@ -40,34 +40,30 @@ const rows = [
   },
 ];
 
-export default function AcccessibleTable(props) {
+export default function TableProfile1(props) {
   return (
     <>
-      <Box xs={12}>
-        <Typography
-          sx={{
-            mb: 2,
-            ml: 3,
-            fontWeight: "bold",
-            fontSize: "17px",
-            display: "flex",
-            justifyContent: "end",
-          }}
-        >
-          :درآمد کل فروش فایل{" "}
-          <span style={{ color: "#F6416C", marginLeft: "5px" }}>2,500,000</span>
-          تومان
-        </Typography>
-      </Box>
       <hr />
       <Typography sx={{ mb: 2, fontWeight: "bold" }}>
         فایل های خریداری شده
       </Typography>
       <TableContainer dir={"rtl"} component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="caption table">
-          <TableHead sx={{ backgroundColor: "colors.black" }}>
+          <TableHead
+            sx={{
+              backgroundColor: "colors.black",
+            }}
+          >
             <TableRow>
-              <TableCell sx={{ color: "white" }}>شناسه</TableCell>
+              <TableCell
+                sx={{
+                  color: "white",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                شناسه
+              </TableCell>
               <TableCell sx={{ color: "white" }} align="right">
                 تصویر
               </TableCell>

@@ -3,8 +3,11 @@ import { Grid, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import SearchBox from "../../components/category/SearchBox";
 import ComponentTop from "../../components/ComponentTop";
+import TableProfile2 from "./TableProfile2";
+import TableProfile1 from "./TableProfile";
+import UploadedFileCard from "./UploadedFileCard";
 import DashboardSideBar from "./DashboardSideBar";
-const MAinDashboard = () => {
+const MAinDashboard = ({ children }) => {
   return (
     <>
       <SearchBox />
@@ -21,8 +24,10 @@ const MAinDashboard = () => {
           </Grid>
           <Grid item xs={12} sm={9} lg={10}>
             <Box
-              sx={{ borderRight: "2px solid #e9e9e9", height: "100%" }}
-            ></Box>
+              sx={{ borderRight: "2px solid #e9e9e9", height: "100%", p: 2 }}
+            >
+              {children}
+            </Box>
           </Grid>
         </Grid>
       </Container>
