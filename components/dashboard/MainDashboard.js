@@ -6,6 +6,7 @@ import ComponentTop from "../../components/ComponentTop";
 import TableProfile2 from "./TableProfile2";
 import TableProfile1 from "./TableProfile";
 import UploadedFileCard from "./UploadedFileCard";
+import DashboardSideBar from "./DashboardSideBar";
 const MAinDashboard = () => {
   return (
     <>
@@ -18,127 +19,7 @@ const MAinDashboard = () => {
         />
         <Grid container>
           <Grid item xs={12} sm={3} lg={2}>
-            <Box>
-              <Box
-                sx={{
-                  borderTop: "1px solid #E9E9E9",
-                  borderBottom: "1px solid #E9E9E9",
-                  height: "55px",
-                  pr: "25px",
-                }}
-              >
-                <Typography
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    height: "100%",
-                    fontSize: "14px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  داشبورد
-                </Typography>
-              </Box>
-              <Box
-                sx={{
-                  borderTop: "1px solid #E9E9E9",
-                  borderBottom: "1px solid #E9E9E9",
-                  height: "55px",
-                  pr: "25px",
-                }}
-              >
-                <Typography
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    height: "100%",
-                    fontSize: "14px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  سوابق کاربری
-                </Typography>
-              </Box>
-              <Box
-                sx={{
-                  borderTop: "1px solid #E9E9E9",
-                  borderBottom: "1px solid #E9E9E9",
-                  height: "55px",
-                  pr: "25px",
-                }}
-              >
-                <Typography
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    height: "100%",
-                    fontSize: "14px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  کلکسیون
-                </Typography>
-              </Box>
-              <Box
-                sx={{
-                  borderTop: "1px solid #E9E9E9",
-                  borderBottom: "1px solid #E9E9E9",
-                  height: "55px",
-                  pr: "25px",
-                }}
-              >
-                <Typography
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    height: "100%",
-                    fontSize: "14px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  مدیریت فایل ها
-                </Typography>
-              </Box>
-              <Box
-                sx={{
-                  borderTop: "1px solid #E9E9E9",
-                  borderBottom: "1px solid #E9E9E9",
-                  height: "55px",
-                  pr: "25px",
-                }}
-              >
-                <Typography
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    height: "100%",
-                    fontSize: "14px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  پشتیبانی
-                </Typography>
-              </Box>
-              <Box
-                sx={{
-                  borderTop: "1px solid #E9E9E9",
-                  height: "55px",
-                  pr: "25px",
-                }}
-              >
-                <Typography
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    height: "100%",
-                    fontSize: "14px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  خروج
-                </Typography>
-              </Box>
-            </Box>
+            <DashboardSideBar />
           </Grid>
           <Grid item xs={12} sm={9} lg={10}>
             <Box
