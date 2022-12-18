@@ -1,13 +1,10 @@
 import PersonDetail from "../../components/designer/PersonDetail";
-import { Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import SearchBox from "../../components/category/SearchBox";
 import ComponentTop from "../../components/ComponentTop";
-import TableProfile2 from "./TableProfile2";
-import TableProfile1 from "./TableProfile";
-import UploadedFileCard from "./UploadedFileCard";
 import DashboardSideBar from "./DashboardSideBar";
-const MAinDashboard = ({ children }) => {
+const MAinDashboard = ({children}) => {
   return (
     <>
       <SearchBox />

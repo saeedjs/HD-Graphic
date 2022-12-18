@@ -2,7 +2,7 @@ import MAinDashboard from "../../components/dashboard/MainDashboard";
 import TableProfile1 from "../../components/dashboard/TableProfile";
 import TableProfile2 from "../../components/dashboard/TableProfile2";
 
-const Lastwork = () => {
+const resume = () => {
   return (
     <>
       <MAinDashboard>
@@ -12,4 +12,4 @@ const Lastwork = () => {
     </>
   );
 };
-export default Lastwork;
+export default resume;
