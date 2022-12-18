@@ -82,12 +82,12 @@ export default function TableProfile2() {
             ))}
           </TableBody>
         </Table>
-      </TableContainer>
-      <Box sx={{ display: "flex", justifyContent: "end" }}>
-        <Box sx={{ display: "flex", justifyContent: "end" }}>
-          <Mypagination />
+        <Box sx={{ display: "flex", justifyContent: "end", mb: 10 }}>
+          <Box sx={{ display: "flex", justifyContent: "end" }}>
+            <Mypagination />
+          </Box>
         </Box>
-      </Box>
+      </TableContainer>
     </>
   );
 }

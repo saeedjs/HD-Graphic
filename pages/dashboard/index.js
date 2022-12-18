@@ -4,11 +4,12 @@ import SearchBox from "../../components/category/SearchBox";
 import ComponentTop from "../../components/ComponentTop";
 import TableProfile1 from "../../components/dashboard/TableProfile";
 import TableProfile2 from "../../components/dashboard/TableProfile2";
+import UploadedFileCard from "../../components/dashboard/UploadedFileCard";
 import PersonDetail from "../../components/designer/PersonDetail";
 
 const dashboardPage = () => {
   return (
-    <>
+    <Box sx={{ p: 4 }}>
       <SearchBox />
       <PersonDetail />
       <Container maxWidth='xxl'>
