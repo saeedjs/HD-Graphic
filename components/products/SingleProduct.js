@@ -4,8 +4,23 @@ import { Box, Container } from "@mui/system";
 import ImageSearchIcon from "@mui/icons-material/ImageSearch";
 import Link from "next/link";
 import SearchBox from "../category/SearchBox";
+import { numberFormat, salePrice } from "../../lib/helper";
+import { useEffect } from "react";
+import handleError from "../../lib/handleerror";
 
 const SingleProduct = () => {
+  let req = {
+    name: "ali",
+  };
+  let res = {
+    status: 404,
+    massage: "ok",
+  };
+
+  useEffect(() => {
+    handleError(req, res);
+  }, []);
+
   return (
     <>
       <SearchBox />
@@ -16,7 +31,10 @@ const SingleProduct = () => {
           marginBottom: "30px",
         }}
       >
-        <Grid container style={{ borderBottom: "1px solid #E5E5E5", paddingBottom: "50px" }}>
+        <Grid
+          container
+          style={{ borderBottom: "1px solid #E5E5E5", paddingBottom: "50px" }}
+        >
           <Grid
             item
             sx={{
@@ -105,8 +123,9 @@ const SingleProduct = () => {
                 variant="h6"
                 color="initial"
               >
-                رم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                گرافیک است. چاپگرها واستفاده از طراحان گرافاستفاده از طراحان
+                رم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                استفاده از طراحان گرافیک است. چاپگرها واستفاده از طراحان
+                گرافاستفاده از طراحان
               </Typography>
               <Typography
                 sx={{
@@ -165,7 +184,11 @@ const SingleProduct = () => {
                     }}
                   >
                     <Box>
-                      <img maxWidth="84px" height="84px" src="/images/15412.png" />
+                      <img
+                        maxWidth="84px"
+                        height="84px"
+                        src="/images/15412.png"
+                      />
                     </Box>
                   </Box>
                   <Box
@@ -176,7 +199,9 @@ const SingleProduct = () => {
                       alignItems: "center",
                     }}
                   >
-                    <Typography color={"colors.pink"}>سفارش چاپ همین حالا {"      "} ! </Typography>
+                    <Typography color={"colors.pink"}>
+                      سفارش چاپ همین حالا {"      "} !{" "}
+                    </Typography>
                     <Typography
                       fontSize={"14px"}
                       color={"#C2C2C2"}
@@ -217,7 +242,11 @@ const SingleProduct = () => {
                     }}
                   >
                     <Box>
-                      <img maxWidth="84px" height="84px" src="/images/545.png" />
+                      <img
+                        maxWidth="84px"
+                        height="84px"
+                        src="/images/545.png"
+                      />
                     </Box>
                     <Typography
                       sx={{
@@ -281,7 +310,8 @@ const SingleProduct = () => {
                           },
                         }}
                       >
-                        لورم ایپسوم متن ساختگی با تولید نامه و مجله در ستون و سطرآنچنان که لازم{" "}
+                        لورم ایپسوم متن ساختگی با تولید نامه و مجله در ستون و
+                        سطرآنچنان که لازم{" "}
                       </Typography>
                     </Box>
                   </Box>
@@ -460,7 +490,12 @@ const SingleProduct = () => {
                   border: "1px solid #C2C2C2",
                 }}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                >
                   <path
                     id="_3917574"
                     data-name="3917574"
@@ -547,7 +582,12 @@ const SingleProduct = () => {
               },
             }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 16 16"
+            >
               <path
                 id="_3917132"
                 data-name="3917132"
@@ -582,7 +622,12 @@ const SingleProduct = () => {
               },
             }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 16 16"
+            >
               <path
                 id="_3917132"
                 data-name="3917132"
@@ -617,7 +662,12 @@ const SingleProduct = () => {
               },
             }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 16 16"
+            >
               <path
                 id="_3917132"
                 data-name="3917132"
@@ -652,7 +702,12 @@ const SingleProduct = () => {
               },
             }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 16 16"
+            >
               <path
                 id="_3917132"
                 data-name="3917132"
@@ -686,7 +741,9 @@ const SingleProduct = () => {
             }}
           >
             <span style={{ borderRight: "8px solid #4ECCA3 " }}>
-              <span style={{ margin: "20px", fontSize: "12px", fontWeight: "500" }}>
+              <span
+                style={{ margin: "20px", fontSize: "12px", fontWeight: "500" }}
+              >
                 بیشتر با فریبا حسنی
               </span>
             </span>

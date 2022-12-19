@@ -34,9 +34,9 @@ const ItemUploadedFileCard = (props) => {
       }
       item
       xs={10}
-      sm={4}
-      md={4}
-      lg={2}
+      sm={5}
+      md={3.5}
+      lg={2.5}
       xl={2}
     >
       <Box
