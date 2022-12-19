@@ -4,7 +4,7 @@ import TitleComponents from "../TitleComponents";
 const ProductmainBig = () => {
   return (
     <>
-      <Grid item xs={11} sm={4} md={4} lg={4} xl={4}>
+      <Grid item xs={11} sm={11} md={8.5} lg={4} xl={4}>
         <img
           style={{
             width: "100%",
