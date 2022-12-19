@@ -1,4 +1,5 @@
 import { Grid, Typography } from "@mui/material";
+import axios from "axios";
 
 import ItemUploadedFileCard from "./ItemUploadedFileCard";
 
@@ -73,4 +74,5 @@ const UploadedFileCard = () => {
     </>
   );
 };
+
 export default UploadedFileCard;
