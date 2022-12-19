@@ -27,6 +27,7 @@ const ItemUploadedFileCard = (props) => {
               pb: 1,
               m: 1,
               position: "relative",
+              borderTopRightRradius: "40%",
             }
           : {
               display: "none",
