@@ -1,92 +1,8 @@
 import { Container, Typography, Box, Grid } from "@mui/material";
-import { width } from "@mui/system";
 import Link from "next/link";
 const PersonDetail = () => {
   return (
     <>
-      {/* <Box
-        sx={{
-          marginTop: "-100px",
-          backgroundColor: "#efefef",
-          marginBottom: "60px",
-          position: "relative ",
-          pb: 6,
-        }}
-      >
-        <img src="images/back.png" style={{ width: "100%", maxHeight: "196px" }} />
-        <Box
-          sx={{
-            position: "relative",
-          }}
-        >
-          <Box
-            component={"img"}
-            sx={{
-              position: "absolute",
-              bottom: "-35px",
-              right: "40px",
-              width: {
-                xs: "90px",
-                md: "120px",
-              },
-            }}
-            src="images/21.png"
-          />
-        </Box>
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: {
-              xs: "16px",
-              md: "20px",
-            },
-            right: {
-              xs: "125px",
-              md: "170px",
-            },
-            width: "max-content",
-          }}
-        >
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Box>
-              <Typography
-                sx={{
-                  color: "colors.pink",
-                  px: 2,
-                  py: "4px",
-                  mb: 2,
-                  mx: 2,
-                  backgroundColor: "white",
-                  borderRadius: "5px",
-                  fontWeight: "bold",
-                }}
-              >
-                مهرانه شریفی
-              </Typography>
-              <Typography sx={{ display: "flex", justifyContent: "center", fontWeight: "bold" }}>
-                <img src="images/download.png" style={{ position: "relative", padding: "0 6px" }} />
-                دانلود ها:625
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex", pt: 6, flexWrap: "wrap" }}>
-              <Typography sx={{ display: "flex", justifyContent: "center", fontWeight: "bold" }}>
-                <img
-                  src="images/folder.png"
-                  style={{
-                    position: "relative",
-                    padding: "0 6px",
-                  }}
-                />
-                فایل ها:456
-              </Typography>
-              <Typography sx={{ display: "flex", justifyContent: "center", fontWeight: "bold" }}>
-                <img src="images/info.png" style={{ position: "relative", padding: "0 6px" }} />
-                <Link href="#">درباره مدرس</Link>
-              </Typography>
-            </Box>
-          </Box>
-        </Box>
-      </Box> */}
       <Box>
         <Box
           component={"img"}
@@ -94,7 +10,7 @@ const PersonDetail = () => {
           sx={{
             width: "100%",
             backgroundColor: "#efefef",
-            pb: "40px",
+            pb: "45px",
           }}
         ></Box>
         <Grid
@@ -133,6 +49,7 @@ const PersonDetail = () => {
             sx={{
               display: "flex",
               alignItems: "end",
+              mb: "3px",
               justifyContent: "space-between",
               // px: {
               //   // md: 4,
@@ -160,14 +77,14 @@ const PersonDetail = () => {
                 مهرانه شریفی
               </Typography>
               <Typography sx={{ mt: "20px", pl: 2, fontSize: "14px" }}>
-                <img src="images/download.png" style={{ verticalAlign: "bottom" }} /> دانلودها:6958
+                <img src="images/download.png" style={{ verticalAlign: "bottom" }} /> دانلودها : 6958
               </Typography>
             </Box>
             <Box
               sx={{
-                pl: {
+                pr: {
                   xs: 1,
-                  md: 2,
+                  md: 5,
                 },
               }}
             >
@@ -175,19 +92,23 @@ const PersonDetail = () => {
                 src="images/folder.png"
                 style={{ verticalAlign: "middle", paddingLeft: "8px" }}
               />
-              <span style={{ fontSize: "14px" }}>فایل ها:6958</span>
+              <Box sx={{ fontSize: "14px" }} component="span">
+                فایل ها : 6958
+              </Box>
             </Box>
             <Box
               sx={{
-                pl: {
+                pr: {
                   xs: 1,
-                  md: 4,
+                  md: 5,
                 },
               }}
             >
               <img src="images/info.png" style={{ verticalAlign: "middle", paddingLeft: "4px" }} />
               <Link href="#">
-                <span style={{ fontSize: "14px" }}>درباره مدرس</span>
+                <Box sx={{ fontSize: "14px" }} component="span">
+                  درباره مدرس
+                </Box>
               </Link>
             </Box>
           </Grid>

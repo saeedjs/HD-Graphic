@@ -27,6 +27,7 @@ const ItemUploadedFileCard = (props) => {
               pb: 1,
               m: 1,
               position: "relative",
+              borderTopRightRradius: "40%",
             }
           : {
               display: "none",
@@ -34,9 +35,9 @@ const ItemUploadedFileCard = (props) => {
       }
       item
       xs={10}
-      sm={4}
-      md={4}
-      lg={2}
+      sm={5}
+      md={3.5}
+      lg={2.5}
       xl={2}
     >
       <Box
@@ -92,7 +93,10 @@ const ItemUploadedFileCard = (props) => {
           </Typography>
         </Box>
         <Box sx={{ display: "flex", justifyContent: "space-between", mt: 4 }}>
-          <Button sx={{ mr: 1 }} onClick={() => handleEdit()}>
+          <Button
+            sx={{ mr: 1, fontSize: "13px", fontWeight: "bold" }}
+            onClick={() => handleEdit()}
+          >
             <svg
               id="_3917361"
               data-name="3917361"
@@ -126,7 +130,16 @@ const ItemUploadedFileCard = (props) => {
               ویرایش
             </span>
           </Button>
-          <Typography sx={{ ml: 1 }}>فروش:{props.sol}بار</Typography>
+          <Typography
+            sx={{
+              ml: 1,
+              marginTop: "9px",
+              fontSize: "12px",
+              fontWeight: "bold",
+            }}
+          >
+            فروش:{props.sol}بار
+          </Typography>
         </Box>
       </Box>
     </Grid>
