@@ -4,8 +4,23 @@ import { Box, Container } from "@mui/system";
 import ImageSearchIcon from "@mui/icons-material/ImageSearch";
 import Link from "next/link";
 import SearchBox from "../category/SearchBox";
+import { numberFormat, salePrice } from "../../lib/helper";
+import { useEffect } from "react";
+import handleError from "../../lib/handleerror";
 
 const SingleProduct = () => {
+  let req = {
+    name: "ali",
+  };
+  let res = {
+    status: 404,
+    massage: "ok",
+  };
+
+  useEffect(() => {
+    handleError(req, res);
+  }, []);
+
   return (
     <>
       <SearchBox />

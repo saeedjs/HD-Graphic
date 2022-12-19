@@ -15,7 +15,14 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { useState } from "react";
 import Link from "next/link";
 
-const pages = ["آیکون", "تصویر", "فایل لایه باز", "دسته بندی", "مجموعه ها", "طراحان"];
+const pages = [
+  { name: "آیکون", href: "/icons" },
+  { name: "تصویر", href: "/picture" },
+  { name: "فایل لایه باز", href: "/openfile" },
+  { name: "دسته بندی", href: "/category" },
+  { name: "مجموعه ها", href: "/collection" },
+  { name: "طراحان", href: "/designer" },
+];
 const settings = ["پروفایل", "اکانت", "داشبورد", "خروج"];
 
 function NavbarTop() {
@@ -91,8 +98,14 @@ function NavbarTop() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu} sx={{ width: "200px" }}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem
+                  key={page.name}
+                  onClick={handleCloseNavMenu}
+                  sx={{ width: "200px" }}
+                >
+                  <Link href={page.href} textAlign="center">
+                    {page.name}
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -113,11 +126,11 @@ function NavbarTop() {
             </Paper>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.naem}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "black", display: "block" }}
               >
-                {page}
+                <Link href={page.href}>{page.name}</Link>
               </Button>
             ))}
           </Box>
@@ -150,7 +163,10 @@ function NavbarTop() {
             )}
             {true && (
               <Tooltip title="پروفایل" sx={{ display: "none" }}>
-                <IconButton onClick={handleOpenUserMenu} sx={{ px: 2, fontSize: "1.5rem" }}>
+                <IconButton
+                  onClick={handleOpenUserMenu}
+                  sx={{ px: 2, fontSize: "1.5rem" }}
+                >
                   <AccountCircleIcon />
                 </IconButton>
               </Tooltip>
@@ -172,7 +188,11 @@ function NavbarTop() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu} sx={{ width: "120px" }}>
+                <MenuItem
+                  key={setting}
+                  onClick={handleCloseUserMenu}
+                  sx={{ width: "120px" }}
+                >
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
