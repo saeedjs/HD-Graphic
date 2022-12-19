@@ -31,7 +31,7 @@ const Mainimages = () => {
               >
                 <Box>
                   <Typography
-                    sx={{ fontWeight: "bold", fontSize: "24px", mb: "13px" }}
+                    sx={{ fontWeight: "bold", fontSize: "24px", mb: "13px", textAlign: "center" }}
                   >
                     عضویت کاربر عادی
                   </Typography>
@@ -84,7 +84,7 @@ const Mainimages = () => {
               >
                 <Box>
                   <Typography
-                    sx={{ fontWeight: "bold", fontSize: "24px", mb: "13px" }}
+                    sx={{ fontWeight: "bold", fontSize: "24px", mb: "13px", textAlign: "center" }}
                   >
                     عضویت طراح یا عکاس
                   </Typography>
@@ -95,6 +95,7 @@ const Mainimages = () => {
                     width="119px"
                     height="32px"
                     sx={{
+                      textAlign: "center",
                       backgroundColor: "colors.pink",
                       borderRadius: "10px",
                       boxShadow: "none",

@@ -194,12 +194,14 @@ export default function SearchBox() {
                 borderRadius: "2px",
                 p: 1,
                 px: 2,
+
                 "&:hover": {
                   backgroundColor: "#efefef",
                 },
               }}
             >
-              <GridViewIcon />
+              <img src="images/icon-collection.png" />
+              {/* <GridViewIcon /> */}
               <Typography sx={{ px: 2 }}>کلکسیون</Typography>
               <Typography
                 sx={{
