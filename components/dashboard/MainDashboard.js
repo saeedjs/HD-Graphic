@@ -1,4 +1,3 @@
-import PersonDetail from "../../components/designer/PersonDetail";
 import { Grid } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import SearchBox from "../../components/category/SearchBox";
@@ -7,8 +6,6 @@ import DashboardSideBar from "./DashboardSideBar";
 const MAinDashboard = ({children}) => {
   return (
     <>
-      <SearchBox />
-      <PersonDetail />
       <Container maxWidth="xxl">
         <ComponentTop
           ltitle={"درآمد کل فروش فایل: 2.500.000 تومان"}

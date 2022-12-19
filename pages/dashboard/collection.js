@@ -1,17 +1,13 @@
-import { Container } from "@mui/material";
 import { Box } from "@mui/system";
 import MAinDashboard from "../../components/dashboard/MainDashboard";
 
-const dashboardPage = () => {
+const collection = () => {
   return (
     <>
       <MAinDashboard>
-        <Container>
-          
-        </Container>
+        <Box>collection</Box>
       </MAinDashboard>
     </>
   );
 };
-
-export default dashboardPage;
+export default collection;
