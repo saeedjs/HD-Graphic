@@ -3,6 +3,15 @@ import Footer from "../components/layout/Footer";
 import NavbarTop from "../components/layout/Navbar/NavbarTop";
 import { CssBaseline, Typography } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import nProgress from "nprogress";
+import Router from "next/router";
+
+Router.events.on("routeChangeStart", () => nProgress.start());
+
+Router.events.on("routeChangeComplete", () => nProgress.done());
+
+Router.events.on("routeChangeError", () => nProgress.done());
+
 function MyApp({ Component, pageProps }) {
   const theme = createTheme({
     direction: "rtl",

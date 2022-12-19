@@ -1,13 +1,16 @@
 import { Box } from "@mui/system";
 import MAinDashboard from "../../components/dashboard/MainDashboard";
+import UploadedFileCard from "../../components/dashboard/UploadedFileCard";
 
 const filemanagement = () => {
-    return(<>
-    <MAinDashboard>
+  return (
+    <>
+      <MAinDashboard>
         <Box>
-            filemanagement
+          <UploadedFileCard />
         </Box>
-    </MAinDashboard>
-    </>)
-}
+      </MAinDashboard>
+    </>
+  );
+};
 export default filemanagement;
