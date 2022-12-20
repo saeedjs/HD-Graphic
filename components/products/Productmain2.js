@@ -8,7 +8,7 @@ import { Box } from "@mui/system";
 import Link from "next/link";
 import TitleComponents from "../TitleComponents";
 
-const Productmain2 = () => {
+const Productmain2 = ({ mockup }) => {
   return (
     <>
       <Container display="flex" justifyContent="center">
@@ -57,54 +57,24 @@ const Productmain2 = () => {
           }}
         ></Box>
         <Grid container>
-          <Grid item xs={6} sm={6} md={3} lg={6}>
-            <img
-              style={{
-                width: "100%",
-                height: "auto",
-                padding: "4px",
+          {mockup.map((item) => {
+            return (
+              <Grid item xs={6} sm={6} md={3} lg={6}>
+                <Link href={`file/${item.slug}/${item.id}`}>
+                  <img
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      padding: "4px",
 
-                margin: "0",
-              }}
-              src="./images/123.png"
-            />
-          </Grid>
-          <Grid item xs={6} sm={6} md={3} lg={6}>
-            <img
-              style={{
-                width: "100%",
-                height: "auto",
-                padding: "4px",
-
-                margin: "0",
-              }}
-              src="./images/1234.png"
-            />
-          </Grid>
-          <Grid item xs={6} sm={6} md={3} lg={6}>
-            <img
-              style={{
-                width: "100%",
-                height: "auto",
-                padding: "4px",
-
-                margin: "0",
-              }}
-              src="./images/12345.png"
-            />
-          </Grid>
-          <Grid item xs={6} sm={6} md={3} lg={6}>
-            <img
-              style={{
-                width: "100%",
-                height: "auto",
-                padding: "4px",
-
-                margin: "0px",
-              }}
-              src="./images/99996.png"
-            />
-          </Grid>
+                      margin: "0",
+                    }}
+                    src={`https://hdgraphic.ir${item.image}`}
+                  />
+                </Link>
+              </Grid>
+            );
+          })}
         </Grid>
       </Container>
     </>

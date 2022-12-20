@@ -21,74 +21,7 @@ import { Box, Container, Stack } from "@mui/system";
 import { useState } from "react";
 import { Mypagination } from "./Mypagination";
 import ComponentTop from "./ComponentTop";
-import axios from "axios";
 const Filter = ({ category }) => {
-  console.log(category);
-  const itemArray = [
-    {
-      src: "eee.png",
-    },
-    {
-      src: "eee.png",
-    },
-    {
-      src: "eee.png",
-    },
-    {
-      src: "eee.png",
-    },
-    {
-      src: "eee.png",
-    },
-    {
-      src: "eee.png",
-    },
-    {
-      src: "eee.png",
-    },
-    {
-      src: "ewe.png",
-    },
-    {
-      src: "ewe.png",
-    },
-    {
-      src: "ewe.png",
-    },
-    {
-      src: "ewe.png",
-    },
-    {
-      src: "ewe.png",
-    },
-    {
-      src: "ewe.png",
-    },
-    {
-      src: "ewe.png",
-    },
-    {
-      src: "asds.png",
-    },
-    {
-      src: "asds.png",
-    },
-    {
-      src: "asds.png",
-    },
-    {
-      src: "asds.png",
-    },
-    {
-      src: "asds.png",
-    },
-    {
-      src: "asds.png",
-    },
-    {
-      src: "asds.png",
-    },
-  ];
   const checkButtonArray = [
     {
       id: 0,
@@ -136,7 +69,6 @@ const Filter = ({ category }) => {
       value: "محبوب ترین",
     },
   ]);
-  const [item, setItem] = useState(itemArray);
   const checkArray = [
     { id: 0, display: "none" },
     { id: 1, display: "none" },
@@ -175,8 +107,10 @@ const Filter = ({ category }) => {
     else findDisplay.status = true;
     setPriceFilter(copyPriceFilter);
   };
+  const vals = category;
   return (
     <>
+      {console.log(vals)}
       <Container maxWidth="xxl">
         <ComponentTop ltitle={"تعداد 6500 طرح آماده"} rtitle={"تنظیمات"} />
         <Grid container>
@@ -283,7 +217,9 @@ const Filter = ({ category }) => {
                   <img wid src="/images/icon/color.png" />
                 </Box>
                 <Box>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>رنگ</Typography>
+                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
+                    رنگ
+                  </Typography>
                 </Box>
               </Box>
               <Box>
@@ -312,102 +248,6 @@ const Filter = ({ category }) => {
                       }}
                     />
                   </Box>
-                  <Box
-                    onClick={() => checkTik(1)}
-                    width="20px"
-                    height="20px"
-                    mr="7px"
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      borderRadius: "100%",
-                      backgroundColor: "colors.green",
-                      "&:hover": {
-                        cursor: "pointer",
-                      },
-                    }}
-                  >
-                    <CheckIcon
-                      fontSize="small"
-                      sx={{
-                        color: "#FFFFFF",
-                        display: checkDisplayState[1].display,
-                      }}
-                    />
-                  </Box>
-                  <Box
-                    onClick={() => checkTik(2)}
-                    width="20px"
-                    height="20px"
-                    mr="7px"
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      borderRadius: "100%",
-                      backgroundColor: "colors.white",
-                      "&:hover": {
-                        cursor: "pointer",
-                      },
-                    }}
-                  >
-                    <CheckIcon
-                      fontSize="small"
-                      sx={{
-                        color: "#FFFFFF",
-                        display: checkDisplayState[2].display,
-                      }}
-                    />
-                  </Box>
-                  <Box
-                    onClick={() => checkTik(3)}
-                    width="20px"
-                    height="20px"
-                    mr="7px"
-                    sx={{
-                      borderRadius: "100%",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      backgroundColor: "colors.pink",
-                      "&:hover": {
-                        cursor: "pointer",
-                      },
-                    }}
-                  >
-                    <CheckIcon
-                      fontSize="small"
-                      sx={{
-                        color: "#FFFFFF",
-                        display: checkDisplayState[3].display,
-                      }}
-                    />
-                  </Box>
-                  <Box
-                    onClick={() => checkTik(4)}
-                    width="20px"
-                    height="20px"
-                    mr="7px"
-                    sx={{
-                      borderRadius: "100%",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      backgroundColor: "colors.gray",
-                      "&:hover": {
-                        cursor: "pointer",
-                      },
-                    }}
-                  >
-                    <CheckIcon
-                      fontSize="small"
-                      sx={{
-                        color: "#FFFFFF",
-                        display: checkDisplayState[4].display,
-                      }}
-                    />
-                  </Box>
                 </Box>
               </Box>
             </Box>
@@ -426,7 +266,9 @@ const Filter = ({ category }) => {
                   <img src="/images/icon/license.png" />
                 </Box>
                 <Box>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>لایسنس</Typography>
+                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
+                    لایسنس
+                  </Typography>
                 </Box>
               </Box>
               <Box>
@@ -527,7 +369,9 @@ const Filter = ({ category }) => {
                   <img src="/images/icon/search.png" />
                 </Box>
                 <Box>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>جستجو</Typography>
+                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
+                    جستجو
+                  </Typography>
                 </Box>
               </Box>
               <Box>
@@ -549,15 +393,21 @@ const Filter = ({ category }) => {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={12} md={9} xl={10} sx={{ borderRight: "1px solid #EEEEEE" }}>
+          <Grid
+            item
+            xs={12}
+            md={9}
+            xl={10}
+            sx={{ borderRight: "1px solid #EEEEEE" }}
+          >
             <Box sx={{ height: "100%" }}>
               <Masonry
                 columns={{ xl: 6, lg: 4, md: 3, sm: 3, xs: 1 }}
                 spacing={0}
                 sx={{ mt: "15px" }}
               >
-                {item.map((item, i) => (
-                  <Link href={"#"}>
+                {vals.map((item, i) => (
+                  <Link href={`/file/${item.slug}/${item.id}`}>
                     <Box
                       key={i}
                       sx={{
@@ -574,7 +424,7 @@ const Filter = ({ category }) => {
                       >
                         <img
                           style={{ height: "100%", width: "100%" }}
-                          src={"/images/" + item.src}
+                          src={process.env.REACT_APP_BASE_URL + item.image}
                         />
                       </Box>
                     </Box>
