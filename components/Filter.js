@@ -21,8 +21,81 @@ import { Box, Container, Stack } from "@mui/system";
 import { useState } from "react";
 import { Mypagination } from "./Mypagination";
 import ComponentTop from "./ComponentTop";
+<<<<<<< HEAD
 const Filter = ({ category }) => {
   console.log(category);
+=======
+import axios from "axios";
+
+const Filter = ({ category }) => {
+  console.log(category);
+
+  const itemArray = [
+    {
+      src: "eee.png",
+    },
+    {
+      src: "eee.png",
+    },
+    {
+      src: "eee.png",
+    },
+    {
+      src: "eee.png",
+    },
+    {
+      src: "eee.png",
+    },
+    {
+      src: "eee.png",
+    },
+    {
+      src: "eee.png",
+    },
+    {
+      src: "ewe.png",
+    },
+    {
+      src: "ewe.png",
+    },
+    {
+      src: "ewe.png",
+    },
+    {
+      src: "ewe.png",
+    },
+    {
+      src: "ewe.png",
+    },
+    {
+      src: "ewe.png",
+    },
+    {
+      src: "ewe.png",
+    },
+    {
+      src: "asds.png",
+    },
+    {
+      src: "asds.png",
+    },
+    {
+      src: "asds.png",
+    },
+    {
+      src: "asds.png",
+    },
+    {
+      src: "asds.png",
+    },
+    {
+      src: "asds.png",
+    },
+    {
+      src: "asds.png",
+    },
+  ];
+>>>>>>> 7b695d9734b3d7b7102099e8c25e91e625d5442c
   const checkButtonArray = [
     {
       id: 0,
@@ -111,7 +184,7 @@ const Filter = ({ category }) => {
   const vals = category;
   return (
     <>
-    {console.log(vals)}
+      {console.log(vals)}
       <Container maxWidth="xxl">
         <ComponentTop ltitle={"تعداد 6500 طرح آماده"} rtitle={"تنظیمات"} />
         <Grid container>
@@ -218,7 +291,9 @@ const Filter = ({ category }) => {
                   <img wid src="/images/icon/color.png" />
                 </Box>
                 <Box>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>رنگ</Typography>
+                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
+                    رنگ
+                  </Typography>
                 </Box>
               </Box>
               <Box>
@@ -361,7 +436,9 @@ const Filter = ({ category }) => {
                   <img src="/images/icon/license.png" />
                 </Box>
                 <Box>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>لایسنس</Typography>
+                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
+                    لایسنس
+                  </Typography>
                 </Box>
               </Box>
               <Box>
@@ -462,7 +539,9 @@ const Filter = ({ category }) => {
                   <img src="/images/icon/search.png" />
                 </Box>
                 <Box>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>جستجو</Typography>
+                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
+                    جستجو
+                  </Typography>
                 </Box>
               </Box>
               <Box>
@@ -484,7 +563,13 @@ const Filter = ({ category }) => {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={12} md={9} xl={10} sx={{ borderRight: "1px solid #EEEEEE" }}>
+          <Grid
+            item
+            xs={12}
+            md={9}
+            xl={10}
+            sx={{ borderRight: "1px solid #EEEEEE" }}
+          >
             <Box sx={{ height: "100%" }}>
               <Masonry
                 columns={{ xl: 6, lg: 4, md: 3, sm: 3, xs: 1 }}
