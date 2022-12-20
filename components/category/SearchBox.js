@@ -37,7 +37,7 @@ export default function SearchBox() {
           >
             <Box component={"span"} sx={{ pt: 2, px: 2 }}>
               <Link href="#">
-                <img src="images/hd-logo.png" />
+                <img src="/images/hd-logo.png" />
               </Link>
             </Box>
           </Grid>
@@ -200,7 +200,7 @@ export default function SearchBox() {
                 },
               }}
             >
-              <img src="images/icon-collection.png" />
+              <img src="/images/icon-collection.png" />
               {/* <GridViewIcon /> */}
               <Typography sx={{ px: 2 }}>کلکسیون</Typography>
               <Typography

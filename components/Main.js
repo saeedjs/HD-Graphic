@@ -6,12 +6,12 @@ import Articls from "./Articls";
 import "swiper/css";
 import Mainimages from "./MainImages";
 
-const Main = ({ instagram }) => {
+const Main = ({ instagram, category }) => {
   return (
     <>
-      <Landing />
+      <Landing category={category} />
       <Container maxWidth="xl" Container>
-        <ProductMain instagram={instagram} />
+        <ProductMain instagram={instagram} category={category} />
         <Productmain3 />
       </Container>
       <Mainimages />

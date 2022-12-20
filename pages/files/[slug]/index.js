@@ -1,10 +1,23 @@
+import { Typography } from "@mui/material";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Filter from "../../../components/Filter";
-const fileSlugPage = (props) => {
+const fileSlugPage = ({ category }) => {
+  const title = category[0].category.title;
   return (
     <>
-      <Filter />
+      <Typography
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          fontSize: "2rem",
+          fontWeight: "bold",
+          my: 4,
+        }}
+      >
+        {title}
+      </Typography>
+      <Filter category={category} />
     </>
   );
 };

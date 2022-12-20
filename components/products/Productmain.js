@@ -1,5 +1,4 @@
 import Card from "@mui/material/Card";
-
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Container, Paper, CardActionArea, Grid } from "@mui/material";
@@ -90,9 +89,7 @@ const ProductMain = ({ instagram }) => {
               },
             }}
           >
-            <Typography sx={{ color: "#AAAAAA", fontSize: "14px" }}>
-              500 طرح آماده
-            </Typography>
+            <Typography sx={{ color: "#AAAAAA", fontSize: "14px" }}>500 طرح آماده</Typography>
           </Box>
         </Box>
       </Box>
@@ -126,9 +123,7 @@ const ProductMain = ({ instagram }) => {
             <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
           </Box>
           <Box sx={{ mr: "12" }}>
-            <Typography sx={{ color: "#AAAAAA", fontSize: "16px" }}>
-              500 طرح آماده
-            </Typography>
+            <Typography sx={{ color: "#AAAAAA", fontSize: "16px" }}>500 طرح آماده</Typography>
           </Box>
         </Box>{" "}
         {instagram.map((item) => {
