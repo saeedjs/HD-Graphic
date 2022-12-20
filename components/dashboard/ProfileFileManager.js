@@ -2,8 +2,15 @@ import { Typography, Box, Button, Grid, Checkbox } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 import { useState } from "react";
 const ProfileFileManager = () => {
-  const [check, setCheck] = useState("check");
+  const [checkFree, setCheckFree] = useState(true);
+  const [checkRule, setCheckRule] = useState(true);
 
+  const handleCheckFree = (check) => {
+    setCheckFree(!check);
+  };
+  const handleCheckRule = (check) => {
+    setCheckRule(!check);
+  };
   return (
     <>
       {/* create and Edit */}
@@ -12,9 +19,16 @@ const ProfileFileManager = () => {
           ایجاد و ویرایش فایل
         </Typography>
         <Grid container>
-          <Grid item lg={9}>
-            <Box sx={{ display: "flex" }}>
-              <Box item sx={{ display: "flex", alignItems: "end", ml: 2 }}>
+          <Grid item xs={12} lg={9} order={{ xs: 2, lg: 1 }}>
+            <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+              <Box
+                item
+                sx={{
+                  display: "flex",
+                  alignItems: "end",
+                  ml: 2,
+                }}
+              >
                 <input type="file" id="files" style={{ display: "none" }} />
                 <label htmlFor="files">
                   <Box
@@ -45,7 +59,13 @@ const ProfileFileManager = () => {
                     تصویر نمایش محصول
                   </Typography>
                   <Typography
-                    sx={{ display: "flex", pt: 2, alignItems: "center", fontSize: "12px" }}
+                    sx={{
+                      display: "flex",
+                      pt: 2,
+                      alignItems: "center",
+                      fontSize: "12px",
+                      whiteSpace: "nowrap",
+                    }}
                   >
                     <Box
                       width="16px"
@@ -69,7 +89,13 @@ const ProfileFileManager = () => {
                     اندازه تصویر 120 در 120 پیکسل
                   </Typography>
                   <Typography
-                    sx={{ display: "flex", pt: 1, alignItems: "center", fontSize: "12px" }}
+                    sx={{
+                      display: "flex",
+                      pt: 1,
+                      alignItems: "center",
+                      fontSize: "12px",
+                      whiteSpace: "nowrap",
+                    }}
                   >
                     <Box
                       width="16px"
@@ -81,6 +107,7 @@ const ProfileFileManager = () => {
                         borderRadius: "100%",
                         backgroundColor: "#c2c2c2",
                         mx: 1,
+                        whiteSpace: "nowrap",
                       }}
                       fontSize="12px"
                     >
@@ -94,7 +121,14 @@ const ProfileFileManager = () => {
                   </Typography>
                 </Box>
               </Box>
-              <Box item sx={{ display: "flex", alignItems: "end" }}>
+              <Box
+                item
+                sx={{
+                  display: "flex",
+                  alignItems: "end",
+                  mt: 2,
+                }}
+              >
                 <input type="file" id="files" style={{ display: "none" }} />
                 <label htmlFor="files">
                   <Box
@@ -125,7 +159,13 @@ const ProfileFileManager = () => {
                     فایل های اصلی
                   </Typography>
                   <Typography
-                    sx={{ display: "flex", pt: 2, alignItems: "center", fontSize: "12px" }}
+                    sx={{
+                      display: "flex",
+                      pt: 2,
+                      alignItems: "center",
+                      fontSize: "12px",
+                      whiteSpace: "nowrap",
+                    }}
                   >
                     <Box
                       width="16px"
@@ -161,6 +201,7 @@ const ProfileFileManager = () => {
                         borderRadius: "100%",
                         backgroundColor: "#c2c2c2",
                         mx: 1,
+                        whiteSpace: "nowrap",
                       }}
                       fontSize="12px"
                     >
@@ -175,7 +216,7 @@ const ProfileFileManager = () => {
                 </Box>
               </Box>
             </Box>
-            <Box sx={{ display: "flex" }}>
+            <Box sx={{ display: "flex", mt: "45px", flexWrap: "wrap" }}>
               <input
                 placeholder="عنوان"
                 style={{
@@ -186,7 +227,7 @@ const ProfileFileManager = () => {
                   backgroundColor: "#eeeeee",
                   borderRadius: "5px",
                   fontFamily: "iranYekan",
-                  margin: "0 15px",
+                  marginLeft: "15px",
                   padding: "10px",
                 }}
               />
@@ -203,22 +244,113 @@ const ProfileFileManager = () => {
                   fontFamily: "iranYekan",
                 }}
               />
-              <Box>
+              <Box sx={{ display: "flex", alignItems: "center" }}>
                 <Box
                   sx={{
                     width: "18px",
                     height: "18px",
-                    border: `${check && "1px solid #c2c2c2"}`,
+                    mr: 2,
+                    border: `${!checkFree && "1px solid #c2c2c2"}`,
                     borderRadius: "5px",
                     cursor: "pointer",
-                    backgroundColor: "colors.green",
+                    backgroundColor: `${checkFree && "colors.green"}`,
                   }}
-                  //   onClick={() => }
+                  onClick={() => handleCheckFree(checkFree)}
                 ></Box>
+                <Typography sx={{ fontSize: "14px", px: 1 }}>رایگان</Typography>
+              </Box>
+            </Box>
+            <Box sx={{ mt: "12px" }}>
+              <textarea
+                style={{
+                  width: "100%",
+                  height: "83px",
+                  backgroundColor: "#eeeeee",
+                  resize: "none",
+                  border: "none",
+                  outline: "none",
+                  fontFamily: "iranYekan",
+                  borderRadius: "5px",
+                  padding: "10px",
+                }}
+                placeholder="توضیح مختصر درباره طرح"
+              ></textarea>
+            </Box>
+            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <Box
+                  sx={{
+                    width: "18px",
+                    height: "18px",
+                    border: `${!checkRule && "1px solid #c2c2c2"}`,
+                    borderRadius: "5px",
+                    cursor: "pointer",
+                    backgroundColor: `${checkRule && "colors.green"}`,
+                  }}
+                  onClick={() => handleCheckRule(checkRule)}
+                ></Box>
+                <Typography sx={{ fontSize: "14px", p: 1 }}>پذیرش قوانین فروش فایل</Typography>
+              </Box>
+              <Button
+                sx={{
+                  backgroundColor: "colors.green",
+                  color: "white",
+                  "&:hover": {
+                    backgroundColor: "colors.greenHover",
+                  },
+                }}
+              >
+                آپلود و ثبت
+              </Button>
+            </Box>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            lg={3}
+            sx={{
+              pr: 6,
+              mt: "-10px",
+            }}
+            order={{
+              xs: 1,
+              lg: 2,
+            }}
+          >
+            <Box sx={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
+              <Typography
+                sx={{
+                  p: "5px",
+                  alignSelf: {
+                    lg: "start",
+                  },
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                }}
+              >
+                پیشنمایش کاور
+              </Typography>
+              <Box
+                sx={{
+                  p: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  boxShadow:
+                    "rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px",
+                  borderRadius: "5px",
+                }}
+              >
+                <img src="/images/zsds.png" />
+              </Box>
+              <Box sx={{ mt: 4 }}>
+                <Typography>فایل اصلی بارگذاری</Typography>
+                <Typography sx={{ mt: 1.5 }}>
+                  <img src="/images/cloude-s.png" style={{ verticalAlign: "middle" }} />
+                  <span style={{ padding: "5px" }}> فایل ضمیمه {}</span>
+                </Typography>
               </Box>
             </Box>
           </Grid>
-          <Grid item lg={3}></Grid>
         </Grid>
       </Box>
     </>
