@@ -288,6 +288,16 @@ const SingleProduct = ({ DetailProduct }) => {
                 </svg>
                 <span style={{ margin: "10px" }}>فرمت فایل:Eps,PSD</span>
               </Typography>
+              <Typography
+                sx={{
+                  marginBottom: "32px",
+                }}
+              >
+                قیمت:
+                <span style={{ margin: "10px" }}>
+                  {numberFormat(DetailProduct.price)} تومان
+                </span>
+              </Typography>
               <Box
                 sx={{
                   border: 1,
@@ -318,7 +328,7 @@ const SingleProduct = ({ DetailProduct }) => {
                       <img
                         maxWidth="84px"
                         height="84px"
-                        src="/images/15412.png"
+                        src={`https://hdgraphic.ir/${DetailProduct.watermarked_image}`}
                       />
                     </Box>
                   </Box>
