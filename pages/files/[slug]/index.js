@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Filter from "../../../components/Filter";
+
 const fileSlugPage = ({ category }) => {
   const title = category[0].category.title;
   return (
@@ -17,6 +18,7 @@ const fileSlugPage = ({ category }) => {
       >
         {title}
       </Typography>
+
       <Filter category={category} />
     </>
   );
