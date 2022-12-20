@@ -39,12 +39,12 @@ const LandingProducts = () => {
                   borderRadius: "100%",
                 }}
               >
-                <Link href="#">
+                <Link href={"/files/فایل-لایه-باز"}>
                   <img src="/images/dv.png" />
                 </Link>
               </Box>
               <Box component="span">
-                <Link href="#">
+                <Link href={"/files/فایل-لایه-باز"}>
                   <Typography variant="h5" component="h5" sx={{ p: 1 }}>
                     فایل لایه باز
                   </Typography>
@@ -52,7 +52,12 @@ const LandingProducts = () => {
                 <Typography
                   variant="p"
                   component="p"
-                  sx={{ width: "75%", display: "flex", textAlign: "center", m: "auto" }}
+                  sx={{
+                    width: "75%",
+                    display: "flex",
+                    textAlign: "center",
+                    m: "auto",
+                  }}
                 >
                   منبع عظیمی از فایل های لایه باز مناسب برای اینستاگرام و غیره
                 </Typography>
@@ -89,12 +94,12 @@ const LandingProducts = () => {
                   borderRadius: "100%",
                 }}
               >
-                <Link href="#">
+                <Link href={"/files/icon"}>
                   <img src="/images/icons.png" />
                 </Link>
               </Box>
               <Box component="span">
-                <Link href="#">
+                <Link href={"/files/icon"}>
                   <Typography variant="h5" component="h5" sx={{ p: 1 }}>
                     آیکون
                   </Typography>
@@ -102,7 +107,12 @@ const LandingProducts = () => {
                 <Typography
                   variant="p"
                   component="p"
-                  sx={{ width: "75%", display: "flex", textAlign: "center", m: "auto" }}
+                  sx={{
+                    width: "75%",
+                    display: "flex",
+                    textAlign: "center",
+                    m: "auto",
+                  }}
                 >
                   منبع عظیمی از آیکون های مناسب برای طراحی صفحات وب{" "}
                 </Typography>
@@ -139,11 +149,11 @@ const LandingProducts = () => {
                   borderRadius: "100%",
                 }}
               >
-                <Link href="#">
+                <Link href={"/files/stock-pictures"}>
                   <img src="/images/zsd.png" />
                 </Link>
               </Box>
-              <Link href="#">
+              <Link href={"/files/stock-pictures"}>
                 <Typography variant="h5" component="h5" sx={{ p: 1 }}>
                   تصویر{" "}
                 </Typography>
@@ -192,11 +202,11 @@ const LandingProducts = () => {
                   borderRadius: "100%",
                 }}
               >
-                <Link href="#">
+                <Link href="/files/موکاپ">
                   <img src="/images/mokop.png" />
                 </Link>
               </Box>
-              <Link href="#">
+              <Link href="/files/موکاپ">
                 <Typography variant="h5" component="h5" sx={{ p: 1 }}>
                   موکاپ
                 </Typography>
