@@ -40,7 +40,7 @@ const LandingProducts = () => {
                 }}
               >
                 <Link href="#">
-                  <img src="images/dv.png" />
+                  <img src="/images/dv.png" />
                 </Link>
               </Box>
               <Box component="span">
@@ -66,7 +66,7 @@ const LandingProducts = () => {
                 },
               }}
             >
-              <img src="images/line1.png" />
+              <img src="/images/line1.png" />
             </Grid>
             <Grid
               item
@@ -90,7 +90,7 @@ const LandingProducts = () => {
                 }}
               >
                 <Link href="#">
-                  <img src="images/icons.png" />
+                  <img src="/images/icons.png" />
                 </Link>
               </Box>
               <Box component="span">
@@ -116,7 +116,7 @@ const LandingProducts = () => {
                 },
               }}
             >
-              <img src="images/line1.png" />
+              <img src="/images/line1.png" />
             </Grid>
             <Grid
               item
@@ -140,7 +140,7 @@ const LandingProducts = () => {
                 }}
               >
                 <Link href="#">
-                  <img src="images/zsd.png" />
+                  <img src="/images/zsd.png" />
                 </Link>
               </Box>
               <Link href="#">
@@ -169,7 +169,7 @@ const LandingProducts = () => {
                 },
               }}
             >
-              <img src="images/line1.png" />
+              <img src="/images/line1.png" />
             </Grid>
             <Grid
               item
@@ -193,7 +193,7 @@ const LandingProducts = () => {
                 }}
               >
                 <Link href="#">
-                  <img src="images/mokop.png" />
+                  <img src="/images/mokop.png" />
                 </Link>
               </Box>
               <Link href="#">

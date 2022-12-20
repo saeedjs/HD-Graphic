@@ -1,10 +1,29 @@
+import { Typography } from "@mui/material";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Filter from "../../../components/Filter";
+<<<<<<< HEAD
 const fileSlugPage = ({category}) => {
   console.log('categry')
   return (
     <>
+=======
+const fileSlugPage = ({ category }) => {
+  const title = category[0].category.title;
+  return (
+    <>
+      <Typography
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          fontSize: "2rem",
+          fontWeight: "bold",
+          my: 4,
+        }}
+      >
+        {title}
+      </Typography>
+>>>>>>> 7b66a17180023bf3e386dbee1be35715845283f6
       <Filter category={category} />
     </>
   );
