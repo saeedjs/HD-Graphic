@@ -122,7 +122,7 @@ function NavbarTop() {
             </Paper>
             {pages.map((page) => (
               <Button
-                key={page.naem}
+                key={page.name}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "black", display: "block" }}
               >
