@@ -2,12 +2,12 @@ import LandingProducts from "./LandingProducts";
 import LandingTitle from "./LandingTitle";
 import SearchBox from "./SearchBox";
 
-const Header = () => {
+const Header = ({ category }) => {
   return (
     <>
       <LandingTitle />
       <SearchBox />
-      <LandingProducts />
+      <LandingProducts category={category} />
     </>
   );
 };

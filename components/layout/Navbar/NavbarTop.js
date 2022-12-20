@@ -65,7 +65,7 @@ function NavbarTop() {
               }}
             >
               <Link href="#">
-                <img src="images/3917033.png" />
+                <img src="/images/3917033.png" />
               </Link>
             </Paper>
             <IconButton
@@ -98,11 +98,7 @@ function NavbarTop() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem
-                  key={page.name}
-                  onClick={handleCloseNavMenu}
-                  sx={{ width: "200px" }}
-                >
+                <MenuItem key={page.name} onClick={handleCloseNavMenu} sx={{ width: "200px" }}>
                   <Link href={page.href} textAlign="center">
                     {page.name}
                   </Link>
@@ -121,7 +117,7 @@ function NavbarTop() {
               }}
             >
               <Link href="#">
-                <img src="images/3917033.png" />
+                <img src="/images/3917033.png" />
               </Link>
             </Paper>
             {pages.map((page) => (
@@ -163,10 +159,7 @@ function NavbarTop() {
             )}
             {true && (
               <Tooltip title="پروفایل" sx={{ display: "none" }}>
-                <IconButton
-                  onClick={handleOpenUserMenu}
-                  sx={{ px: 2, fontSize: "1.5rem" }}
-                >
+                <IconButton onClick={handleOpenUserMenu} sx={{ px: 2, fontSize: "1.5rem" }}>
                   <AccountCircleIcon />
                 </IconButton>
               </Tooltip>
@@ -188,11 +181,7 @@ function NavbarTop() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem
-                  key={setting}
-                  onClick={handleCloseUserMenu}
-                  sx={{ width: "120px" }}
-                >
+                <MenuItem key={setting} onClick={handleCloseUserMenu} sx={{ width: "120px" }}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
@@ -209,7 +198,7 @@ function NavbarTop() {
             }}
           >
             <Link href="#">
-              <img src="images/Group13.png" />
+              <img src="/images/Group13.png" />
             </Link>
           </Paper>
         </Toolbar>
