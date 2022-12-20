@@ -139,7 +139,18 @@ const ProductMain = ({ instagram }) => {
                   <img
                     style={{
                       width: "100%",
-                      height: "auto",
+                      height: "100%",
+                      padding: "0",
+                      marginRight: "10px",
+                    }}
+                    src={`https://hdgraphic.ir${item.image}`}
+                  />
+                </Link>
+                <Link href={`file/${item.slug}/${item.id}`}>
+                  <img
+                    style={{
+                      width: "100%",
+                      height: "100%",
                       padding: "0",
                       marginRight: "10px",
                     }}

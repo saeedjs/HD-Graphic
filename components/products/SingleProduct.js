@@ -33,7 +33,10 @@ const SingleProduct = ({ DetailProduct }) => {
       >
         <Grid
           container
-          style={{ borderBottom: "1px solid #E5E5E5", paddingBottom: "50px" }}
+          style={{
+            borderBottom: "1px solid #E5E5E5",
+            paddingBottom: "50px",
+          }}
         >
           <Grid
             item
@@ -41,6 +44,7 @@ const SingleProduct = ({ DetailProduct }) => {
               display: "flex",
               justifyContent: "center",
               marginTop: "33px",
+              flexDirection: "column",
               marginLeft: {
                 md: "20px",
                 lg: "90px",
@@ -60,6 +64,132 @@ const SingleProduct = ({ DetailProduct }) => {
               }}
               src={`https://hdgraphic.ir/${DetailProduct.watermarked_image}`}
             />
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                width: "90%",
+                justifyContent: "space-between",
+                alignItems: "space-between",
+                marginTop: "40px",
+                // m: 1,
+                marginBottom: "20px",
+              }}
+            >
+              <Typography sx={{ my: 1 }}>
+                <svg
+                  id="_3916699"
+                  data-name="3916699"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 22 22"
+                  style={{
+                    marginBottom: "-5px",
+                  }}
+                >
+                  <path
+                    id="Path_8"
+                    data-name="Path 8"
+                    d="M11,0A11,11,0,1,0,22,11,11,11,0,0,0,11,0Zm0,20.167A9.167,9.167,0,1,1,20.167,11,9.167,9.167,0,0,1,11,20.167Z"
+                  />
+                  <path
+                    id="Path_9"
+                    data-name="Path 9"
+                    d="M12,10H11a1,1,0,0,0,0,2h1v6a1,1,0,0,0,2,0V12A2,2,0,0,0,12,10Z"
+                    transform="translate(-1 -1.333)"
+                  />
+                  <circle
+                    id="Ellipse_20"
+                    data-name="Ellipse 20"
+                    cx="1.5"
+                    cy="1.5"
+                    r="1.5"
+                    transform="translate(9.5 4.524)"
+                  />
+                </svg>
+                <span> گزارش مشکلات دانلود فایل</span>
+              </Typography>
+              <Typography sx={{ my: 1 }}>تعداد دانلود:865</Typography>
+            </Box>
+
+            <Box
+              sx={{
+                mt: 5,
+                display: "flex",
+              }}
+            >
+              <Button
+                sx={{
+                  width: "30%",
+                  height: "43px",
+                  backgroundColor: "white",
+                  whiteSpace: "nowrap",
+                  color: "black",
+                  fontWeight: "bold",
+                  marginRight: "10px",
+                  border: "1px solid #C2C2C2",
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    id="_3917574"
+                    data-name="3917574"
+                    d="M16.088,12.222a3.878,3.878,0,0,0-3.2,1.687L7.474,11.459a3.815,3.815,0,0,0,0-2.906l5.41-2.461a3.884,3.884,0,1,0-.688-2.2,3.865,3.865,0,0,0,.067.655L6.516,7.16A3.888,3.888,0,1,0,6.5,12.849l5.767,2.606a3.951,3.951,0,0,0-.066.654,3.885,3.885,0,1,0,3.884-3.888Zm0-10.555a2.222,2.222,0,1,1-2.219,2.222,2.221,2.221,0,0,1,2.219-2.222ZM3.88,12.222A2.222,2.222,0,1,1,6.1,10,2.221,2.221,0,0,1,3.88,12.222Zm12.208,6.11a2.222,2.222,0,1,1,2.22-2.222,2.221,2.221,0,0,1-2.22,2.222Z"
+                    transform="translate(0.027 0.001)"
+                  />
+                </svg>{" "}
+                <span
+                  style={{
+                    marginRight: "10px",
+                  }}
+                >
+                  {" "}
+                  اشتراک گذاری
+                </span>
+              </Button>
+              <Button
+                sx={{
+                  width: "30%",
+                  height: "43px",
+                  backgroundColor: "white",
+                  color: "black",
+                  fontWeight: "bold",
+                  marginRight: "10px",
+                  border: "1px solid #C2C2C2",
+                }}
+              >
+                <svg
+                  id="_01_align_center"
+                  data-name="01 align center"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="19"
+                  viewBox="0 0 20 19"
+                >
+                  <path
+                    id="Path_3"
+                    data-name="Path 3"
+                    d="M14.577.917A5.318,5.318,0,0,0,10,3.717,5.318,5.318,0,0,0,5.414.917,5.728,5.728,0,0,0,0,6.9C0,12.648,9.125,19.288,9.514,19.57l.481.347.481-.347c.388-.28,9.514-6.922,9.514-12.671A5.728,5.728,0,0,0,14.577.917ZM10,17.828C7.285,15.766,1.665,10.7,1.665,6.9A4.047,4.047,0,0,1,5.414,2.614,4.047,4.047,0,0,1,9.162,6.9h1.666a4.047,4.047,0,0,1,3.748-4.285A4.047,4.047,0,0,1,18.325,6.9C18.325,10.7,12.7,15.766,10,17.828Z"
+                    transform="translate(0.005 -0.917)"
+                    fill="#232931"
+                  />
+                </svg>{" "}
+                <span
+                  style={{
+                    marginRight: "10px",
+                  }}
+                >
+                  {" "}
+                  پسندیدم
+                </span>
+              </Button>
+            </Box>
           </Grid>
           <Grid
             sx={{
@@ -123,6 +253,7 @@ const SingleProduct = ({ DetailProduct }) => {
                 variant="h6"
                 color="initial"
               >
+                {DetailProduct.de}
                 رم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                 استفاده از طراحان گرافیک است. چاپگرها واستفاده از طراحان
                 گرافاستفاده از طراحان
@@ -374,181 +505,59 @@ const SingleProduct = ({ DetailProduct }) => {
                 />
               </svg>
             </Button>
-            <Button
-              sx={{
-                width: "90%",
-                height: "50px",
-                backgroundColor: "colors.pink",
-                color: "white",
-                fontWeight: "bold",
-                marginRight: "10px",
-                m: 1,
-                "&:hover": {
-                  border: "1px solid ",
-                  color: "colors.pink",
-                  backgroundColor: "white",
-                },
-                "&:hover svg path": {
-                  fill: "#F6416C",
-                },
-              }}
-            >
-              <span
-                style={{
-                  marginLeft: "16px",
+            <Link href={`http://hdgraphic.ir${DetailProduct.file}`}>
+              <Button
+                sx={{
+                  width: "90%",
+                  height: "50px",
+                  backgroundColor: "colors.pink",
+                  color: "white",
+                  fontWeight: "bold",
+                  marginRight: "10px",
+                  m: 1,
+                  "&:hover": {
+                    border: "1px solid ",
+                    color: "colors.pink",
+                    backgroundColor: "white",
+                  },
+                  "&:hover svg path": {
+                    fill: "#F6416C",
+                  },
                 }}
               >
-                {" "}
-                دانلود فایل با کیفیت بالا
-              </span>
-              <svg
-                id="_3917330"
-                data-name="3917330"
-                xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="20"
-                viewBox="0 0 22 20"
-              >
-                <path
-                  id="Path_10"
-                  data-name="Path 10"
-                  d="M9.878,16.215a3.255,3.255,0,0,0,4.244,0l3.211-2.873a.828.828,0,0,0-.035-1.233,1.087,1.087,0,0,0-1.379-.029L12.993,14.7,13,.895A.952.952,0,0,0,12,0h0a.952.952,0,0,0-1,.895l-.009,13.786-2.91-2.6a1.085,1.085,0,0,0-1.415,0,.83.83,0,0,0,0,1.266Z"
-                  transform="translate(-0.997)"
-                  fill="#fff"
-                />
-                <path
-                  id="Path_11"
-                  data-name="Path 11"
-                  d="M21.083,16h0a.961.961,0,0,0-.917,1v4a.961.961,0,0,1-.917,1H2.75a.961.961,0,0,1-.917-1V17a.961.961,0,0,0-.917-1h0A.961.961,0,0,0,0,17v4a2.883,2.883,0,0,0,2.75,3h16.5A2.883,2.883,0,0,0,22,21V17A.961.961,0,0,0,21.083,16Z"
-                  transform="translate(0 -4)"
-                  fill="#fff"
-                />
-              </svg>
-            </Button>
-            <Box
-              sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                width: "90%",
-                justifyContent: "space-between",
-                alignItems: "space-between",
-                marginTop: "40px",
-                m: 1,
-                marginBottom: "20px",
-              }}
-            >
-              <Typography sx={{ my: 1 }}>
+                <span
+                  style={{
+                    marginLeft: "16px",
+                  }}
+                >
+                  {" "}
+                  دانلود فایل با کیفیت بالا
+                </span>
                 <svg
-                  id="_3916699"
-                  data-name="3916699"
+                  id="_3917330"
+                  data-name="3917330"
                   xmlns="http://www.w3.org/2000/svg"
                   width="22"
-                  height="22"
-                  viewBox="0 0 22 22"
-                  style={{
-                    marginBottom: "-5px",
-                  }}
+                  height="20"
+                  viewBox="0 0 22 20"
                 >
                   <path
-                    id="Path_8"
-                    data-name="Path 8"
-                    d="M11,0A11,11,0,1,0,22,11,11,11,0,0,0,11,0Zm0,20.167A9.167,9.167,0,1,1,20.167,11,9.167,9.167,0,0,1,11,20.167Z"
+                    id="Path_10"
+                    data-name="Path 10"
+                    d="M9.878,16.215a3.255,3.255,0,0,0,4.244,0l3.211-2.873a.828.828,0,0,0-.035-1.233,1.087,1.087,0,0,0-1.379-.029L12.993,14.7,13,.895A.952.952,0,0,0,12,0h0a.952.952,0,0,0-1,.895l-.009,13.786-2.91-2.6a1.085,1.085,0,0,0-1.415,0,.83.83,0,0,0,0,1.266Z"
+                    transform="translate(-0.997)"
+                    fill="#fff"
                   />
                   <path
-                    id="Path_9"
-                    data-name="Path 9"
-                    d="M12,10H11a1,1,0,0,0,0,2h1v6a1,1,0,0,0,2,0V12A2,2,0,0,0,12,10Z"
-                    transform="translate(-1 -1.333)"
-                  />
-                  <circle
-                    id="Ellipse_20"
-                    data-name="Ellipse 20"
-                    cx="1.5"
-                    cy="1.5"
-                    r="1.5"
-                    transform="translate(9.5 4.524)"
+                    id="Path_11"
+                    data-name="Path 11"
+                    d="M21.083,16h0a.961.961,0,0,0-.917,1v4a.961.961,0,0,1-.917,1H2.75a.961.961,0,0,1-.917-1V17a.961.961,0,0,0-.917-1h0A.961.961,0,0,0,0,17v4a2.883,2.883,0,0,0,2.75,3h16.5A2.883,2.883,0,0,0,22,21V17A.961.961,0,0,0,21.083,16Z"
+                    transform="translate(0 -4)"
+                    fill="#fff"
                   />
                 </svg>
-                <span> گزارش مشکلات دانلود فایل</span>
-              </Typography>
-              <Typography sx={{ my: 1 }}>تعداد دانلود:865</Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-              }}
-            >
-              <Button
-                sx={{
-                  width: "30%",
-                  height: "43px",
-                  backgroundColor: "white",
-                  whiteSpace: "nowrap",
-                  color: "black",
-                  fontWeight: "bold",
-                  marginRight: "10px",
-                  border: "1px solid #C2C2C2",
-                }}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    id="_3917574"
-                    data-name="3917574"
-                    d="M16.088,12.222a3.878,3.878,0,0,0-3.2,1.687L7.474,11.459a3.815,3.815,0,0,0,0-2.906l5.41-2.461a3.884,3.884,0,1,0-.688-2.2,3.865,3.865,0,0,0,.067.655L6.516,7.16A3.888,3.888,0,1,0,6.5,12.849l5.767,2.606a3.951,3.951,0,0,0-.066.654,3.885,3.885,0,1,0,3.884-3.888Zm0-10.555a2.222,2.222,0,1,1-2.219,2.222,2.221,2.221,0,0,1,2.219-2.222ZM3.88,12.222A2.222,2.222,0,1,1,6.1,10,2.221,2.221,0,0,1,3.88,12.222Zm12.208,6.11a2.222,2.222,0,1,1,2.22-2.222,2.221,2.221,0,0,1-2.22,2.222Z"
-                    transform="translate(0.027 0.001)"
-                  />
-                </svg>{" "}
-                <span
-                  style={{
-                    marginRight: "10px",
-                  }}
-                >
-                  {" "}
-                  اشتراک گذاری
-                </span>
               </Button>
-              <Button
-                sx={{
-                  width: "30%",
-                  height: "43px",
-                  backgroundColor: "white",
-                  color: "black",
-                  fontWeight: "bold",
-                  marginRight: "10px",
-                  border: "1px solid #C2C2C2",
-                }}
-              >
-                <svg
-                  id="_01_align_center"
-                  data-name="01 align center"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="19"
-                  viewBox="0 0 20 19"
-                >
-                  <path
-                    id="Path_3"
-                    data-name="Path 3"
-                    d="M14.577.917A5.318,5.318,0,0,0,10,3.717,5.318,5.318,0,0,0,5.414.917,5.728,5.728,0,0,0,0,6.9C0,12.648,9.125,19.288,9.514,19.57l.481.347.481-.347c.388-.28,9.514-6.922,9.514-12.671A5.728,5.728,0,0,0,14.577.917ZM10,17.828C7.285,15.766,1.665,10.7,1.665,6.9A4.047,4.047,0,0,1,5.414,2.614,4.047,4.047,0,0,1,9.162,6.9h1.666a4.047,4.047,0,0,1,3.748-4.285A4.047,4.047,0,0,1,18.325,6.9C18.325,10.7,12.7,15.766,10,17.828Z"
-                    transform="translate(0.005 -0.917)"
-                    fill="#232931"
-                  />
-                </svg>{" "}
-                <span
-                  style={{
-                    marginRight: "10px",
-                  }}
-                >
-                  {" "}
-                  پسندیدم
-                </span>
-              </Button>
-            </Box>
+            </Link>
           </Grid>
         </Grid>
 

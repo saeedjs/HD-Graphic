@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import Productmain2 from "./Productmain2";
 import Productmain4 from "./Productmain4";
 
-const productmain3 = () => {
+const productmain3 = ({ mockup }) => {
   return (
     <>
       <Box
@@ -13,10 +13,10 @@ const productmain3 = () => {
       ></Box>
       <Grid container maxWidth="xl" justifyContent={"center"}>
         <Grid item lg={5.15}>
-          <Productmain2 />
+          <Productmain2 mockup={mockup} />
         </Grid>{" "}
         <Grid item lg={5.7}>
-          <Productmain4 />
+          <Productmain4 mockup={mockup} />
         </Grid>
       </Grid>
     </>

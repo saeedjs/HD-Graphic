@@ -7,6 +7,7 @@ import nProgress from "nprogress";
 import Router from "next/router";
 import { useContext } from "react";
 import { AuthProvider } from "../context/AuthContext";
+import axios from "axios";
 
 Router.events.on("routeChangeStart", () => nProgress.start());
 
