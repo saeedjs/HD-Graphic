@@ -5,6 +5,8 @@ import { CssBaseline, Typography } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import nProgress from "nprogress";
 import Router from "next/router";
+import { useContext } from "react";
+import { AuthProvider } from "../context/AuthContext";
 
 Router.events.on("routeChangeStart", () => nProgress.start());
 
@@ -36,12 +38,14 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <NavbarTop />
-        <Component {...pageProps} />
-        <Footer />
-      </ThemeProvider>
+      <AuthProvider>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <NavbarTop />
+          <Component {...pageProps} />
+          <Footer />
+        </ThemeProvider>
+      </AuthProvider>
     </>
   );
 }

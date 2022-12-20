@@ -67,6 +67,7 @@ const UploadedFileCard = () => {
               title={item.title}
               sol={item.sol}
               srcImage={item.srcImage}
+              howareyou={item}
             />
           );
         })}
