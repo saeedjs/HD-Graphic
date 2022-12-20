@@ -21,6 +21,10 @@ import { Box, Container, Stack } from "@mui/system";
 import { useState } from "react";
 import { Mypagination } from "./Mypagination";
 import ComponentTop from "./ComponentTop";
+<<<<<<< HEAD
+const Filter = ({ category }) => {
+  console.log(category);
+=======
 import axios from "axios";
 
 const Filter = ({ category }) => {
@@ -91,6 +95,7 @@ const Filter = ({ category }) => {
       src: "asds.png",
     },
   ];
+>>>>>>> 7b695d9734b3d7b7102099e8c25e91e625d5442c
   const checkButtonArray = [
     {
       id: 0,
@@ -138,7 +143,6 @@ const Filter = ({ category }) => {
       value: "محبوب ترین",
     },
   ]);
-  const [item, setItem] = useState(itemArray);
   const checkArray = [
     { id: 0, display: "none" },
     { id: 1, display: "none" },
@@ -573,7 +577,7 @@ const Filter = ({ category }) => {
                 sx={{ mt: "15px" }}
               >
                 {vals.map((item, i) => (
-                  <Link href={"#"}>
+                  <Link href={`/file/${item.slug}/${item.id}`}>
                     <Box
                       key={i}
                       sx={{
