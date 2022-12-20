@@ -4,7 +4,8 @@ import { useState } from "react";
 const ProfileFileManager = () => {
   const [checkFree, setCheckFree] = useState(true);
   const [checkRule, setCheckRule] = useState(true);
-
+  const [chooseCover, setChooseCover] = useState("");
+  const [chooseFile, setChooseFile] = useState("");
   const handleCheckFree = (check) => {
     setCheckFree(!check);
   };
@@ -20,17 +21,38 @@ const ProfileFileManager = () => {
         </Typography>
         <Grid container>
           <Grid item xs={12} lg={9} order={{ xs: 2, lg: 1 }}>
-            <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                position: "relative",
+              }}
+            >
               <Box
                 item
                 sx={{
                   display: "flex",
-                  alignItems: "end",
-                  ml: 2,
+                  alignItems: {
+                    xs: "center",
+                    lg: "end",
+                  },
+                  flexDirection: {
+                    xs: "column",
+                    lg: "row",
+                  },
+                  ml: {
+                    lg: 2,
+                  },
                 }}
               >
-                <input type="file" id="files" style={{ display: "none" }} />
-                <label htmlFor="files">
+                <input
+                  type="file"
+                  id="cover"
+                  style={{ display: "none" }}
+                  onChange={(e) => e.target.files[0] && setChooseCover(e.target.files[0].name)}
+                />
+                <label htmlFor="cover">
                   <Box
                     sx={{
                       display: "flex",
@@ -48,9 +70,20 @@ const ProfileFileManager = () => {
                     <Typography component={"p"} sx={{ mt: 1 }}>
                       انتخاب کاور
                     </Typography>
+                    <Typography sx={{ fontSize: "12px" }}>{chooseCover}</Typography>
                   </Box>
                 </label>
-                <Box sx={{ display: "flex", flexDirection: "column", pr: "1.2rem" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    pr: "1.2rem",
+                    my: {
+                      xs: 2,
+                      md: 0,
+                    },
+                  }}
+                >
                   <Typography
                     sx={{ fontWeight: "bold", pr: "0.5rem", fontSize: "14px" }}
                     variant="h4"
@@ -125,11 +158,26 @@ const ProfileFileManager = () => {
                 item
                 sx={{
                   display: "flex",
-                  alignItems: "end",
-                  mt: 2,
+                  alignItems: {
+                    xs: "center",
+                    lg: "end",
+                  },
+                  flexDirection: {
+                    xs: "column",
+                    lg: "row",
+                  },
+                  mt: {
+                    xs: 1,
+                    sm: 0,
+                  },
                 }}
               >
-                <input type="file" id="files" style={{ display: "none" }} />
+                <input
+                  type="file"
+                  id="files"
+                  style={{ display: "none" }}
+                  onChange={(e) => e.target.files[0] && setChooseFile(e.target.files[0].name)}
+                />
                 <label htmlFor="files">
                   <Box
                     sx={{
@@ -148,9 +196,22 @@ const ProfileFileManager = () => {
                     <Typography component={"p"} sx={{ mt: 1 }}>
                       انتخاب فایل
                     </Typography>
+                    <Typography sx={{ fontSize: "12px", wordWrap: "break-word" }}>
+                      {chooseFile}
+                    </Typography>
                   </Box>
                 </label>
-                <Box sx={{ display: "flex", flexDirection: "column", pr: "1.2rem" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    pr: "1.2rem",
+                    my: {
+                      xs: 2,
+                      md: 0,
+                    },
+                  }}
+                >
                   <Typography
                     sx={{ fontWeight: "bold", pr: "0.5rem", fontSize: "14px" }}
                     variant="h4"
@@ -228,6 +289,7 @@ const ProfileFileManager = () => {
                   borderRadius: "5px",
                   fontFamily: "iranYekan",
                   marginLeft: "15px",
+                  marginBottom: "15px",
                   padding: "10px",
                 }}
               />
@@ -244,12 +306,15 @@ const ProfileFileManager = () => {
                   fontFamily: "iranYekan",
                 }}
               />
-              <Box sx={{ display: "flex", alignItems: "center" }}>
+              <Box sx={{ display: "flex", alignItems: "center", paddingRight: "3px" }}>
                 <Box
                   sx={{
                     width: "18px",
                     height: "18px",
-                    mr: 2,
+                    mr: {
+                      xs: 0,
+                      md: 2,
+                    },
                     border: `${!checkFree && "1px solid #c2c2c2"}`,
                     borderRadius: "5px",
                     cursor: "pointer",
@@ -309,8 +374,14 @@ const ProfileFileManager = () => {
             xs={12}
             lg={3}
             sx={{
-              pr: 6,
+              pr: {
+                lg: 6,
+              },
               mt: "-10px",
+              mb: {
+                xs: 4,
+                lg: 0,
+              },
             }}
             order={{
               xs: 1,
@@ -346,7 +417,18 @@ const ProfileFileManager = () => {
                 <Typography>فایل اصلی بارگذاری</Typography>
                 <Typography sx={{ mt: 1.5 }}>
                   <img src="/images/cloude-s.png" style={{ verticalAlign: "middle" }} />
-                  <span style={{ padding: "5px" }}> فایل ضمیمه {}</span>
+                  <Typography
+                    sx={{
+                      padding: "5px",
+                      color: "colors.pink",
+                      fontWeight: "bold",
+                      fontSize: "14px",
+                    }}
+                    component="span"
+                  >
+                    {" "}
+                    فایل ضمیمه {}
+                  </Typography>
                 </Typography>
               </Box>
             </Box>
