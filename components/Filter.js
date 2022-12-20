@@ -21,7 +21,9 @@ import { Box, Container, Stack } from "@mui/system";
 import { useState } from "react";
 import { Mypagination } from "./Mypagination";
 import ComponentTop from "./ComponentTop";
-const Filter = () => {
+import axios from "axios";
+const Filter = ({category}) => {
+  console.log(category);
   const itemArray = [
     {
       src: "eee.png",
