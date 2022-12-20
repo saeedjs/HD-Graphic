@@ -9,7 +9,7 @@ import { Box } from "@mui/system";
 import ProductmainBig from "./ProductmainBig";
 import TitleComponents from "../TitleComponents";
 
-const ProductMain = () => {
+const ProductMain = ({ instagram }) => {
   return (
     <>
       <Box sx={{ display: "flex", mb: 2 }}>
@@ -131,86 +131,25 @@ const ProductMain = () => {
             </Typography>
           </Box>
         </Box>{" "}
-        <Grid justifyContent={"center"} item xs={4} sm={4} md={4} lg={2}>
-          <Grid item sx={{ margin: "3px" }}>
-            <img
-              style={{
-                width: "100%",
-                height: "auto",
-                padding: "0",
-                marginRight: "10px",
-              }}
-              src="./images/asds.png"
-            />
-          </Grid>
-          <Grid item sx={{ margin: "3px" }}>
-            <img
-              style={{
-                maxWidth: "100%",
-                height: "auto",
-                padding: "0",
-                marginRight: "10px",
-              }}
-              src="./images/asd.png"
-            />
-          </Grid>
-        </Grid>
-        <Grid
-          alignItems={"center"}
-          justifyContent={"center"}
-          item
-          xs={4}
-          sm={4}
-          md={4}
-          lg={2}
-        >
-          <Grid item sx={{ margin: "3px" }} xs={12}>
-            <img
-              style={{
-                maxWidth: "100%",
-                height: "auto",
-                padding: "0",
-                marginRight: "10px",
-              }}
-              src="./images/www.png"
-            />
-          </Grid>
-          <Grid item sx={{ margin: "3px" }} xs={12}>
-            <img
-              style={{
-                maxWidth: "100%",
-                height: "auto",
-                padding: "0",
-                marginRight: "10px",
-              }}
-              src="./images/www.png"
-            />
-          </Grid>
-        </Grid>
-        <Grid justifyContent={"center"} item xs={4} sm={4} md={4} lg={2}>
-          <Grid item sx={{ margin: "3px" }} xs={12}>
-            <img
-              style={{
-                maxWidth: "100%",
-                height: "auto",
-                padding: "0",
-                marginRight: "10px",
-              }}
-              src="./images/www.png"
-            />
-          </Grid>
-          <Grid item sx={{ margin: "3px" }} xs={12}>
-            <img
-              style={{
-                width: "100%",
-                height: "auto",
-                padding: "0",
-                marginRight: "10px",
-              }}
-              src="./images/www.png"
-            />
-          </Grid>
-        </Grid>
+        {instagram.map((item) => {
+          return (
+            <Grid justifyContent={"center"} item xs={4} sm={4} md={4} lg={2}>
+              <Grid item sx={{ margin: "3px" }}>
+                <Link href={`file/${item.slug}/${item.id}`}>
+                  <img
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      padding: "0",
+                      marginRight: "10px",
+                    }}
+                    src={`https://hdgraphic.ir${item.image}`}
+                  />
+                </Link>
+              </Grid>
+            </Grid>
+          );
+        })}
       </Grid>
       <Grid item xs={12} sm={12} md={12} lg={10}>
         <img
