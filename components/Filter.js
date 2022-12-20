@@ -21,10 +21,6 @@ import { Box, Container, Stack } from "@mui/system";
 import { useState } from "react";
 import { Mypagination } from "./Mypagination";
 import ComponentTop from "./ComponentTop";
-<<<<<<< HEAD
-const Filter = ({ category }) => {
-  console.log(category);
-=======
 import axios from "axios";
 
 const Filter = ({ category }) => {
@@ -95,7 +91,6 @@ const Filter = ({ category }) => {
       src: "asds.png",
     },
   ];
->>>>>>> 7b695d9734b3d7b7102099e8c25e91e625d5442c
   const checkButtonArray = [
     {
       id: 0,
