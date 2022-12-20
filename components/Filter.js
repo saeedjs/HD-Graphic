@@ -21,79 +21,8 @@ import { Box, Container, Stack } from "@mui/system";
 import { useState } from "react";
 import { Mypagination } from "./Mypagination";
 import ComponentTop from "./ComponentTop";
-import axios from "axios";
-<<<<<<< HEAD
-const Filter = ({category}) => {
-  
-=======
 const Filter = ({ category }) => {
   console.log(category);
->>>>>>> 7b66a17180023bf3e386dbee1be35715845283f6
-  const itemArray = [
-    {
-      src: "eee.png",
-    },
-    {
-      src: "eee.png",
-    },
-    {
-      src: "eee.png",
-    },
-    {
-      src: "eee.png",
-    },
-    {
-      src: "eee.png",
-    },
-    {
-      src: "eee.png",
-    },
-    {
-      src: "eee.png",
-    },
-    {
-      src: "ewe.png",
-    },
-    {
-      src: "ewe.png",
-    },
-    {
-      src: "ewe.png",
-    },
-    {
-      src: "ewe.png",
-    },
-    {
-      src: "ewe.png",
-    },
-    {
-      src: "ewe.png",
-    },
-    {
-      src: "ewe.png",
-    },
-    {
-      src: "asds.png",
-    },
-    {
-      src: "asds.png",
-    },
-    {
-      src: "asds.png",
-    },
-    {
-      src: "asds.png",
-    },
-    {
-      src: "asds.png",
-    },
-    {
-      src: "asds.png",
-    },
-    {
-      src: "asds.png",
-    },
-  ];
   const checkButtonArray = [
     {
       id: 0,
@@ -141,7 +70,6 @@ const Filter = ({ category }) => {
       value: "محبوب ترین",
     },
   ]);
-  const [item, setItem] = useState(itemArray);
   const checkArray = [
     { id: 0, display: "none" },
     { id: 1, display: "none" },
@@ -564,7 +492,7 @@ const Filter = ({ category }) => {
                 sx={{ mt: "15px" }}
               >
                 {vals.map((item, i) => (
-                  <Link href={"#"}>
+                  <Link href={`/file/${item.slug}/${item.id}`}>
                     <Box
                       key={i}
                       sx={{
