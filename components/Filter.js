@@ -21,7 +21,7 @@ import { Box, Container, Stack } from "@mui/system";
 import { useState } from "react";
 import { Mypagination } from "./Mypagination";
 import ComponentTop from "./ComponentTop";
-const Filter = ({ category }) => {
+const Filter = ({ category, colors }) => {
   const checkButtonArray = [
     {
       id: 0,
@@ -223,18 +223,21 @@ const Filter = ({ category }) => {
                 </Box>
               </Box>
               <Box>
-                <Box sx={{ display: "flex" }}>
-                  <Box
+                <Box sx={{ display: "flex", flexWrap:'wrap' }}>
+                  {colors.map((color) => (
+                    <Box
                     onClick={() => checkTik(0)}
                     width="20px"
                     height="20px"
                     mr="7px"
+                    mt="7px"
                     sx={{
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
                       borderRadius: "100%",
-                      backgroundColor: "colors.black",
+                      backgroundColor: color.code,
+                      border:'1px solid #c2c2c2',
                       "&:hover": {
                         cursor: "pointer",
                       },
@@ -248,6 +251,9 @@ const Filter = ({ category }) => {
                       }}
                     />
                   </Box>
+                  ))}
+
+
                 </Box>
               </Box>
             </Box>
