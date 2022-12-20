@@ -22,8 +22,13 @@ import { useState } from "react";
 import { Mypagination } from "./Mypagination";
 import ComponentTop from "./ComponentTop";
 import axios from "axios";
+<<<<<<< HEAD
+const Filter = ({category}) => {
+  
+=======
 const Filter = ({ category }) => {
   console.log(category);
+>>>>>>> 7b66a17180023bf3e386dbee1be35715845283f6
   const itemArray = [
     {
       src: "eee.png",
@@ -175,8 +180,10 @@ const Filter = ({ category }) => {
     else findDisplay.status = true;
     setPriceFilter(copyPriceFilter);
   };
+  const vals = category;
   return (
     <>
+    {console.log(vals)}
       <Container maxWidth="xxl">
         <ComponentTop ltitle={"تعداد 6500 طرح آماده"} rtitle={"تنظیمات"} />
         <Grid container>
@@ -556,7 +563,7 @@ const Filter = ({ category }) => {
                 spacing={0}
                 sx={{ mt: "15px" }}
               >
-                {item.map((item, i) => (
+                {vals.map((item, i) => (
                   <Link href={"#"}>
                     <Box
                       key={i}
@@ -574,7 +581,7 @@ const Filter = ({ category }) => {
                       >
                         <img
                           style={{ height: "100%", width: "100%" }}
-                          src={"/images/" + item.src}
+                          src={process.env.REACT_APP_BASE_URL + item.image}
                         />
                       </Box>
                     </Box>
