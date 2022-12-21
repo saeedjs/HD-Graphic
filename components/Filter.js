@@ -223,37 +223,35 @@ const Filter = ({ category, colors }) => {
                 </Box>
               </Box>
               <Box>
-                <Box sx={{ display: "flex", flexWrap:'wrap' }}>
+                <Box sx={{ display: "flex", flexWrap: "wrap" }}>
                   {colors.map((color) => (
                     <Box
-                    onClick={() => checkTik(0)}
-                    width="20px"
-                    height="20px"
-                    mr="7px"
-                    mt="7px"
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      borderRadius: "100%",
-                      backgroundColor: color.code,
-                      border:'1px solid #c2c2c2',
-                      "&:hover": {
-                        cursor: "pointer",
-                      },
-                    }}
-                  >
-                    <CheckIcon
-                      fontSize="small"
+                      onClick={() => checkTik(0)}
+                      width="20px"
+                      height="20px"
+                      mr="7px"
+                      mt="7px"
                       sx={{
-                        color: "#FFFFFF",
-                        display: checkDisplayState[0].display,
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        borderRadius: "100%",
+                        backgroundColor: color.code,
+                        border: "1px solid #c2c2c2",
+                        "&:hover": {
+                          cursor: "pointer",
+                        },
                       }}
-                    />
-                  </Box>
+                    >
+                      <CheckIcon
+                        fontSize="small"
+                        sx={{
+                          color: "#FFFFFF",
+                          display: checkDisplayState[0].display,
+                        }}
+                      />
+                    </Box>
                   ))}
-
-
                 </Box>
               </Box>
             </Box>
