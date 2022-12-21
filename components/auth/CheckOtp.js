@@ -1,14 +1,14 @@
 import { useContext, useState } from "react";
 import AuthContext from "../../context/AuthContext";
 
-const Login = ({ setStep }) => {
-  const [cellphone, setCellphone] = useState();
+const CheckOtp = () => {
+  const [otp, setOtp] = useState();
 
-  const { login } = useContext(AuthContext);
+  const { checkOtp } = useContext(AuthContext);
 
   async function handleSubmit() {
-    if (cellphone == "") {
-      console.log("شماره تلفن وارد کنید");
+    if (otp == "") {
+      console.log("کد تایید الزامی است!");
       return;
     }
 
@@ -18,23 +18,22 @@ const Login = ({ setStep }) => {
     //   console.log("فرمت شماره موبایل نادرست است");
     //   return;
     // }
-    await login(cellphone);
-    setStep(2);
+    await checkOtp(otp);
   }
 
   return (
     <>
-      <h1>صفحه ورود</h1>
+      <h1> کد ورود</h1>
       <input
         type="text"
-        onChange={(e) => setCellphone(e.target.value)}
+        onChange={(e) => setOtp(e.target.value)}
         name=""
         id=""
-        placeholder="شماره تلفن خودرا وارد کنید"
+        placeholder="کد تایید وارد کنید"
       />
-      <button onClick={() => handleSubmit()}>ورود</button>
+      <button onClick={() => handleSubmit()}>ارسال</button>
     </>
   );
 };
 
-export default Login;
+export default CheckOtp;

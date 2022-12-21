@@ -21,7 +21,7 @@ import { Box, Container, Stack } from "@mui/system";
 import { useState } from "react";
 import { Mypagination } from "./Mypagination";
 import ComponentTop from "./ComponentTop";
-const Filter = ({ category }) => {
+const Filter = ({ category, colors }) => {
   const checkButtonArray = [
     {
       id: 0,
@@ -107,10 +107,9 @@ const Filter = ({ category }) => {
     else findDisplay.status = true;
     setPriceFilter(copyPriceFilter);
   };
-  const vals = category;
+  // const vals = category;
   return (
     <>
-      {console.log(vals)}
       <Container maxWidth="xxl">
         <ComponentTop ltitle={"تعداد 6500 طرح آماده"} rtitle={"تنظیمات"} />
         <Grid container>
@@ -223,31 +222,35 @@ const Filter = ({ category }) => {
                 </Box>
               </Box>
               <Box>
-                <Box sx={{ display: "flex" }}>
-                  <Box
-                    onClick={() => checkTik(0)}
-                    width="20px"
-                    height="20px"
-                    mr="7px"
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      borderRadius: "100%",
-                      backgroundColor: "colors.black",
-                      "&:hover": {
-                        cursor: "pointer",
-                      },
-                    }}
-                  >
-                    <CheckIcon
-                      fontSize="small"
+                <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+                  {colors.map((color) => (
+                    <Box
+                      onClick={() => checkTik(0)}
+                      width="20px"
+                      height="20px"
+                      mr="7px"
+                      mt="7px"
                       sx={{
-                        color: "#FFFFFF",
-                        display: checkDisplayState[0].display,
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        borderRadius: "100%",
+                        backgroundColor: color.code,
+                        border: "1px solid #c2c2c2",
+                        "&:hover": {
+                          cursor: "pointer",
+                        },
                       }}
-                    />
-                  </Box>
+                    >
+                      <CheckIcon
+                        fontSize="small"
+                        sx={{
+                          color: "#FFFFFF",
+                          display: checkDisplayState[0].display,
+                        }}
+                      />
+                    </Box>
+                  ))}
                 </Box>
               </Box>
             </Box>
@@ -406,7 +409,9 @@ const Filter = ({ category }) => {
                 spacing={0}
                 sx={{ mt: "15px" }}
               >
-                {vals.map((item, i) => (
+                  {console.log(category)}
+
+                {category.map((item, i) => (
                   <Link href={`/file/${item.slug}/${item.id}`}>
                     <Box
                       key={i}
@@ -424,7 +429,7 @@ const Filter = ({ category }) => {
                       >
                         <img
                           style={{ height: "100%", width: "100%" }}
-                          src={process.env.REACT_APP_BASE_URL + item.image}
+                          src={'https://hdgraphic.ir' + item.image}
                         />
                       </Box>
                     </Box>
