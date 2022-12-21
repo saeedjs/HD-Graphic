@@ -624,136 +624,57 @@ const SingleProduct = ({ DetailProduct }) => {
               }}
             >
               {" "}
-              قالب اینستاگرام
-            </span>
-          </Button>
-          <Button
-            variant="contained"
-            width="48px"
-            height="30px"
-            sx={{
-              backgroundColor: "white",
-              color: "black",
-              border: "1px solid #4ECCA3",
-              borderRadius: "10px",
-              boxShadow: "none",
-              m: 1,
-              "&:hover ": {
-                color: "white",
-                backgroundColor: "colors.green",
-              },
-              "&:hover svg path": {
-                fill: "white",
-              },
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 16 16"
-            >
-              <path
-                id="_3917132"
-                data-name="3917132"
-                d="M15.773,14.832,11.8,10.857a6.668,6.668,0,1,0-.941.941l3.974,3.974a.666.666,0,1,0,.941-.941ZM6.647,11.973a5.326,5.326,0,1,1,5.326-5.326,5.326,5.326,0,0,1-5.326,5.326Z"
-                transform="translate(0.032 0.032)"
-                fill="#4ecca3"
-              />
-            </svg>
-            <span
-              style={{
-                marginRight: "10px",
-              }}
-            >
-              {" "}
-              قالب اینستاگرام
-            </span>
-          </Button>
-          <Button
-            variant="contained"
-            width="48px"
-            height="30px"
-            sx={{
-              backgroundColor: "white",
-              color: "black",
-              border: "1px solid #4ECCA3",
-              borderRadius: "10px",
-              boxShadow: "none",
-              m: 1,
-              "&:hover ": {
-                color: "white",
-                backgroundColor: "colors.green",
-              },
-              "&:hover svg path": {
-                fill: "white",
-              },
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 16 16"
-            >
-              <path
-                id="_3917132"
-                data-name="3917132"
-                d="M15.773,14.832,11.8,10.857a6.668,6.668,0,1,0-.941.941l3.974,3.974a.666.666,0,1,0,.941-.941ZM6.647,11.973a5.326,5.326,0,1,1,5.326-5.326,5.326,5.326,0,0,1-5.326,5.326Z"
-                transform="translate(0.032 0.032)"
-                fill="#4ecca3"
-              />
-            </svg>
-            <span
-              style={{
-                marginRight: "10px",
-              }}
-            >
-              {" "}
-              قالب اینستاگرام
-            </span>
-          </Button>
-          <Button
-            variant="contained"
-            width="48px"
-            height="30px"
-            sx={{
-              backgroundColor: "white",
-              color: "black",
-              border: "1px solid #4ECCA3",
-              borderRadius: "10px",
-              boxShadow: "none",
-              m: 1,
-              "&:hover ": {
-                color: "white",
-                backgroundColor: "colors.green",
-              },
-              "&:hover svg path": {
-                fill: "white",
-              },
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 16 16"
-            >
-              <path
-                id="_3917132"
-                data-name="3917132"
-                d="M15.773,14.832,11.8,10.857a6.668,6.668,0,1,0-.941.941l3.974,3.974a.666.666,0,1,0,.941-.941ZM6.647,11.973a5.326,5.326,0,1,1,5.326-5.326,5.326,5.326,0,0,1-5.326,5.326Z"
-                transform="translate(0.032 0.032)"
-                fill="#4ecca3"
-              />
-            </svg>
-            <span
-              style={{
-                marginRight: "10px",
-              }}
-            >
-              {" "}
-              قالب اینستاگرام
+              {DetailProduct.tags.map((item) => {
+                return (
+                  <>
+                    <Link href={`#${item.slug}`}>
+                      <Button
+                        variant="contained"
+                        width="48px"
+                        height="30px"
+                        sx={{
+                          backgroundColor: "white",
+                          color: "black",
+                          border: "1px solid #4ECCA3",
+                          borderRadius: "10px",
+                          boxShadow: "none",
+                          m: 1,
+                          "&:hover ": {
+                            color: "white",
+                            backgroundColor: "colors.green",
+                          },
+                          "&:hover svg path": {
+                            fill: "white",
+                          },
+                        }}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            id="_3917132"
+                            data-name="3917132"
+                            d="M15.773,14.832,11.8,10.857a6.668,6.668,0,1,0-.941.941l3.974,3.974a.666.666,0,1,0,.941-.941ZM6.647,11.973a5.326,5.326,0,1,1,5.326-5.326,5.326,5.326,0,0,1-5.326,5.326Z"
+                            transform="translate(0.032 0.032)"
+                            fill="#4ecca3"
+                          />
+                        </svg>
+                        <span
+                          style={{
+                            marginRight: "10px",
+                          }}
+                        >
+                          {" "}
+                          {item.title}
+                        </span>
+                      </Button>
+                    </Link>
+                  </>
+                );
+              })}
             </span>
           </Button>
         </Typography>
