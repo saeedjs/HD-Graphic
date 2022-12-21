@@ -9,7 +9,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <>
-      <Box color={"white"} sx={{ mt: 7 }}>
+      <Box color={"white"} sx={{ mt: 20 }}>
         <Box
           sx={{
             width: "100%",

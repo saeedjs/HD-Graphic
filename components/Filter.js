@@ -107,10 +107,9 @@ const Filter = ({ category, colors }) => {
     else findDisplay.status = true;
     setPriceFilter(copyPriceFilter);
   };
-  const vals = category;
+  // const vals = category;
   return (
     <>
-      {console.log(vals)}
       <Container maxWidth="xxl">
         <ComponentTop ltitle={"تعداد 6500 طرح آماده"} rtitle={"تنظیمات"} />
         <Grid container>
@@ -412,7 +411,9 @@ const Filter = ({ category, colors }) => {
                 spacing={0}
                 sx={{ mt: "15px" }}
               >
-                {vals.map((item, i) => (
+                  {console.log(category)}
+
+                {category.map((item, i) => (
                   <Link href={`/file/${item.slug}/${item.id}`}>
                     <Box
                       key={i}
@@ -430,7 +431,7 @@ const Filter = ({ category, colors }) => {
                       >
                         <img
                           style={{ height: "100%", width: "100%" }}
-                          src={process.env.REACT_APP_BASE_URL + item.image}
+                          src={'https://hdgraphic.ir' + item.image}
                         />
                       </Box>
                     </Box>
