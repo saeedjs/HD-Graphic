@@ -17,6 +17,8 @@ export async function getServerSideProps() {
     "https://hdgraphic.ir/api/v1/files/category/موکاپ?page=1&page_size=4"
   );
 
+  console.log(resInstagram);
+
   return {
     props: {
       instagram: resInstagram.data,

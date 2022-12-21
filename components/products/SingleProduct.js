@@ -627,7 +627,7 @@ const SingleProduct = ({ DetailProduct }) => {
               {DetailProduct.tags.map((item) => {
                 return (
                   <>
-                    <Link href={`#${item.slug}`}>
+                    <Link href={`/files/tag/${item.slug}`}>
                       <Button
                         variant="contained"
                         width="48px"
