@@ -3,7 +3,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import Filter from "../../../components/Filter";
 
-const fileSlugPage = ({ category, colors, title }) => {
+const fileSlugPage = ({ category, colors }) => {
   return (
     <>
       <Typography
@@ -14,9 +14,7 @@ const fileSlugPage = ({ category, colors, title }) => {
           fontWeight: "bold",
           my: 4,
         }}
-      >
-        {title}
-      </Typography>
+      ></Typography>
 
       <Filter category={category} colors={colors} />
     </>
@@ -34,9 +32,8 @@ export async function getServerSideProps(params) {
 
     return {
       props: {
-        category: res.data.items,
-        colors: resColors.data.items.colors,
-        title: res.data.extra.title,
+        category: res.data,
+        colors: resColors.data,
       },
     };
   } catch (error) {

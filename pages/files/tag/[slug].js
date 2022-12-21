@@ -17,7 +17,7 @@ const tagsPage = ({ category, colors, title }) => {
       >
         {title}
       </Typography>{" "}
-      <Filter category={category} colors={colors} title={title} />
+      <Filter category={category} colors={colors} />
     </>
   );
 };
@@ -28,13 +28,17 @@ export async function getServerSideProps(params) {
   const resTag = await axios.get(
     `https://hdgraphic.ir/api/v1/files/tag/${params.params.slug}`
   );
+
   const resColors = await axios.get(`https://hdgraphic.ir/api/v1/files/colors`);
+  const resTitle = await axios.get(
+    `https://hdgraphic.ir/api/v1/files/tag-detail/${params.params.slug}?short=1`
+  );
 
   return {
     props: {
-      category: resTag.data.items,
+      category: resTag.data,
       colors: resColors.data,
-      title: resTag.data.extra.title,
+      title: resTitle.data.title,
     },
   };
 }

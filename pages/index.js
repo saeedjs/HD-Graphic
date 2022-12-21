@@ -21,8 +21,8 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      instagram: resInstagram.data.items,
-      mockup: resMocup.data.items,
+      instagram: resInstagram.data,
+      mockup: resMocup.data,
     }, // will be passed to the page component as props
   };
 }
