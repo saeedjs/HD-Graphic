@@ -11,9 +11,9 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import axios from "axios";
 
 const pages = [
   { name: "آیکون", href: "/icons" },
@@ -28,7 +28,8 @@ const settings = ["پروفایل", "اکانت", "داشبورد", "خروج"];
 function NavbarTop() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
-
+  const [showMenu, setShowMenu] = useState(false);
+  const [categories, setCategories] = useState([]);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -43,6 +44,14 @@ function NavbarTop() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  useEffect(() => {
+    const data = async () => {
+      const categoryList = await axios.get("https://hdgraphic.ir/api/v1/files/categories?father=1");
+      setCategories(categoryList);
+    };
+    data();
+  }, []);
 
   return (
     <AppBar
@@ -121,13 +130,85 @@ function NavbarTop() {
               </Link>
             </Paper>
             {pages.map((page) => (
-              <Button
-                key={page.name}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "black", display: "block" }}
-              >
-                <Link href={page.href}>{page.name}</Link>
-              </Button>
+              <>
+                {page.name !== "دسته بندی" && (
+                  <Button
+                    key={page.name}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "black", display: "block" }}
+                  >
+                    <Link href={page.href}>{page.name}</Link>
+                  </Button>
+                )}
+                {page.name == "دسته بندی" && (
+                  <Typography
+                    href={"#"}
+                    component="span"
+                    sx={{
+                      color: "black",
+                      display: "flex",
+                      justifyContent: "center",
+                      fontSize: "14px",
+                      margin: "15px",
+                      cursor: "pointer",
+                      flexDirection: "column",
+                    }}
+                    onMouseOver={() => setShowMenu(true)}
+                    onMouseOut={() => setShowMenu(false)}
+                  >
+                    {page.name}
+
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        top: "80%",
+                        border: "1px solid #ccc",
+                        backgroundColor: "white",
+                      }}
+                    >
+                      {categories.data &&
+                        showMenu &&
+                        categories.data.map((e) => {
+                          return (
+                            <Box
+                              sx={{
+                                "&:hover": {
+                                  backgroundColor: "#eeeeee",
+                                },
+                                transition: "0.3s",
+                                padding: "5px 5px 5px 50px",
+                              }}
+                              component="div"
+                            >
+                              {e.child.length > 0 && console.log(e)}
+                              <Link href={`/files/${e.slug}`}>
+                                {e.title}
+                                {e.child.length > 0 &&
+                                  e.child.map((e) => {
+                                    return (
+                                      <Box
+                                        sx={{
+                                          margin: "0 70px  0 0",
+                                          "&:hover": {
+                                            backgroundColor: "#eeeeee",
+                                          },
+                                          transition: "0.3s",
+                                          padding: "5px 5px 5px 50px",
+                                        }}
+                                        component="div"
+                                      >
+                                        <Link href={`/files/${e.slug}`}>{e.title}</Link>
+                                      </Box>
+                                    );
+                                  })}
+                              </Link>
+                            </Box>
+                          );
+                        })}
+                    </Box>
+                  </Typography>
+                )}
+              </>
             ))}
           </Box>
 
