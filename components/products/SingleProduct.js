@@ -288,16 +288,26 @@ const SingleProduct = ({ DetailProduct }) => {
                 </svg>
                 <span style={{ margin: "10px" }}>فرمت فایل:Eps,PSD</span>
               </Typography>
-              <Typography
-                sx={{
-                  marginBottom: "32px",
-                }}
-              >
-                قیمت:
-                <span style={{ margin: "10px" }}>
-                  {numberFormat(DetailProduct.price)} تومان
-                </span>
-              </Typography>
+              {DetailProduct.is_free ? (
+                <Typography
+                  sx={{
+                    marginBottom: "32px",
+                  }}
+                >
+                  رایگان
+                </Typography>
+              ) : (
+                <Typography
+                  sx={{
+                    marginBottom: "32px",
+                  }}
+                >
+                  قیمت:
+                  <span style={{ margin: "10px" }}>
+                    {numberFormat(DetailProduct.price)} تومان
+                  </span>
+                </Typography>
+              )}
               <Box
                 sx={{
                   border: 1,
