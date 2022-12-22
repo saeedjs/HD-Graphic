@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect } from "react";
-import Filter from "../../../components/Filter";
+import Filter from "../../../components/filter/Filter";
 
 const tagsPage = ({ category, colors, title }) => {
   return (

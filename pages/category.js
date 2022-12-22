@@ -4,7 +4,7 @@ import Category from "../components/category/Category";
 import SearchBox from "../components/category/SearchBox";
 import Articls from "../components/Articls";
 import "swiper/css";
-import Filter from "../components/Filter";
+import Filter from "../components/filter/Filter";
 
 const category = () => {
   return (

@@ -1,14 +1,13 @@
 import { Typography } from "@mui/material";
 import axios from "axios";
 import { useRouter } from "next/router";
-import Filter from "../../../components/Filter";
+import Filter from "../../../components/filter/Filter";
 
 const fileSlugPage = ({ category, colors }) => {
-  const title = category[0].category.title;
-  // const router = useRouter();
+  // const title = category[0].category.title;
   return (
     <>
-      <Typography
+      {/* <Typography
         sx={{
           display: "flex",
           justifyContent: "center",
@@ -17,7 +16,7 @@ const fileSlugPage = ({ category, colors }) => {
           my: 4,
         }}
       >
-      </Typography>
+      </Typography> */}
       <Filter category={category} colors={colors} />
     </>
   );
@@ -30,9 +29,10 @@ export async function getServerSideProps(params) {
   try {
     const res = await axios.get(`https://hdgraphic.ir/api/v1/files/category/${params.query.slug}?page=${page}`);
     const resColors = await axios.get(`https://hdgraphic.ir/api/v1/files/colors`);
+    console.log(resColors)
     return {
       props: {
-        category: res.data,
+        category: res.data.items,
         colors: resColors.data,
       },
     };
