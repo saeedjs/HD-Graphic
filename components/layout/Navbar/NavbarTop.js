@@ -12,11 +12,12 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Grid } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import axios from "axios";
 import { FindReplace } from "@mui/icons-material";
 import { display } from "@mui/system";
+import AuthContext from "../../../context/AuthContext";
 
 const pages = [
   { name: "آیکون", href: "/icons" },
