@@ -13,18 +13,21 @@ const fileSlugPage = ({ category, colors }) => {
 
 export async function getServerSideProps(params) {
   let page = 1;
+  let color = ' ';
+  let q = '';
   if (params.query.page) page = params.query.page;
+  if (params.query.q) q = params.query.q; 
+  if (params.query.color) color = params.query.color;
   try {
     const res = await axios.get(
-      `https://hdgraphic.ir/api/v1/files/category/${params.query.slug}?page=${page}`
+      `https://hdgraphic.ir/api/v1/files/category/${params.query.slug}?${q ? 'q='+q:""}&page=${page}&color=${color}`
     );
     const resColors = await axios.get(
       `https://hdgraphic.ir/api/v1/files/colors`
     );
-    console.log(resColors);
     return {
       props: {
-        category: res.data.items,
+        category: res.data,
         colors: resColors.data,
       },
     };

@@ -22,7 +22,9 @@ import { useState } from "react";
 import { Mypagination } from "../Mypagination";
 import ComponentTop from "../ComponentTop";
 import ColorFilter from "./colorFilter";
+import SearchFilter from "./SearchFilter";
 const Filter = ({ category, colors }) => {
+  const categoryVals = category.items;
   const checkButtonArray = [
     {
       id: 0,
@@ -314,43 +316,7 @@ const Filter = ({ category, colors }) => {
                 </Button>
               </Box>
             </Box>
-            <Box
-              height="130px"
-              pr="25px"
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-              }}
-            >
-              <Box mb="10px" sx={{ display: "flex" }}>
-                <Box sx={{ ml: "10px" }}>
-                  <img src="/images/icon/search.png" />
-                </Box>
-                <Box>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
-                    جستجو
-                  </Typography>
-                </Box>
-              </Box>
-              <Box>
-                <input
-                  type="text"
-                  style={{
-                    width: "186px ",
-                    height: "42px",
-                    backgroundColor: "#EEEEEE",
-                    borderRadius: "5px",
-                    border: "none",
-                    textAlign: "center",
-                    "&:hover": {
-                      border: "none",
-                    },
-                  }}
-                  placeholder="جستجو در میان طرح های کاربر"
-                />
-              </Box>
-            </Box>
+            <SearchFilter />
           </Grid>
           <Grid
             item
@@ -365,9 +331,7 @@ const Filter = ({ category, colors }) => {
                 spacing={0}
                 sx={{ mt: "15px" }}
               >
-                  {console.log(category)}
-
-                {category.map((item, i) => (
+                {categoryVals.map((item, i) => (
                   <Link href={`/file/${item.slug}/${item.id}`}>
                     <Box
                       key={i}
@@ -395,7 +359,7 @@ const Filter = ({ category, colors }) => {
               </Masonry>
             </Box>
             <Box>
-              <Mypagination />
+              <Mypagination mount={category.extra.page_count} />
             </Box>
           </Grid>
         </Grid>
