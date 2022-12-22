@@ -11,9 +11,12 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import axios from "axios";
+import { FindReplace } from "@mui/icons-material";
+import { display } from "@mui/system";
 
 const pages = [
   { name: "آیکون", href: "/icons" },
@@ -30,6 +33,8 @@ function NavbarTop() {
   const [anchorElUser, setAnchorElUser] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
   const [categories, setCategories] = useState([]);
+  const [showSubMenu, setShowSubMenu] = useState("none");
+  const [subMenu, setSubMenu] = useState([]);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -45,10 +50,17 @@ function NavbarTop() {
     setAnchorElUser(null);
   };
 
+  const findSubMenu = () => {
+    console.log(categories);
+    // let find = categories.data.find((e) => e.title === subMenu);
+    return;
+  };
+
   useEffect(() => {
     const data = async () => {
       const categoryList = await axios.get("https://hdgraphic.ir/api/v1/files/categories?father=1");
-      setCategories(categoryList);
+      console.log(categoriesList);
+      // setCategories(categoryList);
     };
     data();
   }, []);
@@ -157,18 +169,117 @@ function NavbarTop() {
                     onMouseOut={() => setShowMenu(false)}
                   >
                     {page.name}
-
-                    <Box
+                    <Grid
+                      container
                       sx={{
                         position: "absolute",
                         top: "80%",
                         border: "1px solid #ccc",
                         backgroundColor: "white",
+                        width: "400px",
+                        maxWidth: "500px !important",
                       }}
                     >
-                      {categories.data &&
-                        showMenu &&
-                        categories.data.map((e) => {
+                      <Grid item lg={6}>
+                        {categories.data &&
+                          categories.data.map((e, i) => {
+                            return (
+                              <Box
+                                sx={{
+                                  display: `${!showMenu && "none"}`,
+                                  "&:hover": {
+                                    backgroundColor: "#eeeeee",
+                                  },
+                                  transition: "0.3s",
+                                  padding: "5px 5px 5px 50px",
+                                }}
+                                component="div"
+                              >
+                                {e.child.length > 0 ? (
+                                  <Link
+                                    href={`/files/${e.slug}`}
+                                    onMouseOver={(event) => {
+                                      setSubMenu(event.target.innerText);
+                                      setShowSubMenu(true);
+                                    }}
+                                    onMouseOut={() => setShowSubMenu(false)}
+                                    // style={{ whiteSpace: "nowrap" }}
+                                  >
+                                    {e.title}
+                                    {/* {e.child.map((e) => {
+                                    return (
+                                      <Box
+                                        sx={{
+                                          margin: "0 70px  0 0",
+                                          "&:hover": {
+                                            backgroundColor: "#eeeeee",
+                                          },
+                                          display: "block",
+                                          position: "relative",
+                                          right: "78px",
+                                          transition: "0.3s",
+                                          padding: "5px 5px 5px 50px",
+                                          whiteSpace: "nowrap",
+                                        }}
+                                        component="div"
+                                      >
+                                        <Link href={`/files/${e.slug}`}>{e.title}</Link>
+                                      </Box>
+                                    );
+                                  })} */}
+                                  </Link>
+                                ) : (
+                                  <Link href={`/files/${e.slug}`}>{e.title}</Link>
+                                )}
+                              </Box>
+                            );
+                          })}
+                      </Grid>
+
+                      <Grid lg={6}>
+                        <Box
+                          sx={{
+                            "&:hover": {
+                              backgroundColor: "#eeeeee",
+                            },
+                            transition: "0.3s",
+                            padding: "5px 5px 5px 50px",
+                          }}
+                          component="div"
+                        >
+                          <Box>
+                            {/* {findSubMenu().child.map((e) => {
+                              return (
+                                <Box
+                                  sx={{
+                                    "&:hover": {
+                                      backgroundColor: "#eeeeee",
+                                    },
+                                    transition: "0.3s",
+                                    padding: "5px 5px 5px 50px",
+                                  }}
+                                >
+                                  <Link href={"#"}>{e.title}</Link>
+                                </Box>
+                              );
+                            })} */}
+                            {console.log(findSubMenu())}
+                          </Box>
+                        </Box>
+                      </Grid>
+                    </Grid>
+
+                    {/* <Grid item lg={6} sx={{ display: "none" }}>
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          left: "58%",
+                          top: "80%",
+                          border: "1px solid #ccc",
+                          backgroundColor: "white",
+                        }}
+                      >
+                        {findSubMenu().child.map((e) => {
                           return (
                             <Box
                               sx={{
@@ -178,34 +289,13 @@ function NavbarTop() {
                                 transition: "0.3s",
                                 padding: "5px 5px 5px 50px",
                               }}
-                              component="div"
                             >
-                              {e.child.length > 0 && console.log(e)}
-                              <Link href={`/files/${e.slug}`}>
-                                {e.title}
-                                {e.child.length > 0 &&
-                                  e.child.map((e) => {
-                                    return (
-                                      <Box
-                                        sx={{
-                                          margin: "0 70px  0 0",
-                                          "&:hover": {
-                                            backgroundColor: "#eeeeee",
-                                          },
-                                          transition: "0.3s",
-                                          padding: "5px 5px 5px 50px",
-                                        }}
-                                        component="div"
-                                      >
-                                        <Link href={`/files/${e.slug}`}>{e.title}</Link>
-                                      </Box>
-                                    );
-                                  })}
-                              </Link>
+                              <Link href={"#"}>{e.title}</Link>
                             </Box>
                           );
                         })}
-                    </Box>
+                      </Box>
+                    </Grid> */}
                   </Typography>
                 )}
               </>
