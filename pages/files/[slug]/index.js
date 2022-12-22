@@ -31,13 +31,7 @@ export async function getServerSideProps(params) {
     const res = await axios.get(
       `https://hdgraphic.ir/api/v1/files/category/${params.query.slug}?${q ? 'q='+q:""}&page=${page}&color=${color}`
     );
-<<<<<<< HEAD
-    const resColors = await axios.get(
-      `https://hdgraphic.ir/api/v1/files/colors`
-    );
-=======
     const resColors = await axios.get(`https://hdgraphic.ir/api/v1/files/colors`);
->>>>>>> aad40fcddfdb280afe74127cdd5e6b472e97e827
     return {
       props: {
         category: res.data,
