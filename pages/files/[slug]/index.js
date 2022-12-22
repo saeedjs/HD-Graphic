@@ -6,6 +6,15 @@ import Filter from "../../../components/filter/Filter";
 const fileSlugPage = ({ category, colors }) => {
   return (
     <>
+      <Typography
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          fontSize: "2rem",
+          fontWeight: "bold",
+          my: 4,
+        }}
+      ></Typography>
       <Filter category={category} colors={colors} />
     </>
   );
@@ -18,10 +27,7 @@ export async function getServerSideProps(params) {
     const res = await axios.get(
       `https://hdgraphic.ir/api/v1/files/category/${params.query.slug}?page=${page}`
     );
-    const resColors = await axios.get(
-      `https://hdgraphic.ir/api/v1/files/colors`
-    );
-    console.log(resColors);
+    const resColors = await axios.get(`https://hdgraphic.ir/api/v1/files/colors`);
     return {
       props: {
         category: res.data.items,
