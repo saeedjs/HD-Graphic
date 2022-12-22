@@ -77,10 +77,10 @@ const ProfileFileManager = () => {
                   sx={{
                     display: "flex",
                     flexDirection: "column",
-                    pr: "1.2rem",
+                    pr: "0.5rem",
                     my: {
                       xs: 2,
-                      md: 0,
+                      lg: 0,
                     },
                   }}
                 >
@@ -205,10 +205,10 @@ const ProfileFileManager = () => {
                   sx={{
                     display: "flex",
                     flexDirection: "column",
-                    pr: "1.2rem",
+                    pr: "0.5rem",
                     my: {
                       xs: 2,
-                      md: 0,
+                      lg: 0,
                     },
                   }}
                 >
