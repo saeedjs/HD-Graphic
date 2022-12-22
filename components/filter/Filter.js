@@ -19,8 +19,9 @@ import {
 } from "@mui/material";
 import { Box, Container, Stack } from "@mui/system";
 import { useState } from "react";
-import { Mypagination } from "./Mypagination";
-import ComponentTop from "./ComponentTop";
+import { Mypagination } from "../Mypagination";
+import ComponentTop from "../ComponentTop";
+import ColorFilter from "./colorFilter";
 const Filter = ({ category, colors }) => {
   const checkButtonArray = [
     {
@@ -69,14 +70,6 @@ const Filter = ({ category, colors }) => {
       value: "محبوب ترین",
     },
   ]);
-  const checkArray = [
-    { id: 0, display: "none" },
-    { id: 1, display: "none" },
-    { id: 2, display: "none" },
-    { id: 3, display: "none" },
-    { id: 4, display: "none" },
-  ];
-  const [checkDisplayState, setCheckDisplay] = useState(checkArray);
   const checkButton = (id) => {
     const copyCheckButtonState = [...checkButtonState];
     const findDisplay = copyCheckButtonState.find((a) => a.id == id);
@@ -93,13 +86,6 @@ const Filter = ({ category, colors }) => {
     }
     setCheckButton(copyCheckButtonState);
   };
-  const checkTik = (id) => {
-    const copyCheckDisplay = [...checkDisplayState];
-    const findDisplay = copyCheckDisplay.find((a) => a.id == id);
-    if (findDisplay.display == "block") findDisplay.display = "none";
-    else findDisplay.display = "block";
-    setCheckDisplay(copyCheckDisplay);
-  };
   const handleChange = (id) => {
     const copyPriceFilter = [...priceFilter];
     const findDisplay = copyPriceFilter.find((a) => a.id == id);
@@ -107,7 +93,6 @@ const Filter = ({ category, colors }) => {
     else findDisplay.status = true;
     setPriceFilter(copyPriceFilter);
   };
-  // const vals = category;
   return (
     <>
       <Container maxWidth="xxl">
@@ -222,36 +207,7 @@ const Filter = ({ category, colors }) => {
                 </Box>
               </Box>
               <Box>
-                <Box sx={{ display: "flex", flexWrap: "wrap" }}>
-                  {colors.map((color) => (
-                    <Box
-                      onClick={() => checkTik(0)}
-                      width="20px"
-                      height="20px"
-                      mr="7px"
-                      mt="7px"
-                      sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        borderRadius: "100%",
-                        backgroundColor: color.code,
-                        border: "1px solid #c2c2c2",
-                        "&:hover": {
-                          cursor: "pointer",
-                        },
-                      }}
-                    >
-                      <CheckIcon
-                        fontSize="small"
-                        sx={{
-                          color: "#FFFFFF",
-                          display: checkDisplayState[0].display,
-                        }}
-                      />
-                    </Box>
-                  ))}
-                </Box>
+                <ColorFilter colors={colors} />
               </Box>
             </Box>
             <Box
@@ -428,6 +384,7 @@ const Filter = ({ category, colors }) => {
                         }}
                       >
                         <img
+                          alt={item.alt}
                           style={{ height: "100%", width: "100%" }}
                           src={'https://hdgraphic.ir' + item.image}
                         />

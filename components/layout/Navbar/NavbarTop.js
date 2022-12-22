@@ -34,6 +34,7 @@ function NavbarTop() {
   const [showMenu, setShowMenu] = useState(false);
   const [categories, setCategories] = useState([]);
   const [showSubMenu, setShowSubMenu] = useState("none");
+  const [width, setWidth] = useState([""]);
   const [subMenu, setSubMenu] = useState([]);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -51,16 +52,14 @@ function NavbarTop() {
   };
 
   const findSubMenu = () => {
-    console.log(categories);
-    // let find = categories.data.find((e) => e.title === subMenu);
-    return;
+    let find = categories.data.find((e) => e.title === subMenu);
+    return find;
   };
 
   useEffect(() => {
     const data = async () => {
       const categoryList = await axios.get("https://hdgraphic.ir/api/v1/files/categories?father=1");
-      console.log(categoriesList);
-      // setCategories(categoryList);
+      setCategories(categoryList);
     };
     data();
   }, []);
@@ -152,7 +151,7 @@ function NavbarTop() {
                     <Link href={page.href}>{page.name}</Link>
                   </Button>
                 )}
-                {page.name == "دسته بندی" && (
+                {false && page.name == "دسته بندی" && (
                   <Typography
                     href={"#"}
                     component="span"
@@ -176,8 +175,10 @@ function NavbarTop() {
                         top: "80%",
                         border: "1px solid #ccc",
                         backgroundColor: "white",
-                        width: "400px",
-                        maxWidth: "500px !important",
+                        width: "380px",
+                        height: "180px",
+                        overflowY: "scroll",
+                        // maxWidth: " !important",
                       }}
                     >
                       <Grid item lg={6}>
@@ -194,61 +195,29 @@ function NavbarTop() {
                                   padding: "5px 5px 5px 50px",
                                 }}
                                 component="div"
+                                onMouseOver={(event) => {
+                                  setSubMenu(event.target.innerText);
+                                  setShowSubMenu(true);
+                                }}
+                                onMouseOut={() => setShowSubMenu(false)}
                               >
-                                {e.child.length > 0 ? (
-                                  <Link
-                                    href={`/files/${e.slug}`}
-                                    onMouseOver={(event) => {
-                                      setSubMenu(event.target.innerText);
-                                      setShowSubMenu(true);
-                                    }}
-                                    onMouseOut={() => setShowSubMenu(false)}
-                                    // style={{ whiteSpace: "nowrap" }}
-                                  >
-                                    {e.title}
-                                    {/* {e.child.map((e) => {
-                                    return (
-                                      <Box
-                                        sx={{
-                                          margin: "0 70px  0 0",
-                                          "&:hover": {
-                                            backgroundColor: "#eeeeee",
-                                          },
-                                          display: "block",
-                                          position: "relative",
-                                          right: "78px",
-                                          transition: "0.3s",
-                                          padding: "5px 5px 5px 50px",
-                                          whiteSpace: "nowrap",
-                                        }}
-                                        component="div"
-                                      >
-                                        <Link href={`/files/${e.slug}`}>{e.title}</Link>
-                                      </Box>
-                                    );
-                                  })} */}
-                                  </Link>
+                                {/* {e.child.length > 0 ? (
+                                  <Link href={`/files/${e.slug}`}>{e.title}</Link>
                                 ) : (
                                   <Link href={`/files/${e.slug}`}>{e.title}</Link>
-                                )}
+                                )} */}
+                                <Link href={`/files/${e.slug}`}>{e.title}</Link>
                               </Box>
                             );
                           })}
                       </Grid>
 
-                      <Grid lg={6}>
-                        <Box
-                          sx={{
-                            "&:hover": {
-                              backgroundColor: "#eeeeee",
-                            },
-                            transition: "0.3s",
-                            padding: "5px 5px 5px 50px",
-                          }}
-                          component="div"
-                        >
-                          <Box>
-                            {/* {findSubMenu().child.map((e) => {
+                      {/* <Grid item lg={6}>
+                        <Box>
+                          {categories.data &&
+                            categories.data.length >= 1 &&
+                            subMenu.length >= 1 &&
+                            findSubMenu().child.map((e) => {
                               return (
                                 <Box
                                   sx={{
@@ -258,44 +227,19 @@ function NavbarTop() {
                                     transition: "0.3s",
                                     padding: "5px 5px 5px 50px",
                                   }}
+                                  component="div"
                                 >
-                                  <Link href={"#"}>{e.title}</Link>
+                                  <Box>
+                                    <Link href={`files/${e.slug}`} style={{ whiteSpace: "nowrap" }}>
+                                      {e.title}
+                                    </Link>
+                                  </Box>
                                 </Box>
                               );
-                            })} */}
-                            {console.log(findSubMenu())}
-                          </Box>
+                            })}
                         </Box>
-                      </Grid>
+                      </Grid> */}
                     </Grid>
-
-                    {/* <Grid item lg={6} sx={{ display: "none" }}>
-                      <Box
-                        sx={{
-                          position: "absolute",
-                          left: "58%",
-                          top: "80%",
-                          border: "1px solid #ccc",
-                          backgroundColor: "white",
-                        }}
-                      >
-                        {findSubMenu().child.map((e) => {
-                          return (
-                            <Box
-                              sx={{
-                                "&:hover": {
-                                  backgroundColor: "#eeeeee",
-                                },
-                                transition: "0.3s",
-                                padding: "5px 5px 5px 50px",
-                              }}
-                            >
-                              <Link href={"#"}>{e.title}</Link>
-                            </Box>
-                          );
-                        })}
-                      </Box>
-                    </Grid> */}
                   </Typography>
                 )}
               </>

@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect } from "react";
-import Filter from "../../../components/Filter";
+import Filter from "../../../components/filter/Filter";
 
 const tagsPage = ({ category, colors, title }) => {
   return (
@@ -31,7 +31,7 @@ export async function getServerSideProps(params) {
 
   const resColors = await axios.get(`https://hdgraphic.ir/api/v1/files/colors`);
   const resTitle = await axios.get(
-    `https://hdgraphic.ir/api/v1/files/tag-detail/${params.params.slug}?short=1`
+    `https://hdgraphic.ir/api/v1/files/tag-detail/${params.params.slug}`
   );
 
   return {

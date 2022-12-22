@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Box } from "@mui/system";
 import ProductmainBig from "./ProductmainBig";
 import TitleComponents from "../TitleComponents";
+import { Masonry } from "@mui/lab";
 
 const ProductMain = ({ instagram }) => {
   return (
@@ -65,16 +66,14 @@ const ProductMain = ({ instagram }) => {
             <Typography
               sx={{
                 fontSize: {
-                  lg: "20px",
+                  lg: "0px",
                   md: "18px",
                   sm: "12px",
                   xs: "10px",
                 },
                 fontSize: "16px",
               }}
-            >
-              مطالب وبلاگ
-            </Typography>
+            ></Typography>
           </Box>
           <Box sx={{ mr: "35px" }}>
             <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
@@ -89,7 +88,9 @@ const ProductMain = ({ instagram }) => {
               },
             }}
           >
-            <Typography sx={{ color: "#AAAAAA", fontSize: "14px" }}>500 طرح آماده</Typography>
+            <Typography sx={{ color: "#AAAAAA", fontSize: "14px" }}>
+              500 طرح آماده
+            </Typography>
           </Box>
         </Box>
       </Box>
@@ -122,8 +123,10 @@ const ProductMain = ({ instagram }) => {
           <Box sx={{ mr: "35px" }}>
             <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
           </Box>
-          <Box sx={{ mr: "12" }}>
-            <Typography sx={{ color: "#AAAAAA", fontSize: "16px" }}>500 طرح آماده</Typography>
+          <Box sx={{ mr: 4 }}>
+            <Typography sx={{ color: "#AAAAAA", fontSize: "16px" }}>
+              500 طرح آماده
+            </Typography>
           </Box>
         </Box>{" "}
         {instagram.map((item) => {

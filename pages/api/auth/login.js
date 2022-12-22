@@ -24,6 +24,20 @@ export default async function handler(req, res) {
           }
         )
       );
+      res.setHeader(
+        "Set-Cookie",
+        cookie.serialize(
+          "number",
+          req.body.cellphone,
+
+          {
+            httpOnly: true,
+            secure: process.env.NODE_ENV !== "development",
+            maxAge: 60,
+            path: "/",
+          }
+        )
+      );
 
       res.status(200).json({ massage: ":کدورود شما با موفقیت ارسال شد" });
 
