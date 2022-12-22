@@ -14,6 +14,8 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { useState } from "react";
 import Link from "next/link";
+import { useContext } from "react";
+import AuthContext from "../../../context/AuthContext";
 
 const pages = [
   { name: "آیکون", href: "/icons" },
@@ -32,6 +34,9 @@ function NavbarTop() {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
+
+  const { user } = useContext(AuthContext);
+  console.log(user);
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -98,7 +103,11 @@ function NavbarTop() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.name} onClick={handleCloseNavMenu} sx={{ width: "200px" }}>
+                <MenuItem
+                  key={page.name}
+                  onClick={handleCloseNavMenu}
+                  sx={{ width: "200px" }}
+                >
                   <Link href={page.href} textAlign="center">
                     {page.name}
                   </Link>
@@ -147,7 +156,7 @@ function NavbarTop() {
               اشتراک ویژه
             </Button>
 
-            {false && (
+            {!user && (
               <>
                 <Button variant="text" sx={{ color: "colors.black", m: 0 }}>
                   ورود
@@ -159,7 +168,10 @@ function NavbarTop() {
             )}
             {true && (
               <Tooltip title="پروفایل" sx={{ display: "none" }}>
-                <IconButton onClick={handleOpenUserMenu} sx={{ px: 2, fontSize: "1.5rem" }}>
+                <IconButton
+                  onClick={handleOpenUserMenu}
+                  sx={{ px: 2, fontSize: "1.5rem" }}
+                >
                   <AccountCircleIcon />
                 </IconButton>
               </Tooltip>
@@ -181,7 +193,11 @@ function NavbarTop() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu} sx={{ width: "120px" }}>
+                <MenuItem
+                  key={setting}
+                  onClick={handleCloseUserMenu}
+                  sx={{ width: "120px" }}
+                >
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

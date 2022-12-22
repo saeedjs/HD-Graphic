@@ -36,7 +36,7 @@ export async function getServerSideProps(params) {
 
   return {
     props: {
-      category: resTag.data,
+      category: resTag.data.items,
       colors: resColors.data,
       title: resTitle.data.title,
     },
