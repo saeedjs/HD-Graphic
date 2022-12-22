@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import Filter from "../../../components/Filter";
 
 const fileSlugPage = ({ category, colors }) => {
-  const title = category[0].category.title;
   // const router = useRouter();
   return (
     <>
@@ -16,8 +15,7 @@ const fileSlugPage = ({ category, colors }) => {
           fontWeight: "bold",
           my: 4,
         }}
-      >
-      </Typography>
+      ></Typography>
       <Filter category={category} colors={colors} />
     </>
   );
@@ -25,11 +23,14 @@ const fileSlugPage = ({ category, colors }) => {
 
 export async function getServerSideProps(params) {
   let page = 1;
-  if (params.query.page)
-    page = params.query.page;
+  if (params.query.page) page = params.query.page;
   try {
-    const res = await axios.get(`https://hdgraphic.ir/api/v1/files/category/${params.query.slug}?page=${page}`);
-    const resColors = await axios.get(`https://hdgraphic.ir/api/v1/files/colors`);
+    const res = await axios.get(
+      `https://hdgraphic.ir/api/v1/files/category/${params.query.slug}?page=${page}`
+    );
+    const resColors = await axios.get(
+      `https://hdgraphic.ir/api/v1/files/colors`
+    );
     return {
       props: {
         category: res.data,

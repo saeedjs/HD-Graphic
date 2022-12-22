@@ -1,11 +1,15 @@
 import axios from "axios";
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import { toast } from "react-toastify";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  const [number, setNumber] = useState("");
+  const [user, setUser] = useState();
+
   const login = async (cellphone) => {
+    setNumber(cellphone);
     try {
       const res = await axios.post("http://localhost:3000/api/auth/login", {
         cellphone,
@@ -21,15 +25,16 @@ export const AuthProvider = ({ children }) => {
     try {
       const res = await axios.post("http://localhost:3000/api/auth/checkOtp", {
         otp,
+        number,
       });
-      console.log(res.data);
-    } catch {
-      console.log("مشکلی هست!");
-    }
+
+      setUser(res.user);
+      console.log(res.user);
+    } catch {}
   };
 
   return (
-    <AuthContext.Provider value={{ login, checkOtp }}>
+    <AuthContext.Provider value={{ login, checkOtp, number, user }}>
       {children}
     </AuthContext.Provider>
   );

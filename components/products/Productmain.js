@@ -73,9 +73,7 @@ const ProductMain = ({ instagram }) => {
                 },
                 fontSize: "16px",
               }}
-            >
-              مطالب وبلاگ
-            </Typography>
+            ></Typography>
           </Box>
           <Box sx={{ mr: "35px" }}>
             <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
@@ -125,7 +123,7 @@ const ProductMain = ({ instagram }) => {
           <Box sx={{ mr: "35px" }}>
             <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
           </Box>
-          <Box sx={{ mr: "12" }}>
+          <Box sx={{ mr: 4 }}>
             <Typography sx={{ color: "#AAAAAA", fontSize: "16px" }}>
               500 طرح آماده
             </Typography>
