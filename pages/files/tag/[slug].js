@@ -16,7 +16,7 @@ const tagsPage = ({ category, colors, title }) => {
         }}
       >
         {title}
-      </Typography>{" "}
+      </Typography>
       <Filter category={category} colors={colors} />
     </>
   );
@@ -33,6 +33,7 @@ export async function getServerSideProps(params) {
   const resTitle = await axios.get(
     `https://hdgraphic.ir/api/v1/files/tag-detail/${params.params.slug}`
   );
+  console.log();
 
   return {
     props: {

@@ -6,6 +6,8 @@ const CheckOtp = () => {
 
   const { checkOtp } = useContext(AuthContext);
 
+  async function handleResend() {}
+
   async function handleSubmit() {
     if (otp == "") {
       console.log("کد تایید الزامی است!");
@@ -32,6 +34,7 @@ const CheckOtp = () => {
         placeholder="کد تایید وارد کنید"
       />
       <button onClick={() => handleSubmit()}>ارسال</button>
+      <button onClick={() => handleResend()}>ارسال مجدد کد</button>
     </>
   );
 };

@@ -16,6 +16,8 @@ export async function getServerSideProps(params) {
   const resSingleProduct = await axios.get(
     `https://hdgraphic.ir/api/v1/files/file/${params.params.slug}/${params.params.id}`
   );
+
+  console.log(resSingleProduct.data);
   return {
     props: {
       DetailProduct: resSingleProduct.data.file,
