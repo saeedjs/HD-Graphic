@@ -11,7 +11,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [number, setNumber] = useState("");
   const [user, setUser] = useState();
-  const [refresh, setRefresh] = useState(null);
+
   const router = useRouter();
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }) => {
 
       setUser(res.data.user);
       setRefresh(res.data.auth.refresh);
-      console.log(refresh);
+
       router.push("/");
     } catch {}
   };
@@ -49,11 +49,9 @@ export const AuthProvider = ({ children }) => {
     try {
       const res = await axios.post(
         "http://localhost:300/api/auth/refreshToken",
-        {
-          refresh: req.cookies.refresh,
-        }
+        {}
       );
-      console.log(res.data.data);
+      console.log(res.data);
     } catch {}
   };
 

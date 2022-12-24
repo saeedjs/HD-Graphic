@@ -7,6 +7,7 @@ import SearchBox from "../category/SearchBox";
 import { numberFormat, salePrice } from "../../lib/helper";
 import { useEffect } from "react";
 import handleError from "../../lib/handleerror";
+import { Masonry } from "@mui/lab";
 
 const SingleProduct = ({ DetailProduct, creator }) => {
   let req = {
@@ -380,6 +381,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                   height: "130px",
                   backgroundColor: "#fff",
                   borderRadius: "10px",
+                  overFlow: "hidden",
                   mt: 1,
                   mr: 1,
                   padding: "5px",
@@ -417,6 +419,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                       sx={{
                         display: "flex",
                         justifyContent: "space-between",
+                        overFlow: "hidden",
                       }}
                     >
                       <Typography
@@ -453,15 +456,18 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                         display: "flex",
                         alignItems: "start",
                         justifyContent: "start",
+                        overFlow: "hidden",
                       }}
                     >
                       <Typography
                         sx={{
-                          overFlow: "hidden",
-                          fontSize: "11px",
+                          width: "100%",
+
+                          fontSize: "8px",
                           margin: "-20px",
-                          marginLeft: "14px",
+                          marginLeft: "12px",
                           marginRight: "12px",
+                          textOverflow: " ellipsis",
 
                           p: "8px",
                           fontSize: {
@@ -702,120 +708,43 @@ const SingleProduct = ({ DetailProduct, creator }) => {
             flexDirection: "column",
           }}
         >
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              width: "65%",
-            }}
-          >
-            <span style={{ borderRight: "8px solid #4ECCA3 " }}>
-              <span
-                style={{ margin: "20px", fontSize: "12px", fontWeight: "500" }}
-              >
-                بیشتر با فریبا حسنی
-              </span>
-            </span>
-            <Box
-              sx={{
-                display: {
-                  lg: "inline",
-                  md: "none",
-                  sm: "none",
-                  xs: "none",
-                },
-              }}
-            >
-              <span
-                style={{
-                  marginLeft: "89px",
-                  borderRight: "8px solid #4ECCA3 ",
-                }}
-              >
-                <span
-                  style={{
-                    margin: "20px",
-                    fontSize: "12px",
-                    fontWeight: "500",
-                  }}
-                >
-                  بیشتر با فریبا حسنی
-                </span>
-              </span>
-            </Box>
-          </Box>
           <Grid
             container
             sx={{
               justifyContent: "center",
             }}
-            _
+            maxWidth={"xl"}
           >
-            {DetailProduct.related_files.map((item) => {
-              return (
-                <Grid
-                  item
-                  sx={{
-                    display: "flex",
-                    // justifyContent: "center",
-                    flexWrap: "wrap ",
-                  }}
-                  xs={12}
-                  sm={12}
-                  md={10}
-                  lg={5}
-                >
+            <Grid
+              item
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                mr: 1,
+                p: 1,
+              }}
+              xs={12}
+              sm={12}
+              md={12}
+              lg={12}
+            >
+              {DetailProduct.related_files.map((item) => {
+                return (
                   <Link
                     href={`http://localhost:3000/file/${item.slug}/${item.id}`}
                   >
                     <img
                       src={`https://hdgraphic.ir/${item.image}`}
-                      style={{ margin: "4px", height: "300px", width: "300px" }}
+                      style={{
+                        margin: "4px",
+                        height: "300px",
+                        width: "300px",
+                      }}
                     />
                   </Link>
-                </Grid>
-              );
-            })}
-            <Box
-              sx={{
-                display: {
-                  lg: "none",
-                  md: "block",
-                  sm: "block",
-                  xs: "block",
-                },
-              }}
-            >
-              <span style={{ borderRight: "8px solid #4ECCA3 " }}>
-                <span
-                  style={{
-                    margin: "20px",
-                    fontSize: "12px",
-                    fontWeight: "500",
-                  }}
-                >
-                  بیشتر با فریبا حسنی
-                </span>
-              </span>
-            </Box>
-
-            <Grid
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                flexWrap: "wrap ",
-              }}
-              item
-              xs={12}
-              sm={12}
-              md={10}
-              lg={7}
-            >
-              <img src="./images/ewe.png" style={{ margin: "4px" }} />
-
-              <img src="./images/qqq.png" style={{ margin: "4px" }} />
-
-              <img src="./images/dwad.png" style={{ margin: "4px" }} />
+                );
+              })}
             </Grid>
           </Grid>
         </Box>

@@ -2,6 +2,7 @@ import axios from "axios";
 import cookie from "cookie";
 
 export default async function handler(req, res) {
+  var cookies = cookie.parse(req.headers.cookie || "");
   if (req.method == "POST") {
     try {
       const resApi = await axios.post(
@@ -12,7 +13,7 @@ export default async function handler(req, res) {
         }
       );
       console.log(resApi.data);
-      res.setHeader("Set-Cookie", [
+      await res.setHeader("Set-Cookie", [
         cookie.serialize("key", null, {
           httpOnly: true,
           secure: process.env.NODE_ENV !== "development",
@@ -32,7 +33,7 @@ export default async function handler(req, res) {
           path: "/",
         }),
       ]);
-
+      console.log(cookies);
       res.status(200).json({ user: resApi.data.user });
     } catch {
       res.status(405).json({ massage: "مشکلی هست" });
