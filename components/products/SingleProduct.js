@@ -757,7 +757,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                   item
                   sx={{
                     display: "flex",
-                    justifyContent: "center",
+                    // justifyContent: "center",
                     flexWrap: "wrap ",
                   }}
                   xs={12}
@@ -765,10 +765,12 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                   md={10}
                   lg={5}
                 >
-                  <Link href={`file/${item.slug}/${item.id}`}>
+                  <Link
+                    href={`http://localhost:3000/file/${item.slug}/${item.id}`}
+                  >
                     <img
                       src={`https://hdgraphic.ir/${item.image}`}
-                      style={{ margin: "4px", width }}
+                      style={{ margin: "4px", height: "300px", width: "300px" }}
                     />
                   </Link>
                 </Grid>
