@@ -27,8 +27,7 @@ const Complex = () => {
     if (findDisplay.status) findDisplay.status = false;
     else findDisplay.status = true;
     setPriceFilter(copyPriceFilter);
-    router.query.complex = complex;
-    console.log(router)
+    router.query.complex_filter = complex;
     await router.push(router);
   };
   return (
@@ -70,7 +69,7 @@ const Complex = () => {
                     }}
                   >
                     <CloseIcon
-                      onClick={() => handleChange(i, item.query)}
+                      onClick={() => handleChange(i)}
                       sx={{
                         color: "red",
                         fontSize: "16px",
@@ -93,7 +92,7 @@ const Complex = () => {
               <Checkbox
                 checked={item.status}
                 type={"checkbox"}
-                onChange={() => handleChange(i)}
+                onChange={() => handleChange(i, item.query)}
                 sx={{ color: "#C2C2C2" }}
               />
               <Typography>{item.value}</Typography>

@@ -25,16 +25,15 @@ export async function getServerSideProps(params) {
   let color = '';
   let q = '';
   let filter = '';
-  let complex_filte = '';
+  let complex_filter = '';
   if (params.query.page) page = params.query.page;
   if (params.query.filter) filter = params.query.filter;
   if (params.query.q) q = params.query.q; 
-  if (params.query.complex_filte) complex_filte = params.query.complex_filte; 
+  if (params.query.complex_filter) complex_filter = params.query.complex_filter; 
   if (params.query.color) color = params.query.color;
-  console.log(filter,"dlld")
   try {
     const res = await axios.get(
-      `https://hdgraphic.ir/api/v1/files/category/${params.query.slug}?${q ? 'q='+q:""}&page=${page}&${color ? 'color='+color:""}&${filter ? 'filter='+filter:""}&${complex_filte ? 'complex_filte='+complex_filte:""}`
+      `https://hdgraphic.ir/api/v1/files/category/${params.query.slug}?${q ? 'q='+q:""}&page=${page}&${color ? 'color='+color:""}&${filter ? 'filter='+filter:""}&${complex_filter ? 'complex_filter='+complex_filter:""}`
     );
     const resColors = await axios.get(`https://hdgraphic.ir/api/v1/files/colors`);
     return {

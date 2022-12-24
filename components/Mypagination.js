@@ -4,31 +4,47 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 let isClick = 1;
 export const Mypagination = ({ mount }) => {
+  const paginationVals = [];
+  const [page, setPage] = useState(paginationVals);
   const router = useRouter();
   const backPage = async () => {
-    console.log(isClick)
     if (isClick > 1) {
-      console.log(isClick)
-      router.query.page = isClick-1;
+      let copyPaginationVals = page;
+      copyPaginationVals.map((item) => (item.id -= 1));
+      setPage(copyPaginationVals);
+      router.query.page = isClick - 1;
       await router.push(router);
       isClick--;
     }
-  }
-  const pageClick = async (val) => {
-    router.query.page = val;
+  };
+  const pageClick = async (val, index) => {
+    let copyPaginationVals = page;
+    let valFind = copyPaginationVals.find((a) => a == val);
+    let valFilter = copyPaginationVals.filter((a) => a.id != index);
+    valFilter.map((item) => (item.status = false));
+    valFind.status = true;
+    setPage(copyPaginationVals);
+    router.query.page = index;
     await router.push(router);
-    isClick = val;
+    isClick = index;
   };
   const nextPage = async () => {
     if (isClick <= mount) {
-      router.query.page = isClick+1;
-      await router.push(router);
       isClick++;
+      let copyPaginationVals = page;
+      copyPaginationVals.map((item) => (item.id += 1, item.status = false));
+      let nextFind = copyPaginationVals.find((a) => a.id == isClick);
+      nextFind.status = true;
+      setPage(copyPaginationVals);
+      router.query.page = isClick;
+      await router.push(router);
     }
-  }
-  const paginationVals = [];
+  };
   for (let i = 1; i <= mount; i++) {
-    paginationVals.push(i);
+    let val = {};
+    val.status = false;
+    val.id = i;
+    paginationVals.push(val);
   }
   return (
     <>
@@ -41,7 +57,7 @@ export const Mypagination = ({ mount }) => {
             >
               <Box
                 sx={{
-                  width: "34px",
+                  width: "45px",
                   height: "34px",
                   borderRadius: "5px",
                   border: "1px solid #DEDEDE",
@@ -54,27 +70,36 @@ export const Mypagination = ({ mount }) => {
                 <Typography sx={{ fontWeight: "bold" }}>قبلی</Typography>
               </Box>
             </ListItem>
-            {paginationVals.map((item, i) => (
+            {page.map((item, i) => (
               <>
-                <ListItem
-                  onClick={() => pageClick(item)}
-                  sx={{ p: "0px", ml: "3px", mr: "3px" }}
-                >
-                  <Box
-                    sx={{
-                      width: "34px",
-                      height: "34px",
-                      borderRadius: "5px",
-                      border: "1px solid #DEDEDE",
-                      display: "center",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      cursor: "pointer",
-                    }}
+                {i < 3 ? (
+                  <ListItem
+                    onClick={() => pageClick(item, item.id)}
+                    sx={{ p: "0px", ml: "3px", mr: "3px" }}
                   >
-                    <Typography sx={{ fontWeight: "bold" }}>{item}</Typography>
-                  </Box>
-                </ListItem>
+                    <Box
+                      sx={{
+                        width: "34px",
+                        height: "34px",
+                        borderRadius: "5px",
+                        border: "1px solid #DEDEDE",
+                        display: "center",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        cursor: "pointer",
+                        color: item.status ? "white" : "black",
+                        backgroundColor: item.status ? "#4ECCA3" : "white",
+                      }}
+                    >
+                      <Typography sx={{ fontWeight: "bold" }}>
+                        {item.id}
+                        {/* {console.log(item.status)} */}
+                      </Typography>
+                    </Box>
+                  </ListItem>
+                ) : (
+                  <></>
+                )}
               </>
             ))}
             <ListItem
@@ -83,7 +108,7 @@ export const Mypagination = ({ mount }) => {
             >
               <Box
                 sx={{
-                  width: "34px",
+                  width: "45px",
                   height: "34px",
                   borderRadius: "5px",
                   border: "1px solid #DEDEDE",
