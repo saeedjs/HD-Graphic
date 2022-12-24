@@ -10,7 +10,7 @@ export default async function handler(req, res) {
           refresh,
         }
       );
-
+      console.log(resApi.data);
       res.setHeader("Set-Cookie", [
         cookie.serialize("access", resApi.data.access, {
           httpOnly: true,
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
         }),
       ]);
 
-      res.status(200).json({ access: resApi.data.access });
+      res.status(200).json({ data: resApi.data });
     } catch {
       res.status(405).json({ massage: "مشکلی هست" });
     }

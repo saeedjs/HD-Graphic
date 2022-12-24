@@ -2,10 +2,10 @@ import { propsToClassKey } from "@mui/styles";
 import axios from "axios";
 import SingleProduct from "../../../components/products/SingleProduct";
 
-const productSingle = ({ DetailProduct }) => {
+const productSingle = ({ DetailProduct, creator }) => {
   return (
     <>
-      <SingleProduct DetailProduct={DetailProduct} />
+      <SingleProduct DetailProduct={DetailProduct} creator={creator} />
     </>
   );
 };
@@ -18,7 +18,8 @@ export async function getServerSideProps(params) {
   );
   return {
     props: {
-      DetailProduct: resSingleProduct.data,
+      DetailProduct: resSingleProduct.data.file,
+      creator: resSingleProduct.data.user,
     }, // will be passed to the page component as props
   };
 }

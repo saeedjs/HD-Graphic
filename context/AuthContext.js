@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import cookie from "cookie";
 
 import { createContext, useState } from "react";
 import { toast } from "react-toastify";
@@ -8,13 +9,15 @@ import { toast } from "react-toastify";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  const [number, setNumber] = useState("");
+  const [user, setUser] = useState();
+  const [refresh, setRefresh] = useState(null);
+  const router = useRouter();
+
   useEffect(() => {
     refreshToken();
   }, []);
 
-  const [number, setNumber] = useState("");
-  const [user, setUser] = useState();
-  const router = useRouter();
   const login = async (cellphone) => {
     setNumber(cellphone);
     try {
@@ -36,7 +39,8 @@ export const AuthProvider = ({ children }) => {
       });
 
       setUser(res.data.user);
-      console.log(res.data.user);
+      setRefresh(res.data.auth.refresh);
+      console.log(refresh);
       router.push("/");
     } catch {}
   };
@@ -44,20 +48,17 @@ export const AuthProvider = ({ children }) => {
   const refreshToken = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/auth/otp/refreshToken",
+        "http://localhost:300/api/auth/refreshToken",
         {
           refresh: req.cookies.refresh,
         }
       );
-      console.log(res.data);
-      router.push("/");
+      console.log(res.data.data);
     } catch {}
   };
 
   return (
-    <AuthContext.Provider
-      value={{ login, checkOtp, number, user, refreshToken }}
-    >
+    <AuthContext.Provider value={{ login, checkOtp, number, user }}>
       {children}
     </AuthContext.Provider>
   );

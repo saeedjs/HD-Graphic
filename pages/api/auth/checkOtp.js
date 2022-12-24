@@ -26,7 +26,7 @@ export default async function handler(req, res) {
           path: "/",
         }),
         cookie.serialize("refresh", resApi.data.auth.refresh, {
-          httpOnly: true,
+          httpOnly: false,
           secure: process.env.NODE_ENV !== "development",
           maxAge: 60 * 61,
           path: "/",

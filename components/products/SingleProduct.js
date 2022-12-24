@@ -8,7 +8,7 @@ import { numberFormat, salePrice } from "../../lib/helper";
 import { useEffect } from "react";
 import handleError from "../../lib/handleerror";
 
-const SingleProduct = ({ DetailProduct }) => {
+const SingleProduct = ({ DetailProduct, creator }) => {
   let req = {
     name: "ali",
   };
@@ -323,46 +323,50 @@ const SingleProduct = ({ DetailProduct }) => {
                   padding: "5px",
                 }}
               >
-                <Box sx={{ display: "flex", height: "100%" }}>
-                  <Box
-                    xs={12}
-                    sm={12}
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      flexDirection: "column",
-                      m: 1,
-                    }}
-                  >
-                    <Box>
-                      <img
-                        maxWidth="84px"
-                        height="84px"
-                        src={`https://hdgraphic.ir/${DetailProduct.watermarked_image}`}
-                      />
+                <Link
+                  href={`https://iranarmaghan.ir/${DetailProduct.category_main[0].slug}`}
+                >
+                  <Box sx={{ display: "flex", height: "100%" }}>
+                    <Box
+                      xs={12}
+                      sm={12}
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        flexDirection: "column",
+                        m: 1,
+                      }}
+                    >
+                      <Box>
+                        <img
+                          maxWidth="84px"
+                          height="84px"
+                          src={`https://hdgraphic.ir/${DetailProduct.watermarked_image}`}
+                        />
+                      </Box>
+                    </Box>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        flexDirection: "column",
+                        alignItems: "center",
+                      }}
+                    >
+                      <Typography color={"colors.pink"}>
+                        سفارش چاپ همین حالا {"      "} !{" "}
+                      </Typography>
+                      <Typography
+                        fontSize={"14px"}
+                        color={"#C2C2C2"}
+                        sx={{ mt: 2, mr: 1.5 }}
+                        fontWeight={"small"}
+                      >
+                        شما می توانید همین فایل را چاپ نمایید
+                      </Typography>
                     </Box>
                   </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      flexDirection: "column",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Typography color={"colors.pink"}>
-                      سفارش چاپ همین حالا {"      "} !{" "}
-                    </Typography>
-                    <Typography
-                      fontSize={"14px"}
-                      color={"#C2C2C2"}
-                      sx={{ mt: 2, mr: 1.5 }}
-                      fontWeight={"small"}
-                    >
-                      شما می توانید همین فایل را چاپ نمایید
-                    </Typography>
-                  </Box>
-                </Box>
+                </Link>
               </Box>
 
               <Box
@@ -396,7 +400,7 @@ const SingleProduct = ({ DetailProduct }) => {
                       <img
                         maxWidth="84px"
                         height="84px"
-                        src="/images/545.png"
+                        src={`https://hdgraphic.ir/${creator.image}`}
                       />
                     </Box>
                     <Typography
@@ -405,7 +409,7 @@ const SingleProduct = ({ DetailProduct }) => {
                       }}
                       color={"#CBCBCB"}
                     >
-                      تعداد طرح:654
+                      تعداد طرح:{creator.files_count}
                     </Typography>
                   </Box>
                   <Box sx={{ width: "100%" }}>
@@ -426,7 +430,7 @@ const SingleProduct = ({ DetailProduct }) => {
                           color: "colors.green",
                         }}
                       >
-                        طراح: فریبا حسینی
+                        طراح:{creator.name}
                       </Typography>
                       <Link href="#">
                         <Typography
@@ -453,17 +457,20 @@ const SingleProduct = ({ DetailProduct }) => {
                     >
                       <Typography
                         sx={{
-                          marginTop: "10px",
+                          overFlow: "hidden",
+                          fontSize: "11px",
+                          margin: "-20px",
+                          marginLeft: "14px",
+                          marginRight: "12px",
+
                           p: "8px",
                           fontSize: {
                             xs: "10px",
                             lg: "14px",
                           },
                         }}
-                      >
-                        لورم ایپسوم متن ساختگی با تولید نامه و مجله در ستون و
-                        سطرآنچنان که لازم{" "}
-                      </Typography>
+                        dangerouslySetInnerHTML={{ __html: creator.desc }}
+                      ></Typography>
                     </Box>
                   </Box>
                 </Box>
@@ -742,23 +749,31 @@ const SingleProduct = ({ DetailProduct }) => {
             sx={{
               justifyContent: "center",
             }}
+            _
           >
-            <Grid
-              item
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                flexWrap: "wrap ",
-              }}
-              xs={12}
-              sm={12}
-              md={10}
-              lg={5}
-            >
-              <img src="./images/qqq.png" style={{ margin: "4px" }} />
-
-              <img src="./images/dwad.png" style={{ margin: "4px" }} />
-            </Grid>
+            {DetailProduct.related_files.map((item) => {
+              return (
+                <Grid
+                  item
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    flexWrap: "wrap ",
+                  }}
+                  xs={12}
+                  sm={12}
+                  md={10}
+                  lg={5}
+                >
+                  <Link href={`file/${item.slug}/${item.id}`}>
+                    <img
+                      src={`https://hdgraphic.ir/${item.image}`}
+                      style={{ margin: "4px", width }}
+                    />
+                  </Link>
+                </Grid>
+              );
+            })}
             <Box
               sx={{
                 display: {

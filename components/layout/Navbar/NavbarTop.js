@@ -90,7 +90,7 @@ function NavbarTop() {
                 border: "none",
               }}
             >
-              <Link href="#">
+              <Link href={`${process.env.REACT_APP_BASE_URL_LOCAL}`}>
                 <img src="/images/3917033.png" />
               </Link>
             </Paper>
