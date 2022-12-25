@@ -13,9 +13,6 @@ import AuthContext from "../../context/AuthContext";
 import { useState } from "react";
 
 const SingleProduct = async ({ DetailProduct, creator }) => {
-  const [download, setDownload] = useState();
-
-  const { access } = useContext(AuthContext);
   // await axios
   //   .get(
   //     `https://hdgraphic.ir/api/v1/users/access-download/${DetailProduct.token}`,
@@ -36,18 +33,10 @@ const SingleProduct = async ({ DetailProduct, creator }) => {
     status: 404,
     massage: "ok",
   };
-  const router = useRouter();
 
   useEffect(() => {
     handleError(req, res);
   }, []);
-
-  const handleDownload = async (token) => {
-    console.log(router);
-
-    router.query.token = token;
-    await router.push(router);
-  };
 
   return (
     <>
