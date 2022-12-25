@@ -16,6 +16,13 @@ export async function getServerSideProps(params) {
   const resSingleProduct = await axios.get(
     `https://hdgraphic.ir/api/v1/files/file/${params.params.slug}/${params.params.id}`
   );
+  // const downloadAccess = await axios.get(
+  //   `https://hdgraphic.ir/api/v1/users/access-download/${params.query.token}`,{
+  //     header:{
+  //       Auth
+  //     }
+  //   }
+  // );
 
   console.log(resSingleProduct.data);
   return {

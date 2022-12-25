@@ -2,8 +2,9 @@ import { Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect } from "react";
 import Filter from "../../../components/filter/Filter";
+import cookie from "cookie";
 
-const tagsPage = ({ category, colors, title }) => {
+const tagsPage = ({ category, colors }) => {
   return (
     <>
       <Typography
@@ -15,7 +16,7 @@ const tagsPage = ({ category, colors, title }) => {
           my: 4,
         }}
       >
-        {title}
+        {category.extra.title}
       </Typography>
       <Filter category={category} colors={colors} />
     </>
@@ -25,21 +26,39 @@ const tagsPage = ({ category, colors, title }) => {
 export default tagsPage;
 
 export async function getServerSideProps(params) {
-  const resTag = await axios.get(
-    `https://hdgraphic.ir/api/v1/files/tag/${params.params.slug}`
-  );
+  let page = 1;
+  let color = "";
+  let q = "";
+  let filter = "";
+  let complex_filter = "";
+  if (params.query.page) page = params.query.page;
+  if (params.query.filter) filter = params.query.filter;
+  if (params.query.q) q = params.query.q;
+  if (params.query.complex_filter) complex_filter = params.query.complex_filter;
+  if (params.query.color) color = params.query.color;
 
-  const resColors = await axios.get(`https://hdgraphic.ir/api/v1/files/colors`);
-  const resTitle = await axios.get(
-    `https://hdgraphic.ir/api/v1/files/tag-detail/${params.params.slug}`
-  );
-  console.log();
-
-  return {
-    props: {
-      category: resTag.data,
-      colors: resColors.data,
-      title: resTitle.data.title,
-    },
-  };
+  try {
+    const res = await axios.get(
+      `https://hdgraphic.ir/api/v1/files/tag/${params.query.slug}?${
+        q ? "q=" + q : ""
+      }&page=${page}&${color ? "color=" + color : ""}&${
+        filter ? "filter=" + filter : ""
+      }&${complex_filter ? "complex_filter=" + complex_filter : ""}`
+    );
+    const resColors = await axios.get(
+      `https://hdgraphic.ir/api/v1/files/colors`
+    );
+    return {
+      props: {
+        category: res.data,
+        colors: resColors.data,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        error: "s",
+      },
+    };
+  }
 }

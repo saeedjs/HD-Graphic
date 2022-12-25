@@ -4,12 +4,14 @@ import { Box, Container } from "@mui/system";
 import ImageSearchIcon from "@mui/icons-material/ImageSearch";
 import Link from "next/link";
 import SearchBox from "../category/SearchBox";
-import { numberFormat, salePrice } from "../../lib/helper";
+import { numberFormat } from "../../lib/helper";
 import { useEffect } from "react";
 import handleError from "../../lib/handleerror";
-import { Masonry } from "@mui/lab";
+
+import { useRouter } from "next/router";
 
 const SingleProduct = ({ DetailProduct, creator }) => {
+  const router = useRouter();
   let req = {
     name: "ali",
   };
@@ -21,6 +23,10 @@ const SingleProduct = ({ DetailProduct, creator }) => {
   useEffect(() => {
     handleError(req, res);
   }, []);
+
+  const handleDownload = async () => {
+    router.query.token = DetailProduct.token;
+  };
 
   return (
     <>
@@ -468,7 +474,6 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                           marginLeft: "12px",
                           marginRight: "12px",
                           textOverflow: " ellipsis",
-
                           p: "8px",
                           fontSize: {
                             xs: "10px",
@@ -538,59 +543,59 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                 />
               </svg>
             </Button>
-            <Link href={`http://hdgraphic.ir${DetailProduct.file}`}>
-              <Button
-                sx={{
-                  width: "90%",
-                  height: "50px",
-                  backgroundColor: "colors.pink",
-                  color: "white",
-                  fontWeight: "bold",
-                  marginRight: "10px",
-                  m: 1,
-                  "&:hover": {
-                    border: "1px solid ",
-                    color: "colors.pink",
-                    backgroundColor: "white",
-                  },
-                  "&:hover svg path": {
-                    fill: "#F6416C",
-                  },
+
+            <Button
+              onClick={() => handleDownload()}
+              sx={{
+                width: "90%",
+                height: "50px",
+                backgroundColor: "colors.pink",
+                color: "white",
+                fontWeight: "bold",
+                marginRight: "10px",
+                m: 1,
+                "&:hover": {
+                  border: "1px solid ",
+                  color: "colors.pink",
+                  backgroundColor: "white",
+                },
+                "&:hover svg path": {
+                  fill: "#F6416C",
+                },
+              }}
+            >
+              <span
+                style={{
+                  marginLeft: "16px",
                 }}
               >
-                <span
-                  style={{
-                    marginLeft: "16px",
-                  }}
-                >
-                  {" "}
-                  دانلود فایل با کیفیت بالا
-                </span>
-                <svg
-                  id="_3917330"
-                  data-name="3917330"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="20"
-                  viewBox="0 0 22 20"
-                >
-                  <path
-                    id="Path_10"
-                    data-name="Path 10"
-                    d="M9.878,16.215a3.255,3.255,0,0,0,4.244,0l3.211-2.873a.828.828,0,0,0-.035-1.233,1.087,1.087,0,0,0-1.379-.029L12.993,14.7,13,.895A.952.952,0,0,0,12,0h0a.952.952,0,0,0-1,.895l-.009,13.786-2.91-2.6a1.085,1.085,0,0,0-1.415,0,.83.83,0,0,0,0,1.266Z"
-                    transform="translate(-0.997)"
-                    fill="#fff"
-                  />
-                  <path
-                    id="Path_11"
-                    data-name="Path 11"
-                    d="M21.083,16h0a.961.961,0,0,0-.917,1v4a.961.961,0,0,1-.917,1H2.75a.961.961,0,0,1-.917-1V17a.961.961,0,0,0-.917-1h0A.961.961,0,0,0,0,17v4a2.883,2.883,0,0,0,2.75,3h16.5A2.883,2.883,0,0,0,22,21V17A.961.961,0,0,0,21.083,16Z"
-                    transform="translate(0 -4)"
-                    fill="#fff"
-                  />
-                </svg>
-              </Button>
-            </Link>
+                {" "}
+                دانلود فایل با کیفیت بالا
+              </span>
+              <svg
+                id="_3917330"
+                data-name="3917330"
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="20"
+                viewBox="0 0 22 20"
+              >
+                <path
+                  id="Path_10"
+                  data-name="Path 10"
+                  d="M9.878,16.215a3.255,3.255,0,0,0,4.244,0l3.211-2.873a.828.828,0,0,0-.035-1.233,1.087,1.087,0,0,0-1.379-.029L12.993,14.7,13,.895A.952.952,0,0,0,12,0h0a.952.952,0,0,0-1,.895l-.009,13.786-2.91-2.6a1.085,1.085,0,0,0-1.415,0,.83.83,0,0,0,0,1.266Z"
+                  transform="translate(-0.997)"
+                  fill="#fff"
+                />
+                <path
+                  id="Path_11"
+                  data-name="Path 11"
+                  d="M21.083,16h0a.961.961,0,0,0-.917,1v4a.961.961,0,0,1-.917,1H2.75a.961.961,0,0,1-.917-1V17a.961.961,0,0,0-.917-1h0A.961.961,0,0,0,0,17v4a2.883,2.883,0,0,0,2.75,3h16.5A2.883,2.883,0,0,0,22,21V17A.961.961,0,0,0,21.083,16Z"
+                  transform="translate(0 -4)"
+                  fill="#fff"
+                />
+              </svg>
+            </Button>
           </Grid>
         </Grid>
 
