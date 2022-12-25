@@ -11,6 +11,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [number, setNumber] = useState("");
   const [user, setUser] = useState();
+  const [access, setAccess] = useState("");
 
   const router = useRouter();
 
@@ -39,7 +40,7 @@ export const AuthProvider = ({ children }) => {
       });
 
       setUser(res.data.user);
-      setRefresh(res.data.auth.refresh);
+      setAccess(res.data.auth.access);
 
       router.push("/");
     } catch {}
@@ -56,7 +57,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ login, checkOtp, number, user }}>
+    <AuthContext.Provider
+      value={{ login, checkOtp, number, user, accessDownload, access }}
+    >
       {children}
     </AuthContext.Provider>
   );
