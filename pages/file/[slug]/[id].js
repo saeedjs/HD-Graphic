@@ -1,8 +1,11 @@
 import { propsToClassKey } from "@mui/styles";
 import axios from "axios";
+import { useContext } from "react";
 import SingleProduct from "../../../components/products/SingleProduct";
+import AuthContext from "../../../context/AuthContext";
 
 const productSingle = ({ DetailProduct, creator }) => {
+  const { access } = useContext(AuthContext);
   return (
     <>
       <SingleProduct DetailProduct={DetailProduct} creator={creator} />
@@ -16,13 +19,6 @@ export async function getServerSideProps(params) {
   const resSingleProduct = await axios.get(
     `https://hdgraphic.ir/api/v1/files/file/${params.params.slug}/${params.params.id}`
   );
-  // const downloadAccess = await axios.get(
-  //   `https://hdgraphic.ir/api/v1/users/access-download/${params.query.token}`,{
-  //     header:{
-  //       Auth
-  //     }
-  //   }
-  // );
 
   console.log(resSingleProduct.data);
   return {

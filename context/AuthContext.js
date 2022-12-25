@@ -11,14 +11,13 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [number, setNumber] = useState("");
   const [user, setUser] = useState();
-  const [access, setAccess] = useState("");
+  const [access, setAccess] = useState();
 
   const router = useRouter();
-
   useEffect(() => {
     refreshToken();
+    0;
   }, []);
-
   const login = async (cellphone) => {
     setNumber(cellphone);
     try {
@@ -26,6 +25,7 @@ export const AuthProvider = ({ children }) => {
         cellphone,
       });
       toast.success(res.data.massage);
+      localStorage.setItem("number", cellphone);
     } catch {
       console.log("مشکلی هست!");
     }
@@ -39,11 +39,15 @@ export const AuthProvider = ({ children }) => {
         number,
       });
 
-      setUser(res.data.user);
-      setAccess(res.data.auth.access);
+      setUser(res.data);
+      localStorage.setItem("access", res.data.access);
+      localStorage.setItem("refresh", res.data.refresh);
 
+      setAccess(localStorage.getItem("access"));
       router.push("/");
-    } catch {}
+    } catch {
+      console.log("مشکلی هستش!");
+    }
   };
 
   const refreshToken = async () => {
@@ -57,9 +61,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider
-      value={{ login, checkOtp, number, user, accessDownload, access }}
-    >
+    <AuthContext.Provider value={{ login, checkOtp, number, user, access }}>
       {children}
     </AuthContext.Provider>
   );

@@ -5,13 +5,30 @@ import ImageSearchIcon from "@mui/icons-material/ImageSearch";
 import Link from "next/link";
 import SearchBox from "../category/SearchBox";
 import { numberFormat } from "../../lib/helper";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import handleError from "../../lib/handleerror";
-
+import axios from "axios";
 import { useRouter } from "next/router";
+import AuthContext from "../../context/AuthContext";
+import { useState } from "react";
 
-const SingleProduct = ({ DetailProduct, creator }) => {
-  const router = useRouter();
+const SingleProduct = async ({ DetailProduct, creator }) => {
+  const [download, setDownload] = useState();
+
+  const { access } = useContext(AuthContext);
+  // await axios
+  //   .get(
+  //     `https://hdgraphic.ir/api/v1/users/access-download/${DetailProduct.token}`,
+  //     {
+  //       headers: {
+  //         Authorization: `Brearer ${access}`,
+  //       },
+  //     }
+  //   )
+  //   .then((result) => {
+  //     setDownload(result.link);
+  //   });
+
   let req = {
     name: "ali",
   };
@@ -19,13 +36,17 @@ const SingleProduct = ({ DetailProduct, creator }) => {
     status: 404,
     massage: "ok",
   };
+  const router = useRouter();
 
   useEffect(() => {
     handleError(req, res);
   }, []);
 
-  const handleDownload = async () => {
-    router.query.token = DetailProduct.token;
+  const handleDownload = async (token) => {
+    console.log(router);
+
+    router.query.token = token;
+    await router.push(router);
   };
 
   return (
@@ -545,7 +566,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
             </Button>
 
             <Button
-              onClick={() => handleDownload()}
+              onClick={() => handleDownload(DetailProduct.token)}
               sx={{
                 width: "90%",
                 height: "50px",
