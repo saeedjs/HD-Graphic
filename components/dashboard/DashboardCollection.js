@@ -1,32 +1,32 @@
-import SpecialCollection from "../Collection/SpecialCollection";
+import { Grid, Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import DashboardCollectionComp from "./DashboardCollectionComp";
+
 const DashboardCollection = () => {
   const data = [
     {
-      0: {
-        limg: "/images/363.png",
-        timg: "/images/987.png",
-        bimg: "/images/789.png",
-        subc: "قالب های معرفی محصول",
-      },
-      1: {
-        limg: "/images/vfv.png",
-        timg: "/images/xcvxcv.png",
-        bimg: "/images/zxcxzc.png",
-        subc: "پس زمینه ای فانتزی",
-      },
+      limg: "/images/vfv.png",
+      timg: "/images/66.png",
+      bimg: "/images/354.png",
+      subc: "موکاپ های خرید",
     },
     {
-      0: {
-        limg: "/images/666.png",
-        timg: "/images/656.png",
-        bimg: "/images/5626.png",
-        subc: "قالب های دخترانه اینستاگرام",
-      },
+      limg: "/images/vfv.png",
+      timg: "/images/66.png",
+      bimg: "/images/354.png",
+      subc: "موکاپ های خرید",
+    },
+    {
+      limg: "/images/vfv.png",
+      timg: "/images/66.png",
+      bimg: "/images/354.png",
+      subc: "موکاپ های خرید",
     },
   ];
   return (
     <>
-      <SpecialCollection data={data} />
+      <DashboardCollectionComp data={data} />
+      <DashboardCollectionComp data={data} />
     </>
   );
 };
