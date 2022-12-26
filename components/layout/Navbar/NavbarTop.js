@@ -15,8 +15,6 @@ import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import axios from "axios";
-import { FindReplace } from "@mui/icons-material";
-import { display } from "@mui/system";
 
 const pages = [
   { name: "آیکون", href: "/icons" },
@@ -31,11 +29,22 @@ const settings = ["پروفایل", "اکانت", "داشبورد", "خروج"];
 function NavbarTop() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
+
   const [showMenu, setShowMenu] = useState(false);
   const [categories, setCategories] = useState([]);
-  const [showSubMenu, setShowSubMenu] = useState("none");
-  const [width, setWidth] = useState([""]);
+  const [widthSet, setWidthSet] = useState([{ col: 4, width: "550px" }]);
   const [subMenu, setSubMenu] = useState([]);
+  const [showSubMenu, setShowSubMenu] = useState([]);
+  const [dataSub, setDataSub] = useState([]);
+  const [textSub1, setTextSub1] = useState({ index: 0, value: "" });
+
+  const [dataSub1, setDataSub1] = useState([]);
+  const [textSub2, setTextSub2] = useState({ index: 0, value: "" });
+
+  const [dataSub2, setDataSub2] = useState([]);
+  const [dataSub3, setDataSub3] = useState([]);
+  const [dataSub4, setDataSub4] = useState([]);
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -52,8 +61,14 @@ function NavbarTop() {
   };
 
   const findSubMenu = () => {
-    let find = categories.data.find((e) => e.title === subMenu);
-    return find;
+    let find = [];
+    dataSub2.map((item) => {
+      if (item.title === textSub2.value) {
+        find.push(item.child);
+      }
+    });
+    // setDataSub3(find);
+    return (find.length > 0 && find[0]) || find;
   };
 
   useEffect(() => {
@@ -63,6 +78,39 @@ function NavbarTop() {
     };
     data();
   }, []);
+
+  useEffect(() => {
+    if (categories.data) {
+      let sub = [];
+      categories.data.map((e) => {
+        sub.push(e.child);
+      });
+      setDataSub(sub);
+    }
+  }, [categories]);
+
+  useEffect(() => {
+    if (dataSub) {
+      let sub = [];
+      dataSub.map((e) => {
+        sub.push(e);
+      });
+      setDataSub1(sub);
+    }
+  }, [dataSub]);
+
+  useEffect(() => {
+    if (dataSub1) {
+      let sub = [];
+      dataSub1.map((event, i) => {
+        dataSub1[i].map((e) => {
+          if (e.child.length <= 0) return;
+          sub.push({ title: e.title, child: e.child });
+        });
+      });
+      setDataSub2(sub);
+    }
+  }, [dataSub1]);
 
   return (
     <AppBar
@@ -151,7 +199,7 @@ function NavbarTop() {
                     <Link href={page.href}>{page.name}</Link>
                   </Button>
                 )}
-                {false && page.name == "دسته بندی" && (
+                {page.name == "دسته بندی" && (
                   <Typography
                     href={"#"}
                     component="span"
@@ -175,13 +223,13 @@ function NavbarTop() {
                         top: "80%",
                         border: "1px solid #ccc",
                         backgroundColor: "white",
-                        width: "380px",
+                        width: `${widthSet[0].width}`,
                         height: "180px",
                         overflowY: "scroll",
                         // maxWidth: " !important",
                       }}
                     >
-                      <Grid item lg={6}>
+                      <Grid item lg={widthSet[0].col}>
                         {categories.data &&
                           categories.data.map((e, i) => {
                             return (
@@ -201,23 +249,24 @@ function NavbarTop() {
                                 }}
                                 onMouseOut={() => setShowSubMenu(false)}
                               >
-                                {/* {e.child.length > 0 ? (
-                                  <Link href={`/files/${e.slug}`}>{e.title}</Link>
-                                ) : (
-                                  <Link href={`/files/${e.slug}`}>{e.title}</Link>
-                                )} */}
-                                <Link href={`/files/${e.slug}`}>{e.title}</Link>
+                                <Link
+                                  href={`/files/${e.slug}`}
+                                  defaultValue={e.title}
+                                  onMouseOver={(e) =>
+                                    setTextSub1({ index: i, value: e.target.innerText })
+                                  }
+                                >
+                                  {e.title}
+                                </Link>
                               </Box>
                             );
                           })}
                       </Grid>
-
-                      {/* <Grid item lg={6}>
+                      <Grid item lg={widthSet[0].col}>
                         <Box>
-                          {categories.data &&
-                            categories.data.length >= 1 &&
-                            subMenu.length >= 1 &&
-                            findSubMenu().child.map((e) => {
+                          {dataSub1 &&
+                            textSub1.value !== "" &&
+                            dataSub1[textSub1.index].map((e, i) => {
                               return (
                                 <Box
                                   sx={{
@@ -230,7 +279,13 @@ function NavbarTop() {
                                   component="div"
                                 >
                                   <Box>
-                                    <Link href={`files/${e.slug}`} style={{ whiteSpace: "nowrap" }}>
+                                    <Link
+                                      href={`files/${e.slug}`}
+                                      style={{ whiteSpace: "nowrap" }}
+                                      onMouseOver={(e) =>
+                                        setTextSub2({ index: i, value: e.target.innerText })
+                                      }
+                                    >
                                       {e.title}
                                     </Link>
                                   </Box>
@@ -238,7 +293,39 @@ function NavbarTop() {
                               );
                             })}
                         </Box>
-                      </Grid> */}
+                      </Grid>
+                      <Grid item lg={widthSet[0].col}>
+                        <Box>
+                          {dataSub2 &&
+                            textSub2.value !== "" &&
+                            findSubMenu().map((e) => {
+                              return (
+                                <Box
+                                  sx={{
+                                    "&:hover": {
+                                      backgroundColor: "#eeeeee",
+                                    },
+                                    transition: "0.3s",
+                                    padding: "5px 5px 5px 50px",
+                                  }}
+                                  component="div"
+                                >
+                                  <Box>
+                                    <Link
+                                      href={`files/${e.slug}`}
+                                      style={{ whiteSpace: "nowrap" }}
+                                      // onMouseOver={(e) =>
+                                      //   setTextSub2({ index: i, value: e.target.innerText })
+                                      // }
+                                    >
+                                      {e.title}
+                                    </Link>
+                                  </Box>
+                                </Box>
+                              );
+                            })}
+                        </Box>
+                      </Grid>
                     </Grid>
                   </Typography>
                 )}
