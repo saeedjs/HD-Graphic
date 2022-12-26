@@ -5,7 +5,6 @@ import SingleProduct from "../../../components/products/SingleProduct";
 import AuthContext from "../../../context/AuthContext";
 
 const productSingle = ({ DetailProduct, creator }) => {
-  const { access } = useContext(AuthContext);
   return (
     <>
       <SingleProduct DetailProduct={DetailProduct} creator={creator} />

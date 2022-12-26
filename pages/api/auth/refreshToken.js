@@ -10,7 +10,7 @@ export default async function handler(req, res) {
         const resApi = await axios.post(
           "https://hdgraphic.ir/api/v1/users/auth/otp/refresh",
           {
-            refresh: localStorage.getItem("refresh"),
+            refresh: req.body.refresh,
           }
         );
         console.log(resApi.data);

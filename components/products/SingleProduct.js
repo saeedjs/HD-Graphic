@@ -11,21 +11,40 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import AuthContext from "../../context/AuthContext";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
-const SingleProduct = async ({ DetailProduct, creator }) => {
-  // await axios
-  //   .get(
-  //     `https://hdgraphic.ir/api/v1/users/access-download/${DetailProduct.token}`,
-  //     {
-  //       headers: {
-  //         Authorization: `Brearer ${access}`,
-  //       },
-  //     }
-  //   )
-  //   .then((result) => {
-  //     setDownload(result.link);
-  //   });
+const SingleProduct = ({ DetailProduct, creator }) => {
+  const [access, setAccess] = useState("");
+  const [download, setDownload] = useState("");
 
+  useEffect(() => {
+    setAccess(localStorage.getItem("access"));
+  }, []);
+
+  // console.log(access);
+  axios
+    .post(
+      `https://hdgraphic.ir/api/v1/users/access-download/${DetailProduct.token}`,
+      {},
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer  ${access}
+          
+          
+          `,
+        },
+      }
+    )
+    .then((response) => {
+      setDownload(response.data.data);
+      // console.log("response", response.data);
+      console.log(download);
+    })
+    .catch((error) => {
+      console.log("error", error.response);
+      toast.success(error.response.data.data);
+    });
   let req = {
     name: "ali",
   };
@@ -553,59 +572,59 @@ const SingleProduct = async ({ DetailProduct, creator }) => {
                 />
               </svg>
             </Button>
-
-            <Button
-              onClick={() => handleDownload(DetailProduct.token)}
-              sx={{
-                width: "90%",
-                height: "50px",
-                backgroundColor: "colors.pink",
-                color: "white",
-                fontWeight: "bold",
-                marginRight: "10px",
-                m: 1,
-                "&:hover": {
-                  border: "1px solid ",
-                  color: "colors.pink",
-                  backgroundColor: "white",
-                },
-                "&:hover svg path": {
-                  fill: "#F6416C",
-                },
-              }}
-            >
-              <span
-                style={{
-                  marginLeft: "16px",
+            <Link href={download == "" ? "#" : download} download>
+              <Button
+                sx={{
+                  width: "90%",
+                  height: "50px",
+                  backgroundColor: "colors.pink",
+                  color: "white",
+                  fontWeight: "bold",
+                  marginRight: "10px",
+                  m: 1,
+                  "&:hover": {
+                    border: "1px solid ",
+                    color: "colors.pink",
+                    backgroundColor: "white",
+                  },
+                  "&:hover svg path": {
+                    fill: "#F6416C",
+                  },
                 }}
               >
-                {" "}
-                دانلود فایل با کیفیت بالا
-              </span>
-              <svg
-                id="_3917330"
-                data-name="3917330"
-                xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="20"
-                viewBox="0 0 22 20"
-              >
-                <path
-                  id="Path_10"
-                  data-name="Path 10"
-                  d="M9.878,16.215a3.255,3.255,0,0,0,4.244,0l3.211-2.873a.828.828,0,0,0-.035-1.233,1.087,1.087,0,0,0-1.379-.029L12.993,14.7,13,.895A.952.952,0,0,0,12,0h0a.952.952,0,0,0-1,.895l-.009,13.786-2.91-2.6a1.085,1.085,0,0,0-1.415,0,.83.83,0,0,0,0,1.266Z"
-                  transform="translate(-0.997)"
-                  fill="#fff"
-                />
-                <path
-                  id="Path_11"
-                  data-name="Path 11"
-                  d="M21.083,16h0a.961.961,0,0,0-.917,1v4a.961.961,0,0,1-.917,1H2.75a.961.961,0,0,1-.917-1V17a.961.961,0,0,0-.917-1h0A.961.961,0,0,0,0,17v4a2.883,2.883,0,0,0,2.75,3h16.5A2.883,2.883,0,0,0,22,21V17A.961.961,0,0,0,21.083,16Z"
-                  transform="translate(0 -4)"
-                  fill="#fff"
-                />
-              </svg>
-            </Button>
+                <span
+                  style={{
+                    marginLeft: "16px",
+                  }}
+                >
+                  {" "}
+                  دانلود فایل با کیفیت بالا
+                </span>
+                <svg
+                  id="_3917330"
+                  data-name="3917330"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="20"
+                  viewBox="0 0 22 20"
+                >
+                  <path
+                    id="Path_10"
+                    data-name="Path 10"
+                    d="M9.878,16.215a3.255,3.255,0,0,0,4.244,0l3.211-2.873a.828.828,0,0,0-.035-1.233,1.087,1.087,0,0,0-1.379-.029L12.993,14.7,13,.895A.952.952,0,0,0,12,0h0a.952.952,0,0,0-1,.895l-.009,13.786-2.91-2.6a1.085,1.085,0,0,0-1.415,0,.83.83,0,0,0,0,1.266Z"
+                    transform="translate(-0.997)"
+                    fill="#fff"
+                  />
+                  <path
+                    id="Path_11"
+                    data-name="Path 11"
+                    d="M21.083,16h0a.961.961,0,0,0-.917,1v4a.961.961,0,0,1-.917,1H2.75a.961.961,0,0,1-.917-1V17a.961.961,0,0,0-.917-1h0A.961.961,0,0,0,0,17v4a2.883,2.883,0,0,0,2.75,3h16.5A2.883,2.883,0,0,0,22,21V17A.961.961,0,0,0,21.083,16Z"
+                    transform="translate(0 -4)"
+                    fill="#fff"
+                  />
+                </svg>
+              </Button>
+            </Link>
           </Grid>
         </Grid>
 
@@ -747,7 +766,9 @@ const SingleProduct = async ({ DetailProduct, creator }) => {
               {DetailProduct.related_files.map((item) => {
                 return (
                   <Link
-                    href={`http://localhost:3000/file/${item.slug}/${item.id}`}
+                    href={`http://localhost:3000/file/${encodeURI(item.slug)}/${
+                      item.id
+                    }`}
                   >
                     <img
                       src={`https://hdgraphic.ir/${item.image}`}
