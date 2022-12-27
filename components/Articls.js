@@ -4,39 +4,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Grid from "@mui/material";
 import { Container } from "@mui/system";
 import Link from "next/link";
+import { useState } from "react";
+import axios from "axios";
 const Articls = (prop) => {
-  const articlsArray = [
-    {
-      title: "اهمیت طراحی مناسب برای چاپ در تبلیغات",
-      src: "245.png",
-      text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.",
-    },
-    {
-      title: "اهمیت طراحی مناسب برای چاپ در تبلیغات",
-      src: "245.png",
-      text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.",
-    },
-    {
-      title: "اهمیت طراحی مناسب برای چاپ در تبلیغات",
-      src: "245.png",
-      text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.",
-    },
-    {
-      title: "اهمیت طراحی مناسب برای چاپ در تبلیغات",
-      src: "245.png",
-      text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.",
-    },
-    {
-      title: "اهمیت طراحی مناسب برای چاپ در تبلیغات",
-      src: "245.png",
-      text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.",
-    },
-    {
-      title: "اهمیت طراحی مناسب برای چاپ در تبلیغات",
-      src: "245.png",
-      text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.",
-    },
-  ];
+  const [articls, setArticls] = useState([]);
+  axios
+    .get("https://hdgraphic.ir/api/v1/blog/posts/list")
+    .then((result) => {
+      setArticls(result.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   return (
     <>
       <Container minWidth="sm" maxWidth="xxl">
@@ -53,13 +32,14 @@ const Articls = (prop) => {
             <Typography sx={{ fontSize: "16px" }}>{prop.title}</Typography>
           </Box>
           <Box sx={{ mr: "35px" }}>
-            <Typography sx={{ color: "colors.green", fontSize:"14px" }}>مشاهده همه</Typography>
+            <Typography sx={{ color: "colors.green", fontSize: "14px" }}>
+              مشاهده همه
+            </Typography>
           </Box>
         </Box>
         <Box sx={{ mt: 5 }}>
           <Swiper
             spaceBetween={10}
-            // slidesPerView={3.5}
             breakpoints={{
               0: {
                 slidesPerView: 0.8,
@@ -81,7 +61,7 @@ const Articls = (prop) => {
               },
             }}
           >
-            {articlsArray.map((item, i) => (
+            {articls.map((item) => (
               <SwiperSlide>
                 <Link href={"#"}>
                   <Box
@@ -100,7 +80,8 @@ const Articls = (prop) => {
                         <img
                           maxWidth="150px"
                           height="150px"
-                          src={"/images/" + item.src}
+                          style={{borderRadius:'10px'}}
+                          src={"https://hdgraphic.ir"+item.banner}
                         />
                       </Box>
                       <Box sx={{ width: "100%" }}>
@@ -132,7 +113,7 @@ const Articls = (prop) => {
                         >
                           <Box
                             sx={{
-                              maxWidth: "272px",
+                              maxWidth: "233px",
                               height: "103px",
                               borderRadius: "10px",
                               backgroundColor: "#FFFFFF",
@@ -143,13 +124,16 @@ const Articls = (prop) => {
                           >
                             <Typography
                               sx={{
-                                maxWidth: "255px",
+                                width: "255px",
                                 p: "8px",
                                 fontSize: "14px",
-                                fontWeight:'normal'
+                                fontWeight: "normal",
+                                height:'100%',
+                                overflow:'hidden',
+                                mb:'23px'
                               }}
+                              dangerouslySetInnerHTML={{ __html: item.description }}
                             >
-                              {item.text}
                             </Typography>
                           </Box>
                         </Box>

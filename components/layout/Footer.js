@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Button, Grid, ListItem, TextField } from "@mui/material";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
@@ -6,15 +5,36 @@ import { Container } from "@mui/system";
 import Image from "next/image";
 import { List } from "@mui/material";
 import Link from "next/link";
+import axios from "axios";
+import { useEffect, useState } from "react";
 const Footer = () => {
+  const [footerSocials, setFooterSocials] = useState([]);
+  axios
+    .get("https://hdgraphic.ir/api/v1/settings/social")
+    .then((result) => {
+      setFooterSocials(result.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  const [footerCol2, setFooterCol2] = useState("");
+  axios
+    .get("https://hdgraphic.ir/api/v1/settings/footer")
+    .then((result) => {
+      setFooterCol2(result.data.col_2);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   return (
     <>
-      <Box color={"white"} sx={{ mt: 20 }}>
+      <Box color={"white"} sx={{ mt: 20}}>
         <Box
           sx={{
             width: "100%",
             minHeight: "281px",
             backgroundColor: "colors.black",
+            direction:'rtl'
           }}
         >
           <Box sx={{ maxWidth: "100%" }}>
@@ -37,8 +57,9 @@ const Footer = () => {
                     <ListItem sx={{ pb: 0.6 }}>
                       <Box>
                         <Typography sx={{ fontSize: "14px", lineHeight: "2" }}>
-                          برای دریافت جدیدترین تخفیف ها و تغییرات اچ دی گرافیک در ایمیل با وارد کردن
-                          ایمیل خود در خبرنامه اچ دی گرافیک عضو شوید
+                          برای دریافت جدیدترین تخفیف ها و تغییرات اچ دی گرافیک
+                          در ایمیل با وارد کردن ایمیل خود در خبرنامه اچ دی
+                          گرافیک عضو شوید
                         </Typography>
                       </Box>
                     </ListItem>
@@ -77,56 +98,49 @@ const Footer = () => {
                   <List>
                     <ListItem sx={{ py: 1, pb: 3 }}>
                       <Box>
-                        <Typography sx={{ fontSize: "14px" }}>خدمات مشتریان</Typography>
+                        <Typography sx={{ fontSize: "14px" }}>
+                          خدمات مشتریان
+                        </Typography>
                       </Box>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "14px" }}>حساب کاربری من</Typography>
+                        <Typography sx={{ fontSize: "14px" }}>
+                          حساب کاربری من
+                        </Typography>
                       </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "14px" }}>پاسخ به سوالات متداول</Typography>
+                        <Typography sx={{ fontSize: "14px" }}>
+                          پاسخ به سوالات متداول
+                        </Typography>
                       </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "14px" }}>حریم خصوصی</Typography>
+                        <Typography sx={{ fontSize: "14px" }}>
+                          حریم خصوصی
+                        </Typography>
                       </Link>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "14px" }}>قوانین استفاده</Typography>
+                        <Typography sx={{ fontSize: "14px" }}>
+                          قوانین استفاده
+                        </Typography>
                       </Link>
                     </ListItem>
                   </List>
                 </Grid>
                 <Grid item xs={10} sm={6} lg={2} xl={2}>
                   <List>
-                    <ListItem sx={{ py: 1, pb: 3 }}>
-                      <Box>
-                        <Typography sx={{ fontSize: "14px" }}>اچ دی گرافیک</Typography>
-                      </Box>
-                    </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
                       <Link href={"#"}>
-                        <Typography sx={{ fontSize: "14px" }}>درباره ما</Typography>
-                      </Link>
-                    </ListItem>
-                    <ListItem sx={{ pb: 0.6 }}>
-                      <Link href={"#"}>
-                        <Typography sx={{ fontSize: "14px" }}>راهنمای خرید محصول</Typography>
-                      </Link>
-                    </ListItem>
-                    <ListItem sx={{ pb: 0.6 }}>
-                      <Link href={"#"}>
-                        <Typography sx={{ fontSize: "14px" }}>راهنمای پرداخت</Typography>
-                      </Link>
-                    </ListItem>
-                    <ListItem sx={{ pb: 0.6 }}>
-                      <Link href={"#"}>
-                        <Typography sx={{ fontSize: "14px" }}>تماس با ما</Typography>
+                        <Typography
+                          sx={{ fontSize: "14px" }}
+                          dangerouslySetInnerHTML={{ __html: footerCol2 }}
+                        />
                       </Link>
                     </ListItem>
                   </List>
@@ -135,7 +149,9 @@ const Footer = () => {
                   <List>
                     <ListItem sx={{ py: 1, pb: 3 }}>
                       <Box>
-                        <Typography sx={{ fontSize: "14px" }}>نماد ها و افتخارات</Typography>
+                        <Typography sx={{ fontSize: "14px" }}>
+                          نماد ها و افتخارات
+                        </Typography>
                       </Box>
                     </ListItem>
                     <ListItem sx={{ pb: 0.6 }}>
@@ -227,60 +243,26 @@ const Footer = () => {
             </Typography>
           </Box>
           <Box sx={{ display: "flex", ml: 7 }}>
-            <Link href={"#"}>
-              <Box
-                width={24}
-                height={24}
-                sx={{
-                  backgroundColor: "colors.white",
-                  borderRadius: 10,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  mr: 2,
-                }}
-              >
-                <Box height={20}>
-                  <img src="/images/icon/717392.png" />
+            {footerSocials.map((item) => (
+              <Link href={item.url}>
+                <Box
+                  width={24}
+                  height={24}
+                  sx={{
+                    backgroundColor: "colors.white",
+                    borderRadius: 10,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    mr: 2,
+                  }}
+                >
+                  <Box height={20}>
+                    <img width={'100%'} height={"100%"} src={"https://hdgraphic.ir/"+item.file} />
+                  </Box>
                 </Box>
-              </Box>
-            </Link>
-            <Link href={"#"}>
-              <Box
-                width={24}
-                height={24}
-                sx={{
-                  backgroundColor: "colors.white",
-                  borderRadius: 10,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  mr: 2,
-                }}
-              >
-                <Box height={20}>
-                  <img src="/images/icon/739260.png" />
-                </Box>
-              </Box>
-            </Link>
-            <Link href={"#"}>
-              <Box
-                width={24}
-                height={24}
-                sx={{
-                  backgroundColor: "colors.white",
-                  borderRadius: 10,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  mr: 2,
-                }}
-              >
-                <Box height={20}>
-                  <img src="/images/icon/1384023.png" />
-                </Box>
-              </Box>
-            </Link>
+              </Link>
+            ))}
           </Box>
         </Box>
       </Box>
