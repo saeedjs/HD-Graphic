@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import AuthContext from "../../context/AuthContext";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SingleProduct = ({ DetailProduct, creator }) => {
   const [access, setAccess] = useState("");
@@ -43,7 +44,16 @@ const SingleProduct = ({ DetailProduct, creator }) => {
     })
     .catch((error) => {
       console.log("error", error.response);
-      toast.success(error.response.data.data);
+      toast.error(error.response.data.data, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     });
   let req = {
     name: "ali",

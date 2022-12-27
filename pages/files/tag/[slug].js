@@ -22,7 +22,7 @@ const tagsPage = ({ category, colors }) => {
     </>
   );
 };
-
+cosnoel.log("how is going:");
 export default tagsPage;
 
 export async function getServerSideProps(params) {
@@ -57,7 +57,7 @@ export async function getServerSideProps(params) {
   } catch (error) {
     return {
       props: {
-        error: "s",
+        error: "we have a problem!",
       },
     };
   }
