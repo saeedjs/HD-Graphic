@@ -8,6 +8,7 @@ import Router from "next/router";
 import { useContext, useEffect, useState } from "react";
 import { AuthProvider } from "../context/AuthContext";
 import axios from "axios";
+import { ToastContainer } from "react-toastify";
 
 Router.events.on("routeChangeStart", () => nProgress.start());
 Router.events.on("routeChangeComplete", () => nProgress.done());
@@ -38,12 +39,25 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <AuthProvider>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <NavbarTop />
           <Component {...pageProps} />
           <Footer />
         </ThemeProvider>
+        <ToastContainer />
       </AuthProvider>
     </>
   );

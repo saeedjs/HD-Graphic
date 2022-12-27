@@ -12,6 +12,7 @@ import TableRows from "./TableRows";
 import { Mypagination } from "../Mypagination";
 import { Box } from "@mui/system";
 import TableRows2 from "./TableRows2";
+import { useState } from "react";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -42,6 +43,21 @@ const rows = [
 ];
 
 export default function TableProfile2() {
+  const [access, setAccess] = useState(localStorage.getItem("access"));
+
+  axios
+    .get("https://hdgraphic.ir/api/user-download/", {
+      headers: {
+        Authorization: `token ${access}`,
+      },
+    })
+    .then((res) => {
+      console.log(res.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
   return (
     <>
       <Typography sx={{ mb: 2, fontWeight: "bold" }}>
