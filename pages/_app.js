@@ -48,10 +48,4 @@ function MyApp({ Component, pageProps }) {
     </>
   );
 }
-
-// MyApp.getInitialProps = async () => {
-//   const categoryList = await axios.get("https://hdgraphic.ir/api/v1/files/categories");
-//   return { categoryList: categoryList };
-// };
-
 export default MyApp;
