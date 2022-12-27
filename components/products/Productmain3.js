@@ -12,10 +12,10 @@ const productmain3 = ({ mockup }) => {
         }}
       ></Box>
       <Grid container maxWidth="xl" justifyContent={"center"}>
-        <Grid item lg={5.15}>
+        <Grid item lg={5}>
           <Productmain2 mockup={mockup} />
         </Grid>{" "}
-        <Grid item lg={5.7}>
+        <Grid item lg={5}>
           <Productmain4 mockup={mockup} />
         </Grid>
       </Grid>

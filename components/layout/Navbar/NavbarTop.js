@@ -32,7 +32,7 @@ function NavbarTop() {
 
   const [showMenu, setShowMenu] = useState(false);
   const [categories, setCategories] = useState([]);
-  const [widthSet, setWidthSet] = useState([{ col: 4, width: "550px" }]);
+  const [widthSet, setWidthSet] = useState([{ col: 3, width: "750px" }]);
   const [subMenu, setSubMenu] = useState([]);
   const [showSubMenu, setShowSubMenu] = useState([]);
   const [dataSub, setDataSub] = useState([]);
@@ -40,9 +40,11 @@ function NavbarTop() {
 
   const [dataSub1, setDataSub1] = useState([]);
   const [textSub2, setTextSub2] = useState({ index: 0, value: "" });
-
   const [dataSub2, setDataSub2] = useState([]);
+
   const [dataSub3, setDataSub3] = useState([]);
+  const [textSub3, setTextSub3] = useState({ index: 0, value: "" });
+
   const [dataSub4, setDataSub4] = useState([]);
 
   const handleOpenNavMenu = (event) => {
@@ -67,7 +69,20 @@ function NavbarTop() {
         find.push(item.child);
       }
     });
-    // setDataSub3(find);
+    return (find.length > 0 && find[0]) || find;
+  };
+
+  const findSubMenu2 = () => {
+    let find = [];
+    dataSub2.map((item) => {
+      if (item.title === textSub2.value) {
+        item.child.map((e) => {
+          if (e.title === textSub3.value) {
+            find.push(e.child);
+          }
+        });
+      }
+    });
     return (find.length > 0 && find[0]) || find;
   };
 
@@ -199,7 +214,7 @@ function NavbarTop() {
                     <Link href={page.href}>{page.name}</Link>
                   </Button>
                 )}
-                {page.name == "دسته بندی" && (
+                {false && page.name == "دسته بندی" && (
                   <Typography
                     href={"#"}
                     component="span"
@@ -298,7 +313,39 @@ function NavbarTop() {
                         <Box>
                           {dataSub2 &&
                             textSub2.value !== "" &&
-                            findSubMenu().map((e) => {
+                            findSubMenu().map((e, i) => {
+                              return (
+                                <Box
+                                  sx={{
+                                    "&:hover": {
+                                      backgroundColor: "#eeeeee",
+                                    },
+                                    transition: "0.3s",
+                                    padding: "5px 5px 5px 50px",
+                                  }}
+                                  component="div"
+                                >
+                                  <Box>
+                                    <Link
+                                      href={`files/${e.slug}`}
+                                      style={{ whiteSpace: "nowrap" }}
+                                      onMouseOver={(e) =>
+                                        setTextSub3({ index: i, value: e.target.innerText })
+                                      }
+                                    >
+                                      {e.title}
+                                    </Link>
+                                  </Box>
+                                </Box>
+                              );
+                            })}
+                        </Box>
+                      </Grid>
+                      <Grid item lg={widthSet[0].col}>
+                        <Box>
+                          {dataSub2 &&
+                            textSub2.value !== "" &&
+                            findSubMenu2().map((e) => {
                               return (
                                 <Box
                                   sx={{

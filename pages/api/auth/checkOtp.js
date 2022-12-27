@@ -11,8 +11,9 @@ export default async function handler(req, res) {
           key: req.body.otp,
         }
       );
+
       console.log(resApi.data);
-      res.setHeader("Set-Cookie", [
+      await res.setHeader("Set-Cookie", [
         cookie.serialize("key", null, {
           httpOnly: true,
           secure: process.env.NODE_ENV !== "development",
@@ -26,14 +27,20 @@ export default async function handler(req, res) {
           path: "/",
         }),
         cookie.serialize("refresh", resApi.data.auth.refresh, {
-          httpOnly: true,
+          httpOnly: false,
           secure: process.env.NODE_ENV !== "development",
           maxAge: 60 * 61,
           path: "/",
         }),
       ]);
 
-      res.status(200).json({ user: resApi.user });
+      res
+        .status(200)
+        .json({
+          user: resApi.data.user,
+          access: resApi.data.auth.access,
+          refresh: resApi.data.auth.refresh,
+        });
     } catch {
       res.status(405).json({ massage: "مشکلی هست" });
     }

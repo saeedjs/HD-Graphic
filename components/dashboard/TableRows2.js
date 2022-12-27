@@ -75,9 +75,7 @@ const TableRows2 = (props) => {
                 }
           }
           align="right"
-        >
-          {props.userBuy}
-        </TableCell>
+        ></TableCell>
         <TableCell
           sx={
             props.id % 2 == 0

@@ -1,14 +1,27 @@
 import { Box } from "@mui/system";
 import CheckIcon from "@mui/icons-material/Check";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 const ColorFilter = ({ colors }) => {
+  let display = [];
+  colors.map((item) => (display[item.id - 1] = "none"));
+  const [displayState, setDisplayState] = useState([...display]);
   const router = useRouter();
   const check = async (id) => {
-    router.query.color = id;
-    await router.push(router);
+    let copyDisplayState = [...displayState];
+    if (copyDisplayState[id - 1] == "none") {
+      router.query.color = id;
+      await router.push(router);
+      copyDisplayState.map((item, i) => (copyDisplayState[i - 1] = "none"));
+      copyDisplayState[id - 1] = "block";
+    } else {
+      router.query.color = '';
+      await router.push(router);
+      copyDisplayState[id - 1] = "none";
+    }
+    setDisplayState(copyDisplayState);
   };
-
   return (
     <>
       <Box sx={{ display: "flex", flexWrap: "wrap" }}>
@@ -35,7 +48,7 @@ const ColorFilter = ({ colors }) => {
               fontSize="small"
               sx={{
                 color: "#FFFFFF",
-                display: "none",
+                display: displayState[color.id - 1],
               }}
             />
           </Box>

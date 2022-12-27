@@ -1,4 +1,8 @@
 import axios from "axios";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import cookie from "cookie";
+
 import { createContext, useState } from "react";
 import { toast } from "react-toastify";
 
@@ -7,7 +11,12 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [number, setNumber] = useState("");
   const [user, setUser] = useState();
+  const [access, setAccess] = useState();
 
+  const router = useRouter();
+  useEffect(() => {
+    refreshToken();
+  }, []);
   const login = async (cellphone) => {
     setNumber(cellphone);
     try {
@@ -15,6 +24,7 @@ export const AuthProvider = ({ children }) => {
         cellphone,
       });
       toast.success(res.data.massage);
+      localStorage.setItem("number", cellphone);
     } catch {
       console.log("مشکلی هست!");
     }
@@ -28,13 +38,33 @@ export const AuthProvider = ({ children }) => {
         number,
       });
 
-      setUser(res.user);
-      console.log(res.user);
+      setUser(res.data);
+      localStorage.setItem("access", res.data.access);
+      localStorage.setItem("refresh", res.data.refresh);
+
+      setAccess(localStorage.getItem("access"));
+      router.push("/");
+    } catch {
+      console.log("مشکلی هستش!");
+    }
+  };
+
+  const refreshToken = async () => {
+    try {
+      const res = await axios.post(
+        "http://localhost:300/api/auth/refreshToken",
+        {
+          refresh: localStorage.getItem("refresh"),
+        }
+      );
+      console.log(res.data);
     } catch {}
   };
 
   return (
-    <AuthContext.Provider value={{ login, checkOtp, number, user }}>
+    <AuthContext.Provider
+      value={{ login, checkOtp, number, user, access, refreshToken }}
+    >
       {children}
     </AuthContext.Provider>
   );
