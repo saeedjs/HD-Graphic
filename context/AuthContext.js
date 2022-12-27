@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
   const [number, setNumber] = useState("");
   const [user, setUser] = useState();
   const [access, setAccess] = useState();
-
+  const [newUser, setNewUser] = useState();
   const router = useRouter();
   useEffect(() => {
     refreshToken();
@@ -25,21 +25,27 @@ export const AuthProvider = ({ children }) => {
       });
       toast.success(res.data.massage);
       localStorage.setItem("number", cellphone);
+      console.log(res.data.data);
+      setNewUser(res.data.data.new_user);
+      console.log(newUser);
     } catch {
       console.log("مشکلی هست!");
     }
     console.log("login Authcontext");
   };
 
-  const checkOtp = async (otp) => {
+  const checkOtp = async (otp, username) => {
     try {
       const res = await axios.post("http://localhost:3000/api/auth/checkOtp", {
         otp,
         number,
+        username,
       });
 
       setUser(res.data);
       localStorage.setItem("access", res.data.access);
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+
       localStorage.setItem("refresh", res.data.refresh);
 
       setAccess(localStorage.getItem("access"));
@@ -60,10 +66,26 @@ export const AuthProvider = ({ children }) => {
       console.log(res.data);
     } catch {}
   };
-
+  const resendOtp = async () => {
+    try {
+      const res = await axios.post("http://localhost:300/api/auth/resendOtp", {
+        number,
+      });
+      console.log(res.data);
+    } catch {}
+  };
   return (
     <AuthContext.Provider
-      value={{ login, checkOtp, number, user, access, refreshToken }}
+      value={{
+        login,
+        checkOtp,
+        number,
+        user,
+        access,
+        refreshToken,
+        newUser,
+        resendOtp,
+      }}
     >
       {children}
     </AuthContext.Provider>
