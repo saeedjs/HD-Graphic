@@ -1,26 +1,14 @@
-import Typography from "@mui/material/Typography";
 import axios from "axios";
 import Filter from "../../../components/filter/Filter";
 
 const tagsPage = ({ category, colors }) => {
   return (
     <>
-      <Typography
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          fontSize: "2rem",
-          fontWeight: "bold",
-          my: 4,
-        }}
-      >
-        {category.extra.title}
-      </Typography>
       <Filter category={category} colors={colors} />
     </>
   );
 };
-cosnoel.log("how is going:");
+
 export default tagsPage;
 
 export async function getServerSideProps(params) {

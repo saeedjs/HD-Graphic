@@ -3,7 +3,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import Filter from "../../../components/filter/Filter";
 
-const fileSlugPage = ({ category, colors }) => {
+const fileSlugPage = ({ category, colors, title }) => {
   return (
     <>
       <Typography
@@ -14,7 +14,9 @@ const fileSlugPage = ({ category, colors }) => {
           fontWeight: "bold",
           my: 4,
         }}
-      ></Typography>
+      >
+        {title}
+      </Typography>
       <Filter category={category} colors={colors} />
     </>
   );
@@ -42,10 +44,14 @@ export async function getServerSideProps(params) {
     const resColors = await axios.get(
       `https://hdgraphic.ir/api/v1/files/colors`
     );
+    const title = axios.get(
+      `https://hdgraphic.ir/api/v1/files/category-detail/${params.params.slug}`
+    );
     return {
       props: {
         category: res.data,
         colors: resColors.data,
+        title: title.data.title,
       },
     };
   } catch (error) {
