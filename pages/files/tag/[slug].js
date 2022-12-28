@@ -1,8 +1,6 @@
-import { Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import axios from "axios";
-import { useEffect } from "react";
 import Filter from "../../../components/filter/Filter";
-import cookie from "cookie";
 
 const tagsPage = ({ category, colors }) => {
   return (

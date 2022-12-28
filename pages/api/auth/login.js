@@ -19,7 +19,7 @@ export default async function handler(req, res) {
           {
             httpOnly: true,
             secure: process.env.NODE_ENV !== "development",
-            maxAge: 60,
+            maxAge: 60 * 69,
             path: "/",
           }
         )
@@ -39,7 +39,9 @@ export default async function handler(req, res) {
         )
       );
 
-      res.status(200).json({ massage: ":کدورود شما با موفقیت ارسال شد" });
+      res
+        .status(200)
+        .json({ massage: ":کدورود شما با موفقیت ارسال شد", data: resApi.data });
 
       console.log(resApi.data);
     } catch {
