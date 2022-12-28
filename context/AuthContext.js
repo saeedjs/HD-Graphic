@@ -16,10 +16,6 @@ export const AuthProvider = ({ children }) => {
   const router = useRouter();
   useEffect(() => {
     refreshToken();
-<<<<<<< HEAD
-    0;
-=======
->>>>>>> bb6eddb2f0441d775fd342a47a05d9babd699633
   }, []);
   const login = async (cellphone) => {
     setNumber(cellphone);
@@ -57,26 +53,18 @@ export const AuthProvider = ({ children }) => {
     try {
       const res = await axios.post(
         "http://localhost:300/api/auth/refreshToken",
-<<<<<<< HEAD
-        {}
-=======
         {
           refresh: localStorage.getItem("refresh"),
         }
->>>>>>> bb6eddb2f0441d775fd342a47a05d9babd699633
       );
       console.log(res.data);
     } catch {}
   };
 
   return (
-<<<<<<< HEAD
-    <AuthContext.Provider value={{ login, checkOtp, number, user, access }}>
-=======
     <AuthContext.Provider
       value={{ login, checkOtp, number, user, access, refreshToken }}
     >
->>>>>>> bb6eddb2f0441d775fd342a47a05d9babd699633
       {children}
     </AuthContext.Provider>
   );
