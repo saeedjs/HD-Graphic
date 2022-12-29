@@ -1,21 +1,13 @@
 import { Button, Grid, Box, Typography } from "@mui/material";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
 
 import { useContext, useState } from "react";
 
 import AuthContext from "../../context/AuthContext";
-import Link from "next/link";
 
-const Login = ({ setStep }) => {
+const SignIn = ({ setStep }) => {
   const [cellphone, setCellphone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [pepole, setPepole] = useState(true);
-  const [designer, setDesigner] = useState(true);
 
   const [checkFree, setCheckFree] = useState(true);
   const handleCheckNew = (check) => {
@@ -61,67 +53,9 @@ const Login = ({ setStep }) => {
             mb: 4,
           }}
         >
-          ساخت حساب کاربری
+          صفحه ورود
         </Typography>
         <Grid item xs={12}>
-          <Box
-            sx={{
-              backgroundColor: "#EEEEEE",
-              width: "362px",
-              height: "42px",
-              borderRadius: "5px",
-              display: "flex",
-              alignItems: "center",
-              paddingRight: "10px",
-              mt: 1,
-            }}
-          >
-            <Box sx={{ pt: "5px" }}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="13.991"
-                height="18.655"
-                viewBox="0 0 13.991 18.655"
-              >
-                <g
-                  id="_01_align_center"
-                  data-name="01 align center"
-                  transform="translate(0 0)"
-                >
-                  <path
-                    id="Path_5"
-                    data-name="Path 5"
-                    d="M16.991,21.773H15.437v-3.92a2.3,2.3,0,0,0-2.3-2.3H6.853a2.3,2.3,0,0,0-2.3,2.3v3.92H3v-3.92A3.858,3.858,0,0,1,6.853,14h6.285a3.858,3.858,0,0,1,3.853,3.853Z"
-                    transform="translate(-3 -3.118)"
-                    fill="#232931"
-                  />
-                  <path
-                    id="Path_6"
-                    data-name="Path 6"
-                    d="M10.664,9.327a4.664,4.664,0,1,1,4.664-4.664A4.664,4.664,0,0,1,10.664,9.327Zm0-7.773a3.109,3.109,0,1,0,3.109,3.109A3.109,3.109,0,0,0,10.664,1.555Z"
-                    transform="translate(-3.668 0)"
-                    fill="#232931"
-                  />
-                </g>
-              </svg>
-            </Box>
-            <Box sx={{ width: "100%", height: "100%", paddingRight: "10px" }}>
-              <input
-                type="email"
-                style={{
-                  width: "99%",
-                  height: "100%",
-                  backgroundColor: "#EEEEEE",
-                  border: "none",
-                  fontSize: "14px",
-                  color: "#989898",
-                  fontFamily: "iranYekan",
-                }}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="ایمیل..."
-              />
-            </Box>
-          </Box>
           <Box
             sx={{
               backgroundColor: "#EEEEEE",
@@ -162,7 +96,7 @@ const Login = ({ setStep }) => {
                   fontFamily: "iranYekan",
                 }}
                 onChange={(e) => setCellphone(e.target.value)}
-                placeholder="لطفا شماره تلفن خود را وارد کنید"
+                placeholder="لطفا شماره تلفن یا ایمیل خودرا وارد نمایید"
               />
             </Box>
           </Box>
@@ -218,46 +152,6 @@ const Login = ({ setStep }) => {
               />
             </Box>
           </Box>
-          <FormControl>
-            <RadioGroup
-              row
-              aria-labelledby="demo-row-radio-buttons-group-label"
-              name="row-radio-buttons-group"
-            >
-              <FormControlLabel
-                sx={{ fontFamily: "iranYekan" }}
-                value="designer"
-                control={
-                  <Radio
-                    sx={{
-                      color: "#EEEEEE",
-
-                      "&.Mui-checked": {
-                        color: "#F6416C",
-                      },
-                    }}
-                  />
-                }
-                label="طراح یا عکاس"
-              />
-              <FormControlLabel
-                sx={{ fontFamily: "iranYekan" }}
-                value="pepole"
-                control={
-                  <Radio
-                    sx={{
-                      color: "#EEEEEE",
-
-                      "&.Mui-checked": {
-                        color: "#F6416C",
-                      },
-                    }}
-                  />
-                }
-                label="کاربر عادی"
-              />
-            </RadioGroup>
-          </FormControl>
           <Typography
             sx={{ fontSize: "18px", fontFamily: "iranYekan", mt: 5, mb: 2 }}
           >
@@ -278,7 +172,7 @@ const Login = ({ setStep }) => {
               }}
               onClick={() => handleCheckNew(checkFree)}
             ></Box>
-            عضویت در خبرنامه
+            یادآوری برای دفعات بعدی
           </Typography>
         </Grid>
         <Grid item xs={12}>
@@ -286,7 +180,7 @@ const Login = ({ setStep }) => {
             sx={{
               width: "100%",
               height: "51px",
-              backgroundColor: "#F6416C",
+              backgroundColor: "#4ECCA3",
               color: "white",
               fontFamily: "iranYekan",
             }}
@@ -294,25 +188,10 @@ const Login = ({ setStep }) => {
           >
             ورود
           </Button>
-          <Link href={"/auth/login"}>
-            <Typography
-              component={"h1"}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                fontFamily: "iranYekan",
-                fontSize: "18px",
-                mb: 4,
-              }}
-            >
-              <span style={{ color: "#4ECCA3" }}>ورود</span>
-              به حساب کاربری؟
-            </Typography>
-          </Link>
         </Grid>
       </Grid>
     </>
   );
 };
 
-export default Login;
+export default SignIn;

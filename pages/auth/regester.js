@@ -15,6 +15,7 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import axios from "axios";
 function Copyright(props) {
   return (
     <Typography
@@ -34,7 +35,7 @@ function Copyright(props) {
 }
 const theme = createTheme();
 
-const LoginPage = () => {
+const LoginPage = ({ setting }) => {
   const [step, setStep] = useState(1);
 
   return (
@@ -50,11 +51,17 @@ const LoginPage = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            flexDirection: "column",
           }}
           component={Paper}
           elevation={6}
           square
         >
+          <img
+            src={`https://hdgraphic.ir/${setting.logo}`}
+            style={{ marginBottom: "20px" }}
+            alt=""
+          />
           <Box>
             {step == 1 && <Login setStep={setStep} />}
             {step == 2 && <CheckOtp />}
@@ -66,7 +73,7 @@ const LoginPage = () => {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: "url(/images/login.png)",
+            backgroundImage: "url(images/0901630.png)",
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
               t.palette.mode === "light"
@@ -81,3 +88,15 @@ const LoginPage = () => {
   );
 };
 export default LoginPage;
+
+export async function getServerSideProps(context) {
+  const resSetting = await axios.get(
+    "https://hdgraphic.ir/api/v1/settings/setting"
+  );
+
+  return {
+    props: {
+      setting: resSetting.data,
+    }, // will be passed to the page component as props
+  };
+}

@@ -2,9 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../context/AuthContext";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
-import { Button, TextField, Typography } from "@mui/material";
+import { Button, TextField, Typography, Grid } from "@mui/material";
 import Box from "@mui/material/Box";
-import { Grid } from "swiper";
+import { Input } from "@mui/icons-material";
 
 const CheckOtp = () => {
   const [otp, setOtp] = useState("");
@@ -74,22 +74,36 @@ const CheckOtp = () => {
           <Grid>
             <Typography component={"h1"}> کد ورود</Typography>
             <Grid item>
-              <TextField
+              <input
                 type="text"
                 onChange={(e) => setOtp(e.target.value)}
-                name=""
-                id=""
+                style={{
+                  width: "99%",
+                  height: "100%",
+                  backgroundColor: "#EEEEEE",
+                  border: "none",
+                  fontSize: "14px",
+                  color: "#989898",
+                  fontFamily: "iranYekan",
+                }}
                 placeholder="کد تایید وارد کنید"
               />
             </Grid>
 
             <Typography component={"h1"}>نام کاربری</Typography>
             <Grid item>
-              <TextField
+              <input
                 type="text"
                 onChange={(e) => setUsername(e.target.value)}
-                name=""
-                id=""
+                style={{
+                  width: "99%",
+                  height: "100%",
+                  backgroundColor: "#EEEEEE",
+                  border: "none",
+                  fontSize: "14px",
+                  color: "#989898",
+                  fontFamily: "iranYekan",
+                }}
                 placeholder="نام کاربری"
               />
             </Grid>

@@ -2,6 +2,7 @@ import axios from "axios";
 import cookie from "cookie";
 
 export default async function handler(req, res) {
+  console.log(req.method);
   if (req.method == "POST") {
     try {
       const resApi = await axios.post(
