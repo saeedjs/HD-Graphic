@@ -31,10 +31,15 @@ const Support = () => {
 
   const [numberInput, setNumberInput] = useState([]);
   const buttonRef = useRef(null);
+  const textInput = useRef(null);
   const [objStyle, setObjStyle] = useState("");
 
   const handleChange = (event) => {
     setAge(event.target.value);
+  };
+
+  const handleSupport = () => {
+    console.log(textInput);
   };
 
   const handleInput = () => {
@@ -499,6 +504,8 @@ const Support = () => {
                     borderRadius: "5px",
                   }}
                   placeholder="متن پاسخ"
+                  ref={textInput}
+                  // onClick
                 />
 
                 <Button
