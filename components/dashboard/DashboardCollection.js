@@ -5,21 +5,18 @@ import { useState } from "react";
 import DashboardCollectionComp from "./DashboardCollectionComp";
 
 const DashboardCollection = () => {
-  const [collections, setCollections] = useState();
-  const [files, setFiles] = useState();
+  const [collections, setCollections] = useState([]);
   axios
     .post("https://hdgraphic.ir/api/v1/users/user-collections",{}, {
       headers: {
         "Content-Type": "application/json",
         Authorization:
           "Bearer " +
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcyMTUyOTQzLCJpYXQiOjE2NzIxNDkzNDMsImp0aSI6IjlkYTMwNTBjZjVkYzQxMWI5NDczYjc4N2IzZjI0ZDYxIiwidXNlcl9pZCI6NTJ9.e2FmjREGTEfvIK2U1FYt_BuclMKP4du2YTs2vu88CxQ",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcyMjk4NTMyLCJpYXQiOjE2NzIyOTQ5MzIsImp0aSI6ImEzOWZkZDI2YTAyMTQzMzM4MjA0MThkZjUwNmMxOGM4IiwidXNlcl9pZCI6NTJ9.BxhHQfhZn4M_Ij1TqQzDgQ1OFiH-EW6Z9UmGc8j3BSU",
       },
     })
     .then((result) => {
       setCollections(result.data)
-      setFiles(result.data.files)
-      console.log(result)
     })
     .catch((err) => {
       console.log(err);
@@ -47,9 +44,8 @@ const DashboardCollection = () => {
   ];
   return (
     <>
-    {collections+""}
-      <DashboardCollectionComp data={data} />
-      <DashboardCollectionComp data={data} />
+      {/* <DashboardCollectionComp data={data} /> */}
+      <DashboardCollectionComp data={collections} />
     </>
   );
 };

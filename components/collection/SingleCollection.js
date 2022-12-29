@@ -1,13 +1,23 @@
 import { Box, Grid, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 import CollectionImg from "./CollectionImg";
 
 const SingleCollection = (props) => {
+  const [collection, setCollection] = useState(props.collection);
+  const [files, setFiles] = useState(
+    props.collection ? props.collection.files : null
+  );
+  const [collectionImgs, setCollectionImgs] = useState([]);
+  useEffect(() => {
+    let imgs = [];
+    if (files)
+      files.map((item) => imgs.push(item.image));
+    setCollectionImgs(imgs);
+  }, [files]);
   return (
     <>
       <Box sx={{ width: "306px" }}>
-        <Box>
-          <CollectionImg data={props.data ? props.data : ""} />
-        </Box>
+        <Box><CollectionImg data={collectionImgs ? collectionImgs : ""} /></Box>
         <Box
           sx={{ display: "flex", justifyContent: "space-between", my: "10px" }}
         >
@@ -20,7 +30,7 @@ const SingleCollection = (props) => {
                 color: "colors.gray",
               }}
             >
-              {props.data.subc}
+              {collection ? collection.title : "بدون نام"}
             </Typography>
           </Box>
           <Box
