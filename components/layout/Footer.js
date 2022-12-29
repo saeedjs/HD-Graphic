@@ -139,7 +139,7 @@ const Footer = () => {
                       <Link href={"#"}>
                         <Typography
                           sx={{ fontSize: "14px" }}
-                          dangerouslySetInnerHTML={{ __html: footerCol2 }}
+                          // dangerouslySetInnerHTML={{ __html: footerCol2 }}
                         />
                       </Link>
                     </ListItem>
