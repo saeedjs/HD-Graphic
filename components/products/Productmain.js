@@ -13,7 +13,7 @@ const ProductMain = ({ instagram }) => {
   return (
     <>
       <Box sx={{ display: "flex", mb: 2 }}>
-        <Box
+        {/* <Box
           sx={{
             //
             height: "auto",
@@ -38,8 +38,8 @@ const ProductMain = ({ instagram }) => {
           <Box sx={{ mr: "35px" }}>
             <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
           </Box>
-        </Box>
-        <Box
+        </Box> */}
+        {/* <Box
           sx={{
             height: "auto",
             mt: "140px",
@@ -88,22 +88,55 @@ const ProductMain = ({ instagram }) => {
               },
             }}
           >
-            <Typography sx={{ color: "#AAAAAA", fontSize: "14px" }}>
-              500 طرح آماده
-            </Typography>
+            <Typography sx={{ color: "#AAAAAA", fontSize: "14px" }}>500 طرح آماده</Typography>
           </Box>
-        </Box>
+        </Box> */}
       </Box>
 
       <Grid container maxWidth="xl" justifyContent={"center"}>
         <ProductmainBig />
-        <Box
+        {/* <Box
+          sx={{
+            position: "relative",
+            right: "30px",
+            top: {
+              lg: "-30px",
+            },
+            pt: {
+              xs: 6,
+            },
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              pb: 1,
+              position: {
+                xs: "relative",
+                lg: "absolute",
+              },
+            }}
+          >
+            <Box
+              height={"22px"}
+              sx={{
+                height: "22px",
+                backgroundColor: "colors.green",
+              }}
+            ></Box>
+            <Typography sx={{ mx: 2, whiteSpace: "nowrap" }}>قالب اینستاگرام</Typography>
+            <Link href={"#"} style={{ color: "#4ECCA3", fontWeight: "bold", whiteSpace: "nowrap" }}>
+              مشاهده همه
+            </Link>
+          </Box>
+        </Box> */}
+        {/* <Box
           xs={12}
           sx={{
             display: {
               lg: "none",
               md: "none",
-              sm: "flex",
+              sm: "none",
               xs: "flex",
             },
           }}
@@ -124,39 +157,39 @@ const ProductMain = ({ instagram }) => {
             <Typography sx={{ color: "colors.green" }}>مشاهده همه</Typography>
           </Box>
           <Box sx={{ mr: 4 }}>
-            <Typography sx={{ color: "#AAAAAA", fontSize: "16px" }}>
-              500 طرح آماده
-            </Typography>
+            <Typography sx={{ color: "#AAAAAA", fontSize: "16px" }}>500 طرح آماده</Typography>
           </Box>
-        </Box>{" "}
+        </Box> */}
         {instagram.map((item) => {
           return (
-            <Grid justifyContent={"center"} item xs={4} sm={4} md={4} lg={2}>
-              <Grid item sx={{ margin: "3px" }}>
-                <Link href={`file/${item.slug}/${item.id}`}>
-                  <img
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      padding: "0",
-                      marginRight: "10px",
-                    }}
-                    src={`https://hdgraphic.ir${item.image}`}
-                  />
-                </Link>
-                <Link href={`file/${item.slug}/${item.id}`}>
-                  <img
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      padding: "0",
-                      marginRight: "10px",
-                    }}
-                    src={`https://hdgraphic.ir${item.image}`}
-                  />
-                </Link>
+            <>
+              <Grid justifyContent={"center"} item xs={4} sm={4} md={4} lg={2}>
+                <Grid item sx={{ margin: "3px" }}>
+                  <Link href={`file/${item.slug}/${item.id}`}>
+                    <img
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        padding: "0",
+                        marginRight: "10px",
+                      }}
+                      src={`https://hdgraphic.ir${item.image}`}
+                    />
+                  </Link>
+                  <Link href={`file/${item.slug}/${item.id}`}>
+                    <img
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        padding: "0",
+                        marginRight: "10px",
+                      }}
+                      src={`https://hdgraphic.ir${item.image}`}
+                    />
+                  </Link>
+                </Grid>
               </Grid>
-            </Grid>
+            </>
           );
         })}
       </Grid>

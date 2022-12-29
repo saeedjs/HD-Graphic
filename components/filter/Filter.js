@@ -24,7 +24,7 @@ import SearchFilter from "./SearchFilter";
 import LicenseFilter from "./LicenseFilter";
 import Complex from "./Complex";
 const Filter = ({ category, colors }) => {
-  const categoryVals = category.items;
+  const [categoryVals, setCategoryVals] = useState([] || category.items);
   return (
     <>
       <Container maxWidth="xxl">
@@ -66,9 +66,7 @@ const Filter = ({ category, colors }) => {
                   <img wid src="/images/icon/color.png" />
                 </Box>
                 <Box>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
-                    رنگ
-                  </Typography>
+                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>رنگ</Typography>
                 </Box>
               </Box>
               <Box>
@@ -90,22 +88,14 @@ const Filter = ({ category, colors }) => {
                   <img src="/images/icon/license.png" />
                 </Box>
                 <Box>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
-                    لایسنس
-                  </Typography>
+                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>لایسنس</Typography>
                 </Box>
               </Box>
               <LicenseFilter />
             </Box>
             <SearchFilter />
           </Grid>
-          <Grid
-            item
-            xs={12}
-            md={9}
-            xl={10}
-            sx={{ borderRight: "1px solid #EEEEEE" }}
-          >
+          <Grid item xs={12} md={9} xl={10} sx={{ borderRight: "1px solid #EEEEEE" }}>
             <Box sx={{ height: "100%" }}>
               <Masonry
                 columns={{ xl: 6, lg: 4, md: 3, sm: 3, xs: 1 }}
@@ -139,9 +129,7 @@ const Filter = ({ category, colors }) => {
                 ))}
               </Masonry>
             </Box>
-            <Box>
-              <Mypagination mount={category.extra.page_count} />
-            </Box>
+            <Box>{/* <Mypagination mount={category.extra.page_count} /> */}</Box>
           </Grid>
         </Grid>
       </Container>

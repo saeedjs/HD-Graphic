@@ -43,22 +43,13 @@ const ItemUploadedFileCard = (props) => {
       <Box
         sx={{
           position: "absolute",
-          left: "0",
-          top: "0",
+          left: "-8px",
+          top: "-5px",
         }}
         onClick={() => handleDelete()}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="25"
-          height="25"
-          viewBox="0 0 18 18"
-        >
-          <g
-            id="Group_21"
-            data-name="Group 21"
-            transform="translate(-449 -1026)"
-          >
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 18 18">
+          <g id="Group_21" data-name="Group 21" transform="translate(-449 -1026)">
             <circle
               id="Ellipse_25"
               data-name="Ellipse 25"
@@ -88,15 +79,10 @@ const ItemUploadedFileCard = (props) => {
       >
         <img src={props.srcImage} alt="" />
         <Box sx={{ display: "flex", justifyContent: "center", mt: 3 }}>
-          <Typography sx={{ fontSize: "14px", fontWeight: "bold" }}>
-            {props.title}
-          </Typography>
+          <Typography sx={{ fontSize: "14px", fontWeight: "bold" }}>{props.title}</Typography>
         </Box>
         <Box sx={{ display: "flex", justifyContent: "space-between", mt: 4 }}>
-          <Button
-            sx={{ mr: 1, fontSize: "13px", fontWeight: "bold" }}
-            onClick={() => handleEdit()}
-          >
+          <Button sx={{ mr: 1, fontSize: "13px", fontWeight: "bold" }} onClick={() => handleEdit()}>
             <svg
               id="_3917361"
               data-name="3917361"

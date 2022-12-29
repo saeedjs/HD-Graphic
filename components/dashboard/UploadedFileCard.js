@@ -59,8 +59,8 @@ let items = [
 const UploadedFileCard = () => {
   return (
     <>
-      <Typography sx={{ m: 7 }}>فایل های آپلود شده</Typography>
-      <Grid spacing={1} container sx={{ justifyContent: "center" }}>
+      <Typography sx={{ margin: "20px", fontWeight: "bold" }}>فایل های آپلود شده</Typography>
+      <Grid spacing={1} container sx={{ justifyContent: "start" }}>
         {items.map((item) => {
           return (
             <ItemUploadedFileCard

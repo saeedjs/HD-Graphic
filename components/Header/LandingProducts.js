@@ -155,7 +155,7 @@ const LandingProducts = () => {
               </Box>
               <Link href={"/files/stock-pictures"}>
                 <Typography variant="h5" component="h5" sx={{ p: 1 }}>
-                  تصویر{" "}
+                  تصویر
                 </Typography>
               </Link>
               <Typography
