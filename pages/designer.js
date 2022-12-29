@@ -9,7 +9,7 @@ export default function Designer() {
     <>
       <SearchBox />
       <PersonDetail />
-      <Filter />
+      {/* <Filter /> */}
       <Articls title="مطالب مرتبط" />
     </>
   );

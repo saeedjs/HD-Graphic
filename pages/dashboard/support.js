@@ -6,7 +6,7 @@ const support = () => {
   return (
     <>
       <SearchBox />
-      {/* <PersonDetail /> */}
+      <PersonDetail />
       <MAinDashboard>
         <Support />
       </MAinDashboard>
