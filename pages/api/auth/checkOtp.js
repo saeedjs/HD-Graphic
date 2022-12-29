@@ -1,5 +1,4 @@
 import axios from "axios";
-import cookie from "cookie";
 
 export default async function handler(req, res) {
   if (req.method == "POST") {
@@ -22,7 +21,7 @@ export default async function handler(req, res) {
           path: "/",
         }),
         cookie.serialize("access", resApi.data.auth.access, {
-          httpOnly: true,
+          httpOnly: false,
           secure: process.env.NODE_ENV !== "development",
           maxAge: 60 * 60,
           path: "/",

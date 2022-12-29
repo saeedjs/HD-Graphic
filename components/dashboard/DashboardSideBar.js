@@ -27,6 +27,7 @@ const DashboardSideBar = () => {
       item.clickable = true;
     }
     setDashSideVals(copyDashSideVals);
+    Cookies.remove('access')
   };
   return (
     <>
