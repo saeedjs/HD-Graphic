@@ -13,6 +13,7 @@ import { Mypagination } from "../Mypagination";
 import { Box } from "@mui/system";
 import TableRows2 from "./TableRows2";
 import { useState } from "react";
+import axios from "axios";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
