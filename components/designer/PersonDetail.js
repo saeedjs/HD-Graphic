@@ -6,7 +6,7 @@ const PersonDetail = () => {
       <Box>
         <Box
           component={"img"}
-          src="images/back.png"
+          src="/images/back.png"
           sx={{
             width: "100%",
             backgroundColor: "#efefef",
@@ -35,7 +35,7 @@ const PersonDetail = () => {
           <Grid item sx={{ px: 2 }}>
             <Box
               component={"img"}
-              src="images/person.png"
+              src="/images/person.png"
               sx={{
                 width: {
                   // xs: "50%",
@@ -77,7 +77,8 @@ const PersonDetail = () => {
                 مهرانه شریفی
               </Typography>
               <Typography sx={{ mt: "20px", pl: 2, fontSize: "14px" }}>
-                <img src="images/download.png" style={{ verticalAlign: "bottom" }} /> دانلودها : 6958
+                <img src="/images/download.png" style={{ verticalAlign: "bottom" }} /> دانلودها :
+                6958
               </Typography>
             </Box>
             <Box
@@ -89,7 +90,7 @@ const PersonDetail = () => {
               }}
             >
               <img
-                src="images/folder.png"
+                src="/images/folder.png"
                 style={{ verticalAlign: "middle", paddingLeft: "8px" }}
               />
               <Box sx={{ fontSize: "14px" }} component="span">
@@ -104,7 +105,7 @@ const PersonDetail = () => {
                 },
               }}
             >
-              <img src="images/info.png" style={{ verticalAlign: "middle", paddingLeft: "4px" }} />
+              <img src="/images/info.png" style={{ verticalAlign: "middle", paddingLeft: "4px" }} />
               <Link href="#">
                 <Box sx={{ fontSize: "14px" }} component="span">
                   درباره مدرس
