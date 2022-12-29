@@ -49,6 +49,6 @@ export default async function handler(req, res) {
     }
   } else {
     res.setHeader("Allow", ["POST"]);
-    res.status(405).json({ massage: `Mehtode ${req.methode} not allowed` });
+    res.status(405).json({ massage: `Mehtode ${req.methode} not allowed now` });
   }
 }

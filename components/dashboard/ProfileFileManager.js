@@ -16,7 +16,11 @@ const ProfileFileManager = () => {
     <>
       {/* create and Edit */}
       <Box>
-        <Typography component={"h3"} variant="h3" sx={{ fontWeight: "bold", mb: "2.2rem" }}>
+        <Typography
+          component={"h3"}
+          variant="h3"
+          sx={{ fontWeight: "bold", mb: "2.2rem" }}
+        >
           ایجاد و ویرایش فایل
         </Typography>
         <Grid container>
@@ -50,7 +54,9 @@ const ProfileFileManager = () => {
                   type="file"
                   id="cover"
                   style={{ display: "none" }}
-                  onChange={(e) => e.target.files[0] && setChooseCover(e.target.files[0].name)}
+                  onChange={(e) =>
+                    e.target.files[0] && setChooseCover(e.target.files[0].name)
+                  }
                 />
                 <label htmlFor="cover">
                   <Box
@@ -70,7 +76,9 @@ const ProfileFileManager = () => {
                     <Typography component={"p"} sx={{ mt: 1 }}>
                       انتخاب کاور
                     </Typography>
-                    <Typography sx={{ fontSize: "12px" }}>{chooseCover}</Typography>
+                    <Typography sx={{ fontSize: "12px" }}>
+                      {chooseCover}
+                    </Typography>
                   </Box>
                 </label>
                 <Box
@@ -176,7 +184,9 @@ const ProfileFileManager = () => {
                   type="file"
                   id="files"
                   style={{ display: "none" }}
-                  onChange={(e) => e.target.files[0] && setChooseFile(e.target.files[0].name)}
+                  onChange={(e) =>
+                    e.target.files[0] && setChooseFile(e.target.files[0].name)
+                  }
                 />
                 <label htmlFor="files">
                   <Box
@@ -196,7 +206,9 @@ const ProfileFileManager = () => {
                     <Typography component={"p"} sx={{ mt: 1 }}>
                       انتخاب فایل
                     </Typography>
-                    <Typography sx={{ fontSize: "12px", wordWrap: "break-word" }}>
+                    <Typography
+                      sx={{ fontSize: "12px", wordWrap: "break-word" }}
+                    >
                       {chooseFile}
                     </Typography>
                   </Box>
@@ -250,7 +262,12 @@ const ProfileFileManager = () => {
                     آپلود بصورت فایل فشرده با پسوند های مجاز
                   </Typography>
                   <Typography
-                    sx={{ display: "flex", pt: 1, alignItems: "center", fontSize: "12px" }}
+                    sx={{
+                      display: "flex",
+                      pt: 1,
+                      alignItems: "center",
+                      fontSize: "12px",
+                    }}
                   >
                     <Box
                       width="16px"
@@ -306,7 +323,13 @@ const ProfileFileManager = () => {
                   fontFamily: "iranYekan",
                 }}
               />
-              <Box sx={{ display: "flex", alignItems: "center", paddingRight: "3px" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  paddingRight: "3px",
+                }}
+              >
                 <Box
                   sx={{
                     width: "18px",
@@ -354,7 +377,9 @@ const ProfileFileManager = () => {
                   }}
                   onClick={() => handleCheckRule(checkRule)}
                 ></Box>
-                <Typography sx={{ fontSize: "14px", p: 1 }}>پذیرش قوانین فروش فایل</Typography>
+                <Typography sx={{ fontSize: "14px", p: 1 }}>
+                  پذیرش قوانین فروش فایل
+                </Typography>
               </Box>
               <Button
                 sx={{
@@ -388,7 +413,13 @@ const ProfileFileManager = () => {
               lg: 2,
             }}
           >
-            <Box sx={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                flexDirection: "column",
+              }}
+            >
               <Typography
                 sx={{
                   p: "5px",
@@ -416,7 +447,10 @@ const ProfileFileManager = () => {
               <Box sx={{ mt: 4 }}>
                 <Typography>فایل اصلی بارگذاری</Typography>
                 <Typography sx={{ mt: 1.5 }}>
-                  <img src="/images/cloude-s.png" style={{ verticalAlign: "middle" }} />
+                  <img
+                    src="/images/cloude-s.png"
+                    style={{ verticalAlign: "middle" }}
+                  />
                   <Typography
                     sx={{
                       padding: "5px",

@@ -1,4 +1,4 @@
-import { Button, Grid, TextField } from "@mui/material";
+import { Button, Grid, TextField, Typography } from "@mui/material";
 import { useContext, useState } from "react";
 
 import AuthContext from "../../context/AuthContext";
@@ -26,16 +26,42 @@ const Login = ({ setStep }) => {
 
   return (
     <>
-      <Grid item={12}>
-        <h1>صفحه ورود</h1>
+      <Grid item={12} sx={{ display: "flex", justifyContent: "center" }}>
+        <Typography component={"h1"}>صفحه ورود</Typography>
         <Grid item xs={12}>
-          <TextField
+          <input
+            style={{
+              fontFamily: "iranYekan",
+              color: "black",
+              border: "none",
+              backgroundColor: "#eeeeee",
+              padding: "0.5rem 0.8rem",
+              outline: "none",
+              borderRadius: "5px",
+              width: "50vmin",
+            }}
             type="text"
             onChange={(e) => setCellphone(e.target.value)}
-            name=""
-            id=""
             placeholder="شماره تلفن خودرا وارد کنید"
           />
+          <Typograpy>
+            <Box
+              sx={{
+                width: "18px",
+                height: "18px",
+                mr: {
+                  xs: 0,
+                  md: 2,
+                },
+                border: `${!checkFree && "1px solid #c2c2c2"}`,
+                borderRadius: "5px",
+                cursor: "pointer",
+                backgroundColor: `${checkFree && "#4ECCA3"}`,
+              }}
+              onClick={() => handleCheckNew(checkFree)}
+            ></Box>
+            عضویت در خبرنامه
+          </Typograpy>
         </Grid>
         <Grid item xs={12}>
           <Button
