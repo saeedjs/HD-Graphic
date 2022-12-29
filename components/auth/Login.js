@@ -300,9 +300,11 @@ const Login = ({ setStep }) => {
               sx={{
                 display: "flex",
                 justifyContent: "center",
+                alignItems: "center",
                 fontFamily: "iranYekan",
                 fontSize: "18px",
-                mb: 4,
+                mt: 7,
+                mb: 7,
               }}
             >
               <span style={{ color: "#4ECCA3" }}>ورود</span>
