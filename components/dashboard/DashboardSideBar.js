@@ -1,9 +1,13 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Link from "next/link";
+import { NextResponse } from "next/server";
 import { useState } from "react";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 
 const DashboardSideBar = () => {
+  const router = useRouter();
   const [dashSideVals, setDashSideVals] = useState([
     { id: 0, text: "داشبورد", clickable: true, href: "/dashboard/" },
     {
@@ -13,11 +17,16 @@ const DashboardSideBar = () => {
       href: "/dashboard/resume",
     },
     { id: 2, text: "کلکسیون", clickable: false, href: "/dashboard/collection" },
-    { id: 3, text: "مدیریت فایل ها", clickable: false, href: "/dashboard/filemanagement" },
+    {
+      id: 3,
+      text: "مدیریت فایل ها",
+      clickable: false,
+      href: "/dashboard/filemanagement",
+    },
     { id: 4, text: "پشتیبانی", clickable: false, href: "/dashboard/support" },
     { id: 5, text: "خروج", clickable: false, href: "#" },
   ]);
-  const itemHandle = (index) => {
+  const itemHandle = (index, href) => {
     const copyDashSideVals = [...dashSideVals];
     const item = copyDashSideVals.find((a) => a.id == index);
     if (!item.clickable) {
@@ -27,6 +36,10 @@ const DashboardSideBar = () => {
       item.clickable = true;
     }
     setDashSideVals(copyDashSideVals);
+    if (href == "#") {
+      Cookies.remove("access");
+      router.push("/");
+    }
   };
   return (
     <>
@@ -34,7 +47,7 @@ const DashboardSideBar = () => {
         {dashSideVals.map((item, index) => (
           <Link href={item.href}>
             <Box
-              onClick={() => itemHandle(index)}
+              onClick={() => itemHandle(index, item.href)}
               sx={{
                 cursor: "pointer",
                 borderTop: "1px solid #E9E9E9",

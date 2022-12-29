@@ -1,8 +1,9 @@
 import axios from "axios";
-import cookie from "cookie";
 
 export default async function handler(req, res) {
   if (req.method == "POST") {
+    console.log(req);
+    console.log(req.body);
     try {
       const resApi = await axios.post(
         "https://hdgraphic.ir/api/v1/users/auth/otp/resend",
@@ -13,7 +14,7 @@ export default async function handler(req, res) {
       console.log(resApi.data);
 
       res.status(200).json({
-        key: res.data.key,
+        data: resApi.data.key,
       });
     } catch {
       res.status(405).json({ massage: "مشکلی هست" });

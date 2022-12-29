@@ -1,9 +1,21 @@
 import axios from "axios";
 import Filter from "../../../components/filter/Filter";
+import { Typography } from "@mui/material";
 
-const tagsPage = ({ category, colors }) => {
+const tagsPage = ({ category, colors, title }) => {
   return (
     <>
+      <Typography
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          fontSize: "2rem",
+          fontWeight: "bold",
+          my: 4,
+        }}
+      >
+        {title}
+      </Typography>
       <Filter category={category} colors={colors} />
     </>
   );
@@ -34,10 +46,14 @@ export async function getServerSideProps(params) {
     const resColors = await axios.get(
       `https://hdgraphic.ir/api/v1/files/colors`
     );
+    const title = await axios.get(
+      `https://hdgraphic.ir/api/v1/files/tag-detail/${params.params.slug}`
+    );
     return {
       props: {
         category: res.data,
         colors: resColors.data,
+        title: title.data.title,
       },
     };
   } catch (error) {

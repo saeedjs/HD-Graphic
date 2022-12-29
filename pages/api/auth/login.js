@@ -2,6 +2,7 @@ import axios from "axios";
 import cookie from "cookie";
 
 export default async function handler(req, res) {
+  console.log(req.method);
   if (req.method == "POST") {
     try {
       const resApi = await axios.post(
@@ -49,6 +50,6 @@ export default async function handler(req, res) {
     }
   } else {
     res.setHeader("Allow", ["POST"]);
-    res.status(405).json({ massage: `Mehtode ${req.methode} not allowed` });
+    res.status(405).json({ massage: `Mehtode ${req.methode} not allowed now` });
   }
 }

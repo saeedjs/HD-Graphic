@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import axios from "axios";
-import { useRouter } from "next/router";
+
 import Filter from "../../../components/filter/Filter";
 
 const fileSlugPage = ({ category, colors, title }) => {
@@ -17,6 +17,7 @@ const fileSlugPage = ({ category, colors, title }) => {
       >
         {title}
       </Typography>
+
       <Filter category={category} colors={colors} />
     </>
   );
@@ -44,7 +45,9 @@ export async function getServerSideProps(params) {
     const resColors = await axios.get(
       `https://hdgraphic.ir/api/v1/files/colors`
     );
-    const title = axios.get(
+
+    console.log(res.data);
+    const title = await axios.get(
       `https://hdgraphic.ir/api/v1/files/category-detail/${params.params.slug}`
     );
     return {

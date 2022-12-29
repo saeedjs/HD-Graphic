@@ -15,6 +15,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const SingleProduct = ({ DetailProduct, creator }) => {
+  const detailP = DetailProduct;
   const [access, setAccess] = useState("");
   const [download, setDownload] = useState("");
 
@@ -194,7 +195,9 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                 </svg>
                 <span> گزارش مشکلات دانلود فایل</span>
               </Typography>
-              <Typography sx={{ my: 1 }}>تعداد دانلود:865</Typography>
+              <Typography sx={{ my: 1 }}>تعداد دانلود:{detailP.download}</Typography>
+              <Typography sx={{ my: 1 }}>بازدید:{detailP.views}</Typography>
+              <Typography sx={{ my: 1 }}>پسندیده شده:{detailP.like}</Typography>
             </Box>
 
             <Box
@@ -314,7 +317,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                   fontWeight: "bold",
                 }}
               >
-                {DetailProduct.title}
+                {detailP.title}
               </Typography>
               <Typography
                 sx={{
@@ -366,7 +369,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                 </svg>
                 <span style={{ margin: "10px" }}>فرمت فایل:Eps,PSD</span>
               </Typography>
-              {DetailProduct.is_free ? (
+              {detailP.is_free ? (
                 <Typography
                   sx={{
                     marginBottom: "32px",
@@ -415,7 +418,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                         <img
                           maxWidth="84px"
                           height="84px"
-                          src={`https://hdgraphic.ir/${DetailProduct.watermarked_image}`}
+                          src={`https://hdgraphic.ir/${detailP.watermarked_image}`}
                         />
                       </Box>
                     </Box>
@@ -756,7 +759,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
               }}
             >
               {" "}
-              {DetailProduct.tags.map((item) => {
+              {detailP.tags.map((item) => {
                 return (
                   <>
                     <Link href={`/files/tag/${item.slug}`}>
@@ -838,7 +841,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
               md={12}
               lg={12}
             >
-              {DetailProduct.related_files.map((item) => {
+              {detailP.related_files.map((item) => {
                 return (
                   <Link href={`http://localhost:3000/file/${encodeURI(item.slug)}/${item.id}`}>
                     <img

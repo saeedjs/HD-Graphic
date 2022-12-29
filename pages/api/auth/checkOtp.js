@@ -22,7 +22,7 @@ export default async function handler(req, res) {
           path: "/",
         }),
         cookie.serialize("access", resApi.data.auth.access, {
-          httpOnly: true,
+          httpOnly: false,
           secure: process.env.NODE_ENV !== "development",
           maxAge: 60 * 60,
           path: "/",
