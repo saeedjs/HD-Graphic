@@ -15,7 +15,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const SingleProduct = ({ DetailProduct, creator }) => {
-  const detailP = DetailProduct;
+  const detailP = DetailProduct.file;
   const [access, setAccess] = useState("");
   const [download, setDownload] = useState("");
 
@@ -26,7 +26,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
   // console.log(access);
   axios
     .post(
-      `https://hdgraphic.ir/api/v1/users/access-download/${DetailProduct.token}`,
+      `https://hdgraphic.ir/api/v1/users/access-download/${DetailProduct.file.token}`,
       {},
       {
         headers: {
@@ -40,6 +40,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
     )
     .then((response) => {
       setDownload(response.data.data);
+      toast.success(response.data.data);
       // console.log("response", response.data);
       console.log(download);
     })
@@ -60,7 +61,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
   const handelAddToCart = () => {
     axios
       .post(
-        `https://hdgraphic.ir/api/v1/cart/add-to-cart/${DetailProduct.id}`,
+        `https://hdgraphic.ir/api/v1/cart/add-to-cart/${DetailProduct.file.id}`,
         {},
         {
           headers: {
@@ -73,16 +74,8 @@ const SingleProduct = ({ DetailProduct, creator }) => {
         }
       )
       .then((response) => {
-        toast.success(response.data.massage, {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
+        console.log(response.data.massage);
+        toast.success(response.data.massage, {});
       })
       .catch((error) => {
         console.log("error", error.response);
@@ -152,7 +145,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                 padding: "0",
                 marginRight: "0px",
               }}
-              src={`https://hdgraphic.ir/${DetailProduct.watermarked_image}`}
+              src={`https://hdgraphic.ir/${DetailProduct.file.watermarked_image}`}
             />
             <Box
               sx={{
