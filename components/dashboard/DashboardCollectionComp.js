@@ -1,5 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import { useState } from "react";
 import SingleCollection from "../Collection/SingleCollection";
 const DashboardCollectionComp = ({ data }) => {
   return (
@@ -14,9 +15,9 @@ const DashboardCollectionComp = ({ data }) => {
         </Box>
         <Box>
           <Grid container sx={{justifyContent:'space-between'}}>
-            {data.map((data) => (
+            {data.map((collection) => (
               <Grid item xl={4} lg={3.5} md={5.6} sm={7} xs={10} sx={{mt:'50px'}}>
-                <SingleCollection data={data} />
+                <SingleCollection collection={collection} />
               </Grid>
             ))}
           </Grid>

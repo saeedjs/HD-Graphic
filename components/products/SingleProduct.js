@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import AuthContext from "../../context/AuthContext";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SingleProduct = ({ DetailProduct, creator }) => {
   const [access, setAccess] = useState("");
@@ -43,8 +44,60 @@ const SingleProduct = ({ DetailProduct, creator }) => {
     })
     .catch((error) => {
       console.log("error", error.response);
-      toast.success(error.response.data.data);
+      toast.error(error.response.data.data, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     });
+
+  const handelAddToCart = () => {
+    axios
+      .post(
+        `https://hdgraphic.ir/api/v1/cart/add-to-cart/${DetailProduct.id}`,
+        {},
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer  ${access}
+            
+            
+            `,
+          },
+        }
+      )
+      .then((response) => {
+        toast.success(response.data.massage, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      })
+      .catch((error) => {
+        console.log("error", error.response);
+        toast.error(error.response.data.data, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      });
+  };
+
   let req = {
     name: "ali",
   };
@@ -572,8 +625,9 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                 />
               </svg>
             </Button>
-            <Link href={download == "" ? "#" : download} download>
+            {download == "" ? (
               <Button
+                onClick={() => handelAddToCart()}
                 sx={{
                   width: "90%",
                   height: "50px",
@@ -598,33 +652,74 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                   }}
                 >
                   {" "}
-                  دانلود فایل با کیفیت بالا
+                  افزودن به سبد خرید
                 </span>
                 <svg
-                  id="_3917330"
-                  data-name="3917330"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="22"
+                  width="20"
                   height="20"
-                  viewBox="0 0 22 20"
+                  fill="currentColor"
+                  class="bi bi-cart"
+                  viewBox="0 0 16 16"
                 >
-                  <path
-                    id="Path_10"
-                    data-name="Path 10"
-                    d="M9.878,16.215a3.255,3.255,0,0,0,4.244,0l3.211-2.873a.828.828,0,0,0-.035-1.233,1.087,1.087,0,0,0-1.379-.029L12.993,14.7,13,.895A.952.952,0,0,0,12,0h0a.952.952,0,0,0-1,.895l-.009,13.786-2.91-2.6a1.085,1.085,0,0,0-1.415,0,.83.83,0,0,0,0,1.266Z"
-                    transform="translate(-0.997)"
-                    fill="#fff"
-                  />
-                  <path
-                    id="Path_11"
-                    data-name="Path 11"
-                    d="M21.083,16h0a.961.961,0,0,0-.917,1v4a.961.961,0,0,1-.917,1H2.75a.961.961,0,0,1-.917-1V17a.961.961,0,0,0-.917-1h0A.961.961,0,0,0,0,17v4a2.883,2.883,0,0,0,2.75,3h16.5A2.883,2.883,0,0,0,22,21V17A.961.961,0,0,0,21.083,16Z"
-                    transform="translate(0 -4)"
-                    fill="#fff"
-                  />
+                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                 </svg>
               </Button>
-            </Link>
+            ) : (
+              <Link href={download == "" ? "#" : download} download>
+                <Button
+                  sx={{
+                    width: "90%",
+                    height: "50px",
+                    backgroundColor: "colors.pink",
+                    color: "white",
+                    fontWeight: "bold",
+                    marginRight: "10px",
+                    m: 1,
+                    "&:hover": {
+                      border: "1px solid ",
+                      color: "colors.pink",
+                      backgroundColor: "white",
+                    },
+                    "&:hover svg path": {
+                      fill: "#F6416C",
+                    },
+                  }}
+                >
+                  <span
+                    style={{
+                      marginLeft: "16px",
+                    }}
+                  >
+                    {" "}
+                    دانلود فایل با کیفیت بالا
+                  </span>
+                  <svg
+                    id="_3917330"
+                    data-name="3917330"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="20"
+                    viewBox="0 0 22 20"
+                  >
+                    <path
+                      id="Path_10"
+                      data-name="Path 10"
+                      d="M9.878,16.215a3.255,3.255,0,0,0,4.244,0l3.211-2.873a.828.828,0,0,0-.035-1.233,1.087,1.087,0,0,0-1.379-.029L12.993,14.7,13,.895A.952.952,0,0,0,12,0h0a.952.952,0,0,0-1,.895l-.009,13.786-2.91-2.6a1.085,1.085,0,0,0-1.415,0,.83.83,0,0,0,0,1.266Z"
+                      transform="translate(-0.997)"
+                      fill="#fff"
+                    />
+                    <path
+                      id="Path_11"
+                      data-name="Path 11"
+                      d="M21.083,16h0a.961.961,0,0,0-.917,1v4a.961.961,0,0,1-.917,1H2.75a.961.961,0,0,1-.917-1V17a.961.961,0,0,0-.917-1h0A.961.961,0,0,0,0,17v4a2.883,2.883,0,0,0,2.75,3h16.5A2.883,2.883,0,0,0,22,21V17A.961.961,0,0,0,21.083,16Z"
+                      transform="translate(0 -4)"
+                      fill="#fff"
+                    />
+                  </svg>
+                </Button>
+              </Link>
+            )}
           </Grid>
         </Grid>
 

@@ -1,23 +1,9 @@
-import { Typography } from "@mui/material";
 import axios from "axios";
-import { useEffect } from "react";
 import Filter from "../../../components/filter/Filter";
-import cookie from "cookie";
 
 const tagsPage = ({ category, colors }) => {
   return (
     <>
-      <Typography
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          fontSize: "2rem",
-          fontWeight: "bold",
-          my: 4,
-        }}
-      >
-        {category.extra.title}
-      </Typography>
       <Filter category={category} colors={colors} />
     </>
   );
@@ -57,7 +43,7 @@ export async function getServerSideProps(params) {
   } catch (error) {
     return {
       props: {
-        error: "s",
+        error: "we have a problem!",
       },
     };
   }

@@ -9,6 +9,7 @@ export default async function handler(req, res) {
         {
           number: req.body.number,
           key: req.body.otp,
+          username: req.body.username,
         }
       );
 
@@ -34,13 +35,11 @@ export default async function handler(req, res) {
         }),
       ]);
 
-      res
-        .status(200)
-        .json({
-          user: resApi.data.user,
-          access: resApi.data.auth.access,
-          refresh: resApi.data.auth.refresh,
-        });
+      res.status(200).json({
+        user: resApi.data.user,
+        access: resApi.data.auth.access,
+        refresh: resApi.data.auth.refresh,
+      });
     } catch {
       res.status(405).json({ massage: "مشکلی هست" });
     }
