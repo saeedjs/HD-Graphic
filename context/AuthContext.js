@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
 
   const checkOtp = async (otp, username) => {
     try {
-      const res = await axios.post("http://localhost:3000/api/auth/checkOtp", {
+      const res = await axios.post("http://localhost:3000/api/auth/checkOtp ", {
         otp,
         number,
         username,
@@ -75,7 +75,7 @@ export const AuthProvider = ({ children }) => {
       const res = await axios.post("http://localhost:300/api/auth/resendOtp", {
         number,
       });
-      console.log(res.data);
+      console.log(res.data.key);
 
       console.log(res.data);
     } catch {}

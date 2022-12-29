@@ -56,7 +56,8 @@ const CheckOtp = () => {
     // }
     await checkOtp(otp, username);
   }
-  const handleResendOtp = async () => {
+  const handleResendOtp = async (e) => {
+    e.prevenDefault();
     setLoadingResend(true);
     await resendOtp();
     setLoadingResend(false);
@@ -100,7 +101,7 @@ const CheckOtp = () => {
       <button onClick={() => handleSubmit()}>تایید کد</button>
       {show ? (
         <button
-          onClick={handleResendOtp}
+          onClick={(e) => handleResendOtp(e)}
           disabled={loadingResend}
           className="btn btn-dark"
         >

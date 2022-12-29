@@ -10,7 +10,6 @@ export default async function handler(req, res) {
           number: req.body.number,
         }
       );
-
       console.log(resApi.data);
 
       res.status(200).json({
