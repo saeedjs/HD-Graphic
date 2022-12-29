@@ -1,4 +1,6 @@
+import { Button, Grid, TextField } from "@mui/material";
 import { useContext, useState } from "react";
+
 import AuthContext from "../../context/AuthContext";
 
 const Login = ({ setStep }) => {
@@ -24,15 +26,29 @@ const Login = ({ setStep }) => {
 
   return (
     <>
-      <h1>صفحه ورود</h1>
-      <input
-        type="text"
-        onChange={(e) => setCellphone(e.target.value)}
-        name=""
-        id=""
-        placeholder="شماره تلفن خودرا وارد کنید"
-      />
-      <button onClick={() => handleSubmit()}>ورود</button>
+      <Grid item={12}>
+        <h1>صفحه ورود</h1>
+        <Grid item xs={12}>
+          <TextField
+            type="text"
+            onChange={(e) => setCellphone(e.target.value)}
+            name=""
+            id=""
+            placeholder="شماره تلفن خودرا وارد کنید"
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <Button
+            sx={{
+              backgroundColor: "#F6416C",
+              color: "white",
+            }}
+            onClick={() => handleSubmit()}
+          >
+            ورود
+          </Button>
+        </Grid>
+      </Grid>
     </>
   );
 };

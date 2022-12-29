@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import cookie from "cookie";
 
+import "react-toastify/dist/ReactToastify.css";
+
 import { createContext, useState } from "react";
 import { toast } from "react-toastify";
 
@@ -71,14 +73,16 @@ export const AuthProvider = ({ children }) => {
     } catch {}
   };
   const resendOtp = async () => {
+    console.log(number);
     try {
-      const res = await axios.post("http://localhost:300/api/auth/resendOtp", {
-        number,
+      const res = await axios.post("http://localhost:3000/api/auth/resendOtp", {
+        number: number,
       });
-      console.log(res.data.key);
-
-      console.log(res.data);
-    } catch {}
+      toast.success("کد دوباره برای شما ارسال شد");
+      console.log(res.data.data);
+    } catch {
+      console.log("ارسال مجدد با خطا روبرو شد!");
+    }
   };
   return (
     <AuthContext.Provider

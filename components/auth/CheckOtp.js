@@ -2,6 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../context/AuthContext";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
+import { Button, TextField, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import { Grid } from "swiper";
+
 const CheckOtp = () => {
   const [otp, setOtp] = useState("");
   const [username, setUsername] = useState("");
@@ -56,8 +60,7 @@ const CheckOtp = () => {
     // }
     await checkOtp(otp, username);
   }
-  const handleResendOtp = async (e) => {
-    e.prevenDefault();
+  const handleResendOtp = async () => {
     setLoadingResend(true);
     await resendOtp();
     setLoadingResend(false);
@@ -68,50 +71,76 @@ const CheckOtp = () => {
     <>
       {newUser ? (
         <>
-          <h1> کد ورود</h1>
-          <input
-            type="text"
-            onChange={(e) => setOtp(e.target.value)}
-            name=""
-            id=""
-            placeholder="کد تایید وارد کنید"
-          />
-          <h1>نام کاربری</h1>
-          <input
-            type="text"
-            onChange={(e) => setUsername(e.target.value)}
-            name=""
-            id=""
-            placeholder="نام کاربری"
-          />
+          <Grid>
+            <Typography component={"h1"}> کد ورود</Typography>
+            <Grid item>
+              <TextField
+                type="text"
+                onChange={(e) => setOtp(e.target.value)}
+                name=""
+                id=""
+                placeholder="کد تایید وارد کنید"
+              />
+            </Grid>
+
+            <Typography component={"h1"}>نام کاربری</Typography>
+            <Grid item>
+              <TextField
+                type="text"
+                onChange={(e) => setUsername(e.target.value)}
+                name=""
+                id=""
+                placeholder="نام کاربری"
+              />
+            </Grid>
+          </Grid>
         </>
       ) : (
         <>
-          <h1> کد ورود</h1>
-          <input
-            type="text"
-            onChange={(e) => setOtp(e.target.value)}
-            name=""
-            id=""
-            placeholder="کد تایید وارد کنید"
-          />
+          <Typography component={"h1"}> کد ورود</Typography>
+          <Grid item>
+            <TextField
+              type="text"
+              onChange={(e) => setOtp(e.target.value)}
+              name=""
+              id=""
+              placeholder="کد تایید وارد کنید"
+            />
+          </Grid>
         </>
       )}
 
-      <button onClick={() => handleSubmit()}>تایید کد</button>
-      {show ? (
-        <button
-          onClick={(e) => handleResendOtp(e)}
-          disabled={loadingResend}
-          className="btn btn-dark"
+      <Grid item>
+        {" "}
+        <Button
+          sx={{ backgroundColor: "#F6416C", color: "white" }}
+          onClick={() => handleSubmit()}
         >
-          ارسال دوباره
-          {loadingResend && (
-            <div className="spinner-border spinner-border-sm ms-2"></div>
-          )}
-        </button>
+          تایید کد
+        </Button>
+      </Grid>
+      {show ? (
+        <Grid item>
+          <Button
+            onClick={() => handleResendOtp()}
+            disabled={loadingResend}
+            sx={{
+              backgroundColor: "#F6416C",
+              color: "white",
+              "&:hover": {
+                color: "white",
+                backgroundColor: "colors.pink",
+              },
+            }}
+          >
+            ارسال دوباره
+            {loadingResend && (
+              <div className="spinner-border spinner-border-sm ms-2"></div>
+            )}
+          </Button>
+        </Grid>
       ) : (
-        <div className="mt-3">{timer}</div>
+        <Box className="mt-3">{timer}</Box>
       )}
     </>
   );
