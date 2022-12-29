@@ -22,7 +22,6 @@ const SingleProduct = ({ DetailProduct, creator }) => {
     setAccess(localStorage.getItem("access"));
   }, []);
 
-  // console.log(access);
   axios
     .post(
       `https://hdgraphic.ir/api/v1/users/access-download/${DetailProduct.token}`,
@@ -31,8 +30,6 @@ const SingleProduct = ({ DetailProduct, creator }) => {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer  ${access}
-          
-          
           `,
         },
       }
@@ -65,8 +62,6 @@ const SingleProduct = ({ DetailProduct, creator }) => {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer  ${access}
-            
-            
             `,
           },
         }
@@ -220,12 +215,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                   border: "1px solid #C2C2C2",
                 }}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                   <path
                     id="_3917574"
                     data-name="3917574"
@@ -343,9 +333,8 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                 color="initial"
               >
                 {DetailProduct.de}
-                رم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                استفاده از طراحان گرافیک است. چاپگرها واستفاده از طراحان
-                گرافاستفاده از طراحان
+                رم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                گرافیک است. چاپگرها واستفاده از طراحان گرافاستفاده از طراحان
               </Typography>
               <Typography
                 sx={{
@@ -392,9 +381,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                   }}
                 >
                   قیمت:
-                  <span style={{ margin: "10px" }}>
-                    {numberFormat(DetailProduct.price)} تومان
-                  </span>
+                  <span style={{ margin: "10px" }}>{numberFormat(DetailProduct.price)} تومان</span>
                 </Typography>
               )}
               <Box
@@ -412,9 +399,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                   padding: "5px",
                 }}
               >
-                <Link
-                  href={`https://iranarmaghan.ir/${DetailProduct.category_main[0].slug}`}
-                >
+                <Link href={`https://iranarmaghan.ir/${DetailProduct.category_main[0].slug}`}>
                   <Box sx={{ display: "flex", height: "100%" }}>
                     <Box
                       xs={12}
@@ -756,12 +741,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
               },
             }}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 16 16"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
               <path
                 id="_3917132"
                 data-name="3917132"
@@ -860,11 +840,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
             >
               {DetailProduct.related_files.map((item) => {
                 return (
-                  <Link
-                    href={`http://localhost:3000/file/${encodeURI(item.slug)}/${
-                      item.id
-                    }`}
-                  >
+                  <Link href={`http://localhost:3000/file/${encodeURI(item.slug)}/${item.id}`}>
                     <img
                       src={`https://hdgraphic.ir/${item.image}`}
                       style={{

@@ -16,7 +16,7 @@ const ColorFilter = ({ colors }) => {
       copyDisplayState.map((item, i) => (copyDisplayState[i - 1] = "none"));
       copyDisplayState[id - 1] = "block";
     } else {
-      router.query.color = '';
+      router.query.color = "";
       await router.push(router);
       copyDisplayState[id - 1] = "none";
     }

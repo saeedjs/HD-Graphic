@@ -27,12 +27,20 @@ const PersonDetail = () => {
             },
 
             pr: {
-              xs: 2,
+              md: 2,
             },
             whiteSpace: "nowrap",
           }}
         >
-          <Grid item sx={{ px: 2 }}>
+          <Grid
+            item
+            sx={{
+              pr: 2,
+              pl: {
+                sm: 2,
+              },
+            }}
+          >
             <Box
               component={"img"}
               src="/images/person.png"
@@ -51,10 +59,6 @@ const PersonDetail = () => {
               alignItems: "end",
               mb: "3px",
               justifyContent: "space-between",
-              // px: {
-              //   // md: 4,
-              //   // xl: 2,
-              // },
               flexWrap: "wrap",
             }}
           >
@@ -72,6 +76,10 @@ const PersonDetail = () => {
                   borderRadius: "5px",
                   width: "max-content",
                   fontWeight: "bold",
+                  display: {
+                    xs: "none",
+                    sm: "block",
+                  },
                 }}
               >
                 مهرانه شریفی
@@ -89,10 +97,33 @@ const PersonDetail = () => {
                 },
               }}
             >
+              <Typography
+                sx={{
+                  color: "colors.pink",
+                  backgroundColor: "white",
+                  p: "8px 12px 8px 10px",
+                  mr: {
+                    xs: "-10px",
+                    md: "0",
+                  },
+
+                  textAlign: "center",
+                  borderRadius: "5px",
+                  width: "max-content",
+                  fontWeight: "bold",
+                  display: {
+                    xs: "block",
+                    sm: "none",
+                  },
+                }}
+              >
+                مهرانه شریفی
+              </Typography>
               <img
                 src="/images/folder.png"
                 style={{ verticalAlign: "middle", paddingLeft: "8px" }}
               />
+
               <Box sx={{ fontSize: "14px" }} component="span">
                 فایل ها : 6958
               </Box>
@@ -105,7 +136,15 @@ const PersonDetail = () => {
                 },
               }}
             >
-              <img src="/images/info.png" style={{ verticalAlign: "middle", paddingLeft: "4px" }} />
+              <img
+                src="/images/info.png"
+                style={{
+                  verticalAlign: "middle",
+                  paddingLeft: {
+                    lg: "4px",
+                  },
+                }}
+              />
               <Link href="#">
                 <Box sx={{ fontSize: "14px" }} component="span">
                   درباره مدرس

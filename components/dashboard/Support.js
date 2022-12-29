@@ -31,15 +31,26 @@ const Support = () => {
 
   const [numberInput, setNumberInput] = useState([]);
   const buttonRef = useRef(null);
-  const textInput = useRef(null);
+  const [text, setText] = useState("");
   const [objStyle, setObjStyle] = useState("");
 
   const handleChange = (event) => {
     setAge(event.target.value);
   };
 
-  const handleSupport = () => {
-    console.log(textInput);
+  const handleSupportInput = () => {
+    if (text === "") return;
+    let newObj = [
+      ...supportChat,
+      {
+        id: Math.floor(Math.random() * 124654653),
+        type: "user",
+        img: "/images/person-chat.png",
+        text: text,
+      },
+    ];
+    setText("");
+    setSupportChat(newObj);
   };
 
   const handleInput = () => {
@@ -504,8 +515,8 @@ const Support = () => {
                     borderRadius: "5px",
                   }}
                   placeholder="متن پاسخ"
-                  ref={textInput}
-                  // onClick
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
                 />
 
                 <Button
@@ -519,6 +530,7 @@ const Support = () => {
                     mx: 1,
                     my: 1,
                   }}
+                  onClick={() => handleSupportInput()}
                 >
                   ارسال پاسخ
                 </Button>
