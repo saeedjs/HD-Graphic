@@ -1,13 +1,14 @@
 import { Box, Button, List, ListItem, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 let isClick = 1;
 export const Mypagination = ({ mount }) => {
   const mountPage = mount && mount.page_count ? mount.page_count : 0;
   const paginationVals = [];
   const [page, setPage] = useState(paginationVals);
   const router = useRouter();
+  isClick = router.query.page && router.query.page > 0 ? router.query.page : 1;
   const backPage = async () => {
     if (isClick > 1) {
       let copyPaginationVals = page;
@@ -33,7 +34,7 @@ export const Mypagination = ({ mount }) => {
     if (isClick <= mountPage) {
       isClick++;
       let copyPaginationVals = page;
-      copyPaginationVals.map((item) => (item.id += 1, item.status = false));
+      copyPaginationVals.map((item) => ((item.id += 1), (item.status = false)));
       let nextFind = copyPaginationVals.find((a) => a.id == isClick);
       nextFind.status = true;
       setPage(copyPaginationVals);
@@ -41,7 +42,7 @@ export const Mypagination = ({ mount }) => {
       await router.push(router);
     }
   };
-  for (let i = 1; i <= mountPage; i++) {
+  for (let i = isClick; i <= mountPage; i++) {
     let val = {};
     val.status = false;
     val.id = i;
