@@ -36,7 +36,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
     )
     .then((response) => {
       setDownload(response.data.data);
-      toast.success(response.data.data);
+      toast.success("شما مجاز به دانلود هستید");
       // console.log("response", response.data);
       console.log(download);
     })
@@ -320,7 +320,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                   fontWeight: "bold",
                 }}
               >
-                {detailP.title}
+                {DetailProduct.title}
               </Typography>
               <Typography
                 sx={{
@@ -373,7 +373,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                 </svg>
                 <span style={{ margin: "10px" }}>فرمت فایل:Eps,PSD</span>
               </Typography>
-              {detailP.is_free ? (
+              {DetailProduct.is_free ? (
                 <Typography
                   sx={{
                     marginBottom: "32px",

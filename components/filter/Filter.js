@@ -24,7 +24,7 @@ import SearchFilter from "./SearchFilter";
 import LicenseFilter from "./LicenseFilter";
 import Complex from "./Complex";
 const Filter = ({ category, colors }) => {
-  const [categoryVals, setCategoryVals] = useState([] || category.items);
+  const [categoryVals, setCategoryVals] = useState(category.items);
   return (
     <>
       <Container maxWidth="xxl">
