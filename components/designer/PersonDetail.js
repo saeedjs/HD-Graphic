@@ -1,6 +1,6 @@
 import { Container, Typography, Box, Grid } from "@mui/material";
 import Link from "next/link";
-const PersonDetail = () => {
+const PersonDetail = ({username}) => {
   return (
     <>
       <Box>
@@ -82,7 +82,7 @@ const PersonDetail = () => {
                   },
                 }}
               >
-                مهرانه شریفی
+                {username}
               </Typography>
               <Typography sx={{ mt: "20px", pl: 2, fontSize: "14px" }}>
                 <img src="/images/download.png" style={{ verticalAlign: "bottom" }} /> دانلودها :

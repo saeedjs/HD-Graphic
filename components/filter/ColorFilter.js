@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const ColorFilter = ({ colors }) => {
   let display = [];
-  colors && colors.map((item) => (display[item.id - 1] = "none"));
+  colors.map((item) => (display[item.id - 1] = "none"));
   const [displayState, setDisplayState] = useState([...display]);
   const router = useRouter();
   const check = async (id) => {
@@ -25,35 +25,34 @@ const ColorFilter = ({ colors }) => {
   return (
     <>
       <Box sx={{ display: "flex", flexWrap: "wrap" }}>
-        {colors &&
-          colors.map((color) => (
-            <Box
-              onClick={() => check(color.id)}
-              width="20px"
-              height="20px"
-              mr="7px"
-              mt="7px"
+        {colors.map((color) => (
+          <Box
+            onClick={() => check(color.id)}
+            width="20px"
+            height="20px"
+            mr="7px"
+            mt="7px"
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "100%",
+              backgroundColor: color.code,
+              border: "1px solid #c2c2c2",
+              "&:hover": {
+                cursor: "pointer",
+              },
+            }}
+          >
+            <CheckIcon
+              fontSize="small"
               sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                borderRadius: "100%",
-                backgroundColor: color.code,
-                border: "1px solid #c2c2c2",
-                "&:hover": {
-                  cursor: "pointer",
-                },
+                color: "#FFFFFF",
+                display: displayState[color.id - 1],
               }}
-            >
-              <CheckIcon
-                fontSize="small"
-                sx={{
-                  color: "#FFFFFF",
-                  display: displayState[color.id - 1],
-                }}
-              />
-            </Box>
-          ))}
+            />
+          </Box>
+        ))}
       </Box>
     </>
   );
