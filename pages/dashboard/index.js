@@ -3,6 +3,7 @@ import { Box } from "@mui/system";
 import MAinDashboard from "../../components/dashboard/MainDashboard";
 import CheckIcon from "@mui/icons-material/Check";
 import { CheckBox } from "@mui/icons-material";
+import redirect from "nextjs-redirect";
 
 const dashboardPage = () => {
   return (
@@ -122,7 +123,13 @@ const dashboardPage = () => {
             </Box>
             <Box sx={{ mt: 5 }}>
               <Grid container>
-                <Grid container item md={12} xs={12} sx={{ justifyContent: "space-between" }}>
+                <Grid
+                  container
+                  item
+                  md={12}
+                  xs={12}
+                  sx={{ justifyContent: "space-between" }}
+                >
                   <Grid
                     item
                     lg={12}
@@ -145,7 +152,13 @@ const dashboardPage = () => {
                       <Box sx={{ pt: "5px" }}>
                         <img src="/images/icon/01 align center.png" />
                       </Box>
-                      <Box sx={{ width: "100%", height: "100%", paddingRight: "10px" }}>
+                      <Box
+                        sx={{
+                          width: "100%",
+                          height: "100%",
+                          paddingRight: "10px",
+                        }}
+                      >
                         <input
                           style={{
                             width: "99%",
@@ -169,7 +182,11 @@ const dashboardPage = () => {
                     sx={{ display: { lg: "contents", xs: "block" } }}
                   >
                     <Box
-                      sx={{ mt: 1, justifyContent: { md: "end", sm: "start" }, display: "flex" }}
+                      sx={{
+                        mt: 1,
+                        justifyContent: { md: "end", sm: "start" },
+                        display: "flex",
+                      }}
                     >
                       <input
                         style={{
@@ -206,7 +223,11 @@ const dashboardPage = () => {
                         }}
                       >
                         <Typography
-                          sx={{ fontSize: "14px", fontFamily: "iranYekan", textAlign: "center" }}
+                          sx={{
+                            fontSize: "14px",
+                            fontFamily: "iranYekan",
+                            textAlign: "center",
+                          }}
                         >
                           تایید ایمیل
                         </Typography>
@@ -214,7 +235,12 @@ const dashboardPage = () => {
                     </Box>
                   </Grid>
                 </Grid>
-                <Grid container item md={12} sx={{ justifyContent: "space-between", mt: 3 }}>
+                <Grid
+                  container
+                  item
+                  md={12}
+                  sx={{ justifyContent: "space-between", mt: 3 }}
+                >
                   <Grid item lg={3} md={6} sx={{ display: "contents" }}>
                     <Box
                       sx={{
@@ -231,7 +257,13 @@ const dashboardPage = () => {
                       <Box sx={{ pt: "5px" }}>
                         <img src="/images/icon/lock.png" />
                       </Box>
-                      <Box sx={{ width: "100%", height: "100%", paddingRight: "10px" }}>
+                      <Box
+                        sx={{
+                          width: "100%",
+                          height: "100%",
+                          paddingRight: "10px",
+                        }}
+                      >
                         <input
                           style={{
                             width: "99%",
@@ -263,7 +295,13 @@ const dashboardPage = () => {
                       <Box sx={{ pt: "5px" }}>
                         <img src="/images/icon/lock.png" />
                       </Box>
-                      <Box sx={{ width: "100%", height: "100%", paddingRight: "10px" }}>
+                      <Box
+                        sx={{
+                          width: "100%",
+                          height: "100%",
+                          paddingRight: "10px",
+                        }}
+                      >
                         <input
                           style={{
                             width: "99%",
@@ -295,7 +333,13 @@ const dashboardPage = () => {
                       <Box sx={{ pt: "5px" }}>
                         <img src="/images/icon/5070407.png" />
                       </Box>
-                      <Box sx={{ width: "100%", height: "100%", paddingRight: "10px" }}>
+                      <Box
+                        sx={{
+                          width: "100%",
+                          height: "100%",
+                          paddingRight: "10px",
+                        }}
+                      >
                         <input
                           style={{
                             width: "99%",
@@ -334,7 +378,12 @@ const dashboardPage = () => {
                     </Box>
                   </Grid>
                 </Grid>
-                <Grid container item md={12} sx={{ justifyContent: "space-between", mt: 3 }}>
+                <Grid
+                  container
+                  item
+                  md={12}
+                  sx={{ justifyContent: "space-between", mt: 3 }}
+                >
                   <Grid item xs={6} sx={{ display: "contents" }}>
                     <Box sx={{ mt: 1 }}>
                       <input
@@ -372,13 +421,21 @@ const dashboardPage = () => {
                     </Box>
                   </Grid>
                 </Grid>
-                <Grid container item md={12} sx={{ justifyContent: "space-between", mt: 3 }}>
+                <Grid
+                  container
+                  item
+                  md={12}
+                  sx={{ justifyContent: "space-between", mt: 3 }}
+                >
                   <Grid item xs={6} sx={{ display: "contents" }}>
                     <Box sx={{ display: "flex" }}>
                       <Box>
                         <input
                           type="checkbox"
-                          style={{ borderRadius: "5px", border: "1px solid #EEEEEE" }}
+                          style={{
+                            borderRadius: "5px",
+                            border: "1px solid #EEEEEE",
+                          }}
                         ></input>
                       </Box>
                       <Box>
@@ -409,7 +466,11 @@ const dashboardPage = () => {
                         }}
                       >
                         <Typography
-                          sx={{ fontSize: "14px", fontFamily: "iranYekan", textAlign: "center" }}
+                          sx={{
+                            fontSize: "14px",
+                            fontFamily: "iranYekan",
+                            textAlign: "center",
+                          }}
                         >
                           ثبت تغییرات
                         </Typography>
