@@ -1,16 +1,22 @@
 import { Grid } from "@mui/material";
 import { Box, Container } from "@mui/system";
+import { useEffect, useState } from "react";
 import ComponentTop from "../../components/ComponentTop";
 import SearchBox from "../category/SearchBox";
 import PersonDetail from "../designer/PersonDetail";
 import DashboardSideBar from "./DashboardSideBar";
 
 const MAinDashboard = ({ children }) => {
+  const [username, setUserName] = useState("");
+  useEffect(() => {
+    setUserName(JSON.parse(localStorage.getItem("user")));
+    console.log(username);
+  });
   return (
     <>
       <Box>
         <SearchBox />
-        <PersonDetail />
+        <PersonDetail username={username.username} />
       </Box>
       <Container maxWidth="xxl">
         <ComponentTop

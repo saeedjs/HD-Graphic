@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 let isClick = 1;
 export const Mypagination = ({ mount }) => {
+  const mountPage = mount && mount.page_count ? mount.page_count : 0;
   const paginationVals = [];
   const [page, setPage] = useState(paginationVals);
   const router = useRouter();
@@ -29,7 +30,7 @@ export const Mypagination = ({ mount }) => {
     isClick = index;
   };
   const nextPage = async () => {
-    if (isClick <= mount) {
+    if (isClick <= mountPage) {
       isClick++;
       let copyPaginationVals = page;
       copyPaginationVals.map((item) => (item.id += 1, item.status = false));
@@ -40,7 +41,7 @@ export const Mypagination = ({ mount }) => {
       await router.push(router);
     }
   };
-  for (let i = 1; i <= mount; i++) {
+  for (let i = 1; i <= mountPage; i++) {
     let val = {};
     val.status = false;
     val.id = i;

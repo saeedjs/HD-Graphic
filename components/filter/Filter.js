@@ -24,7 +24,12 @@ import SearchFilter from "./SearchFilter";
 import LicenseFilter from "./LicenseFilter";
 import Complex from "./Complex";
 const Filter = ({ category, colors }) => {
-  const [categoryVals, setCategoryVals] = useState([] || category.items);
+  const [categoryVals, setCategoryVals] = useState(
+    category && category.items ? category.items : null
+  );
+  const [mount, setMount] = useState(
+    category && category.extra ? category.extra : null
+  );
   return (
     <>
       <Container maxWidth="xxl">
@@ -107,40 +112,54 @@ const Filter = ({ category, colors }) => {
             sx={{ borderRight: "1px solid #EEEEEE" }}
           >
             <Box sx={{ height: "100%" }}>
-              <Masonry
-                columns={{ xl: 6, lg: 4, md: 3, sm: 3, xs: 1 }}
-                spacing={0}
-                sx={{ mt: "15px" }}
-              >
-                {categoryVals.map((item, i) => (
-                  <Link href={`/file/${item.slug}/${item.id}`}>
-                    <Box
-                      key={i}
-                      sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        py: "10px",
-                      }}
-                    >
+              {categoryVals ? (
+                <Masonry
+                  columns={{ xl: 6, lg: 4, md: 3, sm: 3, xs: 1 }}
+                  spacing={0}
+                  sx={{ mt: "15px" }}
+                >
+                  {categoryVals.map((item, i) => (
+                    <Link href={`/file/${item.slug}/${item.id}`}>
                       <Box
+                        key={i}
                         sx={{
-                          width: { md: "200px", sm: "180px", xs: "200px" },
-                          height: { md: "200px", sm: "180px", xs: "200px" },
+                          display: "flex",
+                          justifyContent: "center",
+                          py: "10px",
                         }}
                       >
-                        <img
-                          alt={item.alt}
-                          style={{ height: "100%", width: "100%" }}
-                          src={"https://hdgraphic.ir" + item.image}
-                        />
+                        <Box
+                          sx={{
+                            width: { md: "200px", sm: "180px", xs: "200px" },
+                            height: { md: "200px", sm: "180px", xs: "200px" },
+                          }}
+                        >
+                          <img
+                            alt={item.alt}
+                            style={{ height: "100%", width: "100%" }}
+                            src={"https://hdgraphic.ir" + item.image}
+                          />
+                        </Box>
                       </Box>
-                    </Box>
-                  </Link>
-                ))}
-              </Masonry>
+                    </Link>
+                  ))}
+                </Masonry>
+              ) : (
+                <Box
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography>محصولی موجود نیست</Typography>
+                </Box>
+              )}
             </Box>
             <Box>
-              {/* <Mypagination mount={category.extra.page_count} /> */}
+              <Mypagination mount={mount ? mount : null} />
             </Box>
           </Grid>
         </Grid>
