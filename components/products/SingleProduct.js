@@ -15,7 +15,6 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const SingleProduct = ({ DetailProduct, creator }) => {
-  const detailP = DetailProduct.file;
   const [access, setAccess] = useState("");
   const [download, setDownload] = useState("");
 
@@ -25,7 +24,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
 
   axios
     .post(
-      `https://hdgraphic.ir/api/v1/users/access-download/${DetailProduct.file.token}`,
+      `https://hdgraphic.ir/api/v1/users/access-download/${DetailProduct.token}`,
       {},
       {
         headers: {
@@ -58,7 +57,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
   const handelAddToCart = () => {
     axios
       .post(
-        `https://hdgraphic.ir/api/v1/cart/add-to-cart/${DetailProduct.file.id}`,
+        `https://hdgraphic.ir/api/v1/cart/add-to-cart/${DetailProduct.id}`,
         {},
         {
           headers: {
@@ -140,7 +139,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                 padding: "0",
                 marginRight: "0px",
               }}
-              src={`https://hdgraphic.ir/${DetailProduct.file.watermarked_image}`}
+              src={`https://hdgraphic.ir/${DetailProduct.watermarked_image}`}
             />
             <Box
               sx={{
@@ -188,9 +187,15 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                 </svg>
                 <span> گزارش مشکلات دانلود فایل</span>
               </Typography>
-              <Typography sx={{ my: 1 }}>تعداد دانلود:{detailP.download}</Typography>
-              <Typography sx={{ my: 1 }}>بازدید:{detailP.views}</Typography>
-              <Typography sx={{ my: 1 }}>پسندیده شده:{detailP.like}</Typography>
+              <Typography sx={{ my: 1 }}>
+                تعداد دانلود:{DetailProduct.download}
+              </Typography>
+              <Typography sx={{ my: 1 }}>
+                بازدید:{DetailProduct.views}
+              </Typography>
+              <Typography sx={{ my: 1 }}>
+                پسندیده شده:{DetailProduct.like}
+              </Typography>
             </Box>
 
             <Box
@@ -211,7 +216,12 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                   border: "1px solid #C2C2C2",
                 }}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                >
                   <path
                     id="_3917574"
                     data-name="3917574"
@@ -329,8 +339,9 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                 color="initial"
               >
                 {DetailProduct.de}
-                رم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                گرافیک است. چاپگرها واستفاده از طراحان گرافاستفاده از طراحان
+                رم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                استفاده از طراحان گرافیک است. چاپگرها واستفاده از طراحان
+                گرافاستفاده از طراحان
               </Typography>
               <Typography
                 sx={{
@@ -377,7 +388,9 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                   }}
                 >
                   قیمت:
-                  <span style={{ margin: "10px" }}>{numberFormat(DetailProduct.price)} تومان</span>
+                  <span style={{ margin: "10px" }}>
+                    {numberFormat(DetailProduct.price)} تومان
+                  </span>
                 </Typography>
               )}
               <Box
@@ -395,7 +408,9 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                   padding: "5px",
                 }}
               >
-                <Link href={`https://iranarmaghan.ir/${DetailProduct.category_main[0].slug}`}>
+                <Link
+                  href={`https://iranarmaghan.ir/${DetailProduct.category_main[0].slug}`}
+                >
                   <Box sx={{ display: "flex", height: "100%" }}>
                     <Box
                       xs={12}
@@ -411,7 +426,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                         <img
                           maxWidth="84px"
                           height="84px"
-                          src={`https://hdgraphic.ir/${detailP.watermarked_image}`}
+                          src={`https://hdgraphic.ir/${DetailProduct.watermarked_image}`}
                         />
                       </Box>
                     </Box>
@@ -737,7 +752,12 @@ const SingleProduct = ({ DetailProduct, creator }) => {
               },
             }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 16 16"
+            >
               <path
                 id="_3917132"
                 data-name="3917132"
@@ -752,7 +772,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
               }}
             >
               {" "}
-              {detailP.tags.map((item) => {
+              {DetailProduct.tags.map((item) => {
                 return (
                   <>
                     <Link href={`/files/tag/${item.slug}`}>
@@ -834,9 +854,13 @@ const SingleProduct = ({ DetailProduct, creator }) => {
               md={12}
               lg={12}
             >
-              {detailP.related_files.map((item) => {
+              {DetailProduct.related_files.map((item) => {
                 return (
-                  <Link href={`http://localhost:3000/file/${encodeURI(item.slug)}/${item.id}`}>
+                  <Link
+                    href={`http://localhost:3000/file/${encodeURI(item.slug)}/${
+                      item.id
+                    }`}
+                  >
                     <img
                       src={`https://hdgraphic.ir/${item.image}`}
                       style={{
