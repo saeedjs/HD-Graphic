@@ -5,6 +5,9 @@ import { NextResponse } from "next/server";
 import { useState } from "react";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
+import Swal from "sweetalert2";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const DashboardSideBar = () => {
   const router = useRouter();
@@ -37,8 +40,20 @@ const DashboardSideBar = () => {
     }
     setDashSideVals(copyDashSideVals);
     if (href == "#") {
-      Cookies.remove("access");
-      router.push("/");
+      Swal.fire({
+        title: "مطمعنی میخوای بری؟",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "خیر",
+        confirmButtonText: "بله",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Cookies.remove("access"), router.push("/"),
+          toast.success("با موفقیت خارج شدید");
+        }
+      });
     }
   };
   return (
