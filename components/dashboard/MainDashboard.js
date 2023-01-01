@@ -31,10 +31,11 @@ const MAinDashboard = ({ children }) => {
           <Grid item xs={12} sm={9} lg={10}>
             <Box
               sx={{
-                borderRight: "2px solid #e9e9e9",
+                borderRight:{sm: "2px solid #e9e9e9"},
                 minHeight: "1200px",
                 pt: "30px",
                 pr: "45px",
+                
               }}
             >
               {children}

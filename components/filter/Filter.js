@@ -109,7 +109,7 @@ const Filter = ({ category, colors }) => {
             xs={12}
             md={9}
             xl={10}
-            sx={{ borderRight: "1px solid #EEEEEE" }}
+            sx={{ borderRight:{md: "1px solid #EEEEEE"} }}
           >
             <Box sx={{ height: "100%" }}>
               {categoryVals ? (
