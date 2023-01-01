@@ -339,9 +339,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                 color="initial"
               >
                 {DetailProduct.de}
-                رم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-                استفاده از طراحان گرافیک است. چاپگرها واستفاده از طراحان
-                گرافاستفاده از طراحان
+                nhk
               </Typography>
               <Typography
                 sx={{
@@ -457,7 +455,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
               <Box
                 sx={{
                   border: 1,
-                  borderColor: "#E2E2E2",
+                  brordeColor: "#E2E2E2",
                   minWidth: {
                     xs: "50%",
                     lg: "90%",
@@ -465,7 +463,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                   height: "130px",
                   backgroundColor: "#fff",
                   borderRadius: "10px",
-                  overFlow: "hidden",
+                  overflow: "hidden",
                   mt: 1,
                   mr: 1,
                   padding: "5px",
@@ -478,6 +476,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                     sx={{
                       display: "flex",
                       alignItems: "center",
+                      overflow: "hidden",
                       flexDirection: "column",
                       m: 1.5,
                     }}
@@ -621,7 +620,61 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                 />
               </svg>
             </Button>
-            {download == "" ? (
+            {DetailProduct.only_subscribe ? (
+              <Link href={"/plans"}>
+                <Button
+                  sx={{
+                    width: "90%",
+                    height: "50px",
+                    backgroundColor: "colors.pink",
+                    color: "white",
+                    fontWeight: "bold",
+                    marginRight: "10px",
+                    m: 1,
+                    "&:hover": {
+                      border: "1px solid ",
+                      color: "colors.pink",
+                      backgroundColor: "white",
+                    },
+                    "&:hover svg path": {
+                      fill: "#F6416C",
+                    },
+                  }}
+                >
+                  <span
+                    style={{
+                      marginLeft: "16px",
+                    }}
+                  >
+                    {" "}
+                    خرید اشتراک
+                  </span>
+                  <svg
+                    id="_3917330"
+                    data-name="3917330"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="20"
+                    viewBox="0 0 22 20"
+                  >
+                    <path
+                      id="Path_10"
+                      data-name="Path 10"
+                      d="M9.878,16.215a3.255,3.255,0,0,0,4.244,0l3.211-2.873a.828.828,0,0,0-.035-1.233,1.087,1.087,0,0,0-1.379-.029L12.993,14.7,13,.895A.952.952,0,0,0,12,0h0a.952.952,0,0,0-1,.895l-.009,13.786-2.91-2.6a1.085,1.085,0,0,0-1.415,0,.83.83,0,0,0,0,1.266Z"
+                      transform="translate(-0.997)"
+                      fill="#fff"
+                    />
+                    <path
+                      id="Path_11"
+                      data-name="Path 11"
+                      d="M21.083,16h0a.961.961,0,0,0-.917,1v4a.961.961,0,0,1-.917,1H2.75a.961.961,0,0,1-.917-1V17a.961.961,0,0,0-.917-1h0A.961.961,0,0,0,0,17v4a2.883,2.883,0,0,0,2.75,3h16.5A2.883,2.883,0,0,0,22,21V17A.961.961,0,0,0,21.083,16Z"
+                      transform="translate(0 -4)"
+                      fill="#fff"
+                    />
+                  </svg>
+                </Button>
+              </Link>
+            ) : download == "" ? (
               <Button
                 onClick={() => handelAddToCart()}
                 sx={{
