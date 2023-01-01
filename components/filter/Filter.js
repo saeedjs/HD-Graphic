@@ -34,7 +34,7 @@ const Filter = ({ category, colors }) => {
     <>
       <Container maxWidth="xxl">
         <ComponentTop ltitle={"تعداد 6500 طرح آماده"} rtitle={"تنظیمات"} />
-        <Grid container>
+        <Grid container>  
           <Grid item xs={12} md={3} xl={2}>
             <Box
               height="60px"
