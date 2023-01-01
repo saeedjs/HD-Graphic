@@ -41,7 +41,7 @@ const DashboardSideBar = () => {
   const itemHandle = (index, href) => {
     if (href == "#") {
       Swal.fire({
-        title: "مطمعنی میخوای بری؟",
+        title: "مطمعنی یخوای بری؟",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",

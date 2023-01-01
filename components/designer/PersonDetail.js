@@ -117,7 +117,7 @@ const PersonDetail = ({username}) => {
                   },
                 }}
               >
-                مهرانه شریفی
+                {username}
               </Typography>
               <img
                 src="/images/folder.png"
