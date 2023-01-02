@@ -10,6 +10,10 @@
     url(./fonts/dana/regular/dana-regular.woff) format("woff"),
     url(./fonts/dana/regular/dana-regular.ttf) format("ttf");
 }
+::selection{
+    background-color: #33cc99;
+    color: #fff;
+}
 html,
 body {
   direction: rtl;

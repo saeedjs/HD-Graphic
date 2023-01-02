@@ -14,7 +14,7 @@ const tagsPage = ({ category, colors, title }) => {
           my: 4,
         }}
       >
-        {title}
+        #{title}
       </Typography>
       <Filter category={category} colors={colors} />
     </>

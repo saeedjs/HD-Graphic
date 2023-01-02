@@ -22,7 +22,7 @@ export async function getServerSideProps(params) {
   console.log(resSingleProduct.data);
   return {
     props: {
-      DetailProduct: resSingleProduct.data,
+      DetailProduct: resSingleProduct.data.file,
       creator: resSingleProduct.data.user,
     }, // will be passed to the page component as props
   };
