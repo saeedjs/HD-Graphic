@@ -27,6 +27,17 @@ function MyApp({ Component, pageProps }) {
     //     console.log(err);
     //   });
   });
+
+  //   axios
+  //     .get("https://hdgraphic.ir/api/v1/settings/setting")
+  //     .then((res) => {
+  //       setSetting(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, [setting]);
+
   const theme = createTheme({
     direction: "rtl",
     palette: {

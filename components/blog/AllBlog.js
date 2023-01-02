@@ -15,8 +15,8 @@ const AllBlog = ({ blogs }) => {
                 <SingleBlog blog={blog} />
               </Grid>
             ))}
-          </Grid>
-          <Mypagination mount={{ page_count: 3 }} />
+          </Grid>         
+          <Mypagination mount={{page_count: 3}} />
         </Container>
       </Box>
     </>
