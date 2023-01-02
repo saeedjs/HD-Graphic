@@ -16,17 +16,17 @@ Router.events.on("routeChangeComplete", () => nProgress.done());
 Router.events.on("routeChangeError", () => nProgress.done());
 
 function MyApp({ Component, pageProps }) {
-  const [setting, setSetting] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://hdgraphic.ir/api/v1/settings/setting")
-      .then((res) => {
-        setSetting(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [setting]);
+  // const [setting, setSetting] = useState([]);
+  // useEffect(() => {
+  //   axios
+  //     .get("https://hdgraphic.ir/api/v1/settings/setting")
+  //     .then((res) => {
+  //       setSetting(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, [setting]);
   const theme = createTheme({
     direction: "rtl",
     palette: {
@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps }) {
     },
     typography: {
       fontFamily: "iranYekan, dana",
-      fontSize: "14px",
+      // fontSize: "14px",
     },
   });
 
@@ -66,7 +66,7 @@ function MyApp({ Component, pageProps }) {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Head>
-            <link rel="shortcut icon" href={"https://hdgraphic.ir" + setting.fav} />
+            {/* <link rel="shortcut icon" href={"https://hdgraphic.ir" + setting.fav} /> */}
           </Head>
           <NavbarTop />
           <Component {...pageProps} />
