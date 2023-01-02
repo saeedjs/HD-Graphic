@@ -11,12 +11,11 @@ const AllBlog = ({ blogs }) => {
         <Container>
           <Grid container sx={{ justifyContent: "center", mb:'30px' }}>
             {blogs.map((blog) => (
-              <Grid item lg={4} md={5} sm={7} xs={10}>
+              <Grid item lg={4} md={5} sm={7} xs={11}>
                 <SingleBlog blog={blog} />
               </Grid>
             ))}
-          </Grid>
-          
+          </Grid>         
           <Mypagination mount={{page_count: 3}} />
         </Container>
       </Box>
