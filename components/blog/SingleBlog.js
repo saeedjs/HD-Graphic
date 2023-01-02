@@ -2,7 +2,6 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
 const SingleBlog = ({blog}) => {
-    console.log(blog)
     return (
         <>
         <Box sx={{width:'354px', height:'378px', border:'1px solid #EEEEEE', borderRadius:'5px', boxShadow:'1px 1px #EEEEEE', m:'10px'}}>

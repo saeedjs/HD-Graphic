@@ -1,9 +1,9 @@
 import { Box } from "@mui/system";
 import axios, { all } from "axios";
-import AllBlog from "../components/blog/AllBlog";
-import BlogNavBar from "../components/blog/BlogNavBar";
-import SingleBlog from "../components/blog/SingleBlog";
-import SearchBox from "../components/category/SearchBox";
+import AllBlog from "../../components/blog/AllBlog";
+import BlogNavBar from "../../components/blog/BlogNavBar";
+import SingleBlog from "../../components/blog/SingleBlog";
+import SearchBox from "../../components/category/SearchBox";
 
 const blog = ({ blogs }) => {
   return (

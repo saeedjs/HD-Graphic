@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }) {
       .catch((err) => {
         console.log(err);
       });
-  });
+  }, [setting]);
   const theme = createTheme({
     direction: "rtl",
     palette: {
