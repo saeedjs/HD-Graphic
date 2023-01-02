@@ -9,9 +9,9 @@ const AllBlog = ({ blogs }) => {
     <>
       <Box>
         <Container>
-          <Grid container sx={{ justifyContent: "center", mb:'30px' }}>
+          <Grid container sx={{ justifyContent: "center", mb: "30px" }}>
             {blogs.map((blog) => (
-              <Grid item lg={4} md={5} sm={7} xs={10}>
+              <Grid item xs={4}>
                 <SingleBlog blog={blog} />
               </Grid>
             ))}
