@@ -5,8 +5,6 @@ import PersonDetail from "../../components/designer/PersonDetail";
 const support = () => {
   return (
     <>
-      <SearchBox />
-      <PersonDetail />
       <MAinDashboard>
         <Support />
       </MAinDashboard>

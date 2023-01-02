@@ -300,7 +300,7 @@ const Login = ({ setStep }) => {
               sx={{
                 display: "flex",
                 justifyContent: "center",
-                alignItems: "center",
+
                 fontFamily: "iranYekan",
                 fontSize: "18px",
                 mt: 7,

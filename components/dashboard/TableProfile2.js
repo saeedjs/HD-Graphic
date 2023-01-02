@@ -44,20 +44,20 @@ const rows = [
 ];
 
 export default function TableProfile2() {
-  const [access, setAccess] = useState(localStorage.getItem("access"));
+  // const [access, setAccess] = useState(localStorage.getItem("access"));
 
-  axios
-    .get("https://hdgraphic.ir/api/user-download/", {
-      headers: {
-        Authorization: `token ${access}`,
-      },
-    })
-    .then((res) => {
-      console.log(res.data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+  // axios
+  //   .get("https://hdgraphic.ir/api/user-download/", {
+  //     headers: {
+  //       Authorization: `token ${access}`,
+  //     },
+  //   })
+  //   .then((res) => {
+  //     console.log(res.data);
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //   });
 
   return (
     <>

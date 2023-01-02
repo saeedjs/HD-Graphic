@@ -2,14 +2,16 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Link from "next/link";
 import { NextResponse } from "next/server";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
+import Swal from "sweetalert2";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const DashboardSideBar = () => {
-  const router = useRouter();
   const [dashSideVals, setDashSideVals] = useState([
-    { id: 0, text: "داشبورد", clickable: true, href: "/dashboard/" },
+    { id: 0, text: "داشبورد", clickable: false, href: "/dashboard" },
     {
       id: 1,
       text: "سوابق کاربری",
@@ -26,19 +28,33 @@ const DashboardSideBar = () => {
     { id: 4, text: "پشتیبانی", clickable: false, href: "/dashboard/support" },
     { id: 5, text: "خروج", clickable: false, href: "#" },
   ]);
+  const router = useRouter();
+  const [route, setRout] = useState(router.route);
+  useEffect(() => {
+    const dashSideValsCopy = [...dashSideVals];
+    let thisRoutFind = dashSideValsCopy.find((href) => href.href == route);
+    if (thisRoutFind)
+      thisRoutFind.clickable = true;
+    setDashSideVals(dashSideValsCopy);
+    console.log(dashSideVals)
+  },[route]);
   const itemHandle = (index, href) => {
-    const copyDashSideVals = [...dashSideVals];
-    const item = copyDashSideVals.find((a) => a.id == index);
-    if (!item.clickable) {
-      copyDashSideVals.map((i) => {
-        i.clickable = false;
-      });
-      item.clickable = true;
-    }
-    setDashSideVals(copyDashSideVals);
     if (href == "#") {
-      Cookies.remove("access");
-      router.push("/");
+      Swal.fire({
+        title: "مطمعنی یخوای بری؟",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "خیر",
+        confirmButtonText: "بله",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Cookies.remove("access"),
+            router.push("/"),
+            toast.success("با موفقیت خارج شدید");
+        }
+      });
     }
   };
   return (
