@@ -13,6 +13,8 @@ import AuthContext from "../../context/AuthContext";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import TitleComponents from "../TitleComponents";
+import React from "react";
 
 const SingleProduct = ({ DetailProduct, creator }) => {
   const [access, setAccess] = useState("");
@@ -21,7 +23,6 @@ const SingleProduct = ({ DetailProduct, creator }) => {
   useEffect(() => {
     setAccess(localStorage.getItem("access"));
   }, []);
-
   axios
     .post(
       `https://hdgraphic.ir/api/v1/users/access-download/${DetailProduct.token}`,
@@ -30,7 +31,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer  ${access}
-          `,
+  `,
         },
       }
     )
@@ -69,7 +70,16 @@ const SingleProduct = ({ DetailProduct, creator }) => {
       )
       .then((response) => {
         console.log(response.data.massage);
-        toast.success(response.data.massage, {});
+        toast.success("به سبد خرید اضافه شد", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       })
       .catch((error) => {
         console.log("error", error.response);
@@ -339,7 +349,6 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                 color="initial"
               >
                 {DetailProduct.de}
-                nhk
               </Typography>
               <Typography
                 sx={{
@@ -440,7 +449,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                         سفارش چاپ همین حالا {"      "} !{" "}
                       </Typography>
                       <Typography
-                        fontSize={"14px"}
+                        fontSize={14}
                         color={"#C2C2C2"}
                         sx={{ mt: 2, mr: 1.5 }}
                         fontWeight={"small"}
@@ -771,7 +780,6 @@ const SingleProduct = ({ DetailProduct, creator }) => {
             )}
           </Grid>
         </Grid>
-
         <Typography
           sx={{
             padding: "10px",
@@ -879,7 +887,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
             </span>
           </Button>
         </Typography>
-
+        <TitleComponents title={`بیشتر با طراح ${creator.name}`} />{" "}
         <Box
           sx={{
             display: "flex",
@@ -891,7 +899,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
             sx={{
               justifyContent: "center",
             }}
-            maxWidth={"xl"}
+            maxWidth="xl"
           >
             <Grid
               item
@@ -933,4 +941,4 @@ const SingleProduct = ({ DetailProduct, creator }) => {
   );
 };
 
-export default SingleProduct;
+export default React.memo(SingleProduct);
