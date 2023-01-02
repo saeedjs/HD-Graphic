@@ -415,9 +415,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                   padding: "5px",
                 }}
               >
-                <Link
-                  href={`https://iranarmaghan.ir/${DetailProduct.category_main[0].slug}`}
-                >
+                <Link href={`https://iranarmaghan.ir/products/`}>
                   <Box sx={{ display: "flex", height: "100%" }}>
                     <Box
                       xs={12}

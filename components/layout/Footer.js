@@ -28,13 +28,13 @@ const Footer = () => {
   //   });
   return (
     <>
-      <Box color={"white"} sx={{ mt: 20}}>
+      <Box color={"white"} sx={{ mt: 20 }}>
         <Box
           sx={{
             width: "100%",
             minHeight: "281px",
             backgroundColor: "colors.black",
-            direction:'rtl'
+            direction: "rtl",
           }}
         >
           <Box sx={{ maxWidth: "100%" }}>
@@ -63,6 +63,7 @@ const Footer = () => {
                         </Typography>
                       </Box>
                     </ListItem>
+
                     <ListItem>
                       <Box>
                         <TextField
