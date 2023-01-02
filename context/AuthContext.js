@@ -40,12 +40,11 @@ export const AuthProvider = ({ children }) => {
 
   const checkOtp = async (otp, username) => {
     try {
-      const res = await axios.post("http://localhost:3000/api/auth/checkOtp ", {
+      const res = await axios.post("http://localhost:3000/api/auth/checkOtp", {
         otp,
         number,
         username,
       });
-
       setUser(res.data);
       localStorage.setItem("access", res.data.access);
       localStorage.setItem("user", JSON.stringify(res.data.user));

@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps }) {
     },
     typography: {
       fontFamily: "iranYekan, dana",
-      fontSize: "14px",
+      // fontSize: "14px",
     },
   });
 
