@@ -31,6 +31,10 @@ p {
   text-align: right;
 }
 
+input {
+  outline: none;
+}
+
 #nprogress {
   pointer-events: none;
 }

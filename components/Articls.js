@@ -3,19 +3,22 @@ import Typography from "@mui/material/Typography";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Grid from "@mui/material";
 import { Container } from "@mui/system";
-import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import Link from "next/link";
 const Articls = (prop) => {
   const [articls, setArticls] = useState([]);
-  axios
-    .get("https://hdgraphic.ir/api/v1/blog/posts/list")
-    .then((result) => {
-      setArticls(result.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  useEffect(() => {
+    axios
+      .get("https://hdgraphic.ir/api/v1/blog/posts/list")
+      .then((result) => {
+        setArticls(result.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      console.log(articls)
+  }, []);
   return (
     <>
       <Container minWidth="sm" maxWidth="xxl">
@@ -32,9 +35,11 @@ const Articls = (prop) => {
             <Typography sx={{ fontSize: "16px" }}>{prop.title}</Typography>
           </Box>
           <Box sx={{ mr: "35px" }}>
-            <Typography sx={{ color: "colors.green", fontSize: "14px" }}>
-              مشاهده همه
-            </Typography>
+            <Link href="/blog">
+              <Typography sx={{ color: "colors.green", fontSize: "14px" }}>
+                مشاهده همه
+              </Typography>
+            </Link>
           </Box>
         </Box>
         <Box sx={{ mt: 5 }}>
@@ -63,7 +68,7 @@ const Articls = (prop) => {
           >
             {articls.map((item) => (
               <SwiperSlide>
-                <Link href={"#"}>
+                <Link href={"/blog/" + item.slug}>
                   <Box
                     sx={{
                       width: "100%",
@@ -80,8 +85,8 @@ const Articls = (prop) => {
                         <img
                           maxWidth="150px"
                           height="150px"
-                          style={{borderRadius:'10px'}}
-                          src={"https://hdgraphic.ir"+item.banner}
+                          style={{ borderRadius: "10px" }}
+                          src={"https://hdgraphic.ir" + item.banner}
                         />
                       </Box>
                       <Box sx={{ width: "100%" }}>
@@ -128,13 +133,14 @@ const Articls = (prop) => {
                                 p: "8px",
                                 fontSize: "14px",
                                 fontWeight: "normal",
-                                height:'100%',
-                                overflow:'hidden',
-                                mb:'23px'
+                                height: "100%",
+                                overflow: "hidden",
+                                mb: "23px",
                               }}
-                              dangerouslySetInnerHTML={{ __html: item.description }}
-                            >
-                            </Typography>
+                              dangerouslySetInnerHTML={{
+                                __html: item.description,
+                              }}
+                            ></Typography>
                           </Box>
                         </Box>
                       </Box>
