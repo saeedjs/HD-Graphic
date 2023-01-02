@@ -5,7 +5,7 @@ const SingleBlog = ({blog}) => {
     console.log(blog)
     return (
         <>
-        <Box sx={{width:'354px', height:'378px', border:'1px solid #EEEEEE', borderRadius:'5px', boxShadow:'1px 1px #EEEEEE', my:'10px'}}>
+        <Box sx={{width:'354px', height:'378px', border:'1px solid #EEEEEE', borderRadius:'5px', boxShadow:'1px 1px #EEEEEE', m:'10px'}}>
             <Box sx={{width:'100%', height:'212px', display:'flex', justifyContent:'center', alignItems:'center'}}>
                 <img width={'340px'} height={'200px'} style={{objectFit:'cover', borderRadius:'5px'}} src={"https://hdgraphic.ir" + blog.banner} />
             </Box>
