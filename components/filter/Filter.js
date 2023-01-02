@@ -129,7 +129,9 @@ const Filter = ({ category, colors }) => {
                 ))}
               </Masonry>
             </Box>
-            <Box>{/* <Mypagination mount={category.extra.page_count} /> */}</Box>
+            <Box>
+              <Mypagination mount={category && category.extra.page_count} />
+            </Box>
           </Grid>
         </Grid>
       </Container>
