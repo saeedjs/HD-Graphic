@@ -45,11 +45,11 @@ const ProductMain = ({ instagram }) => {
             sx={{ justifyContent: { lg: "start", xs: "center" } }}
           >
             <Grid item xl={3.5} lg={4} md={6} sm={8}>
-              <Box sx={{height:'100%'}}>
+              <Box sx={{ height: "100%" }}>
                 <img
                   width={"100%"}
                   height={"98%"}
-                  style={{ marginTop: "5px", objectFit:"cover" }}
+                  style={{ marginTop: "5px", objectFit: "cover" }}
                   src="./images/65454.png"
                 />
               </Box>
@@ -87,59 +87,6 @@ const ProductMain = ({ instagram }) => {
           </Grid>
         </Box>
       </Container>
-
-      {/* <Grid container maxWidth="xl" justifyContent={"center"}></Grid> */}
-      {/* <Grid item xs={12} sm={12} md={12} lg={10}>
-        <img
-          src="/images/group.png"
-          style={{
-            maxWidth: "100%",
-            height: "auto",
-            padding: "0",
-            marginRight: "10px",
-          }}
-        />
-      </Grid> */}
-
-      {/* {instagram.map((item) => {
-                return (
-                  <>
-                    <Grid
-                      justifyContent={"center"}
-                      item
-                      xs={4}
-                      sm={4}
-                      md={4}
-                      lg={2}
-                    >
-                      <Grid item sx={{ margin: "3px" }}>
-                        <Link href={`file/${item.slug}/${item.id}`}>
-                          <img
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              padding: "0",
-                              marginRight: "10px",
-                            }}
-                            src={`https://hdgraphic.ir${item.image}`}
-                          />
-                        </Link>
-                        <Link href={`file/${item.slug}/${item.id}`}>
-                          <img
-                            style={{
-                              width: "100%",
-                              height: "100%",
-                              padding: "0",
-                              marginRight: "10px",
-                            }}
-                            src={`https://hdgraphic.ir${item.image}`}
-                          />
-                        </Link>
-                      </Grid>
-                    </Grid>
-                  </>
-                );
-              })} */}
     </>
   );
 };
