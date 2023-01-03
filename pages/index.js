@@ -12,7 +12,7 @@ export default function Home({ instagram, mockup }) {
 
 export async function getServerSideProps() {
   const resInstagram = await axios.get(
-    "https://hdgraphic.ir/api/v1/files/category/قالب-اینستاگرام?page=2&page_size=4"
+    "https://hdgraphic.ir/api/v1/files/category/قالب-اینستاگرام?page=2&page_size=8"
   );
   const resMocup = await axios.get(
     "https://hdgraphic.ir/api/v1/files/category/موکاپ?page=1&page_size=4"
