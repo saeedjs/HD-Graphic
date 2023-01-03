@@ -238,7 +238,15 @@ const Login = ({ setStep }) => {
                     }}
                   />
                 }
-                label="طراح یا عکاس"
+                label={
+                  <Typography
+                    sx={{ fontFamily: "iranYekan" }}
+                    variant="body2"
+                    color="textSecondary"
+                  >
+                    طراح یا عکاس
+                  </Typography>
+                }
               />
               <FormControlLabel
                 sx={{ fontFamily: "iranYekan" }}
@@ -254,7 +262,15 @@ const Login = ({ setStep }) => {
                     }}
                   />
                 }
-                label="کاربر عادی"
+                label={
+                  <Typography
+                    sx={{ fontFamily: "iranYekan" }}
+                    variant="body2"
+                    color="textSecondary"
+                  >
+                    کاربر عادی
+                  </Typography>
+                }
               />
             </RadioGroup>
           </FormControl>
