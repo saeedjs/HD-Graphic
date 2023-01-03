@@ -40,26 +40,45 @@ const ProductMain = ({ instagram }) => {
           </Grid>
         </Box>
         <Box>
-          <Grid container sx={{justifyContent:{lg:"start", xs:"center"}}}>
+          <Grid
+            container
+            sx={{ justifyContent: { lg: "start", xs: "center" } }}
+          >
             <Grid item xl={3.5} lg={4} md={6} sm={8}>
-              <Box>
-                <img width={"100%"}  height={"98%"} style={{marginTop:'5px'}} src="./images/65454.png" />
+              <Box sx={{height:'100%'}}>
+                <img
+                  width={"100%"}
+                  height={"98%"}
+                  style={{ marginTop: "5px", objectFit:"cover" }}
+                  src="./images/65454.png"
+                />
               </Box>
             </Grid>
             <Grid item xl={8.5} lg={8} md={12} sm={12}>
               <Box>
-                <Grid container sx={{justifyContent:{lg:"start", xs:"center"}}}>
+                <Grid
+                  container
+                  sx={{ justifyContent: { lg: "start", xs: "center" } }}
+                >
                   {instagram.map((item) => (
                     <Grid item xl={3} lg={4} md={3} sm={5} xs={8}>
-                      <Box sx={{display:'flex', justifyContent:"center", m:"5px"}}>
-                        <img
-                          style={{
-                            width: "95%",
-                            height: "95%",
+                      <Link href={`file/${item.slug}/${item.id}`}>
+                        <Box
+                          sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            m: "5px",
                           }}
-                          src={`https://hdgraphic.ir${item.image}`}
-                        />
-                      </Box>
+                        >
+                          <img
+                            style={{
+                              width: "95%",
+                              height: "95%",
+                            }}
+                            src={`https://hdgraphic.ir${item.image}`}
+                          />
+                        </Box>
+                      </Link>
                     </Grid>
                   ))}
                 </Grid>
