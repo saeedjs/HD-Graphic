@@ -247,7 +247,18 @@ const BlogDetail = ({ blogDetail }) => {
         </Box>
       </Box>
       <Box>
-        <Box sx={{ display: "flex", pb: 1, justifyContent: "space-between", px: 5 }}>
+        <Box
+          sx={{
+            display: "flex",
+            pb: 1,
+            justifyContent: "space-between",
+            px: {
+              xs: 0,
+              md: 2,
+              lg: 5,
+            },
+          }}
+        >
           <Box sx={{ display: "flex" }}>
             <Box
               height={"22px"}
@@ -259,9 +270,15 @@ const BlogDetail = ({ blogDetail }) => {
             ></Box>
             <Typography sx={{ mx: 2 }}>دیدگاه کاربران</Typography>
           </Box>
-          <Box>دیدگاه های ثبت شده</Box>
+          <Box sx={{ fontSize: "12px" }}>دیدگاه های ثبت شده</Box>
         </Box>
-        <Box sx={{ px: 5 }}>
+        <Box
+          sx={{
+            px: {
+              md: 5,
+            },
+          }}
+        >
           <Box
             sx={{
               borderRadius: "5px",
@@ -274,14 +291,25 @@ const BlogDetail = ({ blogDetail }) => {
                 <img src="/images/comment-s.png" />
                 <Box sx={{ display: "flex", alignItems: "center", flexDirection: "column", px: 1 }}>
                   <Typography sx={{ color: "colors.green", px: 1, py: 1 }}>علی مرادی</Typography>
-                  <Typography sx={{ color: "#9E9E9E", fontSize: "12px" }}>
+                  <Typography sx={{ color: "#9E9E9E", fontSize: "12px", whiteSpace: "nowrap" }}>
                     13 آذر 1401 22:58
                   </Typography>
                 </Box>
               </Box>
-              <Box sx={{ p: 5 }}>asdas</Box>
+              <Box sx={{ p: 5, display: "flex" }}>
+                <span style={{ display: "flex", alignItems: "flex-start" }}>
+                  <ThumbUpIcon sx={{ mt: -0.5, color: "colors.green" }} />
+                  <span style={{ margin: "0 5px" }}>0</span>
+                </span>
+                <span style={{ display: "flex", alignItems: "flex-end" }}>
+                  <span style={{ margin: "0 5px" }}>0</span>
+                  <ThumbDownIcon sx={{ mt: -0.5, color: "colors.pink" }} />
+                </span>
+              </Box>
             </Box>
-            <Typography sx={{ textAlign: "justify", px: 5, py: 2, fontSize: "14px" }}>
+            <Typography
+              sx={{ textAlign: "justify", px: 5, py: 2, fontSize: "14px", lineHeight: "30px" }}
+            >
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
               گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای
               شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
@@ -292,6 +320,44 @@ const BlogDetail = ({ blogDetail }) => {
               دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار
               گیرد.
             </Typography>
+            <Box sx={{ backgroundColor: "rgba(255, 233, 238 , 0.5)", mx: 5, py: 2 }}>
+              <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+                <Box sx={{ p: "16px 16px 0 0", display: "flex" }}>
+                  <img src="/images/comment-s.png" />
+                  <Box
+                    sx={{ display: "flex", alignItems: "center", flexDirection: "column", px: 1 }}
+                  >
+                    <Typography sx={{ color: "colors.green", px: 1, py: 1 }}>علی مرادی</Typography>
+                    <Typography sx={{ color: "#9E9E9E", fontSize: "12px", whiteSpace: "nowrap" }}>
+                      13 آذر 1401 22:58
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box sx={{ p: 5, display: "flex" }}>
+                  <span style={{ display: "flex", alignItems: "flex-start" }}>
+                    <ThumbUpIcon sx={{ mt: -0.5, color: "colors.green" }} />
+                    <span style={{ margin: "0 5px" }}>0</span>
+                  </span>
+                  <span style={{ display: "flex", alignItems: "flex-end" }}>
+                    <span style={{ margin: "0 5px" }}>0</span>
+                    <ThumbDownIcon sx={{ mt: -0.5, color: "colors.pink" }} />
+                  </span>
+                </Box>
+              </Box>
+              <Typography
+                sx={{ textAlign: "justify", px: 5, py: 2, fontSize: "14px", lineHeight: "30px" }}
+              >
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
+                می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و
+                متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
+                الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید
+                داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان
+                مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود
+                طراحی اساسا مورد استفاده قرار گیرد.
+              </Typography>
+            </Box>
           </Box>
         </Box>
       </Box>
