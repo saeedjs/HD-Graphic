@@ -19,18 +19,12 @@ import SignIn from "../../components/auth/SignIn";
 import axios from "axios";
 function Copyright(props) {
   return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
+    <Typography component={"div"} variant="body2" color="text.secondary" align="center" {...props}>
       {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" href="#">
         Your Website
-      </Link>{" "}
+      </Link>
       {new Date().getFullYear()}
-      {"."}
     </Typography>
   );
 }
@@ -74,9 +68,7 @@ const LoginPage = ({ setting }) => {
             backgroundImage: "url(images/0901630.png)",
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
-              t.palette.mode === "light"
-                ? t.palette.grey[50]
-                : t.palette.grey[900],
+              t.palette.mode === "light" ? t.palette.grey[50] : t.palette.grey[900],
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -88,9 +80,7 @@ const LoginPage = ({ setting }) => {
 export default LoginPage;
 
 export async function getServerSideProps(context) {
-  const resSetting = await axios.get(
-    "https://hdgraphic.ir/api/v1/settings/setting"
-  );
+  const resSetting = await axios.get("https://hdgraphic.ir/api/v1/settings/setting");
 
   return {
     props: {

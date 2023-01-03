@@ -153,6 +153,7 @@ const SignIn = ({ setStep }) => {
             </Box>
           </Box>
           <Typography
+            component={"div"}
             sx={{ fontSize: "18px", fontFamily: "iranYekan", mt: 5, mb: 2 }}
           >
             <Box
