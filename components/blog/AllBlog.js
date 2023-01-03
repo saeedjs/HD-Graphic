@@ -7,6 +7,7 @@ import SingleBlog from "./SingleBlog";
 const AllBlog = ({ blogs }) => {
   return (
     <>
+    {console.log(blogs)}
       <Box>
         <Container>
           <Grid container sx={{ justifyContent: "center", mb: "30px" }}>
