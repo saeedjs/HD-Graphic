@@ -46,7 +46,7 @@ const LoginPage = ({ setting }) => {
           item
           xs={12}
           sm={8}
-          md={5}
+          md={4}
           sx={{
             display: "flex",
             justifyContent: "center",
@@ -71,7 +71,7 @@ const LoginPage = ({ setting }) => {
           item
           xs={false}
           sm={4}
-          md={7}
+          md={8}
           sx={{
             backgroundImage: "url(/images/0901630.png)",
             backgroundRepeat: "no-repeat",

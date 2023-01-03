@@ -8,24 +8,29 @@ import Link from "next/link";
 import axios from "axios";
 import { useEffect, useState } from "react";
 const Footer = () => {
-  // const [footerSocials, setFooterSocials] = useState([]);
-  // axios
-  //   .get("https://hdgraphic.ir/api/v1/settings/social")
-  //   .then((result) => {
-  //     setFooterSocials(result.data);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
-  // const [footerCol2, setFooterCol2] = useState("");
-  // axios
-  //   .get("https://hdgraphic.ir/api/v1/settings/footer")
-  //   .then((result) => {
-  //     setFooterCol2(result.data.col_2);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
+  const [footerSocials, setFooterSocials] = useState([]);
+  const [footerCol2, setFooterCol2] = useState("");
+
+  useEffect(() => {
+    axios
+      .get("https://hdgraphic.ir/api/v1/settings/social")
+      .then((result) => {
+        setFooterSocials(result.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      
+    axios
+      .get("https://hdgraphic.ir/api/v1/settings/footer")
+      .then((result) => {
+        setFooterCol2(result.data.col_2);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <>
       <Box color={"white"} sx={{ mt: 20 }}>
@@ -140,7 +145,7 @@ const Footer = () => {
                       <Link href={"#"}>
                         <Typography
                           sx={{ fontSize: "14px" }}
-                          // dangerouslySetInnerHTML={{ __html: footerCol2 }}
+                          dangerouslySetInnerHTML={{ __html: footerCol2 }}
                         />
                       </Link>
                     </ListItem>
@@ -244,7 +249,7 @@ const Footer = () => {
             </Typography>
           </Box>
           <Box sx={{ display: "flex", ml: 7 }}>
-            {/* {footerSocials.map((item) => (
+            {footerSocials.map((item) => (
               <Link href={item.url}>
                 <Box
                   width={24}
@@ -263,7 +268,7 @@ const Footer = () => {
                   </Box>
                 </Box>
               </Link>
-            ))} */}
+            ))}
           </Box>
         </Box>
       </Box>

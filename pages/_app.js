@@ -18,18 +18,6 @@ Router.events.on("routeChangeError", () => nProgress.done());
 function MyApp({ Component, pageProps }) {
   // const [setting, setSetting] = useState([]);
   // useEffect(() => {
-  // const [setting, setSetting] = useState([]);
-  // useEffect(() => {
-  // axios
-  //   .get("https://hdgraphic.ir/api/v1/settings/setting")
-  //   .then((res) => {
-  //     setSetting(res.data);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
-  // });
-
   //   axios
   //     .get("https://hdgraphic.ir/api/v1/settings/setting")
   //     .then((res) => {
@@ -39,7 +27,6 @@ function MyApp({ Component, pageProps }) {
   //       console.log(err);
   //     });
   // }, [setting]);
-
   const theme = createTheme({
     direction: "rtl",
     palette: {
@@ -80,7 +67,6 @@ function MyApp({ Component, pageProps }) {
           <CssBaseline />
           <Head>
             {/* <link rel="shortcut icon" href={"https://hdgraphic.ir" + setting.fav} /> */}
-            <link rel="shortcut icon " />
           </Head>
           <NavbarTop />
           <Component {...pageProps} />

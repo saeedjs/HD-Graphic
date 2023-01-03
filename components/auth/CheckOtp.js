@@ -71,9 +71,20 @@ const CheckOtp = () => {
     <>
       {newUser ? (
         <>
-          <Grid>
-            <Typography component={"h1"}> کد ورود</Typography>
-            <Grid item>
+          <Grid
+            item={12}
+            sx={{
+              justifyContent: "center",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Typography component={"h1"} sx={{ fontFamily: "iranYekan" }}>
+              {" "}
+              کد تایید شماره موبایل
+            </Typography>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
               <input
                 type="text"
                 onChange={(e) => setOtp(e.target.value)}
@@ -91,7 +102,7 @@ const CheckOtp = () => {
             </Grid>
 
             <Typography component={"h1"}>نام کاربری</Typography>
-            <Grid item>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
               <input
                 type="text"
                 onChange={(e) => setUsername(e.target.value)}
@@ -111,23 +122,33 @@ const CheckOtp = () => {
         </>
       ) : (
         <>
-          <Typography component={"h1"}> کد ورود</Typography>
-          <Grid item>
-            <TextField
+          <Typography component={"h1"} sx={{ fontFamily: "iranYekan" }}>
+            {" "}
+            کد تایید شماره موبایل
+          </Typography>
+          <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+            <input
               type="text"
               onChange={(e) => setOtp(e.target.value)}
-              name=""
-              id=""
+              style={{
+                width: "99%",
+                height: "100%",
+                backgroundColor: "#EEEEEE",
+                border: "none",
+                fontSize: "14px",
+                color: "#989898",
+                fontFamily: "iranYekan",
+              }}
               placeholder="کد تایید وارد کنید"
             />
           </Grid>
         </>
       )}
 
-      <Grid item>
+      <Grid item xs={12} sx={{ marginBottom: "30px" }}>
         {" "}
         <Button
-          sx={{ backgroundColor: "#F6416C", color: "white" }}
+          sx={{ backgroundColor: "#F6416C", color: "white", width: "100%" }}
           onClick={() => handleSubmit()}
         >
           تایید کد

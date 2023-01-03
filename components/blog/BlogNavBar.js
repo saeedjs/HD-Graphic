@@ -1,7 +1,22 @@
 import { Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-
+import { useState } from "react";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 const BlogNavBar = () => {
+  const [cOCheck, setCOCheck] = useState(false);
+  const [display, setDisplay] = useState("none");
+
+  const checkFalse = () => {
+    setCOCheck(false);
+    setDisplay("none");
+  };
+
+  const checkTrue = () => {
+    setCOCheck(true);
+    setDisplay("block");
+  };
+
   return (
     <>
       <Box sx={{ width: "100%", height: "169px", backgroundColor: "#EEEE" }}>
@@ -41,6 +56,10 @@ const BlogNavBar = () => {
                   display: "flex",
                   backgroundColor: "#FFFF",
                   borderRadius: "5px",
+                  marginBottom:{
+                    md:"0px",
+                    xs:"25px"
+                  }
                 }}
               >
                 <Box
@@ -75,32 +94,70 @@ const BlogNavBar = () => {
       </Box>
       <Box>
         <Container>
-          <Box
-            sx={{
-              width: "100%",
-              height: "48px",
-              backgroundColor: "#FFFF",
-              mt: "-24px",
-              border: "1px solid #EEEEEE",
-            }}
-          >
-            <Box sx={{ display: "flex", height: "100%", alignItems: "center" }}>
-              <Box sx={{ px: "10px" }}>
-                <Typography>آموزشی</Typography>
-              </Box>
-              <Box sx={{ px: "10px" }}>
-                <Typography>هنری</Typography>
-              </Box>
-              <Box sx={{ px: "10px" }}>
-                <Typography>عکاسی</Typography>
-              </Box>
-              <Box sx={{ px: "10px" }}>
-                <Typography>راهنما</Typography>
-              </Box>
-              <Box sx={{ px: "10px" }}>
-                <Typography>اخبار</Typography>
+          <Box sx={{ position: "relative" }}>
+            <Box
+              sx={{
+                width: "100%",
+                height: "48px",
+                backgroundColor: "#FFFF",
+                mt: "-24px",
+                border: "1px solid #EEEEEE",
+                boxShadow: "3px #EEEEEE",
+              }}
+            >
+              <Box
+                sx={{ display: "flex", height: "100%", alignItems: "center" }}
+              >
+                <Box sx={{ px: "20px" }}>
+                  <Box
+                    sx={{ display: "flex", cursor: "pointer" }}
+                    onMouseOut={() => checkFalse()}
+                    onMouseOver={() => checkTrue()}
+                  >
+                    <Box>
+                      <Typography>آموزشی</Typography>
+                    </Box>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "end",
+                      }}
+                    >
+                      {cOCheck ? (
+                        <KeyboardArrowDownIcon sx={{ fontSize: "larger" }} />
+                      ) : (
+                        <ArrowBackIosIcon sx={{ fontSize: "larger" }} />
+                      )}
+                    </Box>
+                  </Box>
+                </Box>
+                <Box sx={{ px: "20px" }}>
+                  <Typography>هنری</Typography>
+                </Box>
+                <Box sx={{ px: "20px" }}>
+                  <Typography>عکاسی</Typography>
+                </Box>
+                <Box sx={{ px: "20px" }}>
+                  <Typography>راهنما</Typography>
+                </Box>
+                <Box sx={{ px: "20px" }}>
+                  <Typography>اخبار</Typography>
+                </Box>
               </Box>
             </Box>
+            <Box
+              sx={{
+                width: "100%",
+                height: "200px",
+                backgroundColor: "#FFFF",
+                mt: "0px",
+                border: "1px solid #EEEEEE",
+                borderTop: "none",
+                boxShadow: "3px #EEEEEE",
+                position: "absolute",
+                display: display,
+              }}
+            ></Box>
           </Box>
         </Container>
       </Box>

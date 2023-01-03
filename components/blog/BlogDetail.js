@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import SingleBlog from "./SingleBlog";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 
 const BlogDetail = ({ blogDetail }) => {
   const date = new Date(blogDetail.date_publish);
@@ -20,6 +22,15 @@ const BlogDetail = ({ blogDetail }) => {
     };
     func();
   }, []);
+
+  const [comment, setComment] = useState([
+    {
+      img: "/images/6565.png",
+      person: "احمد علی",
+      date: "13 آذر 1401 22:58",
+      des: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت ",
+    },
+  ]);
 
   return (
     <>
@@ -209,8 +220,7 @@ const BlogDetail = ({ blogDetail }) => {
                 width: "8px",
               }}
             ></Box>
-            {/* <></> */}
-            <Typography sx={{ mx: 2 }}>تصاویر استوک</Typography>
+            <Typography sx={{ mx: 2 }}>مطالب مرتبط</Typography>
             <Link href={"#"} style={{ color: "#4ECCA3", fontWeight: "bold" }}>
               مشاهده همه
             </Link>
@@ -234,6 +244,55 @@ const BlogDetail = ({ blogDetail }) => {
                 </Box>
               );
             })}
+        </Box>
+      </Box>
+      <Box>
+        <Box sx={{ display: "flex", pb: 1, justifyContent: "space-between", px: 5 }}>
+          <Box sx={{ display: "flex" }}>
+            <Box
+              height={"22px"}
+              sx={{
+                height: "22px",
+                backgroundColor: "colors.green",
+                width: "8px",
+              }}
+            ></Box>
+            <Typography sx={{ mx: 2 }}>دیدگاه کاربران</Typography>
+          </Box>
+          <Box>دیدگاه های ثبت شده</Box>
+        </Box>
+        <Box sx={{ px: 5 }}>
+          <Box
+            sx={{
+              borderRadius: "5px",
+              boxShadow:
+                "rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px",
+            }}
+          >
+            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+              <Box sx={{ p: "16px 16px 0 0", display: "flex" }}>
+                <img src="/images/comment-s.png" />
+                <Box sx={{ display: "flex", alignItems: "center", flexDirection: "column", px: 1 }}>
+                  <Typography sx={{ color: "colors.green", px: 1, py: 1 }}>علی مرادی</Typography>
+                  <Typography sx={{ color: "#9E9E9E", fontSize: "12px" }}>
+                    13 آذر 1401 22:58
+                  </Typography>
+                </Box>
+              </Box>
+              <Box sx={{ p: 5 }}>asdas</Box>
+            </Box>
+            <Typography sx={{ textAlign: "justify", px: 5, py: 2, fontSize: "14px" }}>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+              گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای
+              شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+              کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می
+              طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و
+              فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری
+              موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی
+              دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار
+              گیرد.
+            </Typography>
+          </Box>
         </Box>
       </Box>
     </>
