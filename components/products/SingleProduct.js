@@ -42,6 +42,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
       console.log(download);
     })
     .catch((error) => {
+      setDownload("");
       console.log("error", error.response);
       toast.error(error.response.data.data, {
         position: "top-right",
@@ -83,6 +84,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
       })
       .catch((error) => {
         console.log("error", error.response);
+
         toast.error(error.response.data.data, {
           position: "top-right",
           autoClose: 5000,
@@ -461,7 +463,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
 
               <Box
                 sx={{
-                  border: 1,
+                  border: "1px solid #b4b4b4",
                   brordeColor: "#E2E2E2",
                   minWidth: {
                     xs: "50%",

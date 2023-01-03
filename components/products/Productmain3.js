@@ -11,7 +11,7 @@ const productmain3 = ({ mockup }) => {
           mt: 5,
         }}
       ></Box>
-      <Grid container maxWidth="xl" justifyContent={"center"}>
+      <Grid container minWidth="xl" justifyContent={"center"}>
         <Grid item lg={5}>
           <Productmain2 mockup={mockup} />
         </Grid>{" "}
