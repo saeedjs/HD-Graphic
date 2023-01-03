@@ -3,9 +3,24 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import Head from "next/head";
+import Link from "next/link";
+import SingleBlog from "./SingleBlog";
 
 const BlogDetail = ({ blogDetail }) => {
   const date = new Date(blogDetail.date_publish);
+  const [blog, setBlog] = useState([]);
+  useEffect((e) => {
+    const func = async () => {
+      const allBlogs = await axios
+        .get("https://hdgraphic.ir/api/v1/blog/posts/list")
+        .catch((err) => {
+          console.log(err);
+        });
+      setBlog(allBlogs.data);
+    };
+    func();
+  }, []);
+
   return (
     <>
       <Head>
@@ -30,7 +45,6 @@ const BlogDetail = ({ blogDetail }) => {
           xs={12}
           item
           sx={{
-            boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
             mb: 6,
             display: "flex",
             justifyContent: "center",
@@ -125,26 +139,103 @@ const BlogDetail = ({ blogDetail }) => {
           px: {
             xs: 2,
             md: 10,
-            lg: 18,
+            lg: 22,
           },
           mt: 3,
         }}
       >
-        <Grid item sx={{ display: "flex" }} xs={7}>
+        <Grid item sx={{ display: "flex" }} xs={12} lg={7}>
           <Box>
             <img src="/images/6565.png" />
           </Box>
           <Box sx={{ pr: 3, alignSelf: "center" }}>
             <Typography sx={{ color: "colors.pink" }}>احمد مستوفی</Typography>
-            <Typography sx={{ lineHeight: "30px", fontSize: "14px" }}>
+            <Typography sx={{ lineHeight: "25px", fontSize: "14px", textAlign: "justify" }}>
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
               گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
             </Typography>
           </Box>
-          <img src="/images/Line.png"/>
+          <Box
+            sx={{
+              display: {
+                lg: "block",
+              },
+              mx: 2,
+            }}
+          >
+            <img src="/images/line.png" />
+          </Box>
         </Grid>
-        <Grid item></Grid>
+        <Grid
+          item
+          sx={{
+            alignItems: "center",
+            px: 3,
+            fontSize: "14px",
+            display: "flex",
+            py: {
+              xs: 4,
+            },
+          }}
+        >
+          <Box>نوشته های دیگر...</Box>
+          <Link href="#">
+            <img src="/images/an-1.png" style={{ padding: "0 10px" }} />
+          </Link>
+          <Link href="#">
+            <img src="/images/an-2.png" style={{ padding: "0 10px" }} />
+          </Link>
+          <Link href="#">
+            <img src="/images/an-3.png" style={{ padding: "0 10px" }} />
+          </Link>
+        </Grid>
       </Grid>
+      <Box sx={{ mt: 6 }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "start",
+            pr: {
+              xs: 17,
+            },
+          }}
+        >
+          <Box sx={{ display: "flex", pb: 1 }}>
+            <Box
+              height={"22px"}
+              sx={{
+                height: "22px",
+                backgroundColor: "colors.green",
+                width: "8px",
+              }}
+            ></Box>
+            {/* <></> */}
+            <Typography sx={{ mx: 2 }}>تصاویر استوک</Typography>
+            <Link href={"#"} style={{ color: "#4ECCA3", fontWeight: "bold" }}>
+              مشاهده همه
+            </Link>
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            mb: "30px",
+            maxWidth: "1366px",
+            flexWrap: "wrap",
+          }}
+        >
+          {blog &&
+            blog.map((blog, i) => {
+              if (i >= 3) return;
+              return (
+                <Box sx={{ display: "flex" }}>
+                  <SingleBlog blog={blog} />
+                </Box>
+              );
+            })}
+        </Box>
+      </Box>
     </>
   );
 };
