@@ -15,6 +15,7 @@ const Login = ({ setStep }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [pepole, setPepole] = useState(true);
+  const [checkFree, setCheckFree] = useState("none");
 
   const handleCheckNew = (check) => {
     setCheckFree(!check);
