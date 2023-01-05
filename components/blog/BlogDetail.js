@@ -1,16 +1,19 @@
-import { Grid, Typography, Box } from "@mui/material";
-import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react";
-import Head from "next/head";
-import Link from "next/link";
-import SingleBlog from "./SingleBlog";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ThumbDownIcon from "@mui/icons-material/ThumbDown";
+import { Grid, Typography, Box, Button } from "@mui/material";
+import { useState, useEffect, useRef } from "react";
+import BlogDetailNav from "./BlogDetailNav";
+import SingleBlog from "./SingleBlog";
+import axios from "axios";
+import Head from "next/head";
+import Link from "next/link";
 
 const BlogDetail = ({ blogDetail }) => {
   const date = new Date(blogDetail.date_publish);
   const [blog, setBlog] = useState([]);
+
+  const commentRef = useRef();
+
   useEffect((e) => {
     const func = async () => {
       const allBlogs = await axios
@@ -32,6 +35,20 @@ const BlogDetail = ({ blogDetail }) => {
     },
   ]);
 
+  const handleComment = () => {
+    if (commentRef.current.style.display === "none") {
+      commentRef.current.style.display = "block";
+      for (let index = 0; index < 100; index++) {
+        commentRef.current.style.height = `${index}%`;
+      }
+    } else {
+      for (let index = 100; index === 0; index--) {
+        commentRef.current.style.height = `${index}%`;
+      }
+      commentRef.current.style.display = "none";
+    }
+  };
+
   return (
     <>
       <Head>
@@ -40,6 +57,7 @@ const BlogDetail = ({ blogDetail }) => {
         <meta name="keywords" content={blogDetail.meta_keywords} />
         <meta name="title" content={blogDetail.meta_title} />
       </Head>
+      <BlogDetailNav />
       <Grid
         container
         sx={{
@@ -161,7 +179,13 @@ const BlogDetail = ({ blogDetail }) => {
           </Box>
           <Box sx={{ pr: 3, alignSelf: "center" }}>
             <Typography sx={{ color: "colors.pink" }}>احمد مستوفی</Typography>
-            <Typography sx={{ lineHeight: "25px", fontSize: "14px", textAlign: "justify" }}>
+            <Typography
+              sx={{
+                lineHeight: "25px",
+                fontSize: "14px",
+                textAlign: "justify",
+              }}
+            >
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
               گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان
             </Typography>
@@ -250,6 +274,7 @@ const BlogDetail = ({ blogDetail }) => {
         <Box
           sx={{
             display: "flex",
+            alignItems: "center",
             pb: 1,
             justifyContent: "space-between",
             px: {
@@ -259,7 +284,7 @@ const BlogDetail = ({ blogDetail }) => {
             },
           }}
         >
-          <Box sx={{ display: "flex" }}>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
             <Box
               height={"22px"}
               sx={{
@@ -269,8 +294,132 @@ const BlogDetail = ({ blogDetail }) => {
               }}
             ></Box>
             <Typography sx={{ mx: 2 }}>دیدگاه کاربران</Typography>
+            <Button
+              onClick={() => handleComment()}
+              variant="contained"
+              sx={{
+                backgroundColor: "colors.pink",
+                "&:hover": {
+                  backgroundColor: "#DE3960",
+                },
+                borderRadius: "10px",
+              }}
+            >
+              ثبت دیدگاه
+            </Button>
           </Box>
           <Box sx={{ fontSize: "12px" }}>دیدگاه های ثبت شده</Box>
+        </Box>
+        <Box
+          ref={commentRef}
+          sx={{
+            mx: {
+              xs: 1,
+              md: 2,
+              lg: 5,
+            },
+            py: 2,
+            pr: {
+              xs: -2,
+              md: 0,
+              lg: 5,
+            },
+            borderRadius: "5px",
+            width: "90%",
+            height: "0%",
+            display: "none",
+            overflow: "hidden",
+            transition: "0.3s",
+          }}
+        >
+          <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+            <input
+              placeholder="نام"
+              style={{
+                width: {
+                  xs: "100%",
+                  md: "80%",
+                  lg: "50%",
+                },
+                border: "none",
+                outline: "none",
+                backgroundColor: "#eeeeee",
+                borderRadius: "5px",
+                fontFamily: "iranYekan",
+                marginLeft: "15px",
+                marginBottom: "15px",
+                padding: "10px",
+              }}
+            />
+            <Box
+              sx={{
+                "&.MuiBox-root textarea": {
+                  width: {
+                    xs: "100%",
+                    md: "80%",
+                    lg: "50%",
+                  },
+                },
+              }}
+            >
+              <input
+                placeholder="ایمیل"
+                style={{
+                  width: {
+                    xs: "100%",
+                    md: "80%",
+                    lg: "50%",
+                  },
+                  border: "none",
+                  outline: "none",
+                  padding: "10px",
+                  backgroundColor: "#eeeeee",
+                  borderRadius: "5px",
+                  fontFamily: "iranYekan",
+                }}
+                type="email"
+              />
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              mt: "12px",
+              "&.MuiBox-root textarea": {
+                width: {
+                  xs: "100%",
+                  md: "80%",
+                  lg: "50%",
+                },
+              },
+            }}
+          >
+            <textarea
+              rows={5}
+              style={{
+                backgroundColor: "#eeeeee",
+                resize: "none",
+                border: "none",
+                outline: "none",
+                fontFamily: "iranYekan",
+                borderRadius: "5px",
+                padding: "10px",
+              }}
+              placeholder="دیدگاه شما"
+            ></textarea>
+          </Box>
+          <Button
+            // onClick={() => ]()}
+            variant="contained"
+            sx={{
+              backgroundColor: "colors.green",
+              "&:hover": {
+                backgroundColor: "#3fa682",
+              },
+              borderRadius: "10px",
+            }}
+          >
+            ارسال
+          </Button>
         </Box>
         <Box
           sx={{
@@ -286,42 +435,46 @@ const BlogDetail = ({ blogDetail }) => {
                 "rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px",
             }}
           >
-            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-              <Box sx={{ p: "16px 16px 0 0", display: "flex" }}>
-                <img src="/images/comment-s.png" />
-                <Box sx={{ display: "flex", alignItems: "center", flexDirection: "column", px: 1 }}>
-                  <Typography sx={{ color: "colors.green", px: 1, py: 1 }}>علی مرادی</Typography>
-                  <Typography sx={{ color: "#9E9E9E", fontSize: "12px", whiteSpace: "nowrap" }}>
-                    13 آذر 1401 22:58
-                  </Typography>
+            <Box>
+              <Box sx={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>
+                <Box sx={{ p: "16px 16px 0 0", display: "flex" }}>
+                  <img src="/images/comment-s.png" />
+                  <Box
+                    sx={{ display: "flex", alignItems: "center", flexDirection: "column", px: 1 }}
+                  >
+                    <Typography sx={{ color: "colors.green", px: 1, py: 1 }}>علی مرادی</Typography>
+                    <Typography sx={{ color: "#9E9E9E", fontSize: "12px", whiteSpace: "nowrap" }}>
+                      13 آذر 1401 22:58
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box sx={{ p: 5, display: "flex" }}>
+                  <span style={{ display: "flex", alignItems: "flex-start" }}>
+                    <ThumbUpIcon sx={{ mt: -0.5, color: "colors.green" }} />
+                    <span style={{ margin: "0 5px" }}>0</span>
+                  </span>
+                  <span style={{ display: "flex", alignItems: "flex-end" }}>
+                    <span style={{ margin: "0 5px" }}>0</span>
+                    <ThumbDownIcon sx={{ mt: -0.5, color: "colors.pink" }} />
+                  </span>
                 </Box>
               </Box>
-              <Box sx={{ p: 5, display: "flex" }}>
-                <span style={{ display: "flex", alignItems: "flex-start" }}>
-                  <ThumbUpIcon sx={{ mt: -0.5, color: "colors.green" }} />
-                  <span style={{ margin: "0 5px" }}>0</span>
-                </span>
-                <span style={{ display: "flex", alignItems: "flex-end" }}>
-                  <span style={{ margin: "0 5px" }}>0</span>
-                  <ThumbDownIcon sx={{ mt: -0.5, color: "colors.pink" }} />
-                </span>
-              </Box>
+              <Typography
+                sx={{ textAlign: "justify", px: 5, py: 2, fontSize: "14px", lineHeight: "30px" }}
+              >
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
+                برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی
+                می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و
+                متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
+                الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید
+                داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان
+                مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود
+                طراحی اساسا مورد استفاده قرار گیرد.
+              </Typography>
             </Box>
-            <Typography
-              sx={{ textAlign: "justify", px: 5, py: 2, fontSize: "14px", lineHeight: "30px" }}
-            >
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-              گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای
-              شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-              کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می
-              طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و
-              فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری
-              موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی
-              دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار
-              گیرد.
-            </Typography>
-            <Box sx={{ backgroundColor: "rgba(255, 233, 238 , 0.5)", mx: 5, py: 2 }}>
-              <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Box sx={{ backgroundColor: "rgba(255, 233, 238 , 0.5)", mx: 5 }}>
+              <Box sx={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap" }}>
                 <Box sx={{ p: "16px 16px 0 0", display: "flex" }}>
                   <img src="/images/comment-s.png" />
                   <Box
@@ -431,3 +584,7 @@ export default BlogDetail;
 // </Typography>
 
 // </Grid>
+//
+//
+//
+//
