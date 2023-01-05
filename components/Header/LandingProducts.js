@@ -40,7 +40,7 @@ const LandingProducts = () => {
                 }}
               >
                 <Link href={"/files/فایل-لایه-باز"}>
-                  <img src="/images/dv.png" />
+                  <img src="/images/dv.png" style={{ display: "flex" }} />
                 </Link>
               </Box>
               <Box component="span">
@@ -71,7 +71,7 @@ const LandingProducts = () => {
                 },
               }}
             >
-              <img src="/images/line1.png" />
+              <img src="/images/line1.png" style={{ display: "flex" }} />
             </Grid>
             <Grid
               item
@@ -95,7 +95,7 @@ const LandingProducts = () => {
                 }}
               >
                 <Link href={"/files/icon"}>
-                  <img src="/images/icons.png" />
+                  <img src="/images/icons.png" style={{ display: "flex" }} />
                 </Link>
               </Box>
               <Box component="span">
@@ -150,7 +150,7 @@ const LandingProducts = () => {
                 }}
               >
                 <Link href={"/files/stock-pictures"}>
-                  <img src="/images/zsd.png" />
+                  <img src="/images/zsd.png" style={{ display: "flex" }} />
                 </Link>
               </Box>
               <Link href={"/files/stock-pictures"}>
@@ -203,7 +203,7 @@ const LandingProducts = () => {
                 }}
               >
                 <Link href="/files/موکاپ">
-                  <img src="/images/mokop.png" />
+                  <img src="/images/mokop.png" style={{ display: "flex" }} />
                 </Link>
               </Box>
               <Link href="/files/موکاپ">
@@ -232,3 +232,4 @@ const LandingProducts = () => {
 };
 
 export default LandingProducts;
+// 20/09/99
