@@ -45,7 +45,7 @@ export default async function handler(req, res) {
 
       console.log(resApi.data);
     } catch {
-      res.status(405).json({ massage: "مشکلی هست" });
+      res.status(405).json({ massage: "مشکلی وجود دارد!" });
     }
   } else {
     res.setHeader("Allow", ["POST"]);
