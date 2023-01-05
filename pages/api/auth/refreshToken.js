@@ -2,10 +2,8 @@ import axios from "axios";
 import cookie from "cookie";
 
 export default async function handler(req, res) {
-  var cookies = cookie.parse(req.headers.cookie || "");
-
   if (req.method == "POST") {
-    if (!localStorage.getItem("access")) {
+    if (!req.cookies.access) {
       try {
         const resApi = await axios.post(
           "https://hdgraphic.ir/api/v1/users/auth/otp/refresh",
