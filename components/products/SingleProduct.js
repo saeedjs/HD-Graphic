@@ -15,8 +15,38 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import TitleComponents from "../TitleComponents";
 import React from "react";
+import Modal from "@mui/material/Modal";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  borderRadius: "20px",
+  border: "2px solid #EEEEEE",
+  boxShadow: 24,
+  p: 4,
+};
 
 const SingleProduct = ({ DetailProduct, creator }) => {
+  // for input colliction
+  const [age, setAge] = React.useState("");
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+  // for modal colliction
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  // for access download
   const [access, setAccess] = useState("");
   const [download, setDownload] = useState("");
 
@@ -56,6 +86,25 @@ const SingleProduct = ({ DetailProduct, creator }) => {
       });
     });
 
+  // handle share btn
+
+  const handleShare = () => {
+    navigator.clipboard.writeText(window.location.href);
+    toast.success("لینک فایل کپی شد");
+    // var cpLink = window.location.href;
+    // cpLink.select();
+
+    // try {
+    //   var successful = document.execCommand("copy");
+    //   var msg = successful ? "successful" : "unsuccessful";
+    //   console.log("Copy command was " + msg);
+    // } catch (err) {
+    //   console.log("Oops, unable to copy");
+    // }
+    // event.preventDefault;
+  };
+
+  // handle add to card
   const handelAddToCart = () => {
     axios
       .post(
@@ -165,7 +214,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                 marginBottom: "20px",
               }}
             >
-              <Typography sx={{ my: 1 }}>
+              <Typography sx={{ my: 1 }} componen={"div"}>
                 <svg
                   id="_3916699"
                   data-name="3916699"
@@ -217,6 +266,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
               }}
             >
               <Button
+                onClick={() => handleShare()}
                 sx={{
                   width: "30%",
                   height: "43px",
@@ -353,6 +403,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                 {DetailProduct.de}
               </Typography>
               <Typography
+                component={"div"}
                 sx={{
                   marginBottom: "32px",
                 }}
@@ -392,6 +443,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                 </Typography>
               ) : (
                 <Typography
+                  component={"div"}
                   sx={{
                     marginBottom: "32px",
                   }}
@@ -552,6 +604,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                       }}
                     >
                       <Typography
+                        component={"h3"}
                         sx={{
                           width: "100%",
 
@@ -574,6 +627,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
               </Box>
             </Box>
             <Button
+              onClick={handleOpen}
               sx={{
                 width: "90%",
                 height: "50px",
@@ -629,6 +683,45 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                 />
               </svg>
             </Button>
+            <Modal
+              keepMounted
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="keep-mounted-modal-title"
+              aria-describedby="keep-mounted-modal-description"
+            >
+              <Box sx={style}>
+                <Typography
+                  id="keep-mounted-modal-title"
+                  variant="h6"
+                  component="h2"
+                >
+                  کلکسیون مورد نظر را انتخاب کنید!
+                </Typography>
+                <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+                  <InputLabel
+                    sx={{ width: "100%" }}
+                    id="demo-simple-select-standard-label"
+                  >
+                    کلکسیون مورد نظر
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-standard-label"
+                    id="demo-simple-select-standard"
+                    value={age}
+                    onChange={handleChange}
+                    label="Age"
+                  >
+                    <MenuItem value="">
+                      <em>انتخاب کنید</em>
+                    </MenuItem>
+                    <MenuItem value={10}>تصاویر استوک</MenuItem>
+                    <MenuItem value={20}>موکاپ</MenuItem>
+                    <MenuItem value={30}>قالب اینستاگرام های من</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+            </Modal>
             {DetailProduct.only_subscribe ? (
               <Link href={"/plans"}>
                 <Button
@@ -781,6 +874,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
           </Grid>
         </Grid>
         <Typography
+          component={"div"}
           sx={{
             padding: "10px",
           }}
@@ -794,6 +888,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
           </span>
 
           <Button
+            component={"div"}
             variant="contained"
             width="48px"
             height="30px"
@@ -927,7 +1022,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                       style={{
                         margin: "4px",
                         height: "300px",
-                        width: "300px",
+                        width: "auto",
                       }}
                     />
                   </Link>

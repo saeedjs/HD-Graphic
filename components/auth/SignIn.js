@@ -184,6 +184,10 @@ const SignIn = ({ setStep }) => {
               backgroundColor: "#4ECCA3",
               color: "white",
               fontFamily: "iranYekan",
+              "&:hover": {
+                backgroundColor: "#F6416C",
+                color: "white",
+              },
             }}
             onClick={() => handleSubmit()}
           >
