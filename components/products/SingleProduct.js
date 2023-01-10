@@ -37,7 +37,7 @@ const style = {
 const SingleProduct = ({ DetailProduct, creator }) => {
   // for input colliction
   const [age, setAge] = React.useState("");
-
+  const [liked, setLiked] = React.useState(false);
   const handleChange = (event) => {
     setAge(event.target.value);
   };
@@ -52,6 +52,9 @@ const SingleProduct = ({ DetailProduct, creator }) => {
 
   useEffect(() => {
     setAccess(localStorage.getItem("access"));
+    if (localStorage.getItem(`liked_${DetailProduct.id}`)) {
+      setLiked(true);
+    }
   }, []);
   axios
     .post(
@@ -67,7 +70,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
     )
     .then((response) => {
       setDownload(response.data.data);
-      toast.success("شما مجاز به دانلود هستید");
+
       // console.log("response", response.data);
       console.log(download);
     })
@@ -91,19 +94,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
   const handleShare = () => {
     navigator.clipboard.writeText(window.location.href);
     toast.success("لینک فایل کپی شد");
-    // var cpLink = window.location.href;
-    // cpLink.select();
-
-    // try {
-    //   var successful = document.execCommand("copy");
-    //   var msg = successful ? "successful" : "unsuccessful";
-    //   console.log("Copy command was " + msg);
-    // } catch (err) {
-    //   console.log("Oops, unable to copy");
-    // }
-    // event.preventDefault;
   };
-
   // handle add to card
   const handelAddToCart = () => {
     axios
@@ -145,6 +136,13 @@ const SingleProduct = ({ DetailProduct, creator }) => {
           theme: "light",
         });
       });
+  };
+
+  // handle liked button
+  const handleLiked = async (id) => {
+    setLiked(!liked);
+    localStorage.setItem(`liked_${id}`, !liked);
+    const resLiked = await axios.post("https://hdgraphic.ir/api/v1");
   };
 
   let req = {
@@ -300,42 +298,83 @@ const SingleProduct = ({ DetailProduct, creator }) => {
                   اشتراک گذاری
                 </span>
               </Button>
-              <Button
-                sx={{
-                  width: "30%",
-                  height: "43px",
-                  backgroundColor: "white",
-                  color: "black",
-                  fontWeight: "bold",
-                  marginRight: "10px",
-                  border: "1px solid #C2C2C2",
-                }}
-              >
-                <svg
-                  id="_01_align_center"
-                  data-name="01 align center"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="19"
-                  viewBox="0 0 20 19"
-                >
-                  <path
-                    id="Path_3"
-                    data-name="Path 3"
-                    d="M14.577.917A5.318,5.318,0,0,0,10,3.717,5.318,5.318,0,0,0,5.414.917,5.728,5.728,0,0,0,0,6.9C0,12.648,9.125,19.288,9.514,19.57l.481.347.481-.347c.388-.28,9.514-6.922,9.514-12.671A5.728,5.728,0,0,0,14.577.917ZM10,17.828C7.285,15.766,1.665,10.7,1.665,6.9A4.047,4.047,0,0,1,5.414,2.614,4.047,4.047,0,0,1,9.162,6.9h1.666a4.047,4.047,0,0,1,3.748-4.285A4.047,4.047,0,0,1,18.325,6.9C18.325,10.7,12.7,15.766,10,17.828Z"
-                    transform="translate(0.005 -0.917)"
-                    fill="#232931"
-                  />
-                </svg>{" "}
-                <span
-                  style={{
+              {!liked ? (
+                <Button
+                  onClick={() => handleLiked(DetailProduct.id)}
+                  sx={{
+                    width: "30%",
+                    height: "43px",
+                    backgroundColor: "white",
+                    color: "black",
+                    fontWeight: "bold",
                     marginRight: "10px",
+                    border: "1px solid #C2C2C2",
                   }}
                 >
-                  {" "}
-                  پسندیدم
-                </span>
-              </Button>
+                  <svg
+                    id="_01_align_center"
+                    data-name="01 align center"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="19"
+                    viewBox="0 0 20 19"
+                  >
+                    <path
+                      id="Path_3"
+                      data-name="Path 3"
+                      d="M14.577.917A5.318,5.318,0,0,0,10,3.717,5.318,5.318,0,0,0,5.414.917,5.728,5.728,0,0,0,0,6.9C0,12.648,9.125,19.288,9.514,19.57l.481.347.481-.347c.388-.28,9.514-6.922,9.514-12.671A5.728,5.728,0,0,0,14.577.917ZM10,17.828C7.285,15.766,1.665,10.7,1.665,6.9A4.047,4.047,0,0,1,5.414,2.614,4.047,4.047,0,0,1,9.162,6.9h1.666a4.047,4.047,0,0,1,3.748-4.285A4.047,4.047,0,0,1,18.325,6.9C18.325,10.7,12.7,15.766,10,17.828Z"
+                      transform="translate(0.005 -0.917)"
+                      fill="#232931"
+                    />
+                  </svg>{" "}
+                  <span
+                    style={{
+                      marginRight: "10px",
+                    }}
+                  >
+                    {" "}
+                    پسندیدم
+                  </span>
+                </Button>
+              ) : (
+                <Button
+                  onClick={() => handleLiked(DetailProduct.id)}
+                  sx={{
+                    width: "30%",
+                    height: "43px",
+                    backgroundColor: "red",
+                    color: "black",
+                    fontWeight: "bold",
+                    marginRight: "10px",
+                    border: "1px solid #C2C2C2",
+                  }}
+                >
+                  <svg
+                    id="_01_align_center"
+                    data-name="01 align center"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="19"
+                    viewBox="0 0 20 19"
+                  >
+                    <path
+                      id="Path_3"
+                      data-name="Path 3"
+                      d="M14.577.917A5.318,5.318,0,0,0,10,3.717,5.318,5.318,0,0,0,5.414.917,5.728,5.728,0,0,0,0,6.9C0,12.648,9.125,19.288,9.514,19.57l.481.347.481-.347c.388-.28,9.514-6.922,9.514-12.671A5.728,5.728,0,0,0,14.577.917ZM10,17.828C7.285,15.766,1.665,10.7,1.665,6.9A4.047,4.047,0,0,1,5.414,2.614,4.047,4.047,0,0,1,9.162,6.9h1.666a4.047,4.047,0,0,1,3.748-4.285A4.047,4.047,0,0,1,18.325,6.9C18.325,10.7,12.7,15.766,10,17.828Z"
+                      transform="translate(0.005 -0.917)"
+                      fill="#232931"
+                    />
+                  </svg>{" "}
+                  <span
+                    style={{
+                      marginRight: "10px",
+                    }}
+                  >
+                    {" "}
+                    پسندیده شده
+                  </span>
+                </Button>
+              )}
             </Box>
           </Grid>
           <Grid

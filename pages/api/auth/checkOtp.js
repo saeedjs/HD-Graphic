@@ -43,6 +43,9 @@ export default async function handler(req, res) {
     } catch {
       res.status(405).json({ massage: "مشکلی هست" });
     }
+    console.log(
+      "برای ساخت حساب کاربری به صفحه دیگری مراجعه کنید و اقدام به پیگیری کنید "
+    );
   } else {
     res.setHeader("Allow", ["POST"]);
     res.status(405).json({ massage: `Mehtode ${req.methode} not allowed` });
