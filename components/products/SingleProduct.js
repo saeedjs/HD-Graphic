@@ -38,9 +38,19 @@ const SingleProduct = ({ DetailProduct, creator }) => {
   // for input colliction
   const [age, setAge] = React.useState("");
   const [liked, setLiked] = React.useState(false);
+  const [user, setUser] = React.useState();
+
   const handleChange = (event) => {
     setAge(event.target.value);
   };
+
+  {
+    console.log(
+      "this is a badrequast fo erro 401 this not authrithin how is for in the  big status npm run dev for everyone and comeon for ever "
+    );
+    console.log("this going how are you?");
+  }
+
   // for modal colliction
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -52,9 +62,17 @@ const SingleProduct = ({ DetailProduct, creator }) => {
 
   useEffect(() => {
     setAccess(localStorage.getItem("access"));
+    setUser(localStorage.getItem("user"));
+    console.log(user);
+
     if (localStorage.getItem(`liked_${DetailProduct.id}`)) {
       setLiked(true);
     }
+    // if (DetailProduct.user_liked.find(handleLikedfun)) {
+    //   setLiked(true);
+    // } else {
+    //   setLiked(false);
+    // }
   }, []);
   axios
     .post(
@@ -77,16 +95,6 @@ const SingleProduct = ({ DetailProduct, creator }) => {
     .catch((error) => {
       setDownload("");
       console.log("error", error.response);
-      toast.error(error.response.data.data, {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
     });
 
   // handle share btn
@@ -111,16 +119,7 @@ const SingleProduct = ({ DetailProduct, creator }) => {
       )
       .then((response) => {
         console.log(response.data.massage);
-        toast.success("به سبد خرید اضافه شد", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
+        console.log("به سبد خرید اضافه شد");
       })
       .catch((error) => {
         console.log("error", error.response);
@@ -140,6 +139,28 @@ const SingleProduct = ({ DetailProduct, creator }) => {
 
   // handle liked button
   const handleLiked = async (id) => {
+    axios
+      .post(
+        `https://hdgraphic.ir/api/v1/users/like-file/${DetailProduct.token}`,
+        {},
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer  ${access}
+          `,
+          },
+        }
+      )
+      .then((result) => {
+        console.log(result.data.like);
+        setLiked(result.data.like);
+        console.log(result);
+        console.log("لایک انجام شد!");
+      })
+      .catch((err) => {
+        console.log("لایک انجام نشد!");
+      });
+
     setLiked(!liked);
     localStorage.setItem(`liked_${id}`, !liked);
     const resLiked = await axios.post("https://hdgraphic.ir/api/v1");

@@ -9,7 +9,7 @@ import ProductmainBig from "./ProductmainBig";
 import TitleComponents from "../TitleComponents";
 import { Masonry } from "@mui/lab";
 
-const ProductMain = ({ instagram }) => {
+const ProductMain = ({ instagram, stock }) => {
   return (
     <>
       <Container maxWidth={"xl"}>
@@ -45,14 +45,16 @@ const ProductMain = ({ instagram }) => {
             sx={{ justifyContent: { lg: "start", xs: "center" } }}
           >
             <Grid item xl={3.5} lg={4} md={6} sm={8}>
-              <Box sx={{ height: "100%" }}>
-                <img
-                  width={"100%"}
-                  height={"98%"}
-                  style={{ marginTop: "5px", objectFit: "cover" }}
-                  src="./images/65454.png"
-                />
-              </Box>
+              <Link href={"/files/picture_stock"}>
+                <Box sx={{ height: "100%" }}>
+                  <img
+                    width={"100%"}
+                    height={"98%"}
+                    style={{ marginTop: "5px", objectFit: "cover" }}
+                    src={`https://hdgraphic.ir/${stock}`}
+                  />
+                </Box>
+              </Link>
             </Grid>
             <Grid item xl={8.5} lg={8} md={12} sm={12}>
               <Box>

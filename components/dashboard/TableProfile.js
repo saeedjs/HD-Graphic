@@ -11,6 +11,8 @@ import Link from "next/link";
 import TableRows from "./TableRows";
 import { Mypagination } from "../Mypagination";
 import { Box } from "@mui/system";
+import { useEffect } from "react";
+import axios from "axios";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -41,65 +43,98 @@ const rows = [
 ];
 
 export default function TableProfile1(props) {
+  const [access, setAccess] = React.useState("");
+  const [files, setFiles] = React.useState([]);
+
+  React.useEffect(() => {
+    setAccess(localStorage.getItem("access"));
+  }, []);
+
+  axios
+    .post(
+      `https://hdgraphic.ir/api/v1/users/bought-files`,
+      {},
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer  ${access}
+`,
+        },
+      }
+    )
+    .then((response) => {
+      console.log(response.data.items);
+      setFiles(response.data.items);
+
+      // console.log("response", response.data);
+    })
+    .catch((error) => {
+      console.log("error", error.response);
+    });
+
   return (
     <>
       <hr />
       <Typography sx={{ mb: 2, fontWeight: "bold" }}>
         فایل های خریداری شده
       </Typography>
-      <TableContainer dir={"rtl"} component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="caption table">
-          <TableHead
-            sx={{
-              backgroundColor: "colors.black",
-            }}
-          >
-            <TableRow>
-              <TableCell
-                sx={{
-                  color: "white",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                شناسه
-              </TableCell>
-              <TableCell sx={{ color: "white" }} align="right">
-                تصویر
-              </TableCell>
-              <TableCell sx={{ color: "white" }} align="right">
-                نام فایل
-              </TableCell>
-              <TableCell sx={{ color: "white" }} align="right">
-                تاریخ خرید
-              </TableCell>
-              <TableCell sx={{ color: "white" }} align="right">
-                قیمت
-              </TableCell>
-              <TableCell sx={{ color: "white" }} align="right">
-                دانلود
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row, index) => (
-              <TableRows
-                title={row.title}
-                price={row.price}
-                downloadLink={row.downloadLink}
-                id={index + 1}
-                srcImage={row.srcImage}
-                date={row.date}
-              />
-            ))}
-          </TableBody>
-        </Table>
-        <Box sx={{ display: "flex", justifyContent: "end", mb: 10 }}>
-          <Box sx={{ display: "flex", justifyContent: "end" }}>
-            <Mypagination />
+      {files == [] ? (
+        <Typography component={"h1"}>فایلی خریداری شده ندارید!</Typography>
+      ) : (
+        <TableContainer dir={"rtl"} component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="caption table">
+            <TableHead
+              sx={{
+                backgroundColor: "colors.black",
+              }}
+            >
+              <TableRow>
+                <TableCell
+                  sx={{
+                    color: "white",
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  شناسه
+                </TableCell>
+                <TableCell sx={{ color: "white" }} align="right">
+                  تصویر
+                </TableCell>
+                <TableCell sx={{ color: "white" }} align="right">
+                  نام فایل
+                </TableCell>
+                <TableCell sx={{ color: "white" }} align="right">
+                  لینک صفحه فایل
+                </TableCell>
+                <TableCell sx={{ color: "white" }} align="right">
+                  قیمت
+                </TableCell>
+                <TableCell sx={{ color: "white" }} align="right">
+                  دانلود
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {files.map((row, index) => (
+                <TableRows
+                  title={row.title}
+                  downloadLink={row.file_url}
+                  id={row.id}
+                  srcImage={row.image}
+                  slug={row.slug}
+                  price={row.price}
+                />
+              ))}
+            </TableBody>
+          </Table>
+          <Box sx={{ display: "flex", justifyContent: "end", mb: 10 }}>
+            <Box sx={{ display: "flex", justifyContent: "end" }}>
+              <Mypagination />
+            </Box>
           </Box>
-        </Box>
-      </TableContainer>
+        </TableContainer>
+      )}
     </>
   );
 }

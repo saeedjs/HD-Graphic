@@ -1,5 +1,6 @@
-import { TableCell, TableRow, Button } from "@mui/material";
+import { TableCell, TableRow, Button, Typography } from "@mui/material";
 import Link from "next/link";
+import { numberFormat } from "../../lib/helper";
 
 const TableRows = (props) => {
   return (
@@ -40,7 +41,15 @@ const TableRows = (props) => {
           }
           align="right"
         >
-          <img src={props.srcImage} alt={props.title} />
+          <img
+            style={{
+              width: "75px",
+              height: "75px",
+              borderRadius: "15px",
+            }}
+            src={`https://hdgraphic.ir${props.srcImage}`}
+            alt={props.title}
+          />
         </TableCell>
         <TableCell
           sx={
@@ -76,7 +85,18 @@ const TableRows = (props) => {
           }
           align="right"
         >
-          {props.date}
+          <Link href={`/file/${props.slug}/${props.id}`}>
+            <Typography
+              sx={{
+                backgroundColor: "#eee",
+                color: "colos.green",
+                textAlign: "center",
+              }}
+            >
+              {" "}
+              صفحه این فایل
+            </Typography>
+          </Link>
         </TableCell>
         <TableCell
           sx={
@@ -94,7 +114,7 @@ const TableRows = (props) => {
           }
           align="right"
         >
-          {props.price} تومان
+          {numberFormat(props.price)} تومان
         </TableCell>
         <TableCell
           sx={
