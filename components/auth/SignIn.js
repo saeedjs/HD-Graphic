@@ -29,7 +29,6 @@ const SignIn = ({ setStep }) => {
     //   return;
     // }
     await login(cellphone);
-    setStep(2);
   }
 
   return (
@@ -53,6 +52,7 @@ const SignIn = ({ setStep }) => {
             mb: 4,
           }}
         >
+          {console.log("how is going for everyone and too much ")}
           صفحه ورود
         </Typography>
         <Grid item xs={12}>
@@ -184,6 +184,10 @@ const SignIn = ({ setStep }) => {
               backgroundColor: "#4ECCA3",
               color: "white",
               fontFamily: "iranYekan",
+              "&:hover": {
+                backgroundColor: "#F6416C",
+                color: "white",
+              },
             }}
             onClick={() => handleSubmit()}
           >

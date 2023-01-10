@@ -74,6 +74,7 @@ const LoginPage = ({ setting }) => {
           md={8}
           sx={{
             backgroundImage: "url(/images/0901630.png)",
+            height: "100vh",
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
               t.palette.mode === "light"
@@ -83,7 +84,7 @@ const LoginPage = ({ setting }) => {
             backgroundPosition: "center",
           }}
         />
-        <Grid
+        {/* <Grid
           item
           xs={12}
           sx={{ backgroundColor: "#EEEEEE", p: 1, height: "50px", pr: 20 }}
@@ -131,7 +132,7 @@ const LoginPage = ({ setting }) => {
             </svg>
             با عضویت در سایت از قوانین استفاده از سایت موافقت می نمایید
           </Typography>
-        </Grid>
+        </Grid> */}
       </Grid>
     </ThemeProvider>
   );

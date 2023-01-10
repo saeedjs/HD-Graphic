@@ -27,6 +27,7 @@ function MyApp({ Component, pageProps }) {
   //       console.log(err);
   //     });
   // }, [setting]);
+
   const theme = createTheme({
     direction: "rtl",
     palette: {
@@ -52,6 +53,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <AuthProvider>
         <ToastContainer
+          style={{ fontFamily: "iranYekan" }}
           position="top-right"
           autoClose={5000}
           hideProgressBar={false}

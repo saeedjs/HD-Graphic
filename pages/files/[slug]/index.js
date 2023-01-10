@@ -7,6 +7,7 @@ const fileSlugPage = ({ category, colors, title }) => {
   return (
     <>
       <Typography
+        component={"h1"}
         sx={{
           display: "flex",
           justifyContent: "center",

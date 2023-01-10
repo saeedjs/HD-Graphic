@@ -17,7 +17,9 @@ export const AuthProvider = ({ children }) => {
   const [newUser, setNewUser] = useState();
   const router = useRouter();
   useEffect(() => {
-    refreshToken();
+    if (!access) {
+      refreshToken();
+    }
 
     0;
   }, []);

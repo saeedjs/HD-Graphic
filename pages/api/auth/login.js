@@ -2,7 +2,6 @@ import axios from "axios";
 import cookie from "cookie";
 
 export default async function handler(req, res) {
-  console.log(req.method);
   if (req.method == "POST") {
     try {
       const resApi = await axios.post(
@@ -46,7 +45,7 @@ export default async function handler(req, res) {
 
       console.log(resApi.data);
     } catch {
-      res.status(405).json({ massage: "مشکلی هست" });
+      res.status(405).json({ massage: "مشکلی وجود دارد!" });
     }
   } else {
     res.setHeader("Allow", ["POST"]);

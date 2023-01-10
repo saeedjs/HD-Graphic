@@ -9,6 +9,7 @@ import { useContext, useState } from "react";
 
 import AuthContext from "../../context/AuthContext";
 import Link from "next/link";
+import { toast } from "react-toastify";
 
 const Login = ({ setStep }) => {
   const [cellphone, setCellphone] = useState("");
@@ -29,12 +30,20 @@ const Login = ({ setStep }) => {
       return;
     }
 
-    // const mobileReg =
-    //   /(0|\+98)?([ ]|-|[()]){0,2}9[1|2|3|4]([ ]|-|[()]){0,2}(?:[0-9]([ ]|-|[()]){0,2}){8}/gi;
-    // if (!mobileReg.test(cellphone)) {
-    //   console.log("فرمت شماره موبایل نادرست است");
+    const mobileReg = new RegExp(
+      "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$"
+    );
+    if (!mobileReg.test(cellphone)) {
+      toast.error("فرمت شماره موبایل نادرست است");
+      return;
+    }
+
+    // const emailReg = new RegExp("^[w-.]+@([w-]+.)+[w-]{2,4}$");
+    // if (!emailReg.test(email)) {
+    //   toast.error("فرمت ایمیل نادرست است");
     //   return;
     // }
+
     await login(cellphone);
     setStep(2);
   }
@@ -106,7 +115,6 @@ const Login = ({ setStep }) => {
             </Box>
             <Box sx={{ width: "100%", height: "100%", paddingRight: "10px" }}>
               <input
-                type="email"
                 style={{
                   width: "99%",
                   height: "100%",
@@ -304,6 +312,10 @@ const Login = ({ setStep }) => {
               backgroundColor: "#F6416C",
               color: "white",
               fontFamily: "iranYekan",
+              "&:hover": {
+                backgroundColor: "#4ECCA3",
+                color: "white",
+              },
             }}
             onClick={() => handleSubmit()}
           >
