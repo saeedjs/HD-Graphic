@@ -22,11 +22,12 @@ const pages = [
   { name: "فایل لایه باز", href: "/openfile" },
   { name: "دسته بندی", href: "/category" },
   { name: "مجموعه ها", href: "/collection" },
-  { name: "طراحان", href: "/designer" },
+  { name: "بلاگ", href: "/blog" },
 ];
 const settings = ["پروفایل", "اکانت", "داشبورد", "خروج"];
 
 function NavbarTop() {
+  const baseUrl = process.env.BASE_URL;
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -92,6 +93,7 @@ function NavbarTop() {
       setCategories(categoryList);
     };
     data();
+    console.log(process.env);
   }, []);
 
   useEffect(() => {
@@ -182,7 +184,7 @@ function NavbarTop() {
             >
               {pages.map((page) => (
                 <MenuItem key={page.name} onClick={handleCloseNavMenu} sx={{ width: "200px" }}>
-                  <Link href={page.href} textAlign="center">
+                  <Link href={`${page.href}`} textAlign="center">
                     {page.name}
                   </Link>
                 </MenuItem>
@@ -211,7 +213,7 @@ function NavbarTop() {
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: "black", display: "block" }}
                   >
-                    <Link href={page.href}>{page.name}</Link>
+                    <Link href={`${baseUrl}${page.href}`}>{page.name}</Link>
                   </Button>
                 )}
                 {false && page.name == "دسته بندی" && (
