@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <AuthProvider>
         <ToastContainer
-          toastClassName={css({ fontFamily: "Times New Roman, Serif" })}
+          style={{ fontFamily: "iranYekan" }}
           position="top-right"
           autoClose={5000}
           hideProgressBar={false}

@@ -27,12 +27,14 @@ const Filter = ({ category, colors }) => {
   const [categoryVals, setCategoryVals] = useState(
     category && category.items ? category.items : null
   );
-  const [mount, setMount] = useState(category && category.extra ? category.extra : null);
+  const [mount, setMount] = useState(
+    category && category.extra ? category.extra : null
+  );
   return (
     <>
       <Container maxWidth="xxl">
         <ComponentTop ltitle={"تعداد 6500 طرح آماده"} rtitle={"تنظیمات"} />
-        <Grid container>  
+        <Grid container>
           <Grid item xs={12} md={3} xl={2}>
             <Box
               height="60px"
@@ -69,7 +71,9 @@ const Filter = ({ category, colors }) => {
                   <img wid src="/images/icon/color.png" />
                 </Box>
                 <Box>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>رنگ</Typography>
+                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
+                    رنگ
+                  </Typography>
                 </Box>
               </Box>
               <Box>
@@ -91,14 +95,22 @@ const Filter = ({ category, colors }) => {
                   <img src="/images/icon/license.png" />
                 </Box>
                 <Box>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>لایسنس</Typography>
+                  <Typography sx={{ fontSize: "16px", fontWeight: "bold" }}>
+                    لایسنس
+                  </Typography>
                 </Box>
               </Box>
               <LicenseFilter />
             </Box>
             <SearchFilter />
           </Grid>
-          <Grid item xs={12} md={9} xl={10} sx={{ borderRight: { md: "1px solid #EEEEEE" } }}>
+          <Grid
+            item
+            xs={12}
+            md={9}
+            xl={10}
+            sx={{ borderRight: { md: "1px solid #EEEEEE" } }}
+          >
             <Box sx={{ height: "100%" }}>
               {categoryVals ? (
                 <Masonry
@@ -118,13 +130,13 @@ const Filter = ({ category, colors }) => {
                       >
                         <Box
                           sx={{
-                            width: { md: "200px", sm: "180px", xs: "200px" },
+                            width: { md: "auto", sm: "auto", xs: "auto" },
                             height: { md: "200px", sm: "180px", xs: "200px" },
                           }}
                         >
                           <img
                             alt={item.alt}
-                            style={{ height: "100%", width: "100%" }}
+                            style={{ height: "100%", width: "auto" }}
                             src={"https://hdgraphic.ir" + item.image}
                           />
                         </Box>
@@ -149,7 +161,9 @@ const Filter = ({ category, colors }) => {
             <Box>
               <Mypagination mount={mount ? mount : null} />
             </Box>
-            <Box>{/* <Mypagination mount={category.extra.page_count} /> */}</Box>
+            <Box>
+              {/* <Mypagination mount={category.extra.page_count} /> */}
+            </Box>
           </Grid>
         </Grid>
       </Container>
