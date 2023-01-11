@@ -13,6 +13,7 @@ import { Mypagination } from "../Mypagination";
 import { Box } from "@mui/system";
 import { useEffect } from "react";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -45,6 +46,8 @@ const rows = [
 export default function TableProfile1(props) {
   const [access, setAccess] = React.useState("");
   const [files, setFiles] = React.useState([]);
+  const [mount, setMount] = React.useState();
+  const router = useRouter();
 
   React.useEffect(() => {
     setAccess(localStorage.getItem("access"));
@@ -52,7 +55,7 @@ export default function TableProfile1(props) {
 
   axios
     .post(
-      `https://hdgraphic.ir/api/v1/users/bought-files`,
+      `https://hdgraphic.ir/api/v1/users/bought-files?page=${router.query.page}`,
       {},
       {
         headers: {
@@ -65,6 +68,7 @@ export default function TableProfile1(props) {
     .then((response) => {
       console.log(response.data.items);
       setFiles(response.data.items);
+      setMount(response.data.extra.page_count);
 
       // console.log("response", response.data);
     })
@@ -130,7 +134,7 @@ export default function TableProfile1(props) {
           </Table>
           <Box sx={{ display: "flex", justifyContent: "end", mb: 10 }}>
             <Box sx={{ display: "flex", justifyContent: "end" }}>
-              <Mypagination />
+              <Mypagination mount={{ page_count: 2 }} />
             </Box>
           </Box>
         </TableContainer>
